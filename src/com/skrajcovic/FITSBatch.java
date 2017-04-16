@@ -2,23 +2,30 @@ package com.skrajcovic;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class FITSBatch {
-    private ArrayList<FITSFile> files;
+    private HashMap<double[], FITSObject> data;
 
-    public FITSBatch(ArrayList<FITSFile> files) {
-        this.files = files;
+    public FITSBatch(HashMap<double[], FITSObject> data) {
+        this.data = data;
     }
 
     public void doRegression() {
         SimpleRegression regression = new SimpleRegression();
-        for (FITSFile file : files) {
-//            regression.addData();
+        for (FITSObject object : data.values()) {
+            regression.addData(object.getX(), object.getY());
         }
+        System.out.println(regression.getSlope());
+        System.out.println(regression.getIntercept());
     }
 
     public String toString() {
-        return this.files.toString();
+        for (double[] d : data.keySet()) {
+            System.out.print(Arrays.toString(d));
+        }
+        System.out.println();
+        return this.data.toString();
     }
 }
