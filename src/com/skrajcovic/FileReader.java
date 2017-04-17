@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class FileReader {
-    public static HashMap<double[], FITSObject> processFile(String fileLocation) {
+    public static HashMap<double[], FITSObject> processFile(FITSBatch batch, String fileLocation) {
         boolean skipFirstLine = true;
-        HashMap<double[], FITSObject> data = new HashMap<>();
+        HashMap<double[], FITSObject> data = batch.getDataStructure();
 
         File file = new File(fileLocation);
         try {
@@ -28,7 +28,10 @@ public class FileReader {
                         double x = Double.valueOf(splitLine[3]);
                         double y = Double.valueOf(splitLine[4]);
                         double intensity = Double.valueOf(splitLine[5]);
+
                         data.put(new double[] {x, y}, new FITSObject(splitLine[0], real, splitLine[2], x, y, intensity));
+
+                        batch.regression.addData(x, y);
                     }
                 } else {
                     skipFirstLine = false;
