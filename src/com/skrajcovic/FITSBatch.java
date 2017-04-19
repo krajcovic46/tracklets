@@ -43,7 +43,7 @@ public class FITSBatch {
 
     public String toString() {
         for (double[] d : data.keySet()) {
-            System.out.println(d[0] + " " + d[1]);
+            System.out.println(String.valueOf(d[0]).replace(".", ",") + " " + String.valueOf(d[1]).replace(".", ","));
         }
         System.out.println();
         return this.data.toString();
