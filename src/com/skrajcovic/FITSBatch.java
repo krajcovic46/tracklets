@@ -2,23 +2,50 @@ package com.skrajcovic;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FITSBatch {
-    private ArrayList<FITSFile> files;
+    private HashMap<double[], FITSObject> data;
+    SimpleRegression regression;
 
-    public FITSBatch(ArrayList<FITSFile> files) {
-        this.files = files;
+    public FITSBatch() {
+        data = new HashMap<>();
+        regression = new SimpleRegression();
     }
 
-    public void doRegression() {
-        SimpleRegression regression = new SimpleRegression();
-        for (FITSFile file : files) {
-//            regression.addData();
+    public FITSBatch(HashMap<double[], FITSObject> data) {
+        this.data = data;
+    }
+
+    public void getPoints() {
+        double m = regression.getSlope();
+        double c = regression.getIntercept();
+
+        System.out.println(regression.getRSquare());
+
+        for (Map.Entry<double[], FITSObject> e : data.entrySet()) {
+            System.out.println("y = " + e.getKey()[1]);
+            System.out.println("x = " + m*e.getKey()[0] + c);
+            if (e.getKey()[1] == m*e.getKey()[0] + c) {
+                System.out.println("wut");
+            }
+            System.out.println("-----------------------------");
         }
+
+        System.out.println(m + " " + c);
+    }
+
+    public HashMap<double[], FITSObject> getDataStructure() {
+        return data;
     }
 
     public String toString() {
-        return this.files.toString();
+        for (double[] d : data.keySet()) {
+            System.out.println(String.valueOf(d[0]).replace(".", ",") + " " + String.valueOf(d[1]).replace(".", ","));
+        }
+        System.out.println();
+        return this.data.toString();
     }
 }

@@ -8,6 +8,17 @@ public class FITSObject {
     private String mjd;
     private double intensity;
 
+    public FITSObject() {}
+
+    public FITSObject(String name, boolean real, String mjd, double x, double y, double intensity) {
+        setName(name);
+        setReal(real);
+        setMjd(mjd);
+        setX(x);
+        setY(y);
+        setIntensity(intensity);
+    }
+
     public FITSObject(String[] data) {
         setName(data[0]);
         setReal(Boolean.parseBoolean(data[1]));
