@@ -29,7 +29,7 @@ public class FITSObject {
     }
 
     public String toString() {
-        return "[" + getName() + ", " + getX() + ", " + getY() + "]";
+        return "[" + getName() + ", " + getX() + ", " + getY() + ", " + getMjd() +"]";
     }
 
     public String getName() {
