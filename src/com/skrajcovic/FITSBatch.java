@@ -11,7 +11,7 @@ public class FITSBatch {
     private Set<FITSObject> sSet;
     private Map<FITSObject[], SimpleRegression> regressions;
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
 
     public FITSBatch() {
         regressions = new HashMap<>();
@@ -27,6 +27,7 @@ public class FITSBatch {
     public void doTheThing() {
 
         findRegressions();
+
         for (int i = 1; i < 101; i++) {
             double[] tmp = testRegressions(i);
             if (tmp != null) {
