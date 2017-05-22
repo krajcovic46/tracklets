@@ -28,7 +28,7 @@ public class FileReader {
                     String[] splitLine = pattern.split(text.replace(',', '.'), 0);
 
                     if (splitLine.length != 0) {
-                        boolean real = Boolean.parseBoolean(splitLine[1]);
+                        boolean real = splitLine[1].equals("Real");
                         double x = Double.valueOf(splitLine[3]);
                         double y = Double.valueOf(splitLine[4]);
                         double intensity = Double.valueOf(splitLine[5]);
@@ -56,7 +56,6 @@ public class FileReader {
                     skipFirstLine = false;
                 }
             }
-
             bf.close();
         } catch (IOException e) {
             e.printStackTrace();

@@ -2,7 +2,6 @@ package com.skrajcovic;
 
 import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.util.*;
 
@@ -11,6 +10,8 @@ public class FITSBatch {
     private Set<FITSObject> fSet;
     private Set<FITSObject> sSet;
     private Map<FITSObject[], SimpleRegression> regressions;
+
+    public static final boolean DEBUG = false;
 
     public FITSBatch() {
         regressions = new HashMap<>();
@@ -26,8 +27,15 @@ public class FITSBatch {
     public void doTheThing() {
 
         findRegressions();
-
-        testRegressions();
+        for (int i = 1; i < 101; i++) {
+            double[] tmp = testRegressions(i);
+            if (tmp != null) {
+                System.out.format("Threshold: %d\nNumber of all points under threshold: %d\nReal points: %d\nSuccess rate: %f",
+                        i, (int)tmp[0], (int)tmp[1], tmp[2]); System.out.println("%");
+                System.out.println("---------------------------------");
+            }
+        }
+//        testRegressions();
     }
 
     void findRegressions() {
@@ -41,33 +49,37 @@ public class FITSBatch {
         }
     }
 
-    void testRegressions() {
-        double threshold = 15;
+    double[] testRegressions(double threshold) {
+//        double threshold = 70;
         for (Map.Entry<FITSObject[], SimpleRegression> regression : regressions.entrySet()) {
             Set<FITSObject> result = new HashSet<>();
             int real = 0;
             for (FITSObject fitsObject : data.values()) {
-//                if (fitsObject != regression.getKey()[0] && fitsObject != regression.getKey()[1]) {
-                    double x = fitsObject.getX();
-                    double y = fitsObject.getY();
-                    double m = regression.getValue().getSlope();
-                    double c = regression.getValue().getIntercept();
+                double x = fitsObject.getX();
+                double y = fitsObject.getY();
+                double m = regression.getValue().getSlope();
+                double c = regression.getValue().getIntercept();
+                double b = (y > 0) ? 1 : -1;
 
-                    if (y <= (m * x + c) + threshold && y >= (m * x + c) - threshold) {
-                        if (x == 599.61 || x == 598.63 || x == 599.79 || x == 600.07 || x == 599.98 || x == 600.62) {
-                            real++;
-                        }
-                        result.add(fitsObject);
+                double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
+
+                if (Math.abs(distance) <= threshold) {
+                    if (fitsObject.isReal()) {
+                        real++;
                     }
-                }
-                if (result.size() > 0) {
-                    System.out.println(result);
-                    System.out.println(result.size());
-                    System.out.println(real);
-                    System.out.println("-------------");
+                    result.add(fitsObject);
                 }
             }
-//        }
+            if (regression.getKey()[0].isReal() && regression.getKey()[1].isReal()) {
+                return new double[]{result.size(), real, (real / (double) result.size())*100};
+//                    System.out.println(Arrays.toString(regression.getKey()) + " -- " + result);
+//                    System.out.println(result.size());
+//                    System.out.println(real);
+//                    System.out.println("Success rate: " + (real / (double) result.size()) * 100 + "%");
+//                    System.out.println("-------------");
+            }
+        }
+        return null;
     }
 
     public void mainDataInsert(double[] id, FITSObject object) {
