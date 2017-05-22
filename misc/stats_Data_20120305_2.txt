@@ -1,0 +1,501 @@
+DATA FOR COMMIT b589103 (22.5.2017)
+
+Threshold: 1
+Number of all points under threshold: 2
+Real points: 2
+Success rate: 100.000000%
+---------------------------------
+Threshold: 2
+Number of all points under threshold: 2
+Real points: 2
+Success rate: 100.000000%
+---------------------------------
+Threshold: 3
+Number of all points under threshold: 3
+Real points: 3
+Success rate: 100.000000%
+---------------------------------
+Threshold: 4
+Number of all points under threshold: 5
+Real points: 5
+Success rate: 100.000000%
+---------------------------------
+Threshold: 5
+Number of all points under threshold: 5
+Real points: 5
+Success rate: 100.000000%
+---------------------------------
+Threshold: 6
+Number of all points under threshold: 6
+Real points: 6
+Success rate: 100.000000%
+---------------------------------
+Threshold: 7
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 8
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 9
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 10
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 11
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 12
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 13
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 14
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 15
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 16
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 17
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 18
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 19
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 20
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 21
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 22
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 23
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 24
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 25
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 26
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 27
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 28
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 29
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 30
+Number of all points under threshold: 7
+Real points: 6
+Success rate: 85.714286%
+---------------------------------
+Threshold: 31
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 32
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 33
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 34
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 35
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 36
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 37
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 38
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 39
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 40
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 41
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 42
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 43
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 44
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 45
+Number of all points under threshold: 8
+Real points: 6
+Success rate: 75.000000%
+---------------------------------
+Threshold: 46
+Number of all points under threshold: 9
+Real points: 6
+Success rate: 66.666667%
+---------------------------------
+Threshold: 47
+Number of all points under threshold: 9
+Real points: 6
+Success rate: 66.666667%
+---------------------------------
+Threshold: 48
+Number of all points under threshold: 9
+Real points: 6
+Success rate: 66.666667%
+---------------------------------
+Threshold: 49
+Number of all points under threshold: 9
+Real points: 6
+Success rate: 66.666667%
+---------------------------------
+Threshold: 50
+Number of all points under threshold: 9
+Real points: 6
+Success rate: 66.666667%
+---------------------------------
+Threshold: 51
+Number of all points under threshold: 10
+Real points: 6
+Success rate: 60.000000%
+---------------------------------
+Threshold: 52
+Number of all points under threshold: 10
+Real points: 6
+Success rate: 60.000000%
+---------------------------------
+Threshold: 53
+Number of all points under threshold: 10
+Real points: 6
+Success rate: 60.000000%
+---------------------------------
+Threshold: 54
+Number of all points under threshold: 10
+Real points: 6
+Success rate: 60.000000%
+---------------------------------
+Threshold: 55
+Number of all points under threshold: 10
+Real points: 6
+Success rate: 60.000000%
+---------------------------------
+Threshold: 56
+Number of all points under threshold: 11
+Real points: 6
+Success rate: 54.545455%
+---------------------------------
+Threshold: 57
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 58
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 59
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 60
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 61
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 62
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 63
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 64
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 65
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 66
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 67
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 68
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 69
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 70
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 71
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 72
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 73
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 74
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 75
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 76
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 77
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 78
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 79
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 80
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 81
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 82
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 83
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 84
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 85
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 86
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 87
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 88
+Number of all points under threshold: 12
+Real points: 6
+Success rate: 50.000000%
+---------------------------------
+Threshold: 89
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 90
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 91
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 92
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 93
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 94
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 95
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 96
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 97
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 98
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 99
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
+---------------------------------
+Threshold: 100
+Number of all points under threshold: 13
+Real points: 6
+Success rate: 46.153846%
