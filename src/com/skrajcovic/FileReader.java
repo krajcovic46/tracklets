@@ -28,18 +28,20 @@ public class FileReader {
 
                     if (splitLine.length != 0) {
                         boolean real = splitLine[1].equals("Real");
+                        double mjd = Double.valueOf(splitLine[2]);
                         double x = Double.valueOf(splitLine[3]);
                         double y = Double.valueOf(splitLine[4]);
                         double intensity = Double.valueOf(splitLine[5]);
 
-                        FITSObject obj = new FITSObject(splitLine[0], real, splitLine[2], x, y, intensity);
+                        FITSObject obj = new FITSObject(splitLine[0], real, mjd, x, y, intensity);
 
                         if (insertFirst) {
                             batch.firstSetInsert(obj);
                         } else if (insertSecond) {
                             batch.secondSetInsert(obj);
+                        } else {
+                            batch.mainDataInsert(obj);
                         }
-                        batch.mainDataInsert(obj);
 
 //                        batch.regression.addData(x, y);
                     } else {

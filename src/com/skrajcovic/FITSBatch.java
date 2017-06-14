@@ -8,7 +8,7 @@ public class FITSBatch {
     private List<FITSObject> data;
     private Set<FITSObject> fSet;
     private Set<FITSObject> sSet;
-    private Map<FITSObject[], SimpleRegression> regressions;
+    private Map<ArrayList<FITSObject>, SimpleRegression> regressions;
 
     public static final boolean DEBUG = false;
 
@@ -38,43 +38,44 @@ public class FITSBatch {
                 SimpleRegression sr = new SimpleRegression();
                 sr.addData(obj1.getX(), obj1.getY());
                 sr.addData(obj2.getX(), obj2.getY());
-                regressions.put(new FITSObject[]{obj1, obj2}, sr);
+                regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
             }
         }
     }
 
     double[] fitPointsToRegressions(double threshold) {
-//        double threshold = 70;
-        for (Map.Entry<FITSObject[], SimpleRegression> regression : regressions.entrySet()) {
-            double averageCombinedSpeed = 0;
+        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
             Set<FITSObject> result = new HashSet<>();
+            ArrayList<FITSObject> regressionPoints = regression.getKey();
+
+            double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0),
+                    regressionPoints.get(1).calculateDeltaTime(regressionPoints.get(0)));
+
             int real = 0;
             for (FITSObject fitsObject : data) {
 
-                if (isObjectUnderThreshold(fitsObject, regression.getValue(), threshold)) {
+                double deltaTime;
+
+                if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)) {
+                    deltaTime = regressionPoints.get(regressionPoints.size() - 1).calculateDeltaTime(fitsObject);
+                    double currentSpeed = regressionPoints.get(1).calculateSpeed(fitsObject, deltaTime);
+                    if (Math.abs(averageCombinedSpeed - currentSpeed) <= 10) {
+                        averageCombinedSpeed = (averageCombinedSpeed + regressionPoints.get(1).calculateSpeed(fitsObject, deltaTime)) / 2;
+                    }
+
+                    result.add(fitsObject);
+                    regressionPoints.add(fitsObject);
+
                     if (fitsObject.isReal()) {
                         real++;
                     }
-                    result.add(fitsObject);
                 }
             }
-            if (regression.getKey()[0].isReal() && regression.getKey()[1].isReal()) {
+            if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
                 return new double[]{result.size(), real, (real / (double) result.size())*100};
             }
         }
         return null;
-    }
-
-    private boolean isObjectUnderThreshold(FITSObject fitsObject, SimpleRegression regression, double threshold) {
-        double x = fitsObject.getX();
-        double y = fitsObject.getY();
-        double m = regression.getSlope();
-        double c = regression.getIntercept();
-        double b = (y > 0) ? 1 : -1;
-
-        double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
-
-        return Math.abs(distance) <= threshold;
     }
 
     public void mainDataInsert(FITSObject object) {

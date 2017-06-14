@@ -1,16 +1,18 @@
 package com.skrajcovic;
 
+import org.apache.commons.math3.stat.regression.SimpleRegression;
+
 public class FITSObject implements Comparable<FITSObject> {
     private String name;
     private boolean real;
     private double x;
     private double y;
-    private String mjd;
+    private double mjd;
     private double intensity;
 
     public FITSObject() {}
 
-    public FITSObject(String name, boolean real, String mjd, double x, double y, double intensity) {
+    public FITSObject(String name, boolean real, double mjd, double x, double y, double intensity) {
         setName(name);
         setReal(real);
         setMjd(mjd);
@@ -22,7 +24,7 @@ public class FITSObject implements Comparable<FITSObject> {
     public FITSObject(String[] data) {
         setName(data[0]);
         setReal(Boolean.parseBoolean(data[1]));
-        setMjd(data[2]);
+        setMjd(Double.valueOf(data[2]));
         setX(Double.valueOf(data[3]));
         setY(Double.valueOf(data[4]));
         setIntensity(Double.valueOf(data[5]));
@@ -64,11 +66,11 @@ public class FITSObject implements Comparable<FITSObject> {
         this.y = y;
     }
 
-    public String getMjd() {
+    public double getMjd() {
         return mjd;
     }
 
-    public void setMjd(String mjd) {
+    public void setMjd(double mjd) {
         this.mjd = mjd;
     }
 
@@ -80,10 +82,29 @@ public class FITSObject implements Comparable<FITSObject> {
         this.intensity = intensity;
     }
 
+    public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
+        double x = this.getX();
+        double y = this.getY();
+        double m = regression.getSlope();
+        double c = regression.getIntercept();
+        double b = (y > 0) ? 1 : -1;
+
+        double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
+
+        return Math.abs(distance) <= threshold;
+    }
+
+    public double calculateDeltaTime(FITSObject otherObject) {
+        return Math.abs(this.getMjd() - otherObject.getMjd());
+    }
+
+    public double calculateSpeed(FITSObject otherObject, double deltaTime) {
+        return Math.sqrt(Math.pow(this.getX() - otherObject.getX(), 2) + Math.pow(this.getY() - otherObject.getY(), 2))
+                / deltaTime;
+    }
+
     @Override
     public int compareTo(FITSObject o) {
-        Double dMjd = Double.valueOf(getMjd());
-        Double dMjd2 = Double.valueOf(o.getMjd());
-        return dMjd.compareTo(dMjd2);
+        return Double.valueOf(this.getMjd()).compareTo(o.getMjd());
     }
 }
