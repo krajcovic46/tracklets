@@ -1,6 +1,6 @@
 package com.skrajcovic;
 
-public class FITSObject {
+public class FITSObject implements Comparable<FITSObject> {
     private String name;
     private boolean real;
     private double x;
@@ -78,5 +78,12 @@ public class FITSObject {
 
     public void setIntensity(double intensity) {
         this.intensity = intensity;
+    }
+
+    @Override
+    public int compareTo(FITSObject o) {
+        Double dMjd = Double.valueOf(getMjd());
+        Double dMjd2 = Double.valueOf(o.getMjd());
+        return dMjd.compareTo(dMjd2);
     }
 }

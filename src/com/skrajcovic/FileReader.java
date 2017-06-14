@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 public class FileReader {
     public static void processFile(FITSBatch batch, String fileLocation) {
         boolean skipFirstLine = true;
-        HashMap<double[], FITSObject> data = batch.getDataStructure();
 
         File file = new File(fileLocation);
         try {
@@ -40,7 +39,7 @@ public class FileReader {
                         } else if (insertSecond) {
                             batch.secondSetInsert(obj);
                         }
-                        batch.mainDataInsert(new double[] {x, y}, obj);
+                        batch.mainDataInsert(obj);
 
 //                        batch.regression.addData(x, y);
                     } else {

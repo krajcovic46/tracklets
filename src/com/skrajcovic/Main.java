@@ -19,5 +19,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
+        System.out.println(batch.getDataStructure());
     }
 }

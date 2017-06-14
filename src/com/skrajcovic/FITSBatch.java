@@ -1,12 +1,11 @@
 package com.skrajcovic;
 
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.*;
 
 public class FITSBatch {
-    private HashMap<double[], FITSObject> data;
+    private List<FITSObject> data;
     private Set<FITSObject> fSet;
     private Set<FITSObject> sSet;
     private Map<FITSObject[], SimpleRegression> regressions;
@@ -15,27 +14,22 @@ public class FITSBatch {
 
     public FITSBatch() {
         regressions = new HashMap<>();
-        data = new HashMap<>();
+        data = new ArrayList<>();
         fSet = new HashSet<>();
         sSet = new HashSet<>();
-    }
-
-    public FITSBatch(HashMap<double[], FITSObject> data) {
-        this.data = data;
     }
 
     public void doTheThing() {
 
         findRegressions();
         for (int i = 1; i < 101; i++) {
-            double[] tmp = testRegressions(i);
+            double[] tmp = fitPointsToRegressions(i);
             if (tmp != null) {
                 System.out.format("Threshold: %d\nNumber of all points under threshold: %d\nReal points: %d\nSuccess rate: %f",
                         i, (int)tmp[0], (int)tmp[1], tmp[2]); System.out.println("%");
                 System.out.println("---------------------------------");
             }
         }
-//        testRegressions();
     }
 
     void findRegressions() {
@@ -49,12 +43,13 @@ public class FITSBatch {
         }
     }
 
-    double[] testRegressions(double threshold) {
+    double[] fitPointsToRegressions(double threshold) {
 //        double threshold = 70;
         for (Map.Entry<FITSObject[], SimpleRegression> regression : regressions.entrySet()) {
+            double averageCombinedSpeed = 0;
             Set<FITSObject> result = new HashSet<>();
             int real = 0;
-            for (FITSObject fitsObject : data.values()) {
+            for (FITSObject fitsObject : data) {
                 double x = fitsObject.getX();
                 double y = fitsObject.getY();
                 double m = regression.getValue().getSlope();
@@ -82,8 +77,8 @@ public class FITSBatch {
         return null;
     }
 
-    public void mainDataInsert(double[] id, FITSObject object) {
-        data.put(id, object);
+    public void mainDataInsert(FITSObject object) {
+        data.add(object);
     }
 
     public void firstSetInsert(FITSObject fitsObject) {
@@ -94,7 +89,7 @@ public class FITSBatch {
         sSet.add(fitsObject);
     }
 
-    public HashMap<double[], FITSObject> getDataStructure() {
+    public List<FITSObject> getDataStructure() {
         return data;
     }
 
