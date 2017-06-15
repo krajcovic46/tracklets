@@ -46,6 +46,8 @@ public class FITSBatch {
     double[] fitPointsToRegressions(double threshold) {
         for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
             Set<FITSObject> result = new HashSet<>();
+            FITSObject last = null;
+            double lastSpeed = Double.MAX_VALUE;
             ArrayList<FITSObject> regressionPoints = regression.getKey();
 
             double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0),
@@ -59,12 +61,23 @@ public class FITSBatch {
                 if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)) {
                     deltaTime = regressionPoints.get(regressionPoints.size() - 1).calculateDeltaTime(fitsObject);
                     double currentSpeed = regressionPoints.get(1).calculateSpeed(fitsObject, deltaTime);
-                    if (Math.abs(averageCombinedSpeed - currentSpeed) <= 10) {
-                        averageCombinedSpeed = (averageCombinedSpeed + regressionPoints.get(1).calculateSpeed(fitsObject, deltaTime)) / 2;
+                    if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
+                        last = fitsObject;
+                        lastSpeed = currentSpeed;
+                    }
+
+                    if (last != null && !fitsObject.getName().equals(last.getName()) &&
+                            !regressionPoints.get(regressionPoints.size() - 1).getName().equals(last.getName())) {
+                        regressionPoints.add(last);
+                        regression.getValue().addData(last.getX(), last.getY());
+                        averageCombinedSpeed = (averageCombinedSpeed + lastSpeed) / 2;
+
+                        //cleanup
+                        last = null;
+                        lastSpeed = Double.MAX_VALUE;
                     }
 
                     result.add(fitsObject);
-                    regressionPoints.add(fitsObject);
 
                     if (fitsObject.isReal()) {
                         real++;
