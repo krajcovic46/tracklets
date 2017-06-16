@@ -84,6 +84,11 @@ public class FITSBatch {
                     }
                 }
             }
+            // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
+            if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getName().equals(last.getName())) {
+                regressionPoints.add(last);
+                regression.getValue().addData(last.getX(), last.getY());
+            }
             if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
                 return new double[]{result.size(), real, (real / (double) result.size())*100};
             }
