@@ -50,8 +50,7 @@ public class FITSBatch {
             double lastSpeed = Double.MAX_VALUE;
             ArrayList<FITSObject> regressionPoints = regression.getKey();
 
-            double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0),
-                    regressionPoints.get(1).calculateDeltaTime(regressionPoints.get(0)));
+            double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
 
             int real = 0;
             for (FITSObject fitsObject : data) {
@@ -59,8 +58,7 @@ public class FITSBatch {
                 double deltaTime;
 
                 if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)) {
-                    deltaTime = regressionPoints.get(regressionPoints.size() - 1).calculateDeltaTime(fitsObject);
-                    double currentSpeed = regressionPoints.get(1).calculateSpeed(fitsObject, deltaTime);
+                    double currentSpeed = regressionPoints.get(1).calculateSpeed(fitsObject);
                     if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
                         last = fitsObject;
                         lastSpeed = currentSpeed;
@@ -70,7 +68,7 @@ public class FITSBatch {
                             !regressionPoints.get(regressionPoints.size() - 1).getName().equals(last.getName())) {
                         regressionPoints.add(last);
                         regression.getValue().addData(last.getX(), last.getY());
-                        averageCombinedSpeed = (averageCombinedSpeed + lastSpeed) / 2;
+//                        averageCombinedSpeed = (averageCombinedSpeed + lastSpeed) / 2;
 
                         //cleanup
                         last = null;
@@ -90,6 +88,7 @@ public class FITSBatch {
                 regression.getValue().addData(last.getX(), last.getY());
             }
             if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
+                System.out.println(result);
                 return new double[]{result.size(), real, (real / (double) result.size())*100};
             }
         }

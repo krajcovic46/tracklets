@@ -98,9 +98,9 @@ public class FITSObject implements Comparable<FITSObject> {
         return Math.abs(this.getMjd() - otherObject.getMjd());
     }
 
-    public double calculateSpeed(FITSObject otherObject, double deltaTime) {
+    public double calculateSpeed(FITSObject otherObject) {
         return Math.sqrt(Math.pow(this.getX() - otherObject.getX(), 2) + Math.pow(this.getY() - otherObject.getY(), 2))
-                / deltaTime;
+                / calculateDeltaTime(otherObject);
     }
 
     @Override
