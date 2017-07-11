@@ -91,6 +91,10 @@ public class FITSObject implements Comparable<FITSObject> {
 
         double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
 
+        if (this.isReal()) {
+            System.out.println(this.getName() + " - " + distance);
+        }
+
         return Math.abs(distance) <= threshold;
     }
 
