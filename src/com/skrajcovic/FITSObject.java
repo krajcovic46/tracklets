@@ -107,6 +107,26 @@ public class FITSObject implements Comparable<FITSObject> {
                 / calculateDeltaTime(otherObject);
     }
 
+    public Integer[] getHeading(FITSObject otherObject) {
+        Integer[] heading = new Integer[]{0, 0};
+        if (this.getX() < otherObject.getX()) {
+            heading[0] = 1;
+        } else if (this.getX() > otherObject.getX()) {
+            heading[0] = -1;
+        }
+
+        if (this.getY() < otherObject.getY()) {
+            heading[1] = 1;
+        } else if (this.getY() > otherObject.getY()) {
+            heading[1] = -1;
+        }
+        return heading;
+    }
+
+    private void detectXHeading(FITSObject otherObject) {
+
+    }
+
     @Override
     public int compareTo(FITSObject o) {
         return Double.valueOf(this.getMjd()).compareTo(o.getMjd());
