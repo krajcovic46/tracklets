@@ -52,12 +52,14 @@ public class FITSBatch {
                 ArrayList<FITSObject> regressionPoints = regression.getKey();
 
                 double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
+                Integer[] baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
 
 //                System.out.println(averageCombinedSpeed);
 
                 int real = 0;
                 for (FITSObject fitsObject : data) {
-                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)) {
+                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold) &&
+                            Arrays.equals(baseHeading, regressionPoints.get(regressionPoints.size() - 1).getHeading(fitsObject))) {
 
                         if (last != null && !fitsObject.getName().equals(last.getName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
@@ -65,7 +67,7 @@ public class FITSBatch {
 //                                averageCombinedSpeed = (averageCombinedSpeed + lastSpeed) / 2;
 
                             //cleanup
-                            if (threshold == 500) threshold = 25;
+//                            if (threshold == 500) threshold = 25;
                             last = null;
                             lastSpeed = Double.MAX_VALUE;
 
