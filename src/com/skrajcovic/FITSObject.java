@@ -91,9 +91,9 @@ public class FITSObject implements Comparable<FITSObject> {
 
         double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
 
-        if (this.isReal()) {
-            System.out.println(this.getName() + " - " + distance);
-        }
+//        if (this.isReal()) {
+//            System.out.println(this.getName() + " - " + distance);
+//        }
 
         return Math.abs(distance) <= threshold;
     }
@@ -107,21 +107,8 @@ public class FITSObject implements Comparable<FITSObject> {
                 / calculateDeltaTime(otherObject);
     }
 
-    @Deprecated
-    public Integer[] getHeading(FITSObject otherObject) {
-        Integer[] heading = new Integer[]{0, 0};
-        if (this.getX() < otherObject.getX()) {
-            heading[0] = 1;
-        } else if (this.getX() > otherObject.getX()) {
-            heading[0] = -1;
-        }
-
-        if (this.getY() < otherObject.getY()) {
-            heading[1] = 1;
-        } else if (this.getY() > otherObject.getY()) {
-            heading[1] = -1;
-        }
-        return heading;
+    public double getHeading(FITSObject otherObject) {
+        return Math.toDegrees(Math.atan(getSlope(otherObject)));
     }
 
     private double getSlope(FITSObject otherObject) {
@@ -129,6 +116,14 @@ public class FITSObject implements Comparable<FITSObject> {
         double y2 = otherObject.getY();
 
         return (y2 - this.getY()) / (x2 - this.getX());
+    }
+
+    public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
+        if (otherObject.isReal()) {
+            System.out.println(this.getName() + " - " + angle +" >= " + (getHeading(otherObject) + threshold));
+        }
+        double heading = getHeading(otherObject);
+        return angle <= heading + threshold && angle >= heading - threshold;
     }
 
     @Override
