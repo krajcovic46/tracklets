@@ -108,8 +108,11 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double getHeading(FITSObject otherObject) {
-        return Math.toDegrees(Math.atan(getSlope(otherObject)));
+//        return Math.toDegrees(Math.atan(getSlope(otherObject)));
+        double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
+        return Math.abs(theta);
     }
+
 
     private double getSlope(FITSObject otherObject) {
         double x2 = otherObject.getX();
@@ -119,10 +122,11 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
-        if (otherObject.isReal()) {
-            System.out.println(this.getName() + " - " + angle +" >= " + (getHeading(otherObject) + threshold));
-        }
         double heading = getHeading(otherObject);
+        if (otherObject.isReal()) {
+            System.out.println(otherObject.getName() + " - " + angle +" <= " + heading + " + " + threshold +
+            " && " + angle + " >= " + heading + " - " + threshold);
+        }
         return angle <= heading + threshold && angle >= heading - threshold;
     }
 
