@@ -1,7 +1,7 @@
 package com.skrajcovic;
 
 
-//import eap.fitsbrowser.Browser;
+import eap.fitsbrowser.Browser;
 
 import java.io.IOException;
 
@@ -12,13 +12,12 @@ public class Main {
 	    FileReader.processFile(batch, "misc//Data_20120318_2.txt");
 	    batch.doTheThing();
 	    if (FITSBatch.DEBUG) {
-//            Browser browser = new Browser();
-//            try {
-//                browser.openFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            Browser browser = new Browser();
+            try {
+                browser.openFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-//        System.out.println(batch.getDataStructure());
     }
 }

@@ -1,5 +1,6 @@
 package com.skrajcovic;
 
+import eap.fits.FitsData;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.*;
@@ -9,8 +10,9 @@ public class FITSBatch {
     private Set<FITSObject> fSet;
     private Set<FITSObject> sSet;
     private Map<ArrayList<FITSObject>, SimpleRegression> regressions;
+    private Set<FitsData> images;
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
 
     public FITSBatch() {
         regressions = new HashMap<>();
@@ -46,15 +48,12 @@ public class FITSBatch {
     double[] fitPointsToRegressions(double threshold) {
         for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
             if (regression.getKey().get(0).isReal() && regression.getKey().get(1).isReal()) {
-                Set<FITSObject> result = new HashSet<>();
                 FITSObject last = null;
                 double lastSpeed = Double.MAX_VALUE;
                 ArrayList<FITSObject> regressionPoints = regression.getKey();
 
                 double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
                 double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
-
-//                System.out.println(averageCombinedSpeed);
 
                 int real = 0;
                 for (FITSObject fitsObject : data) {
@@ -65,15 +64,10 @@ public class FITSBatch {
                         if (last != null && !fitsObject.getName().equals(last.getName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
                             regression.getValue().addData(last.getX(), last.getY());
-//                                averageCombinedSpeed = (averageCombinedSpeed + lastSpeed) / 2;
 
                             //cleanup
-//                            if (threshold == 500) threshold = 25;
                             last = null;
                             lastSpeed = Double.MAX_VALUE;
-//                            baseHeading = regressionPoints.get(regressionPoints.size() - 1).getHeading(fitsObject);
-
-//                            result.add(fitsObject);
                         }
 
                         double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
@@ -100,6 +94,10 @@ public class FITSBatch {
             }
         }
         return null;
+    }
+
+    public void matchImages() {
+
     }
 
     public void mainDataInsert(FITSObject object) {

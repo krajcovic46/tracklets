@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/commons-math3-3.6.1-bin/commons-math3-3.6.1/commons-math3-3.6.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/libraries/commons-math3-3.6.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/fits1.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/libraries/fits1.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

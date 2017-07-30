@@ -91,10 +91,6 @@ public class FITSObject implements Comparable<FITSObject> {
 
         double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
 
-//        if (this.isReal()) {
-//            System.out.println(this.getName() + " - " + distance);
-//        }
-
         return Math.abs(distance) <= threshold;
     }
 
@@ -108,17 +104,8 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double getHeading(FITSObject otherObject) {
-//        return Math.toDegrees(Math.atan(getSlope(otherObject)));
         double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
         return Math.abs(theta);
-    }
-
-
-    private double getSlope(FITSObject otherObject) {
-        double x2 = otherObject.getX();
-        double y2 = otherObject.getY();
-
-        return (y2 - this.getY()) / (x2 - this.getX());
     }
 
     public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
