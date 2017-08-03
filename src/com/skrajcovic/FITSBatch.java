@@ -1,8 +1,12 @@
 package com.skrajcovic;
 
-import eap.fits.FitsData;
+import eap.fits.*;
+import eap.fitsbrowser.HDUDisplay;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
 
 public class FITSBatch {
@@ -94,10 +98,6 @@ public class FITSBatch {
             }
         }
         return null;
-    }
-
-    public void matchImages() {
-
     }
 
     public void mainDataInsert(FITSObject object) {

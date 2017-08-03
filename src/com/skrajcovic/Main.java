@@ -3,13 +3,14 @@ package com.skrajcovic;
 
 import eap.fitsbrowser.Browser;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) {
     	FITSBatch batch = new FITSBatch();
-	    FileReader.processFile(batch, "misc//Data_20120318_2.txt");
+	    FileReader.processFile(batch, "misc//Data_20120305_2.txt");
 	    batch.doTheThing();
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();
