@@ -1,0 +1,24 @@
+123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+----- NORAD# 38353 -----
+
+CZ-3B R/B
+1 38353U 12028B   17222.13261984 +.00013102 +00000-0 +29868-3 0  9996
+2 38353 026.8442 156.8208 4754421 242.1014 062.2700 06.16526084086033
+
+Object int ID:      2012-028B
+
+Start time:         2017-08-10 10:19:03.0 (UTC)
+Start time:         57975.42989583333 days (MJD)
+Observatory:        -68.4375 deg, -20.9817 deg, 2200.0 m
+Exp time:           36 s
+Visual mag:         12.7 ; 12.7
+Standard mag:       5.9
+Angular speed:      3283.513 arcmin/min
+Position angle:     267.014 deg
+
+MJD             Date                      Az         h          R.A.       dec        Phase  Obs.r.     Angular      Shadow Sun_elev   Gal_lat    Moon_dist 
+[day]           (UTC)                     [deg]      [deg]      [deg]      [deg]      [deg]  [km]       [arcm/min]          [deg]      [deg]      [deg]     
+
+57975.429895833 2017-08-10 10:19:03.0     200.68616  22.6045    323.67808  -70.81864  55.345 556.805    3283.513     false  -10.0267   -38.87791  66.95196  
+
+SatEph

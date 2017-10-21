@@ -1,0 +1,23 @@
+123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+----- NORAD# 694 -----
+
+ATLAS CENTAUR 2 R/B
+1 00694U 63047A   17064.84981755  .00000361  00000-0  31306-4 0  9991
+2 00694  30.3602  13.3417 0588362 215.0593 140.9889 14.02010722668201
+
+Object int ID:      1963-047A
+
+Start time:         2017-08-10 00:00:00.0 (UTC)
+Start time:         57975.0 days (MJD)
+Observatory:        17.274 deg, 48.3733 deg, 536.0 m
+Exp time:           30 s
+Visual mag:         9.2233720368547763E17 ; 9.2233720368547763E17
+Standard mag:       5.9
+Angular speed:      113.93 arcmin/min
+Position angle:     75.085 deg
+
+MJD             Date                      Az         h          R.A.       dec        Phase  Obs. r.    Angular      Shadow Sun_elev   Gal_lat    Moon_dist 
+[day]           (UTC)                     [deg]      [deg]      [deg]      [deg]      [deg]  [km]       [arcm/min]          [deg]      [deg]      [deg]     
+
+
+SatEph

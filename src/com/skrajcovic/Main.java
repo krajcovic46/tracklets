@@ -10,7 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
     	FITSBatch batch = new FITSBatch();
-	    FileReader.processFile(batch, "misc//Data_20120305_2.txt");
+//	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
+        FITSFileHandler.readCATFiles(new File("misc//data"));
 	    batch.doTheThing();
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();

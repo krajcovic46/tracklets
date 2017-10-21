@@ -1,0 +1,23 @@
+123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+----- NORAD# 32705 -----
+
+SL-6 R/B(2)
+N/A
+N/A
+
+Object int ID:      1977-093E
+
+Start time:         2017-08-10 23:58:00.0 (UTC)
+Start time:         57975.998611111114 days (MJD)
+Observatory:        17.274 deg, 48.3733 deg, 531.1 m
+Exp time:           180 s
+Visual mag:         9.2233720368547763E17 ; 9.2233720368547763E17
+Standard mag:       7.9
+Angular speed:      0.0 arcmin/min
+Position angle:     89.248 deg
+
+MJD             Date                      Az         h          R.A.       dec        Phase  Obs. r.    Angular      Shadow Sun_elev   Gal_lat    Moon_dist 
+[day]           (UTC)                     [deg]      [deg]      [deg]      [deg]      [deg]  [km]       [arcm/min]          [deg]      [deg]      [deg]     
+
+
+SatEph
