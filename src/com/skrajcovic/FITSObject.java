@@ -1,36 +1,98 @@
 package com.skrajcovic;
 
+import com.skrajcovic.utils.Declination;
+import com.skrajcovic.utils.Rectascension;
+import com.skrajcovic.utils.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 public class FITSObject implements Comparable<FITSObject> {
-    private String name;
-    private boolean real;
+    private String fileName;
+    private Type type;
+
+    private Rectascension rectascension;
+    private Declination declination;
+
+    private double magnitude;
+
     private double x;
     private double y;
+
     private double mjd;
-    private double intensity;
+
+    private boolean real;
 
     public FITSObject() {}
 
-    public FITSObject(String name, boolean real, double mjd, double x, double y, double intensity) {
-        setName(name);
+    public FITSObject(String fileName, boolean real, double mjd, double x, double y, double magnitude) {
+        setFileName(fileName);
         setReal(real);
         setMjd(mjd);
         setX(x);
         setY(y);
-        setIntensity(intensity);
+        setMagnitude(magnitude);
     }
+
+    public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
+        double x = this.getX();
+        double y = this.getY();
+        double m = regression.getSlope();
+        double c = regression.getIntercept();
+        double b = (y > 0) ? 1 : -1;
+
+        double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
+
+        return Math.abs(distance) <= threshold;
+    }
+
+    public double calculateDeltaTime(FITSObject otherObject) {
+        return Math.abs(this.getMjd() - otherObject.getMjd());
+    }
+
+    public double calculateSpeed(FITSObject otherObject) {
+        return Math.sqrt(Math.pow(this.getX() - otherObject.getX(), 2) + Math.pow(this.getY() - otherObject.getY(), 2))
+                / calculateDeltaTime(otherObject);
+    }
+
+    public double getHeading(FITSObject otherObject) {
+        double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
+        return Math.abs(theta);
+    }
+
+    public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
+        double heading = getHeading(otherObject);
+        if (otherObject.isReal()) {
+            System.out.println(otherObject.getFileName() + " - " + angle +" <= " + heading + " + " + threshold +
+            " && " + angle + " >= " + heading + " - " + threshold);
+        }
+        return angle <= heading + threshold && angle >= heading - threshold;
+    }
+
+    @Override
+    public int compareTo(FITSObject o) {
+        return Double.valueOf(this.getMjd()).compareTo(o.getMjd());
+    }
+
+
+
 
     public String toString() {
-        return "[" + getName() + ", " + getX() + ", " + getY() + ", " + isReal() +"]";
+        return "[" + getFileName() + ", " + getX() + ", " + getY() + ", " + isReal() +"]";
     }
 
-    public String getName() {
-        return name;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFileName(String name) {
+        this.fileName = name;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public boolean isReal() {
@@ -65,51 +127,27 @@ public class FITSObject implements Comparable<FITSObject> {
         this.mjd = mjd;
     }
 
-    public double getIntensity() {
-        return intensity;
+    public double getMagnitude() {
+        return magnitude;
     }
 
-    public void setIntensity(double intensity) {
-        this.intensity = intensity;
+    public void setMagnitude(double magnitude) {
+        this.magnitude = magnitude;
     }
 
-    public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
-        double x = this.getX();
-        double y = this.getY();
-        double m = regression.getSlope();
-        double c = regression.getIntercept();
-        double b = (y > 0) ? 1 : -1;
-
-        double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
-
-        return Math.abs(distance) <= threshold;
+    public Rectascension getRectascension() {
+        return rectascension;
     }
 
-    public double calculateDeltaTime(FITSObject otherObject) {
-        return Math.abs(this.getMjd() - otherObject.getMjd());
+    public void setRectascension(Rectascension rectascension) {
+        this.rectascension = rectascension;
     }
 
-    public double calculateSpeed(FITSObject otherObject) {
-        return Math.sqrt(Math.pow(this.getX() - otherObject.getX(), 2) + Math.pow(this.getY() - otherObject.getY(), 2))
-                / calculateDeltaTime(otherObject);
+    public Declination getDeclination() {
+        return declination;
     }
 
-    public double getHeading(FITSObject otherObject) {
-        double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
-        return Math.abs(theta);
-    }
-
-    public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
-        double heading = getHeading(otherObject);
-        if (otherObject.isReal()) {
-            System.out.println(otherObject.getName() + " - " + angle +" <= " + heading + " + " + threshold +
-            " && " + angle + " >= " + heading + " - " + threshold);
-        }
-        return angle <= heading + threshold && angle >= heading - threshold;
-    }
-
-    @Override
-    public int compareTo(FITSObject o) {
-        return Double.valueOf(this.getMjd()).compareTo(o.getMjd());
+    public void setDeclination(Declination declination) {
+        this.declination = declination;
     }
 }
