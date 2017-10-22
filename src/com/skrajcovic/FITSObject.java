@@ -21,15 +21,6 @@ public class FITSObject implements Comparable<FITSObject> {
         setIntensity(intensity);
     }
 
-    public FITSObject(String[] data) {
-        setName(data[0]);
-        setReal(Boolean.parseBoolean(data[1]));
-        setMjd(Double.valueOf(data[2]));
-        setX(Double.valueOf(data[3]));
-        setY(Double.valueOf(data[4]));
-        setIntensity(Double.valueOf(data[5]));
-    }
-
     public String toString() {
         return "[" + getName() + ", " + getX() + ", " + getY() + ", " + isReal() +"]";
     }
