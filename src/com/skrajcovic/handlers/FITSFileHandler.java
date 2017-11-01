@@ -1,9 +1,8 @@
-package com.skrajcovic;
+package com.skrajcovic.handlers;
 
 
-import com.skrajcovic.utils.Declination;
-import com.skrajcovic.utils.Rectascension;
-import com.skrajcovic.utils.Type;
+import com.skrajcovic.FITSObject;
+import com.skrajcovic.datastructures.Type;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,7 +18,9 @@ public class FITSFileHandler {
     private static final int X_INDEX = 11;
     private static final int Y_INDEX = 12;
 
-    static void processFiles(File folder) throws Exception {
+    private FITSFileHandler() {}
+
+    public static void processFiles(File folder) throws Exception {
         File[] files = folder.listFiles();
         if (files == null) {
             throw new NullPointerException();
@@ -98,14 +99,13 @@ public class FITSFileHandler {
             List<FITSObject> fitsObjects = new ArrayList<>();
 
             while ((text = bf.readLine()) != null) {
-                text = text.trim();
-                String splitLine[] = pattern.split(text);
+//                text = text.trim();
+//                List<String> splitLine = Arrays.asList(pattern.split(text));
+
                 if (creatingFITS) {
-                    System.out.println(Arrays.toString(splitLine));
-                    System.out.println(splitLine.length);
                     FITSObject fitsObject = new FITSObject();
                     Type type;
-                    switch (splitLine[0]) {
+                    switch (text.substring(2,3)) {
                         case "R":
                             type = Type.R;
                             break;
@@ -121,7 +121,7 @@ public class FITSFileHandler {
                         // last two are distinguished for the future
                     }
                     //TODO - smartovnejsie vkladat veci do fitsobjectu, najlepsie nejaky pointer a chodit getNext()
-//                    fitsObject.setType(type);
+                    fitsObject.setType(type);
 //                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(splitLine[RA_INDEX]),
 //                            Integer.valueOf(splitLine[RA_INDEX+1]), Double.valueOf(splitLine[RA_INDEX+2])));
 //                    fitsObject.setDeclination(new Declination(Integer.valueOf(splitLine[DA_INDEX]),
@@ -131,7 +131,7 @@ public class FITSFileHandler {
 //                    fitsObject.setY(Double.valueOf(splitLine[Y_INDEX]));
 //                    System.out.println("FITSObject" + fitsObject);
                 }
-                if (splitLine.length == 1 && !splitLine[0].equals("")) {
+                if (text.contains("----")) {
                     creatingFITS = true;
                 }
             }

@@ -1,8 +1,8 @@
 package com.skrajcovic;
 
-import com.skrajcovic.utils.Declination;
-import com.skrajcovic.utils.Rectascension;
-import com.skrajcovic.utils.Type;
+import com.skrajcovic.datastructures.Declination;
+import com.skrajcovic.datastructures.Rectascension;
+import com.skrajcovic.datastructures.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 public class FITSObject implements Comparable<FITSObject> {
