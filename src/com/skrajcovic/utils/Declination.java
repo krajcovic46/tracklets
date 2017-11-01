@@ -5,6 +5,12 @@ public class Declination {
     private int minutes;
     private double seconds;
 
+    public Declination(int degrees, int minutes, double seconds) {
+        setDegrees(degrees);
+        setMinutes(minutes);
+        setSeconds(seconds);
+    }
+
     public int getDegrees() {
         return degrees;
     }

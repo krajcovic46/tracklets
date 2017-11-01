@@ -5,6 +5,12 @@ public class Rectascension {
     private int minutes;
     private double seconds;
 
+    public Rectascension(int hours, int minutes, double seconds) {
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
+    }
+
     public int getHours() {
         return hours;
     }

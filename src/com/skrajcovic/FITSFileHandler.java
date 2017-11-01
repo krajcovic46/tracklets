@@ -1,6 +1,8 @@
 package com.skrajcovic;
 
 
+import com.skrajcovic.utils.Declination;
+import com.skrajcovic.utils.Rectascension;
 import com.skrajcovic.utils.Type;
 
 import java.io.BufferedReader;
@@ -10,11 +12,12 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class FITSFileHandler {
-    public static void processFile(FITSBatch batch, String fileLocation) {
-        boolean skipFirstLine = true;
 
-        File file = new File(fileLocation);
-    }
+    private static final int RA_INDEX = 1;
+    private static final int DA_INDEX = 5;
+    private static final int MAG_INDEX = 9;
+    private static final int X_INDEX = 11;
+    private static final int Y_INDEX = 12;
 
     static void processFiles(File folder) throws Exception {
         File[] files = folder.listFiles();
@@ -99,7 +102,31 @@ public class FITSFileHandler {
                 String splitLine[] = pattern.split(text);
                 if (creatingFITS) {
                     System.out.println(Arrays.toString(splitLine));
-
+                    FITSObject fitsObject = new FITSObject();
+                    Type type;
+                    switch (splitLine[0]) {
+                        case "R":
+                            type = Type.R;
+                            break;
+                        case "S":
+                            type = Type.S;
+                            break;
+                        case "?":
+                            type = Type.UNKNOWN;
+                            break;
+                        default:
+                            type = Type.UNKNOWN;
+                            break;
+                        // last two are distinguished for the future
+                    }
+                    fitsObject.setType(type);
+                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(splitLine[RA_INDEX]),
+                            Integer.valueOf(splitLine[RA_INDEX+1]), Double.valueOf(splitLine[RA_INDEX+2])));
+                    fitsObject.setDeclination(new Declination(Integer.valueOf(splitLine[DA_INDEX]),
+                            Integer.valueOf(splitLine[DA_INDEX+1]), Double.valueOf(splitLine[DA_INDEX+2])));
+                    fitsObject.setMagnitude(Double.valueOf(splitLine[MAG_INDEX]));
+                    fitsObject.setX(Double.valueOf(splitLine[X_INDEX]));
+                    fitsObject.setY(Double.valueOf(splitLine[Y_INDEX]));
                 }
                 if (splitLine.length == 1 && !splitLine[0].equals("")) {
                     creatingFITS = true;
