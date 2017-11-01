@@ -1,6 +1,8 @@
 package com.skrajcovic;
 
 
+import com.skrajcovic.utils.Type;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class FITSFileHandler {
         File file = new File(fileLocation);
     }
 
-    static void readFiles(File folder) throws Exception {
+    static void processFiles(File folder) throws Exception {
         File[] files = folder.listFiles();
         if (files == null) {
             throw new NullPointerException();
@@ -37,12 +39,17 @@ public class FITSFileHandler {
 
         Map<File, File> mergedFiles = mergeCATWithFITS(catFiles, fitsFilesList);
 
+        insertBatch(mergedFiles);
+
         System.out.println(mergedFiles);
     }
 
     private static void insertBatch(Map<File, File> mergedFiles) {
         FITSObject fitsObject = new FITSObject();
-
+        for (Map.Entry<File, File> entry : mergedFiles.entrySet()) {
+            readCATFile(entry.getKey());
+        }
+        System.out.println(mergedFiles.size());
     }
 
     private static Map<File, File> mergeCATWithFITS(List<File> catFiles, List<File> fitsFiles) throws Exception {
@@ -77,17 +84,30 @@ public class FITSFileHandler {
         }
         return catFiles;
     }
+
+    private static void readCATFile(File file) {
+        try {
+            BufferedReader bf = new BufferedReader(new java.io.FileReader(file));
+            String text;
+            boolean creatingFITS = false;
+            Pattern pattern = Pattern.compile("\\s+");
+
+            List<FITSObject> fitsObjects = new ArrayList<>();
+
+            while ((text = bf.readLine()) != null) {
+                text = text.trim();
+                String splitLine[] = pattern.split(text);
+                if (creatingFITS) {
+                    System.out.println(Arrays.toString(splitLine));
+
+                }
+                if (splitLine.length == 1 && !splitLine[0].equals("")) {
+                    creatingFITS = true;
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
-//                try {
-//                    BufferedReader bf = new BufferedReader(new java.io.FileReader(fileEntry));
-//                    String text;
-//                    Pattern pattern = Pattern.compile("\\s+");
-//
-//                    while ((text = bf.readLine()) != null) {
-//                        String splitLine[] = pattern.split(text);
-//                        System.out.println(Arrays.toString(splitLine));
-//                    }
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
