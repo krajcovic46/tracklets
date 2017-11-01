@@ -65,7 +65,7 @@ public class FITSBatch {
                             && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
                             ) {
 
-                        if (last != null && !fitsObject.getName().equals(last.getName()) && !regressionPoints.contains(last)) {
+                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
                             regression.getValue().addData(last.getX(), last.getY());
 
@@ -82,7 +82,7 @@ public class FITSBatch {
                     }
                 }
                 // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
-                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getName().equals(last.getName())) {
+                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
                     regressionPoints.add(last);
                     regression.getValue().addData(last.getX(), last.getY());
                 }
