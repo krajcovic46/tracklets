@@ -19,9 +19,9 @@ public class FITSFileHandler {
         if (files == null) {
             throw new NullPointerException();
         }
-        ArrayList<File> filesList = new ArrayList<>(Arrays.asList(files));
+        ArrayList<File> fitsFilesList = new ArrayList<>(Arrays.asList(files));
         File astrometryFolder = null;
-        Iterator iterator = filesList.iterator();
+        Iterator iterator = fitsFilesList.iterator();
         while (iterator.hasNext()) {
             File fileEntry = (File) iterator.next();
             if (fileEntry.getName().equals("Astrometry")) {
@@ -33,14 +33,15 @@ public class FITSFileHandler {
             throw new Exception("Missing \"Astrometry\" folder in the provided directory.");
         }
 
-        List<File> catFiles = getCatFiles(astrometryFolder, filesList.size()*2);
+        List<File> catFiles = getCatFiles(astrometryFolder, fitsFilesList.size()*2);
 
-        Map<File, File> mergedFiles = mergeCATWithFITS(catFiles, filesList);
+        Map<File, File> mergedFiles = mergeCATWithFITS(catFiles, fitsFilesList);
 
         System.out.println(mergedFiles);
     }
 
     private static void insertBatch(Map<File, File> mergedFiles) {
+        FITSObject fitsObject = new FITSObject();
 
     }
 
