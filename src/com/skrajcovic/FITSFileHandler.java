@@ -102,6 +102,7 @@ public class FITSFileHandler {
                 String splitLine[] = pattern.split(text);
                 if (creatingFITS) {
                     System.out.println(Arrays.toString(splitLine));
+                    System.out.println(splitLine.length);
                     FITSObject fitsObject = new FITSObject();
                     Type type;
                     switch (splitLine[0]) {
@@ -119,14 +120,16 @@ public class FITSFileHandler {
                             break;
                         // last two are distinguished for the future
                     }
-                    fitsObject.setType(type);
-                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(splitLine[RA_INDEX]),
-                            Integer.valueOf(splitLine[RA_INDEX+1]), Double.valueOf(splitLine[RA_INDEX+2])));
-                    fitsObject.setDeclination(new Declination(Integer.valueOf(splitLine[DA_INDEX]),
-                            Integer.valueOf(splitLine[DA_INDEX+1]), Double.valueOf(splitLine[DA_INDEX+2])));
-                    fitsObject.setMagnitude(Double.valueOf(splitLine[MAG_INDEX]));
-                    fitsObject.setX(Double.valueOf(splitLine[X_INDEX]));
-                    fitsObject.setY(Double.valueOf(splitLine[Y_INDEX]));
+                    //TODO - smartovnejsie vkladat veci do fitsobjectu, najlepsie nejaky pointer a chodit getNext()
+//                    fitsObject.setType(type);
+//                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(splitLine[RA_INDEX]),
+//                            Integer.valueOf(splitLine[RA_INDEX+1]), Double.valueOf(splitLine[RA_INDEX+2])));
+//                    fitsObject.setDeclination(new Declination(Integer.valueOf(splitLine[DA_INDEX]),
+//                            Integer.valueOf(splitLine[DA_INDEX+1]), Double.valueOf(splitLine[DA_INDEX+2])));
+//                    fitsObject.setMagnitude(Double.valueOf(splitLine[MAG_INDEX]));
+//                    fitsObject.setX(Double.valueOf(splitLine[X_INDEX]));
+//                    fitsObject.setY(Double.valueOf(splitLine[Y_INDEX]));
+//                    System.out.println("FITSObject" + fitsObject);
                 }
                 if (splitLine.length == 1 && !splitLine[0].equals("")) {
                     creatingFITS = true;
