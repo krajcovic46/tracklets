@@ -2,6 +2,8 @@ package com.skrajcovic.handlers;
 
 
 import com.skrajcovic.FITSObject;
+import com.skrajcovic.datastructures.Declination;
+import com.skrajcovic.datastructures.Rectascension;
 import com.skrajcovic.datastructures.Type;
 
 import java.io.BufferedReader;
@@ -51,7 +53,11 @@ public class FITSFileHandler {
     private static void insertBatch(Map<File, File> mergedFiles) {
         FITSObject fitsObject = new FITSObject();
         for (Map.Entry<File, File> entry : mergedFiles.entrySet()) {
-            readCATFile(entry.getKey());
+            try {
+                readCATFile(entry.getKey());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         System.out.println(mergedFiles.size());
     }
@@ -89,7 +95,7 @@ public class FITSFileHandler {
         return catFiles;
     }
 
-    private static void readCATFile(File file) {
+    private static void readCATFile(File file) throws Exception {
         try {
             BufferedReader bf = new BufferedReader(new java.io.FileReader(file));
             String text;
@@ -101,11 +107,12 @@ public class FITSFileHandler {
             while ((text = bf.readLine()) != null) {
 //                text = text.trim();
 //                List<String> splitLine = Arrays.asList(pattern.split(text));
-
                 if (creatingFITS) {
                     FITSObject fitsObject = new FITSObject();
+                    int type_i = ResourceHandler.getValue("type_i");
+                    String typeString = text.substring(type_i-1, type_i);
                     Type type;
-                    switch (text.substring(2,3)) {
+                    switch (typeString) {
                         case "R":
                             type = Type.R;
                             break;
@@ -120,16 +127,26 @@ public class FITSFileHandler {
                             break;
                         // last two are distinguished for the future
                     }
-                    //TODO - smartovnejsie vkladat veci do fitsobjectu, najlepsie nejaky pointer a chodit getNext()
                     fitsObject.setType(type);
-//                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(splitLine[RA_INDEX]),
-//                            Integer.valueOf(splitLine[RA_INDEX+1]), Double.valueOf(splitLine[RA_INDEX+2])));
-//                    fitsObject.setDeclination(new Declination(Integer.valueOf(splitLine[DA_INDEX]),
-//                            Integer.valueOf(splitLine[DA_INDEX+1]), Double.valueOf(splitLine[DA_INDEX+2])));
-//                    fitsObject.setMagnitude(Double.valueOf(splitLine[MAG_INDEX]));
-//                    fitsObject.setX(Double.valueOf(splitLine[X_INDEX]));
-//                    fitsObject.setY(Double.valueOf(splitLine[Y_INDEX]));
-//                    System.out.println("FITSObject" + fitsObject);
+                    int raHoursI = ResourceHandler.getValue("ra_hours_i");
+                    int raMinutesI = ResourceHandler.getValue("ra_minutes_i");
+                    int raSecondsI = ResourceHandler.getValue("ra_seconds_i");
+                    fitsObject.setRectascension(new Rectascension(Integer.valueOf(text.substring(raHoursI-2, raHoursI)),
+                            Integer.valueOf(text.substring(raMinutesI-2, raMinutesI)),
+                            Double.valueOf(text.substring(raSecondsI-6, raSecondsI))));
+                    int decDegreesI = ResourceHandler.getValue("dec_degrees_i");
+                    int decMinutesI = ResourceHandler.getValue("dec_minutes_i");
+                    int decSecondsI = ResourceHandler.getValue("dec_seconds_i");
+                    fitsObject.setDeclination(new Declination(Integer.valueOf(text.substring(decDegreesI-3, decDegreesI)),
+                            Integer.valueOf(text.substring(decMinutesI-2, decMinutesI)),
+                            Double.valueOf(text.substring(decSecondsI-5, decSecondsI))));
+                    int magI = ResourceHandler.getValue("mag_i");
+                    fitsObject.setMagnitude(Double.valueOf(text.substring(magI-5, magI)));
+                    int xCoordI = ResourceHandler.getValue("x_coord_i");
+                    fitsObject.setX(Double.valueOf(text.substring(xCoordI-7, xCoordI).trim()));
+                    int yCoordI = ResourceHandler.getValue("x_coord_i");
+                    fitsObject.setY(Double.valueOf(text.substring(yCoordI-7, yCoordI).trim()));
+                    System.out.println("FITSObject" + fitsObject);
                 }
                 if (text.contains("----")) {
                     creatingFITS = true;

@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 public class ResourceHandler {
@@ -33,6 +34,9 @@ public class ResourceHandler {
     }
 
     public static Integer getValue(String key) throws Exception {
+        if (resources == null) {
+            throw new Exception("Resources have not been initialised.");
+        }
         if (!resources.containsKey(key)) {
             throw new Exception("Invalid resource name.");
         }

@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
     	FITSBatch batch = new FITSBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
-        FITSFileHandler.processFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"));
         ResourceHandler.initValues();
+        FITSFileHandler.processFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"));
         batch.doTheThing();
 	    if (ResourceHandler.getValue("debug") == 1) {
             Browser browser = new Browser();
