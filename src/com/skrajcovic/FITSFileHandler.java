@@ -3,15 +3,33 @@ package com.skrajcovic;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.Buffer;
 import java.util.*;
 import java.util.regex.Pattern;
 
 public class FITSFileHandler {
-    public static void processFile(FITSBatch batch, String fileLocation) {
-        boolean skipFirstLine = true;
+    public static void processEntry(Map.Entry<File, File> entry) throws IOException{
+        boolean read = false;
 
-        File file = new File(fileLocation);
+        File catFile = entry.getKey();
+        File fitsFile = entry.getValue();
+
+        BufferedReader bf = new BufferedReader(new FileReader(catFile));
+        String text;
+        Pattern pattern = Pattern.compile("\\s+");
+
+        while ((text = bf.readLine()) != null) {
+            if (read) {
+
+            }
+
+            if (text.contains("-----")) {
+                read = true;
+            }
+        }
+
     }
 
     static void readFiles(File folder) throws Exception {
@@ -40,8 +58,14 @@ public class FITSFileHandler {
         System.out.println(mergedFiles);
     }
 
-    private static void insertBatch(Map<File, File> mergedFiles) {
+    @SuppressWarnings("unchecked")
+    private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) {
+        Object[] arr = mergedFiles.entrySet().toArray();
+        Map.Entry<File, File> firstEntry = (Map.Entry<File, File>) arr[0];
+        Map.Entry<File, File> secondEntry = (Map.Entry<File, File>) arr[1];
+        for (int i = 2; i < mergedFiles.size(); i++) {
 
+        }
     }
 
     private static Map<File, File> mergeCATWithFITS(List<File> catFiles, List<File> fitsFiles) throws Exception {
