@@ -1,11 +1,16 @@
 package com.skrajcovic;
 
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.Buffer;
+import com.skrajcovic.utils.Declination;
+import com.skrajcovic.utils.Rectascension;
+import eap.fits.FitsCard;
+import eap.fits.FitsHDU;
+import eap.fits.FitsHeader;
+import eap.fits.InputStreamFitsFile;
+
+import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -22,7 +27,40 @@ public class FITSFileHandler {
 
         while ((text = bf.readLine()) != null) {
             if (read) {
+                List<String> textList = Arrays.asList(pattern.split(text.trim()));
+                if (textList.get(0).equals("?")) {
+                    FITSObject fitsObject = new FITSObject();
 
+                    Rectascension ra = new Rectascension();
+                    ra.setHours(Integer.valueOf(textList.get(1)));
+                    ra.setMinutes(Integer.valueOf(textList.get(2)));
+                    ra.setSeconds(Double.valueOf(textList.get(3)));
+
+                    Declination dec = new Declination();
+                    dec.setDegrees(Integer.valueOf(textList.get(4)));
+                    dec.setMinutes(Integer.valueOf(textList.get(5)));
+                    dec.setSeconds(Double.valueOf(textList.get(6)));
+
+                    Double magnitude = Double.valueOf(textList.get(7));
+
+                    Double x = Double.valueOf(textList.get(8));
+                    Double y = Double.valueOf(textList.get(9));
+
+                    FitsHeader fitsHeader = getFitsMetadata(fitsFile);
+                    FitsCard fitsCard = fitsHeader.card("DATE-OBS");
+
+                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+                    LocalDateTime ld = LocalDateTime.parse(fitsCard.value().toString(), dtf);
+
+                    System.out.println(ld);
+
+                    fitsObject.setRectascension(ra);
+                    fitsObject.setDeclination(dec);
+                    fitsObject.setMagnitude(magnitude);
+                    fitsObject.setX(x);
+                    fitsObject.setY(y);
+                    fitsObject.setLocalDateTime(ld);
+                }
             }
 
             if (text.contains("-----")) {
@@ -30,6 +68,12 @@ public class FITSFileHandler {
             }
         }
 
+    }
+
+    private static FitsHeader getFitsMetadata(File fitsFile) throws IOException {
+        InputStreamFitsFile inputStreamFitsFile = new InputStreamFitsFile(new FileInputStream(fitsFile));
+        FitsHDU fitsHDU = inputStreamFitsFile.getHDU(0);
+        return fitsHDU.getHeader();
     }
 
     static void readFiles(File folder) throws Exception {
@@ -55,17 +99,20 @@ public class FITSFileHandler {
 
         Map<File, File> mergedFiles = mergeCATWithFITS(catFiles, filesList);
 
+        insertBatch(mergedFiles, null);
+
         System.out.println(mergedFiles);
     }
 
     @SuppressWarnings("unchecked")
-    private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) {
+    private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) throws Exception {
         Object[] arr = mergedFiles.entrySet().toArray();
         Map.Entry<File, File> firstEntry = (Map.Entry<File, File>) arr[0];
         Map.Entry<File, File> secondEntry = (Map.Entry<File, File>) arr[1];
         for (int i = 2; i < mergedFiles.size(); i++) {
 
         }
+        processEntry(firstEntry);
     }
 
     private static Map<File, File> mergeCATWithFITS(List<File> catFiles, List<File> fitsFiles) throws Exception {

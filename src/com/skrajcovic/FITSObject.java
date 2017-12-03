@@ -5,6 +5,9 @@ import com.skrajcovic.utils.Rectascension;
 import com.skrajcovic.utils.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class FITSObject implements Comparable<FITSObject> {
     private String fileName;
     private Type type;
@@ -18,6 +21,8 @@ public class FITSObject implements Comparable<FITSObject> {
     private double y;
 
     private double mjd;
+
+    private LocalDateTime ldt;
 
     private boolean real;
 
@@ -149,5 +154,13 @@ public class FITSObject implements Comparable<FITSObject> {
 
     public void setDeclination(Declination declination) {
         this.declination = declination;
+    }
+
+    public LocalDateTime getLdt() {
+        return ldt;
+    }
+
+    public void setLocalDateTime(LocalDateTime ldt) {
+        this.ldt = ldt;
     }
 }
