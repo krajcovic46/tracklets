@@ -26,7 +26,9 @@ public class FITSBatch {
     }
 
     public void doTheThing() {
-
+        System.out.println(fSet);
+        System.out.println(sSet);
+        System.out.println(data);
         findRegressions();
         for (int i = 100; i < 101; i++) {
             double[] tmp = fitPointsToRegressions(i);

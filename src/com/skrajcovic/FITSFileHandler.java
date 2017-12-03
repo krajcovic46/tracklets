@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class FITSFileHandler {
-    public static void processEntry(Map.Entry<File, File> entry) throws IOException{
+    public static void processEntry(Map.Entry<File, File> entry, FITSBatch batch, String set) throws IOException{
         boolean read = false;
 
         File catFile = entry.getKey();
@@ -52,14 +52,24 @@ public class FITSFileHandler {
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
                     LocalDateTime ld = LocalDateTime.parse(fitsCard.value().toString(), dtf);
 
-                    System.out.println(ld);
-
                     fitsObject.setRectascension(ra);
                     fitsObject.setDeclination(dec);
                     fitsObject.setMagnitude(magnitude);
                     fitsObject.setX(x);
                     fitsObject.setY(y);
                     fitsObject.setLocalDateTime(ld);
+
+                    switch (set) {
+                        case "firstSet":
+                            batch.firstSetInsert(fitsObject);
+                            break;
+                        case "secondSet":
+                            batch.secondSetInsert(fitsObject);
+                            break;
+                        default:
+                            batch.mainDataInsert(fitsObject);
+                            break;
+                    }
                 }
             }
 
@@ -76,7 +86,7 @@ public class FITSFileHandler {
         return fitsHDU.getHeader();
     }
 
-    static void readFiles(File folder) throws Exception {
+    static void readFiles(File folder, FITSBatch batch) throws Exception {
         File[] files = folder.listFiles();
         if (files == null) {
             throw new NullPointerException();
@@ -99,7 +109,7 @@ public class FITSFileHandler {
 
         Map<File, File> mergedFiles = mergeCATWithFITS(catFiles, filesList);
 
-        insertBatch(mergedFiles, null);
+        insertBatch(mergedFiles, batch);
 
         System.out.println(mergedFiles);
     }
@@ -109,10 +119,11 @@ public class FITSFileHandler {
         Object[] arr = mergedFiles.entrySet().toArray();
         Map.Entry<File, File> firstEntry = (Map.Entry<File, File>) arr[0];
         Map.Entry<File, File> secondEntry = (Map.Entry<File, File>) arr[1];
+        processEntry(firstEntry, batch, "firstSet");
+        processEntry(secondEntry, batch, "secondSet");
         for (int i = 2; i < mergedFiles.size(); i++) {
-
+            processEntry(firstEntry, batch, "mainSet");
         }
-        processEntry(firstEntry);
     }
 
     private static Map<File, File> mergeCATWithFITS(List<File> catFiles, List<File> fitsFiles) throws Exception {

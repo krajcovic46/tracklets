@@ -12,7 +12,7 @@ public class Main {
     	FITSBatch batch = new FITSBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
         try {
-            FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"));
+            FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
         } catch (Exception e) {
             e.printStackTrace();
         }
