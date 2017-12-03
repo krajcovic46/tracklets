@@ -26,7 +26,9 @@ public class FITSBatch {
     }
 
     public void doTheThing() {
-
+        System.out.println(fSet);
+        System.out.println(sSet);
+        System.out.println(data);
         findRegressions();
         for (int i = 100; i < 101; i++) {
             double[] tmp = fitPointsToRegressions(i);
@@ -65,7 +67,7 @@ public class FITSBatch {
                             && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
                             ) {
 
-                        if (last != null && !fitsObject.getName().equals(last.getName()) && !regressionPoints.contains(last)) {
+                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
                             regression.getValue().addData(last.getX(), last.getY());
 
@@ -82,7 +84,7 @@ public class FITSBatch {
                     }
                 }
                 // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
-                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getName().equals(last.getName())) {
+                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
                     regressionPoints.add(last);
                     regression.getValue().addData(last.getX(), last.getY());
                 }

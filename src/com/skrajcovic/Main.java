@@ -11,8 +11,12 @@ public class Main {
     public static void main(String[] args) {
     	FITSBatch batch = new FITSBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
-        FITSFileHandler.readCATFiles(new File("misc//data"));
-	    batch.doTheThing();
+        try {
+            FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        batch.doTheThing();
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();
             try {
