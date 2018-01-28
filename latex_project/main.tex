@@ -1,0 +1,174 @@
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage[hidelinks]{hyperref}
+\usepackage[british,UKenglish,USenglish,english,american]{babel}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{natbib}
+
+\setstretch{1.5}
+%\renewcommand\baselinestretch{1.5} % riadkovanie jeden a pol
+
+% pekne pokope definujeme potrebne udaje
+\newcommand\mftitle{Vývoj algoritmu na efektívne \protect konštruovanie trackletov objektov vesmírneho odpadu}
+\newcommand\mfthesistype{Diplomová práca}
+\newcommand\mfauthor{Bc. Stanislav Krajčovič}
+\newcommand\mfadvisor{prof. RNDr. Roman Ďurikovič, PhD.}
+\newcommand\mfplacedate{Bratislava, 2017}
+\newcommand\mfuniversity{UNIVERZITA KOMENSKÉHO V BRATISLAVE}
+\newcommand\mffaculty{FAKULTA MATEMATIKY, FYZIKY A INFORMATIKY}
+\newcommand{\sub}[1]{$_{\text{#1}}$}
+\newcommand{\reference}[1]{č.~\ref{#1}}
+\newcommand{\imageHeight}{150px}
+
+\ifx\pdfoutput\undefined\relax\else\pdfinfo{ /Title (\mftitle) /Author (\mfauthor) /Creator (PDFLaTeX) } \fi
+
+\begin{document}
+
+\frontmatter
+
+\thispagestyle{empty}
+
+\noindent
+\begin{minipage}{\textwidth}
+\begin{center}
+\textbf{\mfuniversity \\
+\mffaculty}
+\end{center}
+\end{minipage}
+
+\vfill
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics{images/logo_fmph}
+		\label{img:logo}
+	\end{center}
+\end{figure}
+\begin{center}
+	\begin{minipage}{0.8\textwidth}
+		\centerline{\textbf{\Large\MakeUppercase{\mftitle}}}
+		\smallskip
+		\centerline{\mfthesistype}
+	\end{minipage}
+\end{center}
+\vfill
+2017 \hfill
+\mfauthor
+\eject 
+% koniec obalu
+
+\thispagestyle{empty}
+
+\noindent
+\begin{minipage}{\textwidth}
+\begin{center}
+\textbf{\mfuniversity \\
+\mffaculty}
+\end{center}
+\end{minipage}
+
+\vfill
+\begin{figure}[!hbt]
+\begin{center}
+\includegraphics{images/logo_fmph}
+\label{img:logo}
+\end{center}
+\end{figure}
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\centerline{\textbf{\Large\MakeUppercase{\mftitle}}}
+\smallskip
+\centerline{\mfthesistype}
+\end{minipage}
+\end{center}
+\vfill
+\begin{tabular}{l l}
+Študijný program: & Aplikovaná informatika\\
+Študijný odbor: & 2511 Aplikovaná informatika\\
+Školiace pracovisko: & Katedra aplikovanej informatiky\\
+Školiteľ: & \mfadvisor
+\end{tabular}
+\vfill
+\noindent
+\mfplacedate \hfill
+\mfauthor
+\eject 
+% koniec titulneho listu
+
+\thispagestyle{empty}
+
+\begin{figure}[H]
+\begin{center}
+\makebox[\textwidth]{\includegraphics[width=\paperwidth]{images/logo_fmph}}
+\label{img:zadanie}
+\end{center}
+\end{figure}
+
+{~}\vspace{12cm}
+
+\noindent
+\begin{minipage}{0.25\textwidth}~\end{minipage}
+\begin{minipage}{0.75\textwidth}
+Čestne prehlasujem, že túto diplomovú prácu som vypracoval samostatne len s použitím uvedenej literatúry a za pomoci konzultácií u môjho školiteľa.
+\newline \newline
+\end{minipage}
+\vfill
+~ \hfill {\hbox to 6cm{\dotfill}} \\
+\mfplacedate \hfill \mfauthor
+\vfill\eject 
+
+\chapter*{Poďakovanie}\label{chap:thank_you}
+Touto cestou by som sa chcel v prvom rade poďakovať môjmu školiteľovi prof. RNDr. Romanovi Ďurikovičovi, PhD. za jeho cenné rady a usmernenia, ktoré mi veľmi pomohli pri riešení tejto diplomovej práce. Takisto sa chcem poďakovať mojím kolegom z YACGS semináru za rady ohľadom implementácie a v neposlednom rade chcem tiež poďakovať všetkým mojím kamarátom a celej mojej rodine za podporu počas môjho štúdia. 
+\vfill\eject 
+
+\chapter*{Abstrakt}\label{chap:abstract_sk}
+Počas astronomických pozorovaní sa získavajú snímky nočnej oblohy, prevažne jej kokrétnej časti, ktoré sa ukladajú do tzv. Flexible Image Transport System (FITS) formátu. Tieto snímky obsahujú signál rôzneho charakteru od šumu spôsobeného elektrickým prúdom a vyčítavaním snímky zo CCD kamier, cez pozadie oblohy až po skutočné objekty ako hviezdy alebo objekty slnečnej sústavy (asteroidy, kométy, vesmírny odpad, atď.). Každý pixel FITS snímky je charakterisktický svojou pozíciou na CCD kamere (x,y) a intenzitou. Tieto údaje sa využívajú na výpočet polohy objektu na CCD snímke a na jeho súhrnú intenzitu. Na typických astronomických snímkach sa hviezdy javia ako statické body, ktoré možno popísať tzv. rozptýlovou funkciou (z ang. Point Spread Function). To neplatí v prípade, keď sa uskutočnia pozorovania vesmírneho odpadu, ktorý sa pohybuje relatívne rýchlo vzhľadom k hviezdnemu pozadiu. V tomto prípade sa objekty javia ako predlžené čiary a nie ako body. Ak sa počas pozorovaní ďalekohľad pohybuje za objektom vesmírneho odpadu nastáva situácia, že všetky hviezdy sa javia ako predlžené čiary s rovnakou dĺžkou a smerom, zatiaľ čo snímaný objekt sa javí ako bod. Úlohou študenta/-ky bude naštudovať si literatúru venujúcu sa spracovaniu astronomických FITS snímok, ktoré obsahujú objekty vesmírneho odpadu. Následne študent/-ka navrhne najvhodnejší, alebo aj vlastný algoritmus na segmentáciu snímok, ktorý následne naprogramuje a otestuje. Počas segmentácie sa identifikujú všetky objekty na snímke a pre každý taký objekt sa vyextrahuje jeho pozícia na CCD snímke (x,y) ako aj súhrná intenzita. Testovanie algoritmu bude uskutočnené na reálnych snímkach na ktorých sa nachádza hviezdne pozadie ako aj vesmírny odpad. Výsledky sa porovnajú s predpoveďami pozícii vesmírneho odpadu, ktoré budú študentovi dodané spolu s reálnymi snímkami získanými ďalekohľadmi na Astronomickom a geofyzikálnom observatóriu v Modre, FMFI UK.
+
+~\\
+Kľúčové slová: vesmírny odpad, pozorovanie
+\vfill\eject 
+
+\chapter*{Abstract}\label{chap:abstract_en}
+
+
+~\\
+Keywords: space debris, observation
+\vfill\eject 
+% koniec abstraktov
+
+\tableofcontents
+
+\mainmatter
+
+% treba este prejst dokument ci je kod spravne formatovany
+\input 01uvod.tex
+\input 02introduction.tex
+\input 03object_dynamics.tex
+\input 04existing_solutions.tex
+\input 05requirements.tex
+\input 06proposed_solutions.tex
+\input 07design_implementation.tex
+\input 08results.tex
+\input 09conclusion.tex
+
+\backmatter
+
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}
