@@ -1,6 +1,8 @@
 package com.skrajcovic;
 
 
+import com.skrajcovic.handlers.FITSFileHandler;
+import com.skrajcovic.handlers.ResourceHandler;
 import eap.fitsbrowser.Browser;
 
 import java.io.File;
@@ -8,7 +10,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
     	FITSBatch batch = new FITSBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
         try {
@@ -17,7 +19,7 @@ public class Main {
             e.printStackTrace();
         }
         batch.doTheThing();
-	    if (FITSBatch.DEBUG) {
+	    if (ResourceHandler.getValue("debug") == 1) {
             Browser browser = new Browser();
             try {
                 browser.openFile();

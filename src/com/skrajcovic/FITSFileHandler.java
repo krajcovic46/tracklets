@@ -1,8 +1,8 @@
 package com.skrajcovic;
 
 
-import com.skrajcovic.utils.Declination;
-import com.skrajcovic.utils.Rectascension;
+import com.skrajcovic.datastructures.Declination;
+import com.skrajcovic.datastructures.Rectascension;
 import eap.fits.FitsCard;
 import eap.fits.FitsHDU;
 import eap.fits.FitsHeader;
@@ -31,15 +31,15 @@ public class FITSFileHandler {
                 if (textList.get(0).equals("?")) {
                     FITSObject fitsObject = new FITSObject();
 
-                    Rectascension ra = new Rectascension();
-                    ra.setHours(Integer.valueOf(textList.get(1)));
-                    ra.setMinutes(Integer.valueOf(textList.get(2)));
-                    ra.setSeconds(Double.valueOf(textList.get(3)));
+                    Integer RAHours = Integer.valueOf(textList.get(1));
+                    Integer RAMinutes = Integer.valueOf(textList.get(2));
+                    Double RASeconds = Double.valueOf(textList.get(3));
+                    Rectascension ra = new Rectascension(RAHours, RAMinutes,RASeconds);
 
-                    Declination dec = new Declination();
-                    dec.setDegrees(Integer.valueOf(textList.get(4)));
-                    dec.setMinutes(Integer.valueOf(textList.get(5)));
-                    dec.setSeconds(Double.valueOf(textList.get(6)));
+                    Integer DECDegrees = Integer.valueOf(textList.get(4));
+                    Integer DECMinutes = Integer.valueOf(textList.get(5));
+                    Double DECSeconds = Double.valueOf(textList.get(6));
+                    Declination dec = new Declination(DECDegrees,DECMinutes,DECSeconds);
 
                     Double magnitude = Double.valueOf(textList.get(7));
 

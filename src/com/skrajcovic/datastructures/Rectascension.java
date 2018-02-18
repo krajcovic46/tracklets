@@ -1,16 +1,22 @@
-package com.skrajcovic.utils;
+package com.skrajcovic.datastructures;
 
-public class Declination {
-    private int degrees;
+public class Rectascension {
+    private int hours;
     private int minutes;
     private double seconds;
 
-    public int getDegrees() {
-        return degrees;
+    public Rectascension(int hours, int minutes, double seconds) {
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
     }
 
-    public void setDegrees(int degrees) {
-        this.degrees = degrees;
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 
     public int getMinutes() {
@@ -32,7 +38,7 @@ public class Declination {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getDegrees());
+        sb.append(getHours());
         sb.append(" ");
         sb.append(getMinutes());
         sb.append(" ");
