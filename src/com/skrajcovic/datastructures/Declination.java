@@ -5,7 +5,7 @@ public class Declination {
     private int minutes;
     private double seconds;
 
-    public Declination(int degrees, int minutes, double seconds) {
+    public Declination(Integer degrees, Integer minutes, Double seconds) {
         setDegrees(degrees);
         setMinutes(minutes);
         setSeconds(seconds);

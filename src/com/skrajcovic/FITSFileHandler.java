@@ -34,12 +34,12 @@ public class FITSFileHandler {
                     Integer RAHours = Integer.valueOf(textList.get(1));
                     Integer RAMinutes = Integer.valueOf(textList.get(2));
                     Double RASeconds = Double.valueOf(textList.get(3));
-                    Rectascension ra = new Rectascension(RAHours, RAMinutes,RASeconds);
+                    Rectascension ra = new Rectascension(RAHours, RAMinutes, RASeconds);
 
                     Integer DECDegrees = Integer.valueOf(textList.get(4));
                     Integer DECMinutes = Integer.valueOf(textList.get(5));
                     Double DECSeconds = Double.valueOf(textList.get(6));
-                    Declination dec = new Declination(DECDegrees,DECMinutes,DECSeconds);
+                    Declination dec = new Declination(DECDegrees, DECMinutes, DECSeconds);
 
                     Double magnitude = Double.valueOf(textList.get(7));
 

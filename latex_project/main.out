@@ -1,0 +1,34 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Introduction to space debris and observations}{}% 2
+\BOOKMARK [1][-]{subsection.2.0.1}{Small space debris}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.0.2}{Large space debris}{subsection.2.0.1}% 4
+\BOOKMARK [1][-]{section.2.1}{Observations and telescopes}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.1.1}{ESA OGS}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.2}{FMPI AGO}{section.2.1}% 7
+\BOOKMARK [0][-]{chapter.3}{Object dynamics}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Kepler's laws of orbital motion}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{Equatorial coordinate system}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.3}{CCD and image reference frame}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.4}{Image processing, segmentation and astrometric reduction}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.5}{Initial orbit determination problem}{chapter.3}% 13
+\BOOKMARK [0][-]{chapter.4}{Existing solutions to the problem of tracklet building}{}% 14
+\BOOKMARK [1][-]{section.4.1}{kd-trees}{chapter.4}% 15
+\BOOKMARK [2][-]{subsection.4.1.1}{Efficient intra- and inter-night linking of asteroid detections using kd-trees}{section.4.1}% 16
+\BOOKMARK [1][-]{section.4.2}{Uniform linear motion detection}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.2.1}{Optical observation, image-processing, and detection of space debris in GEO}{section.4.2}% 18
+\BOOKMARK [0][-]{chapter.5}{Technical and practical requirements}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Input data}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.1.1}{.fits files}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.2}{.cat files}{section.5.1}% 22
+\BOOKMARK [2][-]{subsection.5.1.3}{Processing server parameters}{section.5.1}% 23
+\BOOKMARK [0][-]{chapter.6}{Proposed solutions}{}% 24
+\BOOKMARK [1][-]{section.6.1}{Use of linear regression}{chapter.6}% 25
+\BOOKMARK [1][-]{section.6.2}{Use of neural network}{chapter.6}% 26
+\BOOKMARK [1][-]{section.6.3}{Use of the Initial Orbit Determination algorithms}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.4}{Use of Hough transform}{chapter.6}% 28
+\BOOKMARK [0][-]{chapter.7}{Design and implementation}{}% 29
+\BOOKMARK [0][-]{chapter.8}{Results}{}% 30
+\BOOKMARK [1][-]{section.8.1}{TDM, MPC, and CCSDS data formats}{chapter.8}% 31
+\BOOKMARK [1][-]{section.8.2}{Visualization of results}{chapter.8}% 32
+\BOOKMARK [1][-]{section.8.3}{Parameters}{chapter.8}% 33
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 34

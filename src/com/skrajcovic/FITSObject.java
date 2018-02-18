@@ -5,7 +5,6 @@ import com.skrajcovic.datastructures.Rectascension;
 import com.skrajcovic.datastructures.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class FITSObject implements Comparable<FITSObject> {
@@ -81,8 +80,7 @@ public class FITSObject implements Comparable<FITSObject> {
 
 
     public String toString() {
-        return "[" + getType() + ", " + getRectascension() + ", " + getDeclination() +
-                ", " + getMagnitude() + ", " + getX() + ", " + getY() +"]";
+        return "[" + getFileName() + ", " + getX() + ", " + getY() + ", " + isReal() +"]";
     }
 
     public String getFileName() {
