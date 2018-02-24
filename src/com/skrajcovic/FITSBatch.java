@@ -53,50 +53,51 @@ public class FITSBatch {
 
     double[] fitPointsToRegressions(double threshold) {
         for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
-            if (regression.getKey().get(0).isReal() && regression.getKey().get(1).isReal()) {
-                FITSObject last = null;
-                double lastSpeed = Double.MAX_VALUE;
-                ArrayList<FITSObject> regressionPoints = regression.getKey();
+            FITSObject last = null;
+            double lastSpeed = Double.MAX_VALUE;
+            ArrayList<FITSObject> regressionPoints = regression.getKey();
 
-                double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
-                double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
+//            System.out.println(regressionPoints.get(0));
+//            System.out.println(regressionPoints.get(1));
 
-                int real = 0;
-                for (FITSObject fitsObject : data) {
-                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
-                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
-                            ) {
+            double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
+            double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
 
-                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
-                            regressionPoints.add(last);
-                            regression.getValue().addData(last.getX(), last.getY());
+            int real = 0;
+            for (FITSObject fitsObject : data) {
+                if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
+                        && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
+                        ) {
 
-                            //cleanup
-                            last = null;
-                            lastSpeed = Double.MAX_VALUE;
-                        }
+                    if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
+                        regressionPoints.add(last);
+                        regression.getValue().addData(last.getX(), last.getY());
 
-                        double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
-                        if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
-                            last = fitsObject;
-                            lastSpeed = currentSpeed;
-                        }
+                        //cleanup
+                        last = null;
+                        lastSpeed = Double.MAX_VALUE;
+                    }
+
+                    double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
+                    if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
+                        last = fitsObject;
+                        lastSpeed = currentSpeed;
                     }
                 }
-                // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
-                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
-                    regressionPoints.add(last);
-                    regression.getValue().addData(last.getX(), last.getY());
-                }
-                if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
-                    System.out.println(regressionPoints);
-                    for (FITSObject obj : regressionPoints) {
-                        if (obj.isReal()) {
-                            real++;
-                        }
+            }
+            // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
+            if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
+                regressionPoints.add(last);
+                regression.getValue().addData(last.getX(), last.getY());
+            }
+            if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
+                System.out.println(regressionPoints);
+                for (FITSObject obj : regressionPoints) {
+                    if (obj.isReal()) {
+                        real++;
                     }
-                    return new double[]{regressionPoints.size(), real, (real / (double) regressionPoints.size()) * 100};
                 }
+                return new double[]{regressionPoints.size(), real, (real / (double) regressionPoints.size()) * 100};
             }
         }
         return null;

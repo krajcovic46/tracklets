@@ -161,5 +161,35 @@ public class FITSObject implements Comparable<FITSObject> {
 
     public void setLocalDateTime(LocalDateTime ldt) {
         this.ldt = ldt;
+        convertLDTtoMJD();
+    }
+
+    private void convertLDTtoMJD() {
+        long    MjdMidnight;
+        double  FracOfDay;
+        int     b;
+
+
+        int month = getLdt().getMonthValue();
+        int year = getLdt().getYear();
+        int day = getLdt().getDayOfMonth();
+        int hour = getLdt().getHour();
+        int min = getLdt().getMinute();
+        int sec = getLdt().getSecond();
+
+        if (month <= 2) {
+            month+=12; --year;
+        }
+
+        if ((10000L * year + 100L * month + day) <= 15821004L ) {
+            b = -2 + ((year + 4716) / 4) - 1179;     // Julian calendar
+        } else {
+            b = (year / 400) - (year / 100) + (year / 4);  // Gregorian calendar
+        }
+
+        MjdMidnight = 365L * year - 679004L + b + (int)(30.6001 * (month + 1)) + day;
+        FracOfDay   = (hour + min / 60.0 + sec / 3600.0) / 24.0;
+
+        setMjd(MjdMidnight + FracOfDay);
     }
 }
