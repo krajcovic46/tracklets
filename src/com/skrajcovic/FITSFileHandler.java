@@ -15,11 +15,18 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class FITSFileHandler {
-    public static void processEntry(Map.Entry<File, File> entry, FITSBatch batch, String set) throws IOException{
+    public static void processEntry(Map.Entry<File, File> entry, FITSBatch batch, String set) throws Exception {
         boolean read = false;
 
         File catFile = entry.getKey();
         File fitsFile = entry.getValue();
+
+        if (catFile == null) {
+            throw new NullPointerException("Missing .cat file in an entry.");
+        }
+        if (fitsFile == null) {
+            throw new NullPointerException("Missing .fits file in an entry.");
+        }
 
         BufferedReader bf = new BufferedReader(new FileReader(catFile));
         String text;
@@ -52,6 +59,7 @@ public class FITSFileHandler {
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
                     LocalDateTime ld = LocalDateTime.parse(fitsCard.value().toString(), dtf);
 
+                    fitsObject.setFileName(catFile.getName());
                     fitsObject.setRectascension(ra);
                     fitsObject.setDeclination(dec);
                     fitsObject.setMagnitude(magnitude);
