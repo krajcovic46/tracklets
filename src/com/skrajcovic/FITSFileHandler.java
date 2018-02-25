@@ -124,13 +124,14 @@ public class FITSFileHandler {
 
     @SuppressWarnings("unchecked")
     private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) throws Exception {
-        Object[] arr = mergedFiles.entrySet().toArray();
-        Map.Entry<File, File> firstEntry = (Map.Entry<File, File>) arr[0];
-        Map.Entry<File, File> secondEntry = (Map.Entry<File, File>) arr[1];
+//        Object[] arr = mergdFiles.entrySet().toArray();
+        ArrayList<Map.Entry<File, File>> arr = new ArrayList<>(mergedFiles.entrySet());
+        Map.Entry<File, File> firstEntry = arr.get(0);
+        Map.Entry<File, File> secondEntry = arr.get(1);
         processEntry(firstEntry, batch, "firstSet");
         processEntry(secondEntry, batch, "secondSet");
-        for (int i = 2; i < mergedFiles.size(); i++) {
-            processEntry(firstEntry, batch, "mainSet");
+        for (int i = 2; i < arr.size(); i++) {
+            processEntry(arr.get(i), batch, "mainSet");
         }
     }
 
@@ -138,7 +139,7 @@ public class FITSFileHandler {
         if (catFiles.size() != fitsFiles.size()) {
             throw new Exception("The number of .cat and .fits files is different.");
         }
-        Map<File, File> mergedFiles = new HashMap<>();
+        Map<File, File> mergedFiles = new TreeMap<>();
         for (File catFileEntry : catFiles) {
             for (File fitsFileEntry : fitsFiles) {
                 String catFileNameSplit =  catFileEntry.getName().split("\\.")[0];

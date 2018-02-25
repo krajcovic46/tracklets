@@ -63,6 +63,8 @@ public class FITSBatch {
             double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
             double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
 
+//            System.out.println(averageCombinedSpeed);
+
             int real = 0;
             for (FITSObject fitsObject : data) {
                 if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
@@ -91,7 +93,6 @@ public class FITSBatch {
                 regression.getValue().addData(last.getX(), last.getY());
             }
             if (regressionPoints.get(0).isReal() && regressionPoints.get(1).isReal()) {
-                System.out.println(regressionPoints);
                 for (FITSObject obj : regressionPoints) {
                     if (obj.isReal()) {
                         real++;
