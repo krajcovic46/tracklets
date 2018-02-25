@@ -168,16 +168,3 @@ public class FITSFileHandler {
         return catFiles;
     }
 }
-//                try {
-//                    BufferedReader bf = new BufferedReader(new java.io.FileReader(fileEntry));
-//                    String text;
-//                    Pattern pattern = Pattern.compile("\\s+");
-//
-//                    while ((text = bf.readLine()) != null) {
-//                        String splitLine[] = pattern.split(text);
-//                        System.out.println(Arrays.toString(splitLine));
-//                    }
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
