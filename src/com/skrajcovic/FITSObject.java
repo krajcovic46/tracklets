@@ -49,6 +49,12 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double calculateDeltaTime(FITSObject otherObject) {
+//        System.out.println("MOJ MJD: " + this.getMjd());
+//        System.out.println("MOJ LDT: " + this.getLdt());
+//        System.out.println("IHR MJD: " + otherObject.getMjd());
+//        System.out.println("IHR LDT: " + otherObject.getLdt());
+//        System.out.println("DEL MJD: " + (this.getMjd() - otherObject.getMjd()));
+//        System.out.println("----------------------------------------------------");
         return Math.abs(this.getMjd() - otherObject.getMjd());
     }
 

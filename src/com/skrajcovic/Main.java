@@ -1,6 +1,7 @@
 package com.skrajcovic;
 
 
+import com.skrajcovic.algorithms.FITSLinearRegression;
 import com.skrajcovic.utils.Arguments;
 import eap.fitsbrowser.Browser;
 
@@ -35,7 +36,7 @@ public class Main {
         if (arguments.contains("nn") || arguments.contains("neural")) {
             //TODO - neural network - python script probably
         }
-        batch.doTheThing();
+        FITSLinearRegression.perform(batch);
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();
             try {
