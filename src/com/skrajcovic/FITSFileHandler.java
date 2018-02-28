@@ -3,6 +3,7 @@ package com.skrajcovic;
 
 import com.skrajcovic.datastructures.Declination;
 import com.skrajcovic.datastructures.Rectascension;
+import com.skrajcovic.datastructures.Type;
 import eap.fits.FitsCard;
 import eap.fits.FitsHDU;
 import eap.fits.FitsHeader;
@@ -35,8 +36,10 @@ public class FITSFileHandler {
         while ((text = bf.readLine()) != null) {
             if (read) {
                 List<String> textList = Arrays.asList(pattern.split(text.trim()));
-                if (textList.get(0).equals("?")) {
+                if (textList.get(0).equals("?") || textList.get(0).equals("H")) {
                     FITSObject fitsObject = new FITSObject();
+
+//                    System.out.println(textList.get(0));
 
                     Integer RAHours = Integer.valueOf(textList.get(1));
                     Integer RAMinutes = Integer.valueOf(textList.get(2));
@@ -59,6 +62,7 @@ public class FITSFileHandler {
                     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
                     LocalDateTime ld = LocalDateTime.parse(fitsCard.value().toString(), dtf);
 
+                    fitsObject.setType(textList.get(0));
                     fitsObject.setFileName(catFile.getName());
                     fitsObject.setRectascension(ra);
                     fitsObject.setDeclination(dec);

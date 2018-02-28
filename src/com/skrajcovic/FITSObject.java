@@ -101,8 +101,23 @@ public class FITSObject implements Comparable<FITSObject> {
         return type;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setType(String type) {
+        switch (type) {
+            case "R":
+                this.type = Type.R;
+                break;
+            case "S":
+                this.type = Type.S;
+                break;
+            case "H":
+                this.type = Type.H;
+                break;
+            case "?":
+                this.type = Type.UNKNOWN;
+                break;
+            default:
+                break;
+        }
     }
 
     public boolean isReal() {
