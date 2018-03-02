@@ -32,6 +32,7 @@ public class FITSLinearRegression {
         }
     }
 
+    //TODO - make the method work on RADEC instead of x/y
     private static double[] fitPointsToRegressions(double threshold, Map<ArrayList<FITSObject>, SimpleRegression> regressions, ArrayList<FITSObject> data) {
         for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
             FITSObject last = null;
@@ -44,13 +45,13 @@ public class FITSLinearRegression {
              */
             if (regressionPoints.get(0).getType() == Type.H && regressionPoints.get(1).getType() == Type.H) {
 
-                System.out.println(regressionPoints.get(0).getType());
-                System.out.println(regressionPoints.get(1).getType());
+//                System.out.println(regressionPoints.get(0).getType());
+//                System.out.println(regressionPoints.get(1).getType());
 
                 double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
                 double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
 
-                //            System.out.println(averageCombinedSpeed);
+//                System.out.println(averageCombinedSpeed);
 
                 int real = 0;
                 for (FITSObject fitsObject : data) {
@@ -58,6 +59,7 @@ public class FITSLinearRegression {
                             && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
                             ) {
 
+                        System.out.println(fitsObject.getFileName());
                         System.out.println(fitsObject.getType());
                         System.out.println(fitsObject.getX());
                         System.out.println(fitsObject.getY());

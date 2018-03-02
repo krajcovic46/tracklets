@@ -53,7 +53,7 @@ public class OrbitDetermination {
         // v[0] - 1st observation to use to OD
         // v[1] - 2nd observation to use to OD
         // v[2] - 3rd observation to use to OD
-        Vector vectorArray[] = new CombinationGenerator().getCombinations(intArray, false);
+        Vector vectorArray[] = CombinationGenerator.getCombinations(intArray, false);
 
         //array of observation for the method getVectors()
         Observation observation2[] = new Observation[3];

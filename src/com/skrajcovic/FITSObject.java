@@ -181,6 +181,8 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public void setLocalDateTime(LocalDateTime ldt) {
+        /*TODO - calculate "real" time as described in e-mail, make the method below less magical
+        * */
         this.ldt = ldt;
         convertLDTtoMJD();
     }
