@@ -3,6 +3,8 @@ package com.skrajcovic;
 import com.skrajcovic.datastructures.Declination;
 import com.skrajcovic.datastructures.Rectascension;
 import com.skrajcovic.datastructures.Type;
+import eap.fits.FitsCard;
+import eap.fits.NoSuchFitsCardException;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.time.LocalDateTime;
@@ -21,11 +23,20 @@ public class FITSObject implements Comparable<FITSObject> {
 
     private double mjd;
 
-    private LocalDateTime ldt;
-
     private boolean real;
 
     public FITSObject() {}
+
+    public FITSObject(String fileName, String type, Rectascension rectascension,
+                      Declination declination, double magnitude, double x, double y) {
+        setFileName(fileName);
+        setType(type);
+        setRectascension(rectascension);
+        setDeclination(declination);
+        setMagnitude(magnitude);
+        setX(x);
+        setY(y);
+    }
 
     public FITSObject(String fileName, boolean real, double mjd, double x, double y, double magnitude) {
         setFileName(fileName);
@@ -176,43 +187,47 @@ public class FITSObject implements Comparable<FITSObject> {
         this.declination = declination;
     }
 
-    public LocalDateTime getLdt() {
-        return ldt;
+    public void setTime(FitsCard dateObs, FitsCard expTime) {
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        try {
+            LocalDateTime ldt = LocalDateTime.parse(dateObs.stringValue());
+            Double exposureTimeSeconds = expTime.doubleValue();
+
+            int month = ldt.getMonthValue();
+            int year = ldt.getYear();
+            int day = ldt.getDayOfMonth();
+            int hour = ldt.getHour();
+            int min = ldt.getMinute();
+            double sec = ldt.getSecond();
+
+            sec += exposureTimeSeconds / 2;
+
+            setMjd(produceMjd(month, year, day, hour, min, sec));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setLocalDateTime(LocalDateTime ldt) {
-        /*TODO - calculate "real" time as described in e-mail, make the method below less magical
-        * */
-        this.ldt = ldt;
-        convertLDTtoMJD();
-    }
-
-    private void convertLDTtoMJD() {
-        long    MjdMidnight;
-        double  FracOfDay;
-        int     b;
-
-
-        int month = getLdt().getMonthValue();
-        int year = getLdt().getYear();
-        int day = getLdt().getDayOfMonth();
-        int hour = getLdt().getHour();
-        int min = getLdt().getMinute();
-        int sec = getLdt().getSecond();
+    @SuppressWarnings("Duplicates")
+    private double produceMjd(int month, int year, int day, int hour, int min, double sec) {
+        long MjdMidnight;
+        double FracOfDay;
+        int b;
 
         if (month <= 2) {
-            month+=12; --year;
+            month += 12;
+            --year;
         }
 
         if ((10000L * year + 100L * month + day) <= 15821004L ) {
-            b = -2 + ((year + 4716) / 4) - 1179;     // Julian calendar
+            b = -2 + ((year + 4716) / 4) - 1179;
         } else {
-            b = (year / 400) - (year / 100) + (year / 4);  // Gregorian calendar
+            b = (year / 400) - (year / 100) + (year / 4);
         }
 
         MjdMidnight = 365L * year - 679004L + b + (int)(30.6001 * (month + 1)) + day;
-        FracOfDay   = (hour + min / 60.0 + sec / 3600.0) / 24.0;
+        FracOfDay = (hour + min / 60.0 + sec / 3600.0) / 24.0;
 
-        setMjd(MjdMidnight + FracOfDay);
+        return MjdMidnight + FracOfDay;
     }
 }

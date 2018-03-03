@@ -3,11 +3,7 @@ package com.skrajcovic;
 
 import com.skrajcovic.datastructures.Declination;
 import com.skrajcovic.datastructures.Rectascension;
-import com.skrajcovic.datastructures.Type;
-import eap.fits.FitsCard;
-import eap.fits.FitsHDU;
-import eap.fits.FitsHeader;
-import eap.fits.InputStreamFitsFile;
+import eap.fits.*;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -37,7 +33,6 @@ public class FITSFileHandler {
             if (read) {
                 List<String> textList = Arrays.asList(pattern.split(text.trim()));
                 if (textList.get(0).equals("?") || textList.get(0).equals("H")) {
-                    FITSObject fitsObject = new FITSObject();
 
                     String type = textList.get(0);
 
@@ -57,19 +52,17 @@ public class FITSFileHandler {
                     Double y = Double.valueOf(textList.get(9));
 
                     FitsHeader fitsHeader = getFitsMetadata(fitsFile);
-                    FitsCard fitsCard = fitsHeader.card("DATE-OBS");
+                    FitsCard fitsCardDATEOBS = fitsHeader.card("DATE-OBS");
+                    FitsCard fitsCardEXPTIME;
 
-                    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-                    LocalDateTime ld = LocalDateTime.parse(fitsCard.value().toString(), dtf);
+                    try {
+                        fitsCardEXPTIME = fitsHeader.card("EXPTIME");
+                    } catch (NoSuchFitsCardException e) {
+                        fitsCardEXPTIME = fitsHeader.card("EXPOSURE");
+                    }
 
-                    fitsObject.setFileName(catFile.getName());
-                    fitsObject.setType(type);
-                    fitsObject.setRectascension(ra);
-                    fitsObject.setDeclination(dec);
-                    fitsObject.setMagnitude(magnitude);
-                    fitsObject.setX(x);
-                    fitsObject.setY(y);
-                    fitsObject.setLocalDateTime(ld);
+                    FITSObject fitsObject = new FITSObject(catFile.getName(), type, ra, dec, magnitude, x, y);
+                    fitsObject.setTime(fitsCardDATEOBS, fitsCardEXPTIME);
 
                     switch (set) {
                         case "firstSet":
