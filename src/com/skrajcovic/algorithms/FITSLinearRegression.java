@@ -56,8 +56,7 @@ public class FITSLinearRegression {
                 int real = 0;
                 for (FITSObject fitsObject : data) {
                     if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
-                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)
-                            ) {
+                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)) {
 
                         System.out.println(fitsObject.getFileName());
                         System.out.println(fitsObject.getType());
