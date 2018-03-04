@@ -35,6 +35,21 @@ public class Rectascension {
         this.seconds = seconds;
     }
 
+    public boolean isSmaller(Rectascension other) {
+        if (this.getHours() >= other.getHours()) {
+            if (this.getMinutes() >= other.getMinutes()) {
+                if (this.getSeconds() >= other.getSeconds()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean isLarger(Rectascension other) {
+        return !isSmaller(other);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

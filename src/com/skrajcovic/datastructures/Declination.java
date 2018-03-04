@@ -35,6 +35,21 @@ public class Declination {
         this.seconds = seconds;
     }
 
+    public boolean isSmaller(Declination other) {
+        if (this.getDegrees() >= other.getDegrees()) {
+            if (this.getMinutes() >= other.getMinutes()) {
+                if (this.getSeconds() >= other.getSeconds()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean isLarger(Declination other) {
+        return !isSmaller(other);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
