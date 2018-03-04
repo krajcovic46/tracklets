@@ -5,10 +5,14 @@ public class Declination {
     private int minutes;
     private double seconds;
 
+    private double degValue;
+
     public Declination(Integer degrees, Integer minutes, Double seconds) {
         setDegrees(degrees);
         setMinutes(minutes);
         setSeconds(seconds);
+
+        convertToDegrees();
     }
 
     public int getDegrees() {
@@ -35,19 +39,38 @@ public class Declination {
         this.seconds = seconds;
     }
 
-    public boolean isSmaller(Declination other) {
-        if (this.getDegrees() >= other.getDegrees()) {
-            if (this.getMinutes() >= other.getMinutes()) {
-                if (this.getSeconds() >= other.getSeconds()) {
-                    return false;
-                }
-            }
-        }
-        return true;
+    public double getDegValue() {
+        return degValue;
     }
 
-    public boolean isLarger(Declination other) {
-        return !isSmaller(other);
+    private void convertToDegrees() {
+        double temp = 0;
+
+        temp += getDegrees();
+        temp += getMinutes() / 60;
+        temp += getSeconds() / 3600;
+
+        degValue = temp;
+    }
+
+    //TODO
+    public double add(Declination other) {
+        double temp = getDegValue() + other.getDegValue();
+
+        if (temp > 90) {
+            temp = -90 + temp;
+        }
+
+        return temp;
+    }
+
+    //TODO
+    public double sub(Declination other) {
+        return 0;
+    }
+
+    public boolean isSmaller(Declination other) {
+        return getDegValue() < other.getDegValue();
     }
 
     @Override

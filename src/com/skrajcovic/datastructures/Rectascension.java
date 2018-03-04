@@ -1,14 +1,18 @@
 package com.skrajcovic.datastructures;
 
-public class Rectascension {
+public class Rectascension  {
     private int hours;
     private int minutes;
     private double seconds;
+
+    private double degValue;
 
     public Rectascension(Integer hours, Integer minutes, Double seconds) {
         setHours(hours);
         setMinutes(minutes);
         setSeconds(seconds);
+
+        convertToDegrees();
     }
 
     public int getHours() {
@@ -35,19 +39,40 @@ public class Rectascension {
         this.seconds = seconds;
     }
 
-    public boolean isSmaller(Rectascension other) {
-        if (this.getHours() >= other.getHours()) {
-            if (this.getMinutes() >= other.getMinutes()) {
-                if (this.getSeconds() >= other.getSeconds()) {
-                    return false;
-                }
-            }
-        }
-        return true;
+    public double getDegValue() {
+        return degValue;
     }
 
-    public boolean isLarger(Rectascension other) {
-        return !isSmaller(other);
+    private void convertToDegrees() {
+        double temp = 0;
+        temp += getHours() * 15;
+        temp += getMinutes() / 60;
+        temp += getSeconds() / 3600;
+
+        degValue = temp;
+    }
+
+    public double add(Rectascension other) {
+        double temp = this.getDegValue() + other.getDegValue();
+        return temp % 24;
+    }
+
+    public double sub(Rectascension other) {
+        double myDegValue = getDegValue();
+        double otherDegValue = other.getDegValue();
+
+        if (myDegValue > otherDegValue) {
+            return myDegValue - otherDegValue;
+        } else if (myDegValue < otherDegValue) {
+            myDegValue = 24 + myDegValue;
+            return myDegValue - otherDegValue;
+        }
+        return myDegValue;
+    }
+
+
+    public boolean isSmaller(Rectascension other) {
+        return getDegValue() < other.getDegValue();
     }
 
     @Override
