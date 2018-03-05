@@ -19,17 +19,19 @@
 \contentsline {subsection}{\numberline {4.2.1}Optical observation, image-processing, and detection of space debris in GEO}{19}{subsection.4.2.1}
 \contentsline {chapter}{\numberline {5}Technical and practical requirements}{20}{chapter.5}
 \contentsline {section}{\numberline {5.1}Input data}{20}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}.fits files}{20}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}.cat files}{20}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{20}{subsection.5.1.3}
-\contentsline {chapter}{\numberline {6}Proposed solutions}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Use of linear regression}{21}{section.6.1}
-\contentsline {section}{\numberline {6.2}Use of neural network}{21}{section.6.2}
-\contentsline {section}{\numberline {6.3}Use of the Initial Orbit Determination algorithms}{21}{section.6.3}
-\contentsline {section}{\numberline {6.4}Use of Hough transform}{21}{section.6.4}
-\contentsline {chapter}{\numberline {7}Design and implementation}{22}{chapter.7}
-\contentsline {chapter}{\numberline {8}Results}{23}{chapter.8}
-\contentsline {section}{\numberline {8.1}TDM, MPC, and CCSDS data formats}{23}{section.8.1}
-\contentsline {section}{\numberline {8.2}Visualization of results}{23}{section.8.2}
-\contentsline {section}{\numberline {8.3}Parameters}{23}{section.8.3}
-\contentsline {chapter}{\numberline {9}Conclusion}{24}{chapter.9}
+\contentsline {subsection}{\numberline {5.1.1}Flexible Image Transport System files}{21}{subsection.5.1.1}
+\contentsline {subsubsection}{File structure}{21}{section*.16}
+\contentsline {subsubsection}{Headers}{22}{section*.17}
+\contentsline {subsection}{\numberline {5.1.2}.cat files}{23}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{23}{subsection.5.1.3}
+\contentsline {chapter}{\numberline {6}Proposed solutions}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Use of linear regression}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}Use of neural network}{24}{section.6.2}
+\contentsline {section}{\numberline {6.3}Use of the Initial Orbit Determination algorithms}{24}{section.6.3}
+\contentsline {section}{\numberline {6.4}Use of Hough transform}{24}{section.6.4}
+\contentsline {chapter}{\numberline {7}Design and implementation}{25}{chapter.7}
+\contentsline {chapter}{\numberline {8}Results}{26}{chapter.8}
+\contentsline {section}{\numberline {8.1}TDM, MPC, and CCSDS data formats}{26}{section.8.1}
+\contentsline {section}{\numberline {8.2}Visualization of results}{26}{section.8.2}
+\contentsline {section}{\numberline {8.3}Parameters}{26}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusion}{27}{chapter.9}

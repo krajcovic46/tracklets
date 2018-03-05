@@ -18,7 +18,7 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{Optical observation, image-processing, and detection of space debris in GEO}{section.4.2}% 18
 \BOOKMARK [0][-]{chapter.5}{Technical and practical requirements}{}% 19
 \BOOKMARK [1][-]{section.5.1}{Input data}{chapter.5}% 20
-\BOOKMARK [2][-]{subsection.5.1.1}{.fits files}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.1}{Flexible Image Transport System files}{section.5.1}% 21
 \BOOKMARK [2][-]{subsection.5.1.2}{.cat files}{section.5.1}% 22
 \BOOKMARK [2][-]{subsection.5.1.3}{Processing server parameters}{section.5.1}% 23
 \BOOKMARK [0][-]{chapter.6}{Proposed solutions}{}% 24
