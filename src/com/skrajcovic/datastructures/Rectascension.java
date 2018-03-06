@@ -46,8 +46,8 @@ public class Rectascension  {
     private void convertToDegrees() {
         double temp = 0;
         temp += getHours() * 15;
-        temp += getMinutes() / 60;
-        temp += getSeconds() / 3600;
+        temp += getMinutes() * 15 / 60;
+        temp += getSeconds() * 15 / 3600;
 
         degValue = temp;
     }

@@ -6,8 +6,6 @@ import com.skrajcovic.datastructures.Rectascension;
 import eap.fits.*;
 
 import java.io.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -51,7 +49,7 @@ public class FITSFileHandler {
                     Double x = Double.valueOf(textList.get(8));
                     Double y = Double.valueOf(textList.get(9));
 
-                    FitsHeader fitsHeader = getFitsMetadata(fitsFile);
+                    FitsHeader fitsHeader = getFitsHeader(fitsFile);
                     FitsCard fitsCardDATEOBS = fitsHeader.card("DATE-OBS");
                     FitsCard fitsCardEXPTIME;
 
@@ -85,7 +83,7 @@ public class FITSFileHandler {
 
     }
 
-    private static FitsHeader getFitsMetadata(File fitsFile) throws IOException {
+    private static FitsHeader getFitsHeader(File fitsFile) throws IOException {
         InputStreamFitsFile inputStreamFitsFile = new InputStreamFitsFile(new FileInputStream(fitsFile));
         FitsHDU fitsHDU = inputStreamFitsFile.getHDU(0);
         return fitsHDU.getHeader();
