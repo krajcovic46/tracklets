@@ -92,24 +92,24 @@
 	\begin{enumerate}
 		\item Type - column outlining the type of a detected object; has four valid values
 		\begin{itemize}
-			\item R - 
-			\item H - 
-			\item S - a star
+			\item R - a star which has been matched with the star catalogue; if the value is in parentheses, the deviation between the two is too large
+			\item H - a manually marked object
+			\item S - a star which has not been matched with the star catalogue
 			\item ? - an unknown object
 		\end{itemize}
 		\item RA - right ascension in hours/minutes/seconds (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec})
-		\item dRA - difference in right ascension
+		\item dRA - deviation of values of RA between centroid created by Astrometrica and the star catalogue
 		\item Dec. - declination in degrees/minutes/seconds (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec})
-		\item dDec - difference in declination
-		\item R - radiance in magnitudes
-		\item dR - difference in radiance
+		\item dDec - deviation of values of DEC between centroid created by Astrometrica and the star catalogue
+		\item R - brightness in magnitute
+		\item dR - deviation of values of brightness between centroid created by Astrometrica and the star catalogue
 		\item x - position of an object in FITS file on \emph{x} axis
 		\item y - position of an object in FITS file on \emph{y} axis
-		\item Flux - 
-		\item FWHM - 
-		\item Peak - 
-		\item Fit - 
-		\item Designation - 
+		\item Flux - total intensity of all pixels in ADU (analog to digital unit)
+		\item FWHM - "\emph{full width at half maximum}" describes a measurement of the width of a diffused object
+		\item Peak - signal to noise ration - describes the difference between the pixel with maximal value and background
+		\item Fit - the deviation of fitting of centroids in image to the star catalogue
+		\item Designation - an user given input
 	\end{enumerate}
 	
 \subsection{Processing server parameters}\label{sec:server_param}

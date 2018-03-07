@@ -2,6 +2,7 @@ package com.skrajcovic;
 
 
 import com.skrajcovic.algorithms.FITSLinearRegression;
+import com.skrajcovic.algorithms.FITSOrbitDetermination;
 import com.skrajcovic.utils.Arguments;
 import eap.fitsbrowser.Browser;
 
@@ -31,7 +32,7 @@ public class Main {
 
         if (arguments.contains("lod") || arguments.contains("orbital")) {
             //TODO - orbital determination
-        }
+            FITSOrbitDetermination.perform(null);        }
 
         if (arguments.contains("nn") || arguments.contains("neural")) {
             //TODO - neural network - python script probably
