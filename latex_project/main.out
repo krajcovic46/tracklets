@@ -28,7 +28,10 @@
 \BOOKMARK [1][-]{section.6.4}{Use of Hough transform}{chapter.6}% 28
 \BOOKMARK [0][-]{chapter.7}{Design and implementation}{}% 29
 \BOOKMARK [0][-]{chapter.8}{Results}{}% 30
-\BOOKMARK [1][-]{section.8.1}{TDM, MPC, and CCSDS data formats}{chapter.8}% 31
-\BOOKMARK [1][-]{section.8.2}{Visualization of results}{chapter.8}% 32
-\BOOKMARK [1][-]{section.8.3}{Parameters}{chapter.8}% 33
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 34
+\BOOKMARK [1][-]{section.8.1}{TDM and MPC formats, CCSDS}{chapter.8}% 31
+\BOOKMARK [2][-]{subsection.8.1.1}{CCSDS}{section.8.1}% 32
+\BOOKMARK [2][-]{subsection.8.1.2}{TDM format}{section.8.1}% 33
+\BOOKMARK [2][-]{subsection.8.1.3}{MPC format}{section.8.1}% 34
+\BOOKMARK [1][-]{section.8.2}{Visualization of results}{chapter.8}% 35
+\BOOKMARK [1][-]{section.8.3}{Parameters}{chapter.8}% 36
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 37

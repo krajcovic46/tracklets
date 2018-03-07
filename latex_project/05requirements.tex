@@ -14,7 +14,7 @@
 	
 	It was originally designed in year 1981 for transporting image data on magnetic tapes between research institutions. In year 1982, FITS was officially endorsed by International Astronomical Union (IAU) as the format for the interchange of astronomical data. Since then FITS have expanded to accommodate more complex data structures and have evolved from only transporting information into preferred format for archival and analytical purposes.
 	
-	FITS files in this work are used as a source of data about objects and for image stacking.
+	FITS files in this work are used as a source of data about objects and for image stacking \citep{FITSdefinition}.
 	
 \subsubsection{File structure}
 
@@ -28,11 +28,11 @@
 	
 	In our case, all FITS Files contain only the primary HDU which is sometimes referred to as Basic FITS File or a Single Image FITS File.
 	
-	If used, a structure contains a higher than zero number of FITS Blocks (blocks), each with size of 2880 bytes. Primary HDU always starts with the first block and each following structure begins with a block starting right after the end of the last block of previous structure. Furthermore, the primary HDU and each extension HDU must contain non-zero number of 2880-byte FITS Header (header) blocks, which are mandatory, and an optional array of associated 2880-byte data blocks. There is no explicit limit on the number of blocks and therefore the size of the file.
+	If used, a structure contains a higher than zero number of FITS Blocks (blocks), each with size of 2880 bytes. Primary HDU always starts with the first block and each following structure begins with a block starting right after the end of the last block of previous structure. Furthermore, the primary HDU and each extension HDU must contain non-zero number of 2880-byte FITS Header (header) blocks, which are mandatory, and an optional array of associated 2880-byte data blocks. There is no explicit limit on the number of blocks and therefore the size of the file \citep{FITSdefinition}.
 	
 \subsubsection{Data arrays} 
 	
-	If not empty, primary data array has size $1 x 999$ and is represented by continuous stream of bits. Each data value in the array consists of a fixed number of bits which are given in the keyword \emph{BITPIX}. If length of data is shorter than length of final block, the difference is filled by setting the bits to zero. Arrays with more than one dimension are possible but irrelevant in our context.
+	If not empty, primary data array has size $1 x 999$ and is represented by continuous stream of bits. Each data value in the array consists of a fixed number of bits which are given in the keyword \emph{BITPIX}. If length of data is shorter than length of final block, the difference is filled by setting all the trailing bits to zero. Arrays with more than one dimension are possible but irrelevant in our context \citep{FITSdefinition}.
 	
 	An example of FITS Data array is shown in Figure
 	
@@ -42,14 +42,14 @@
 	
 	\begin{figure}[H]
 	\centering
-	  \includegraphics[scale=0.2]{images/asciifull}
+	  \includegraphics[width=10cm]{images/asciifull}
 		  \caption{Allowed ASCII characters}
 	  \label{fig:allowed_ascii}
 	\end{figure}
 	
-	A header contains at least one header block, each consisting of maximum 80-character keyword sequence. In the 2880-byte block, this puts the number of records at 36. The logical end of the block is marked by the END keyword and if there is space left, it is filled with ASCII space.
+	A header contains at least one header block, each consisting of maximum 80-character keyword sequence. In the 2880-byte block, this puts the maximum number of records at 36. The logical end of the block is marked by the END keyword and if there is space left, it is filled with ASCII character for space.
 	
-	Keywords are composed of key-value pairs and an optional comment. The presence of the value indicator (\emph{'= '}, ASCII symbol "equals" followed by ASCII space) determines that the key has a value associated with it. The values field can hold any of the following types:
+	Keywords are composed of key-value pairs and an optional comment. The presence of the value indicator (\emph{'= '}, ASCII character "equals" followed by ASCII character for space) determines that the key has a value associated with it. The values field can hold any of the following types:
 	
 	\begin{itemize}
 		\item character string (eg. '27/10/82')
@@ -60,26 +60,28 @@
 		\item complex floating-point number (eg. $7.8+1.7i$).
 	\end{itemize}
 	
-	 Each FITS file must contain several mandatory keywords (such as \emph{SIMPLE} - describes whether FITS file is a Basic Fits File or not; \emph{END} - marks logical end of a block) which are reserved and have fixed types of their values. FITS format also contains reserved keywords that are not mandatory (such as \emph{DATE} - date on which the HDU was created; other).
+	 Each FITS file (file) must contain several mandatory keywords (such as \emph{SIMPLE} - describes whether FITS file is a Basic Fits File or not; \emph{END} - marks logical end of a block, and other) which are reserved and have fixed types of their values. FITS format also contains reserved keywords that are not mandatory (such as \emph{DATE} - date on which the HDU was created, and other).
 	 
-	 In our case, the most relevant keywords are \emph{DATE-OBS} and \emph{EXPTIME}, or \emph{EXPOSURE} in files where the keyword \emph{EXPTIME} is missing.
+	 In our case, the most relevant keywords are \emph{DATE-OBS} and \emph{EXPTIME}, or \emph{EXPOSURE} in files where the keyword \emph{EXPTIME} is missing \citep{FITSdefinition}.
 	 
 	 An example of FITS Header is shown in Figure \ref{fig:fits_header}.
 	
 	\begin{figure}[H]
 	\centering
-	  \includegraphics[scale=0.644]{images/fits_header_example}
+	  \includegraphics[width=10cm]{images/fits_header_example}
 		  \caption{FITS Header example}
 	  \label{fig:fits_header}
 	\end{figure}
 
 \subsection{.cat files}\label{sec:cat_files}
 	
-	.cat files are text files generated by the Astrometrica tool. Astrometrica tool accepts FITS files (see \ref{sec:fits_files}) as input, provides interactive graphical user interface to manipulate each FITS file and performs Astrometrical reduction resulting in an output file with the extension .cat. Detailed description of the contents of a .cat file is in the following subsection.
+	.cat files are text files generated by the Astrometrica tool. Astrometrica tool accepts FITS files (see \ref{sec:fits_files}) as input, provides interactive graphical user interface to manipulate each FITS file and performs image processing, segmentation, and Astrometrical reduction resulting in an output file with the extension .cat. The Astrometrical reduction is performed by constructing centroids, as mentioned in Chapter \ref{chap:object_dynamics}, Section \ref{sec:proc_seg_reduc}.
+	
+	 Detailed description of the contents of a .cat file is in the following subsection.
 	
 \subsubsection{Contents of a .cat file}\label{subsubsec:content_cat}
 	
-	First four lines of a .cat file are header - first line is empty, second is name of the colum, third contains units in which are values in specific column represented and fourth is a separator (see Figure \ref{fig:cat_header}).
+	First four lines of a .cat file are header - first line is empty, second is the name of the colum, third contains units in which are values in specific column represented and fourth is a separator, as shown in Figure \ref{fig:cat_header}.
 	
 	\begin{figure}[H]
 	  \includegraphics[width=\linewidth]{images/cat_columns}
@@ -90,7 +92,7 @@
 	Meaning of each column is as follows:
 	
 	\begin{enumerate}
-		\item Type - column outlining the type of a detected object; has four valid values
+		\item Type - column outlining the type of a detected object; has four valid values:
 		\begin{itemize}
 			\item R - a star which has been matched with the star catalogue; if the value is in parentheses, the deviation between the two is too large
 			\item H - a manually marked object
@@ -101,13 +103,13 @@
 		\item dRA - deviation of values of RA between centroid created by Astrometrica and the star catalogue
 		\item Dec. - declination in degrees/minutes/seconds (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec})
 		\item dDec - deviation of values of DEC between centroid created by Astrometrica and the star catalogue
-		\item R - brightness in magnitute
+		\item R - brightness in magnitude
 		\item dR - deviation of values of brightness between centroid created by Astrometrica and the star catalogue
 		\item x - position of an object in FITS file on \emph{x} axis
 		\item y - position of an object in FITS file on \emph{y} axis
 		\item Flux - total intensity of all pixels in ADU (analog to digital unit)
 		\item FWHM - "\emph{full width at half maximum}" describes a measurement of the width of a diffused object
-		\item Peak - signal to noise ration - describes the difference between the pixel with maximal value and background
+		\item Peak - signal to noise ratio; describes the difference between the pixel with the maximal value and background
 		\item Fit - the deviation of fitting of centroids in image to the star catalogue
 		\item Designation - an user given input
 	\end{enumerate}

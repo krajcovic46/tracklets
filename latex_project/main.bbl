@@ -1,27 +1,47 @@
-\begin{thebibliography}{otPUoOSSS99}
+\begin{thebibliography}{}
 
-\bibitem[ESA17]{esabr336}
-ESA.
-\newblock Space debris: the esa approach.
-\newblock Brochure, 2017.
+\bibitem[TDM, 2007]{TDMdefinition}
+ (2007).
+\newblock {\em Recommendation for Space Data System Standards}.
+\newblock {CCSDS Secretariat}.
 
-\bibitem[Kli06]{klinkrad2006space}
-H.~Klinkrad.
+\bibitem[FIT, 2016]{FITSdefinition}
+ (2016).
+\newblock {\em Definition of the Flexible Image Transport System {(FITS)}}.
+\newblock International Astronomical Union.
+\newblock Version 4.0.
+
+\bibitem[{ASRC Federal Technical Services CCSDS}, 2017]{ccsds}
+{ASRC Federal Technical Services CCSDS} (2017).
+\newblock {CCSDS}.
+
+\bibitem[ESA, 2017]{esabr336}
+ESA (2017).
+\newblock Space debris: the {ESA} approach.
+\newblock Brochure.
+
+\bibitem[Klinkrad, 2006]{klinkrad2006space}
+Klinkrad, H. (2006).
 \newblock {\em Space Debris: Models and Risk Analysis}.
-\newblock Astronautical Engineering. Springer, 2006.
+\newblock Astronautical Engineering. Springer.
 
-\bibitem[otPUoOSSS99]{united1999technical}
-United Nations. General Assembly.~Committee on~the Peaceful Uses~of Outer
-  Space.~Scientific and Technical Subcommittee.
+\bibitem[{Minor Planet Center}, 2016]{mpc}
+{Minor Planet Center} (2016).
+\newblock {MPC} format.
+
+\bibitem[on~the Peaceful Uses~of Outer Space.~Scientific and Subcommittee,
+  1999]{united1999technical}
+on~the Peaceful Uses~of Outer Space.~Scientific, U. N. G. A.~C. and
+  Subcommittee, T. (1999).
 \newblock {\em Technical report on space debris: text of the report adopted by
   the Scientific and Technical Subcommittee of the United Nations Committee on
   the Peaceful uses of Outer Space}.
-\newblock United Nations, 1999.
+\newblock United Nations.
 
-\bibitem[Ši12]{Silha2012id}
-Jiři Šilha.
+\bibitem[Šilha, 2012]{Silha2012id}
+Šilha, J. (2012).
 \newblock {\em Identification of the Artifical Objects in Close Vicinity of the
   Earth}.
-\newblock PhD thesis, Comenius University, 2012.
+\newblock PhD thesis, Comenius University.
 
 \end{thebibliography}
