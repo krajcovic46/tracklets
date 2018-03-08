@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  8 MAR 2018 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  8 MAR 2018 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,7 +977,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/logo_fmph.png, id=152, 106.59825pt x 113.58435pt>
+<images/logo_fmph.png, id=156, 106.59825pt x 113.58435pt>
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
 Package pdftex.def Info: images/logo_fmph.png  used on input line 59.
@@ -1059,7 +1059,7 @@ mr/m/n/12 4
  []
 
 [4]
-<images/paintflakes.jpg, id=286, 361.35pt x 320.8788pt>
+<images/paintflakes.jpg, id=291, 361.35pt x 320.8788pt>
 File: images/paintflakes.jpg Graphic file (type jpg)
 <use images/paintflakes.jpg>
 Package pdftex.def Info: images/paintflakes.jpg  used on input line 27.
@@ -1071,7 +1071,7 @@ mr/m/n/12 5
  []
 
 [5 <./images/paintflakes.jpg>]
-<images/hypervelocitycollision.jpg, id=299, 682.9515pt x 523.9575pt>
+<images/hypervelocitycollision.jpg, id=304, 682.9515pt x 523.9575pt>
 File: images/hypervelocitycollision.jpg Graphic file (type jpg)
 <use images/hypervelocitycollision.jpg>
 Package pdftex.def Info: images/hypervelocitycollision.jpg  used on input line 
@@ -1084,7 +1084,7 @@ mr/m/n/12 6
  []
 
 [6 <./images/hypervelocitycollision.jpg>]
-<images/slag.jpg, id=310, 545.99985pt x 427.1157pt>
+<images/slag.jpg, id=315, 545.99985pt x 427.1157pt>
 File: images/slag.jpg Graphic file (type jpg)
 <use images/slag.jpg>
 Package pdftex.def Info: images/slag.jpg  used on input line 45.
@@ -1102,7 +1102,7 @@ mr/m/n/12 7
  []
 
 [7 <./images/slag.jpg>]
-<images/westfordneedles.jpg, id=318, 763.85374pt x 429.605pt>
+<images/westfordneedles.jpg, id=323, 763.85374pt x 429.605pt>
 File: images/westfordneedles.jpg Graphic file (type jpg)
 <use images/westfordneedles.jpg>
 Package pdftex.def Info: images/westfordneedles.jpg  used on input line 56.
@@ -1120,7 +1120,7 @@ mr/m/n/12 9
  []
 
 [9]
-<images/upperstage.jpg, id=337, 377.91188pt x 376.40625pt>
+<images/upperstage.jpg, id=342, 377.91188pt x 376.40625pt>
 File: images/upperstage.jpg Graphic file (type jpg)
 <use images/upperstage.jpg>
 Package pdftex.def Info: images/upperstage.jpg  used on input line 78.
@@ -1150,12 +1150,12 @@ mr/m/n/12 13
  []
 
 [13]
-<images/ESAOGS1.jpg, id=366, 700.6175pt x 708.6475pt>
+<images/ESAOGS1.jpg, id=371, 700.6175pt x 708.6475pt>
 File: images/ESAOGS1.jpg Graphic file (type jpg)
 <use images/ESAOGS1.jpg>
 Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 113.
 (pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
-<images/ESAOGS2.jpg, id=368, 501.875pt x 360.34625pt>
+<images/ESAOGS2.jpg, id=373, 501.875pt x 360.34625pt>
 File: images/ESAOGS2.jpg Graphic file (type jpg)
 <use images/ESAOGS2.jpg>
 Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 122.
@@ -1167,12 +1167,12 @@ mr/m/n/12 14
  []
 
 [14 <./images/ESAOGS1.jpg> <./images/ESAOGS2.jpg>]
-<images/FMPIAGO1.jpg, id=375, 1084.05pt x 953.5625pt>
+<images/FMPIAGO1.jpg, id=380, 1084.05pt x 953.5625pt>
 File: images/FMPIAGO1.jpg Graphic file (type jpg)
 <use images/FMPIAGO1.jpg>
 Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 134.
 (pdftex.def)             Requested size: 227.62204pt x 200.21039pt.
-<images/FMPIAGO2.jpg, id=377, 120.45pt x 79.9788pt>
+<images/FMPIAGO2.jpg, id=382, 120.45pt x 79.9788pt>
 File: images/FMPIAGO2.jpg Graphic file (type jpg)
 <use images/FMPIAGO2.jpg>
 Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 143.
@@ -1202,20 +1202,20 @@ Chapter 5.
 [20
 
 ] [21]
-<images/asciifull.png, id=422, 1583.9175pt x 1220.30907pt>
+<images/asciifull.png, id=427, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
 Package pdftex.def Info: images/asciifull.png  used on input line 45.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
  [22 <./images/asciifull.png>]
-<images/fits_header_example.png, id=436, 425.33907pt x 425.33907pt>
+<images/fits_header_example.png, id=441, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
 Package pdftex.def Info: images/fits_header_example.png  used on input line 71.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
  [23] [24 <./images/fits_header_example.png>]
-<images/cat_columns.png, id=450, 956.82469pt x 60.225pt>
+<images/cat_columns.png, id=455, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
 Package pdftex.def Info: images/cat_columns.png  used on input line 87.
@@ -1238,13 +1238,19 @@ Overfull \hbox (1.7667pt too wide) in paragraph at lines 24--25
 or-ma-tion about
  []
 
-[30]) (./09conclusion.tex [31]
+[30]
+<images/tdm_example.png, id=511, 379.4175pt x 592.1322pt>
+File: images/tdm_example.png Graphic file (type png)
+<use images/tdm_example.png>
+Package pdftex.def Info: images/tdm_example.png  used on input line 54.
+(pdftex.def)             Requested size: 284.52756pt x 444.05289pt.
+ [31] [32 <./images/tdm_example.png>] [33]) (./09conclusion.tex [34]
 Chapter 9.
-) [32
+) [35
 
 ] (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [33
+ [36
 
 
 ]
@@ -1253,7 +1259,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D1E58A518750F85C36DC6C51FEB2584A;2675.
+(rerunfilecheck)             Checksum: AA8B8786EC555A27E20998C062E49A7F;2732.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1261,10 +1267,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 10944 strings out of 492985
- 156870 string characters out of 6136283
- 249708 words of memory out of 5000000
- 14139 multiletter control sequences out of 15000+600000
+ 10956 strings out of 492985
+ 157081 string characters out of 6136283
+ 249761 words of memory out of 5000000
+ 14145 multiletter control sequences out of 15000+600000
  18171 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,39p,2103b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1281,10 +1287,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/cm-super/sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
 cm-super/sfti1200.pfb>
-Output written on main.pdf (43 pages, 3808029 bytes).
+Output written on main.pdf (46 pages, 4046254 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 521 compressed objects within 6 object streams
- 137 named destinations out of 1000 (max. 500000)
- 362 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 621 PDF objects out of 1000 (max. 8388607)
+ 538 compressed objects within 6 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 375 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -40,10 +40,42 @@ Header                & \multicolumn{2}{c|}{}                   & mandatory     
                       &                            & Data n     &                            \\ \hline
 \end{tabular}
 \end{table}
+
+	TDM header contains information that identifies the basic parameters of the message in the KVN format, such as \emph{CREATION\_DATE}, which provides data creation date and time in UTC, or \emph{ORIGINATOR}, which provides information about the file's creator. 
+	
+	The purpose of TDM metadata's section is to contain configuration details applicable to each TDM data section in the same TDM segment. An example of commonly used metadata keywords are \emph{START\_TIME}, a keyword specifying the starting time of observations, and \emph{STOP\_TIME}, a keyword specifying the ending time of observations in the following TDM data sections.
+	
+	The arrangement of a TDM data section adheres to the KVN format in that it contains records in keyword-value pairs spanning across one line. However, each record has to have a timetag indicating the time associated with the tracking \citep{TDMdefinition}.
+	
+	See Figure \ref{fig:tdm_example} for a visual example of a TDM file.
+	
+	\begin{figure}[H]
+	\centering
+	  \includegraphics[width=10cm]{images/tdm_example}
+		  \caption{TDM format example}
+	  \label{fig:tdm_example}
+	\end{figure}
 		
-	\citep{TDMdefinition}
-		
+\subsection{MPC}
+
+	Another worldwide organization for Astronomical purposes is the Minor Planet Center (MPC). The organization is in charge of collecting observational data for minor planets, comets and satellites of major planets and belongs under International Astronomical Union.
+	
 \subsection{MPC format}
+
+	The officially MPC endorsed format is a text file with exactly prescribed form. The format is divided into columns. Each column equals one character in a text file. The columns are implicitly set, therefore the format does not contain any headers. There are four kinds of formats - for minor planets, for comets, for natural satellites and for minor planets, comets and natural satellites. In our case, we are using the last type (minor planets, comets and natural satellites).
+	
+	The designation for every column is as follows:
+	
+	\begin{itemize}
+		\item columns 1-12 -- designation of observation
+		\item column 14 -- NOTE 1 - an alphabetical publishable note (for example \emph{S} for "poor sky", or \emph{K} for "stacked image"
+		\item column 15 -- NOTE 2 - indicates how observation has been made (for example \emph{C} for "CCD")
+		\item columns 16-32 -- DATE OF OBSERVATIONS - contains the date and time in UTC of the mid-point of observation; the format of this column is "YYYY MM DD.dddddd"
+		\item columns 32-44 -- OBSERVED RA - contains observed right ascension; the format of this column is "HH MM SS.ddd"
+		\item columns 45-56 -- OBSERVED DECL - contains observerd declination; the format of this column is "sDD MM SS.dd" ("s" for sign)
+		\item columns 57-77 -- OBSERVED MAGNITUDE AND BAND - the observed magnitude of an object and band in which the measurement was made
+		\item columns 78-80 -- OBSERVATORY CODE - the code of the observatory in which observation was made (AGO has code 118)
+	\end{itemize}
 
 	\citep{mpc}
 
