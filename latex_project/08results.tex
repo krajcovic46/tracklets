@@ -9,9 +9,39 @@
 
 \subsection{TDM format}
 
-		Tracking Data Message (TDM) is a standard message format for exchange of spacecraft tracking data between space agencies recommended by the CCSDS.
+	Tracking Data Message (TDM) is a standard message format for exchange of spacecraft tracking data between space agencies recommended by the CCSDS.
+	
+	TDM consists of lines with text on each line represented by ASCII characters. ASCII has been chosen because it is universally used and interpretable by all popular systems and human-readable without any necessary preprocessing, while only having a slight overhead when compared to binary in this context. TDM can be exchanged both in an XML format or a keyword-value notation (KVN) format.
+	
+	The structure of TDM KVN format has a header and a body and can be divided into three major parts:
+	
+	\begin{itemize}
+		\item a header
+		\item a metadata section (part of body)
+		\item a data section (part of body).
+	\end{itemize}
+	
+	Data section contains Tracking Data records which hold information about observations. Metadata section and data section added together are called a TDM segment. There is no explicit limit on the number of TDM segments in a body. See Table \ref{tab:TDMtable} for a detailed schematic.
+	
+\begin{table}[H]
+\centering
+\caption{TDM structure}
+\label{tab:TDMtable}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Header                & \multicolumn{2}{c|}{}                   & mandatory                  \\ \hline
+\multirow{8}{*}{Body} & \multirow{2}{*}{Segment 1} & Metadata 1 & \multirow{2}{*}{mandatory} \\ \cline{3-3}
+                      &                            & Data 1     &                            \\ \cline{2-4} 
+                      & \multirow{2}{*}{Segment 2} & Metadata 2 & \multirow{2}{*}{optional}  \\ \cline{3-3}
+                      &                            & Data 2     &                            \\ \cline{2-4} 
+                      & \multirow{2}{*}{...}       & ...        & \multirow{2}{*}{optional}  \\ \cline{3-3}
+                      &                            & ...        &                            \\ \cline{2-4} 
+                      & \multirow{2}{*}{Segment n} & Metadata n & \multirow{2}{*}{optional}  \\ \cline{3-3}
+                      &                            & Data n     &                            \\ \hline
+\end{tabular}
+\end{table}
 		
-		\citep{TDMdefinition}
+	\citep{TDMdefinition}
 		
 \subsection{MPC format}
 
