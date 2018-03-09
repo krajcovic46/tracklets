@@ -4,7 +4,6 @@ import com.skrajcovic.datastructures.Declination;
 import com.skrajcovic.datastructures.Rectascension;
 import com.skrajcovic.datastructures.Type;
 import eap.fits.FitsCard;
-import eap.fits.NoSuchFitsCardException;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.time.LocalDateTime;
@@ -48,15 +47,17 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
-        double x = this.getX();
-        double y = this.getY();
         double m = regression.getSlope();
-        double c = regression.getIntercept();
-        double b = (y > 0) ? 1 : -1;
+        double b = regression.getIntercept();
 
-        double distance = (-m * x + b * y - c) / Math.sqrt(Math.pow(m, 2) + Math.pow(b, 2));
+        double x = getX();
+        double y = getY();
 
-        return Math.abs(distance) <= threshold;
+        double coeffy = (y > 0) ? 1 : -1;
+
+        double distance = Math.abs(-m * x + coeffy * y - b) / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
+
+        return distance <= threshold;
     }
 
     public double calculateDeltaTime(FITSObject otherObject) {

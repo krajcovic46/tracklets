@@ -16,7 +16,7 @@ public class FITSLinearRegression {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
                 (HashSet<FITSObject>) batch.getSecondSet(), batch.getRegressions());
 
-        FITSLinearRegression.fitPointsToRegressions(100, batch.getRegressions(),
+        FITSLinearRegression.fitPointsToRegressions(50, batch.getRegressions(),
                 (ArrayList<FITSObject>) batch.getMainData());
 
     }
@@ -50,8 +50,6 @@ public class FITSLinearRegression {
 
                 double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
                 double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
-
-//                System.out.println(averageCombinedSpeed);
 
                 int real = 0;
                 for (FITSObject fitsObject : data) {
