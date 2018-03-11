@@ -5,10 +5,7 @@ import com.skrajcovic.FITSObject;
 import com.skrajcovic.datastructures.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class FITSLinearRegression {
 
@@ -16,8 +13,9 @@ public class FITSLinearRegression {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
                 (HashSet<FITSObject>) batch.getSecondSet(), batch.getRegressions());
 
-        FITSLinearRegression.fitPointsToRegressions(50, batch.getRegressions(),
-                (ArrayList<FITSObject>) batch.getMainData());
+        FITSLinearRegression.fitPointsToRegressions(50, batch);
+
+        System.out.println(batch.getRegressionResults());
 
     }
 
@@ -33,7 +31,10 @@ public class FITSLinearRegression {
     }
 
     //TODO - make the method work on RADEC instead of x/y
-    private static double[] fitPointsToRegressions(double threshold, Map<ArrayList<FITSObject>, SimpleRegression> regressions, ArrayList<FITSObject> data) {
+    private static void fitPointsToRegressions(double threshold, FITSBatch batch) {
+        Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
+        ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();
+
         for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
             FITSObject last = null;
             double lastSpeed = Double.MAX_VALUE;
@@ -45,22 +46,18 @@ public class FITSLinearRegression {
              */
             if (regressionPoints.get(0).getType() == Type.H && regressionPoints.get(1).getType() == Type.H) {
 
-//                System.out.println(regressionPoints.get(0).getType());
-//                System.out.println(regressionPoints.get(1).getType());
-
                 double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
                 double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
 
-                int real = 0;
                 for (FITSObject fitsObject : data) {
                     if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
                             && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)) {
 
-                        System.out.println(fitsObject.getFileName());
-                        System.out.println(fitsObject.getType());
-                        System.out.println(fitsObject.getX());
-                        System.out.println(fitsObject.getY());
-                        System.out.println("-----------------");
+//                        System.out.println(fitsObject.getFileName());
+//                        System.out.println(fitsObject.getType());
+//                        System.out.println(fitsObject.getX());
+//                        System.out.println(fitsObject.getY());
+//                        System.out.println("-----------------");
 
                         if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
@@ -83,14 +80,8 @@ public class FITSLinearRegression {
                     regressionPoints.add(last);
                     regression.getValue().addData(last.getX(), last.getY());
                 }
-                //            for (FITSObject obj : regressionPoints) {
-                //                if (obj.isReal()) {
-                //                    real++;
-                //                }
-                //            }
-                //            return new double[]{regressionPoints.size(), real, (real / (double) regressionPoints.size()) * 100};
+                batch.setRegressionResults(regressionPoints);
             }
         }
-        return null;
     }
 }

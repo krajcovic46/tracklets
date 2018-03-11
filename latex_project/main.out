@@ -12,7 +12,7 @@
 \BOOKMARK [1][-]{section.3.4}{Image processing, segmentation and astrometric reduction}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.5}{Initial orbit determination problem}{chapter.3}% 13
 \BOOKMARK [0][-]{chapter.4}{Existing solutions to the problem of tracklet building}{}% 14
-\BOOKMARK [1][-]{section.4.1}{kd-trees}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.1}{k-d trees}{chapter.4}% 15
 \BOOKMARK [2][-]{subsection.4.1.1}{Efficient intra- and inter-night linking of asteroid detections using kd-trees}{section.4.1}% 16
 \BOOKMARK [1][-]{section.4.2}{Uniform linear motion detection}{chapter.4}% 17
 \BOOKMARK [2][-]{subsection.4.2.1}{Optical observation, image-processing, and detection of space debris in GEO}{section.4.2}% 18

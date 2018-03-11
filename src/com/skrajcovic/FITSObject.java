@@ -98,7 +98,7 @@ public class FITSObject implements Comparable<FITSObject> {
 
 
     public String toString() {
-        return "[" + getFileName() + ", " + getX() + ", " + getY() + ", " + isReal() +"]";
+        return "[" + getFileName() + ", " + getX() + ", " + getY() + ", " + getType() +"]";
     }
 
     public String getFileName() {

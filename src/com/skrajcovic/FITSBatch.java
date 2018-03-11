@@ -1,6 +1,5 @@
 package com.skrajcovic;
 
-import eap.fits.*;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.*;
@@ -10,8 +9,9 @@ public class FITSBatch {
     private Set<FITSObject> fSet;
     private Set<FITSObject> sSet;
     private Map<ArrayList<FITSObject>, SimpleRegression> regressions;
+    private List<FITSObject> regressionResults;
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     public FITSBatch() {
         regressions = new HashMap<>();
@@ -46,6 +46,14 @@ public class FITSBatch {
 
     public Map<ArrayList<FITSObject>, SimpleRegression> getRegressions() {
         return this.regressions;
+    }
+
+    public void setRegressionResults(List<FITSObject> list) {
+        regressionResults = list;
+    }
+
+    public List<FITSObject> getRegressionResults() {
+        return regressionResults;
     }
 
     public String toString() {

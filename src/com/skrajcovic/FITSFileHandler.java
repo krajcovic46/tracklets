@@ -30,7 +30,7 @@ public class FITSFileHandler {
         while ((text = bf.readLine()) != null) {
             if (read) {
                 List<String> textList = Arrays.asList(pattern.split(text.trim()));
-                if (textList.get(0).equals("?") || textList.get(0).equals("H")) {
+                if (textList.get(0).equals("?") || textList.get(0).equals("H") || textList.get(0).equals("S")) {
 
                     String type = textList.get(0);
 

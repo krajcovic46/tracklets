@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  8 MAR 2018 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.23)  11 MAR 2018 20:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1191,46 +1191,76 @@ mr/m/n/12 16
 
 [16 <./images/FMPIAGO2.jpg>]
 Chapter 3.
-) (./04existing_solutions.tex [17
+[17
 
-] [18]
+]) (./04existing_solutions.tex [18]
 Chapter 4.
-) (./05requirements.tex [19
+[19
 
 ]
-Chapter 5.
-[20
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 20
+ []
 
-] [21]
-<images/asciifull.png, id=427, 1583.9175pt x 1220.30907pt>
+[20]
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 21
+ []
+
+[21]
+<images/kd_tree.png, id=421, 903.375pt x 380.92313pt>
+File: images/kd_tree.png Graphic file (type png)
+<use images/kd_tree.png>
+Package pdftex.def Info: images/kd_tree.png  used on input line 38.
+(pdftex.def)             Requested size: 284.52756pt x 119.97397pt.
+
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 22
+ []
+
+[22 <./images/kd_tree.png>]) (./05requirements.tex
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 23
+ []
+
+[23]
+Chapter 5.
+[24
+
+] [25]
+<images/asciifull.png, id=453, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
 Package pdftex.def Info: images/asciifull.png  used on input line 45.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
- [22 <./images/asciifull.png>]
-<images/fits_header_example.png, id=441, 425.33907pt x 425.33907pt>
+ [26 <./images/asciifull.png>]
+<images/fits_header_example.png, id=466, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
 Package pdftex.def Info: images/fits_header_example.png  used on input line 71.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
- [23] [24 <./images/fits_header_example.png>]
-<images/cat_columns.png, id=455, 956.82469pt x 60.225pt>
+ [27] [28 <./images/fits_header_example.png>]
+<images/cat_columns.png, id=481, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
 Package pdftex.def Info: images/cat_columns.png  used on input line 87.
 (pdftex.def)             Requested size: 390.0pt x 24.5472pt.
- [25 <./images/cat_columns.png>]) (./06proposed_solutions.tex [26]
+ [29 <./images/cat_columns.png>]) (./06proposed_solutions.tex [30]
 Chapter 6.
-) (./07design_implementation.tex [27
+) (./07design_implementation.tex [31
 
 ]
 Chapter 7.
-) (./08results.tex [28
+) (./08results.tex [32
 
 ]
 Chapter 8.
-[29
+[33
 
 ]
 Overfull \hbox (1.7667pt too wide) in paragraph at lines 24--25
@@ -1238,19 +1268,19 @@ Overfull \hbox (1.7667pt too wide) in paragraph at lines 24--25
 or-ma-tion about
  []
 
-[30]
-<images/tdm_example.png, id=511, 379.4175pt x 592.1322pt>
+[34]
+<images/tdm_example.png, id=537, 379.4175pt x 592.1322pt>
 File: images/tdm_example.png Graphic file (type png)
 <use images/tdm_example.png>
 Package pdftex.def Info: images/tdm_example.png  used on input line 54.
 (pdftex.def)             Requested size: 284.52756pt x 444.05289pt.
- [31] [32 <./images/tdm_example.png>] [33]) (./09conclusion.tex [34]
+ [35] [36 <./images/tdm_example.png>] [37]) (./09conclusion.tex [38]
 Chapter 9.
-) [35
+) [39
 
 ] (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [36
+ [40
 
 
 ]
@@ -1259,7 +1289,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AA8B8786EC555A27E20998C062E49A7F;2732.
+(rerunfilecheck)             Checksum: A75CC0B9E1E2E96C8C6CC9A0007AA47C;2733.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1267,10 +1297,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 10956 strings out of 492985
- 157081 string characters out of 6136283
- 249761 words of memory out of 5000000
- 14145 multiletter control sequences out of 15000+600000
+ 10970 strings out of 492985
+ 157272 string characters out of 6136283
+ 249853 words of memory out of 5000000
+ 14151 multiletter control sequences out of 15000+600000
  18171 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,39p,2103b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1287,10 +1317,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/cm-super/sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
 cm-super/sfti1200.pfb>
-Output written on main.pdf (46 pages, 4046254 bytes).
+Output written on main.pdf (50 pages, 4089421 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 538 compressed objects within 6 object streams
- 142 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 561 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 380 words of extra memory for PDF output out of 10000 (max. 10000000)
 
