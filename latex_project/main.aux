@@ -101,82 +101,84 @@
 \newlabel{subsec:intra_inter}{{4.1.1}{20}{Efficient intra- and inter-night linking of asteroid detections using kd-trees}{subsection.4.1.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Pan-STARRS}{20}{section*.17}}
 \@writefile{toc}{\contentsline {subsubsection}{Pan-STARRS MOPS}{21}{section*.18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces TDM format example\relax }}{22}{figure.caption.19}}
-\newlabel{fig:kd_tree}{{4.1}{22}{TDM format example\relax }{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Uniform linear motion detection}{23}{section.4.2}}
-\newlabel{sec:linear_motion}{{4.2}{23}{Uniform linear motion detection}{section.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Optical observation, image-processing, and detection of space debris in GEO}{23}{subsection.4.2.1}}
-\newlabel{subsec:linear_geo}{{4.2.1}{23}{Optical observation, image-processing, and detection of space debris in GEO}{subsection.4.2.1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Technical and practical requirements}{24}{chapter.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces k-d tree schematic.\relax }}{22}{figure.caption.19}}
+\newlabel{fig:kd_tree}{{4.1}{22}{k-d tree schematic.\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces k-d tree temporal search.\relax }}{23}{figure.caption.20}}
+\newlabel{fig:kd_tree_time}{{4.2}{23}{k-d tree temporal search.\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Uniform linear motion detection}{24}{section.4.2}}
+\newlabel{sec:linear_motion}{{4.2}{24}{Uniform linear motion detection}{section.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Optical observation, image-processing, and detection of space debris in GEO}{24}{subsection.4.2.1}}
+\newlabel{subsec:linear_geo}{{4.2.1}{24}{Optical observation, image-processing, and detection of space debris in GEO}{subsection.4.2.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Technical and practical requirements}{25}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:requirements}{{5}{24}{Technical and practical requirements}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Input data}{24}{section.5.1}}
-\newlabel{sec:input_data}{{5.1}{24}{Input data}{section.5.1}{}}
+\newlabel{chap:requirements}{{5}{25}{Technical and practical requirements}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Input data}{25}{section.5.1}}
+\newlabel{sec:input_data}{{5.1}{25}{Input data}{section.5.1}{}}
 \citation{FITSdefinition}
 \citation{FITSdefinition}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Flexible Image Transport System files}{25}{subsection.5.1.1}}
-\newlabel{sec:fits_files}{{5.1.1}{25}{Flexible Image Transport System files}{subsection.5.1.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{File structure}{25}{section*.20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Flexible Image Transport System files}{26}{subsection.5.1.1}}
+\newlabel{sec:fits_files}{{5.1.1}{26}{Flexible Image Transport System files}{subsection.5.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{File structure}{26}{section*.21}}
 \citation{FITSdefinition}
-\@writefile{toc}{\contentsline {subsubsection}{Data arrays}{26}{section*.21}}
-\@writefile{toc}{\contentsline {subsubsection}{Headers}{26}{section*.22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Allowed ASCII characters\relax }}{26}{figure.caption.23}}
-\newlabel{fig:allowed_ascii}{{5.1}{26}{Allowed ASCII characters\relax }{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Data arrays}{27}{section*.22}}
+\@writefile{toc}{\contentsline {subsubsection}{Headers}{27}{section*.23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Allowed ASCII characters\relax }}{27}{figure.caption.24}}
+\newlabel{fig:allowed_ascii}{{5.1}{27}{Allowed ASCII characters\relax }{figure.caption.24}{}}
 \citation{FITSdefinition}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces FITS Header example\relax }}{28}{figure.caption.24}}
-\newlabel{fig:fits_header}{{5.2}{28}{FITS Header example\relax }{figure.caption.24}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}.cat files}{28}{subsection.5.1.2}}
-\newlabel{sec:cat_files}{{5.1.2}{28}{.cat files}{subsection.5.1.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Contents of a .cat file}{29}{section*.25}}
-\newlabel{subsubsec:content_cat}{{5.1.2}{29}{Contents of a .cat file}{section*.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces .cat header columns\relax }}{29}{figure.caption.26}}
-\newlabel{fig:cat_header}{{5.3}{29}{.cat header columns\relax }{figure.caption.26}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{30}{subsection.5.1.3}}
-\newlabel{sec:server_param}{{5.1.3}{30}{Processing server parameters}{subsection.5.1.3}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Proposed solutions}{31}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces FITS Header example\relax }}{29}{figure.caption.25}}
+\newlabel{fig:fits_header}{{5.2}{29}{FITS Header example\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}.cat files}{29}{subsection.5.1.2}}
+\newlabel{sec:cat_files}{{5.1.2}{29}{.cat files}{subsection.5.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Contents of a .cat file}{30}{section*.26}}
+\newlabel{subsubsec:content_cat}{{5.1.2}{30}{Contents of a .cat file}{section*.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces .cat header columns\relax }}{30}{figure.caption.27}}
+\newlabel{fig:cat_header}{{5.3}{30}{.cat header columns\relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{31}{subsection.5.1.3}}
+\newlabel{sec:server_param}{{5.1.3}{31}{Processing server parameters}{subsection.5.1.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Proposed solutions}{32}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:proposed_solutions}{{6}{31}{Proposed solutions}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Use of linear regression}{31}{section.6.1}}
-\newlabel{sec:linear_regression}{{6.1}{31}{Use of linear regression}{section.6.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Use of neural network}{31}{section.6.2}}
-\newlabel{sec:neural}{{6.2}{31}{Use of neural network}{section.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Use of the Initial Orbit Determination algorithms}{31}{section.6.3}}
-\newlabel{sec:IDO}{{6.3}{31}{Use of the Initial Orbit Determination algorithms}{section.6.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Use of Hough transform}{31}{section.6.4}}
-\newlabel{sec:hough}{{6.4}{31}{Use of Hough transform}{section.6.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Design and implementation}{32}{chapter.7}}
+\newlabel{chap:proposed_solutions}{{6}{32}{Proposed solutions}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Use of linear regression}{32}{section.6.1}}
+\newlabel{sec:linear_regression}{{6.1}{32}{Use of linear regression}{section.6.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Use of neural network}{32}{section.6.2}}
+\newlabel{sec:neural}{{6.2}{32}{Use of neural network}{section.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Use of the Initial Orbit Determination algorithms}{32}{section.6.3}}
+\newlabel{sec:IDO}{{6.3}{32}{Use of the Initial Orbit Determination algorithms}{section.6.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Use of Hough transform}{32}{section.6.4}}
+\newlabel{sec:hough}{{6.4}{32}{Use of Hough transform}{section.6.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Design and implementation}{33}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:design}{{7}{32}{Design and implementation}{chapter.7}{}}
+\newlabel{chap:design}{{7}{33}{Design and implementation}{chapter.7}{}}
 \citation{ccsds}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Results}{33}{chapter.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Results}{34}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:results}{{8}{33}{Results}{chapter.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}TDM and MPC formats, CCSDS}{33}{section.8.1}}
-\newlabel{sec:tdm_ccsds}{{8.1}{33}{TDM and MPC formats, CCSDS}{section.8.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}CCSDS}{33}{subsection.8.1.1}}
-\newlabel{subsec:ccsds}{{8.1.1}{33}{CCSDS}{subsection.8.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}TDM format}{33}{subsection.8.1.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces TDM structure\relax }}{34}{table.caption.27}}
-\newlabel{tab:TDMtable}{{8.1}{34}{TDM structure\relax }{table.caption.27}{}}
+\newlabel{chap:results}{{8}{34}{Results}{chapter.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}TDM and MPC formats, CCSDS}{34}{section.8.1}}
+\newlabel{sec:tdm_ccsds}{{8.1}{34}{TDM and MPC formats, CCSDS}{section.8.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}CCSDS}{34}{subsection.8.1.1}}
+\newlabel{subsec:ccsds}{{8.1.1}{34}{CCSDS}{subsection.8.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}TDM format}{34}{subsection.8.1.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces TDM structure\relax }}{35}{table.caption.28}}
+\newlabel{tab:TDMtable}{{8.1}{35}{TDM structure\relax }{table.caption.28}{}}
 \citation{TDMdefinition}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces TDM format example\relax }}{36}{figure.caption.28}}
-\newlabel{fig:tdm_example}{{8.1}{36}{TDM format example\relax }{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}MPC}{36}{subsection.8.1.3}}
-\newlabel{sec:mpc}{{8.1.3}{36}{MPC}{subsection.8.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}MPC format}{37}{subsection.8.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces TDM format example\relax }}{37}{figure.caption.29}}
+\newlabel{fig:tdm_example}{{8.1}{37}{TDM format example\relax }{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}MPC}{37}{subsection.8.1.3}}
+\newlabel{sec:mpc}{{8.1.3}{37}{MPC}{subsection.8.1.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}MPC format}{38}{subsection.8.1.4}}
 \citation{mpc}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Visualization of results}{38}{section.8.2}}
-\newlabel{sec:visualization}{{8.2}{38}{Visualization of results}{section.8.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Parameters}{38}{section.8.3}}
-\newlabel{sec:parameters}{{8.3}{38}{Parameters}{section.8.3}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion}{39}{chapter.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Visualization of results}{39}{section.8.2}}
+\newlabel{sec:visualization}{{8.2}{39}{Visualization of results}{section.8.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Parameters}{39}{section.8.3}}
+\newlabel{sec:parameters}{{8.3}{39}{Parameters}{section.8.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion}{40}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusion}{{9}{39}{Conclusion}{chapter.9}{}}
+\newlabel{chap:conclusion}{{9}{40}{Conclusion}{chapter.9}{}}
 \citation{*}
 \bibstyle{apalike}
 \bibdata{references}
