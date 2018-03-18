@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  13 MAR 2018 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.23)  18 MAR 2018 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,7 +1050,7 @@ mr/m/n/12 3
 [3]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 20.
+(hyperref)                than one, level fixed on input line 21.
 
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
@@ -1059,11 +1059,17 @@ mr/m/n/12 4
  []
 
 [4]
-<images/paintflakes.jpg, id=291, 361.35pt x 320.8788pt>
+<images/paintflakes.jpg, id=296, 361.35pt x 320.8788pt>
 File: images/paintflakes.jpg Graphic file (type jpg)
 <use images/paintflakes.jpg>
-Package pdftex.def Info: images/paintflakes.jpg  used on input line 27.
+Package pdftex.def Info: images/paintflakes.jpg  used on input line 29.
 (pdftex.def)             Requested size: 227.62204pt x 202.13022pt.
+<images/hypervelocitycollision.jpg, id=300, 682.9515pt x 523.9575pt>
+File: images/hypervelocitycollision.jpg Graphic file (type jpg)
+<use images/hypervelocitycollision.jpg>
+Package pdftex.def Info: images/hypervelocitycollision.jpg  used on input line 
+38.
+(pdftex.def)             Requested size: 227.62204pt x 174.6334pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
@@ -1071,12 +1077,11 @@ mr/m/n/12 5
  []
 
 [5 <./images/paintflakes.jpg>]
-<images/hypervelocitycollision.jpg, id=304, 682.9515pt x 523.9575pt>
-File: images/hypervelocitycollision.jpg Graphic file (type jpg)
-<use images/hypervelocitycollision.jpg>
-Package pdftex.def Info: images/hypervelocitycollision.jpg  used on input line 
-36.
-(pdftex.def)             Requested size: 227.62204pt x 174.6334pt.
+<images/slag.jpg, id=312, 545.99985pt x 427.1157pt>
+File: images/slag.jpg Graphic file (type jpg)
+<use images/slag.jpg>
+Package pdftex.def Info: images/slag.jpg  used on input line 47.
+(pdftex.def)             Requested size: 227.62204pt x 178.06436pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
@@ -1084,17 +1089,16 @@ mr/m/n/12 6
  []
 
 [6 <./images/hypervelocitycollision.jpg>]
-<images/slag.jpg, id=315, 545.99985pt x 427.1157pt>
-File: images/slag.jpg Graphic file (type jpg)
-<use images/slag.jpg>
-Package pdftex.def Info: images/slag.jpg  used on input line 45.
-(pdftex.def)             Requested size: 227.62204pt x 178.06436pt.
-
-Overfull \hbox (2.60674pt too wide) in paragraph at lines 50--51
+Overfull \hbox (2.60674pt too wide) in paragraph at lines 52--53
 []\T1/cmr/m/n/12 Another sim-i-lar but rare type is droplets of sodium-potassiu
 m al-loy (NaK),
  []
 
+<images/westfordneedles.jpg, id=320, 763.85374pt x 429.605pt>
+File: images/westfordneedles.jpg Graphic file (type jpg)
+<use images/westfordneedles.jpg>
+Package pdftex.def Info: images/westfordneedles.jpg  used on input line 58.
+(pdftex.def)             Requested size: 227.62204pt x 128.0172pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
@@ -1102,12 +1106,6 @@ mr/m/n/12 7
  []
 
 [7 <./images/slag.jpg>]
-<images/westfordneedles.jpg, id=323, 763.85374pt x 429.605pt>
-File: images/westfordneedles.jpg Graphic file (type jpg)
-<use images/westfordneedles.jpg>
-Package pdftex.def Info: images/westfordneedles.jpg  used on input line 56.
-(pdftex.def)             Requested size: 227.62204pt x 128.0172pt.
-
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 8
@@ -1120,10 +1118,10 @@ mr/m/n/12 9
  []
 
 [9]
-<images/upperstage.jpg, id=342, 377.91188pt x 376.40625pt>
+<images/upperstage.jpg, id=348, 377.91188pt x 376.40625pt>
 File: images/upperstage.jpg Graphic file (type jpg)
 <use images/upperstage.jpg>
-Package pdftex.def Info: images/upperstage.jpg  used on input line 78.
+Package pdftex.def Info: images/upperstage.jpg  used on input line 81.
 (pdftex.def)             Requested size: 227.62204pt x 226.71275pt.
 
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
@@ -1131,168 +1129,156 @@ Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 mr/m/n/12 10
  []
 
-[10]
+[10 <./images/upperstage.jpg>]
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 11
  []
 
-[11 <./images/upperstage.jpg>]
+[11]
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 12
  []
 
 [12]
+<images/ESAOGS1.jpg, id=372, 700.6175pt x 708.6475pt>
+File: images/ESAOGS1.jpg Graphic file (type jpg)
+<use images/ESAOGS1.jpg>
+Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 116.
+(pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
+<images/ESAOGS2.jpg, id=374, 501.875pt x 360.34625pt>
+File: images/ESAOGS2.jpg Graphic file (type jpg)
+<use images/ESAOGS2.jpg>
+Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 125.
+(pdftex.def)             Requested size: 227.62204pt x 163.43544pt.
+
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 13
  []
 
-[13]
-<images/ESAOGS1.jpg, id=371, 700.6175pt x 708.6475pt>
-File: images/ESAOGS1.jpg Graphic file (type jpg)
-<use images/ESAOGS1.jpg>
-Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 113.
-(pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
-<images/ESAOGS2.jpg, id=373, 501.875pt x 360.34625pt>
-File: images/ESAOGS2.jpg Graphic file (type jpg)
-<use images/ESAOGS2.jpg>
-Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 122.
-(pdftex.def)             Requested size: 227.62204pt x 163.43544pt.
-
+[13 <./images/ESAOGS1.jpg> <./images/ESAOGS2.jpg>]
+<images/FMPIAGO1.jpg, id=381, 1084.05pt x 953.5625pt>
+File: images/FMPIAGO1.jpg Graphic file (type jpg)
+<use images/FMPIAGO1.jpg>
+Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 137.
+(pdftex.def)             Requested size: 227.62204pt x 200.21039pt.
+<images/FMPIAGO2.jpg, id=383, 120.45pt x 79.9788pt>
+File: images/FMPIAGO2.jpg Graphic file (type jpg)
+<use images/FMPIAGO2.jpg>
+Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 146.
+(pdftex.def)             Requested size: 227.62204pt x 151.15585pt.
+) (./03object_dynamics.tex
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 14
  []
 
-[14 <./images/ESAOGS1.jpg> <./images/ESAOGS2.jpg>]
-<images/FMPIAGO1.jpg, id=380, 1084.05pt x 953.5625pt>
-File: images/FMPIAGO1.jpg Graphic file (type jpg)
-<use images/FMPIAGO1.jpg>
-Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 134.
-(pdftex.def)             Requested size: 227.62204pt x 200.21039pt.
-<images/FMPIAGO2.jpg, id=382, 120.45pt x 79.9788pt>
-File: images/FMPIAGO2.jpg Graphic file (type jpg)
-<use images/FMPIAGO2.jpg>
-Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 143.
-(pdftex.def)             Requested size: 227.62204pt x 151.15585pt.
-) (./03object_dynamics.tex
+[14 <./images/FMPIAGO1.jpg>]
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 15
  []
 
-[15 <./images/FMPIAGO1.jpg>]
-Overfull \hbox (28.28246pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
-mr/m/n/12 16
- []
-
-[16 <./images/FMPIAGO2.jpg>]
+[15 <./images/FMPIAGO2.jpg>]
 Chapter 3.
-[17
+[16
 
-]) (./04existing_solutions.tex [18]
+]) (./04existing_solutions.tex [17]
 Chapter 4.
-[19
+[18
 
 ]
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 19
+ []
+
+[19]
+<images/kd_tree.png, id=416, 903.375pt x 380.92313pt>
+File: images/kd_tree.png Graphic file (type png)
+<use images/kd_tree.png>
+Package pdftex.def Info: images/kd_tree.png  used on input line 25.
+(pdftex.def)             Requested size: 284.52756pt x 119.97397pt.
+
 Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
 ING \T1/cmr/m/n/12 20
  []
 
 [20]
+<images/kd_tree_time.png, id=424, 363.60844pt x 146.04562pt>
+File: images/kd_tree_time.png Graphic file (type png)
+<use images/kd_tree_time.png>
+Package pdftex.def Info: images/kd_tree_time.png  used on input line 36.
+(pdftex.def)             Requested size: 284.52756pt x 114.28503pt.
+
 Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
 ING \T1/cmr/m/n/12 21
  []
 
-[21]
-<images/kd_tree.png, id=421, 903.375pt x 380.92313pt>
-File: images/kd_tree.png Graphic file (type png)
-<use images/kd_tree.png>
-Package pdftex.def Info: images/kd_tree.png  used on input line 38.
-(pdftex.def)             Requested size: 284.52756pt x 119.97397pt.
-
+[21 <./images/kd_tree.png>]) (./05requirements.tex
 Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
 ING \T1/cmr/m/n/12 22
  []
 
-[22 <./images/kd_tree.png>]
-<images/kd_tree_time.png, id=429, 363.60844pt x 146.04562pt>
-File: images/kd_tree_time.png Graphic file (type png)
-<use images/kd_tree_time.png>
-Package pdftex.def Info: images/kd_tree_time.png  used on input line 49.
-(pdftex.def)             Requested size: 284.52756pt x 114.28503pt.
-) (./05requirements.tex
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 23
- []
-
-[23 <./images/kd_tree_time.png>]
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 24
- []
-
-[24]
+[22 <./images/kd_tree_time.png>]
 Chapter 5.
-[25
+[23
 
-] [26]
-<images/asciifull.png, id=460, 1583.9175pt x 1220.30907pt>
+] [24]
+<images/asciifull.png, id=457, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
 Package pdftex.def Info: images/asciifull.png  used on input line 45.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
- [27 <./images/asciifull.png>]
-<images/fits_header_example.png, id=474, 425.33907pt x 425.33907pt>
+ [25 <./images/asciifull.png>]
+<images/fits_header_example.png, id=470, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
 Package pdftex.def Info: images/fits_header_example.png  used on input line 71.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
- [28] [29 <./images/fits_header_example.png>]
-<images/cat_columns.png, id=488, 956.82469pt x 60.225pt>
+ [26] [27 <./images/fits_header_example.png>]
+<images/cat_columns.png, id=485, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
 Package pdftex.def Info: images/cat_columns.png  used on input line 87.
 (pdftex.def)             Requested size: 390.0pt x 24.5472pt.
- [30 <./images/cat_columns.png>]) (./06proposed_solutions.tex [31]
+ [28 <./images/cat_columns.png>]) (./06proposed_solutions.tex [29]
 Chapter 6.
-) (./07design_implementation.tex [32
+) (./07design_implementation.tex [30
 
 ]
 Chapter 7.
-) (./08results.tex [33
+) (./08results.tex [31
 
 ]
 Chapter 8.
-[34
+[32
 
 ]
-Overfull \hbox (1.7667pt too wide) in paragraph at lines 24--25
+Overfull \hbox (1.7667pt too wide) in paragraph at lines 25--26
 []\T1/cmr/m/n/12 Data sec-tion con-tains Track-ing Data records which hold in-f
 or-ma-tion about
  []
 
-[35]
-<images/tdm_example.png, id=545, 379.4175pt x 592.1322pt>
+[33]
+<images/tdm_example.png, id=543, 379.4175pt x 592.1322pt>
 File: images/tdm_example.png Graphic file (type png)
 <use images/tdm_example.png>
-Package pdftex.def Info: images/tdm_example.png  used on input line 54.
+Package pdftex.def Info: images/tdm_example.png  used on input line 55.
 (pdftex.def)             Requested size: 284.52756pt x 444.05289pt.
- [36] [37 <./images/tdm_example.png>] [38]) (./09conclusion.tex [39]
+ [34] [35 <./images/tdm_example.png>] [36]) (./09conclusion.tex [37]
 Chapter 9.
-) [40
+) [38
 
 ] (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [41
+ [39
 
 
 ]
@@ -1309,8 +1295,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 10978 strings out of 492985
- 157441 string characters out of 6136283
+ 10976 strings out of 492985
+ 157427 string characters out of 6136283
  249914 words of memory out of 5000000
  14156 multiletter control sequences out of 15000+600000
  18171 words of font info for 46 fonts, out of 8000000 for 9000
@@ -1329,10 +1315,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/cm-super/sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
 cm-super/sfti1200.pfb>
-Output written on main.pdf (51 pages, 4108050 bytes).
+Output written on main.pdf (49 pages, 4105692 bytes).
 PDF statistics:
- 657 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 151 named destinations out of 1000 (max. 500000)
+ 653 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
  385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
