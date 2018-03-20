@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.23)  18 MAR 2018 16:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  20 MAR 2018 19:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,6 +908,9 @@ LaTeX Info: Redefining \cite on input line 694.
 
 LaTeX Warning: Label `img:logo' multiply defined.
 
+
+LaTeX Warning: Label `fig:kd_tree_time' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1118,7 +1121,7 @@ mr/m/n/12 9
  []
 
 [9]
-<images/upperstage.jpg, id=348, 377.91188pt x 376.40625pt>
+<images/upperstage.jpg, id=347, 377.91188pt x 376.40625pt>
 File: images/upperstage.jpg Graphic file (type jpg)
 <use images/upperstage.jpg>
 Package pdftex.def Info: images/upperstage.jpg  used on input line 81.
@@ -1136,17 +1139,18 @@ mr/m/n/12 11
  []
 
 [11]
+<images/ESAOGS1.jpg, id=366, 700.6175pt x 708.6475pt>
+File: images/ESAOGS1.jpg Graphic file (type jpg)
+<use images/ESAOGS1.jpg>
+Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 116.
+(pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
+
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 12
  []
 
 [12]
-<images/ESAOGS1.jpg, id=372, 700.6175pt x 708.6475pt>
-File: images/ESAOGS1.jpg Graphic file (type jpg)
-<use images/ESAOGS1.jpg>
-Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 116.
-(pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
 <images/ESAOGS2.jpg, id=374, 501.875pt x 360.34625pt>
 File: images/ESAOGS2.jpg Graphic file (type jpg)
 <use images/ESAOGS2.jpg>
@@ -1196,7 +1200,7 @@ ING \T1/cmr/m/n/12 19
  []
 
 [19]
-<images/kd_tree.png, id=416, 903.375pt x 380.92313pt>
+<images/kd_tree.png, id=417, 903.375pt x 380.92313pt>
 File: images/kd_tree.png Graphic file (type png)
 <use images/kd_tree.png>
 Package pdftex.def Info: images/kd_tree.png  used on input line 25.
@@ -1207,8 +1211,8 @@ Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 ING \T1/cmr/m/n/12 20
  []
 
-[20]
-<images/kd_tree_time.png, id=424, 363.60844pt x 146.04562pt>
+[20 <./images/kd_tree.png>]
+<images/kd_tree_time.png, id=425, 363.60844pt x 146.04562pt>
 File: images/kd_tree_time.png Graphic file (type png)
 <use images/kd_tree_time.png>
 Package pdftex.def Info: images/kd_tree_time.png  used on input line 36.
@@ -1219,46 +1223,59 @@ Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 ING \T1/cmr/m/n/12 21
  []
 
-[21 <./images/kd_tree.png>]) (./05requirements.tex
+[21 <./images/kd_tree_time.png>]
+<images/uniform_linear_motion.png, id=434, 200.24812pt x 289.83281pt>
+File: images/uniform_linear_motion.png Graphic file (type png)
+<use images/uniform_linear_motion.png>
+Package pdftex.def Info: images/uniform_linear_motion.png  used on input line 6
+1.
+(pdftex.def)             Requested size: 227.62204pt x 329.47084pt.
+) (./05requirements.tex
 Overfull \hbox (92.2198pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
 ING \T1/cmr/m/n/12 22
  []
 
-[22 <./images/kd_tree_time.png>]
-Chapter 5.
-[23
+[22]
+Overfull \hbox (92.2198pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
+ING \T1/cmr/m/n/12 23
+ []
 
-] [24]
-<images/asciifull.png, id=457, 1583.9175pt x 1220.30907pt>
+[23 <./images/uniform_linear_motion.png>]
+Chapter 5.
+[24
+
+] [25]
+<images/asciifull.png, id=465, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
 Package pdftex.def Info: images/asciifull.png  used on input line 45.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
- [25 <./images/asciifull.png>]
-<images/fits_header_example.png, id=470, 425.33907pt x 425.33907pt>
+ [26 <./images/asciifull.png>]
+<images/fits_header_example.png, id=478, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
 Package pdftex.def Info: images/fits_header_example.png  used on input line 71.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
- [26] [27 <./images/fits_header_example.png>]
-<images/cat_columns.png, id=485, 956.82469pt x 60.225pt>
+ [27] [28 <./images/fits_header_example.png>]
+<images/cat_columns.png, id=493, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
 Package pdftex.def Info: images/cat_columns.png  used on input line 87.
 (pdftex.def)             Requested size: 390.0pt x 24.5472pt.
- [28 <./images/cat_columns.png>]) (./06proposed_solutions.tex [29]
+ [29 <./images/cat_columns.png>]) (./06proposed_solutions.tex [30]
 Chapter 6.
-) (./07design_implementation.tex [30
+) (./07design_implementation.tex [31
 
 ]
 Chapter 7.
-) (./08results.tex [31
+) (./08results.tex [32
 
 ]
 Chapter 8.
-[32
+[33
 
 ]
 Overfull \hbox (1.7667pt too wide) in paragraph at lines 25--26
@@ -1266,19 +1283,19 @@ Overfull \hbox (1.7667pt too wide) in paragraph at lines 25--26
 or-ma-tion about
  []
 
-[33]
-<images/tdm_example.png, id=543, 379.4175pt x 592.1322pt>
+[34]
+<images/tdm_example.png, id=551, 379.4175pt x 592.1322pt>
 File: images/tdm_example.png Graphic file (type png)
 <use images/tdm_example.png>
 Package pdftex.def Info: images/tdm_example.png  used on input line 55.
 (pdftex.def)             Requested size: 284.52756pt x 444.05289pt.
- [34] [35 <./images/tdm_example.png>] [36]) (./09conclusion.tex [37]
+ [35] [36 <./images/tdm_example.png>] [37]) (./09conclusion.tex [38]
 Chapter 9.
-) [38
+) [39
 
 ] (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [39
+ [40
 
 
 ]
@@ -1295,10 +1312,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 10976 strings out of 492985
- 157427 string characters out of 6136283
- 249914 words of memory out of 5000000
- 14156 multiletter control sequences out of 15000+600000
+ 10985 strings out of 492985
+ 157645 string characters out of 6136283
+ 249947 words of memory out of 5000000
+ 14160 multiletter control sequences out of 15000+600000
  18171 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,39p,2103b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1315,10 +1332,10 @@ texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist
 /fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/typ
 e1/public/cm-super/sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
 cm-super/sfti1200.pfb>
-Output written on main.pdf (49 pages, 4105692 bytes).
+Output written on main.pdf (50 pages, 4122104 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 149 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 572 compressed objects within 6 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
 
