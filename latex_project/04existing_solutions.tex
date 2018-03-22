@@ -46,7 +46,7 @@
 
 \subsection{Optical observation, image-processing, and detection of space debris in GEO}\label{subsec:linear_geo}
 
-	The paper describes an efficient detection of space debris on GEO orbit using a telescope with 3.17° FOV producing images with a resolution of $2048 x 2048$. The authors describe image processing and the successive application of the uniform linear motion algorithm to detect objects which are then matched with the USSTRATCOM catalogue.
+	The paper describes an efficient detection of space debris on GEO orbit using a telescope with 3.17° FOV producing images with a resolution of $2048 x 2048$. The authors describe image processing and the successive application of the uniform linear motion algorithm to detect objects which are then either matched with the USSTRATCOM catalogue or classified as newly discovered debris.
 	
 \subsubsection{Image processing}
 
@@ -54,11 +54,13 @@
 	
 \subsubsection{Detection algorithm}
 
-		
+	The detection algorithm is based on the facts mentioned in Section \ref{sec:linear_motion} - when we select small enough part of the whole trajectory of an object, the part adheres to the uniform linear motion. After selecting an appropriate candidate from an image (an object having sufficient intensity and correct shape), the next image is considered and only objects that show uniform linear motion and are the brightest are picked. This procedure is repeated until there are 9 positive matches out of 18 light frames and the object is marked as orbital object. See Figure \ref{fig:u_l_m} for illustration of the detection algorithm.
+	
+	In conclusion, the algorithm has proven to be effective and efficient and lead to discovery of more than 200 unidentified objects in the span of five nights.
 
 	\begin{figure}[H]
 	\centering
-	  \includegraphics[width=8cm]{images/uniform_linear_motion}
+	  \includegraphics[width=6cm]{images/uniform_linear_motion}
 		  \caption{Uniform linear motion throughout successive images.}
-	  \label{fig:kd_tree_time}
+	  \label{fig:u_l_m}
 	\end{figure}

@@ -9,7 +9,7 @@
 \BOOKMARK [1][-]{section.3.1}{Kepler's laws of orbital motion}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.2}{Equatorial coordinate system}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.3}{CCD and image reference frame}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.4}{Image processing, segmentation and astrometric reduction}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.4}{Astrometric reduction}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.5}{Initial orbit determination problem}{chapter.3}% 13
 \BOOKMARK [0][-]{chapter.4}{Existing solutions to the problem of tracklet building}{}% 14
 \BOOKMARK [1][-]{section.4.1}{k-d trees}{chapter.4}% 15

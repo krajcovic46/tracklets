@@ -2,7 +2,7 @@
 
 \section{TDM and MPC formats, CCSDS}\label{sec:tdm_ccsds}
 
-	This section provides insight over standardised output data formats used in this work and encouraged by multinational agencies. 
+	This section provides a short insight over standardised output data formats used in this thesis and encouraged by multinational agencies. 
 
 \subsection{CCSDS}\label{subsec:ccsds}
 
@@ -22,7 +22,7 @@
 		\item a data section (part of body).
 	\end{itemize}
 	
-	Data section contains Tracking Data records which hold information about observations. Metadata section and data section added together are called a TDM segment. There is no explicit limit on the number of TDM segments in a body. See Table \ref{tab:TDMtable} for a detailed schematic.
+	Data section contains Tracking Data records which hold information about observations. Metadata section and data section added together are called a TDM segment. There is no explicit limit on the number of TDM segments in a body. See Table \ref{tab:TDMtable} for a more detailed schematic.
 	
 \begin{table}[H]
 \centering
@@ -42,11 +42,11 @@ Header                & \multicolumn{2}{c|}{}                   & mandatory     
 \end{tabular}
 \end{table}
 
-	The arrangement of a TDM data section adheres to the KVN format in that it contains records in keyword-value pairs spanning across one line. However, each record has to have a timetag indicating the time associated with the tracking \citep{TDMdefinition}.
+	The arrangement of a TDM data section adheres to the KVN format in that it contains records in keyword-value pairs spanning across one line. However, each record has to have a time tag indicating the time associated with the tracking \citep{TDMdefinition}.
 
 	TDM header contains information that identifies the basic parameters of the message in the KVN format, such as \emph{CREATION\_DATE}, which provides data creation date and time in UTC, or \emph{ORIGINATOR}, which provides information about the file's creator. 
 	
-	The purpose of TDM metadata's section is to contain configuration details applicable to each TDM data section in the same TDM segment. An example of commonly used metadata keywords are \emph{START\_TIME}, a keyword specifying the starting time of observations, and \emph{STOP\_TIME}, a keyword specifying the ending time of observations in the following TDM data sections.
+	The purpose of TDM meta-data's section is to contain configuration details applicable to each TDM data section in the same TDM segment. An example of commonly used metadata keywords are \emph{START\_TIME}, a keyword specifying the starting time of observations, and \emph{STOP\_TIME}, a keyword specifying the ending time of observations in the following TDM data sections.
 	
 	See Figure \ref{fig:tdm_example} for a visual example of a TDM file.
 	
@@ -63,7 +63,7 @@ Header                & \multicolumn{2}{c|}{}                   & mandatory     
 	
 \subsection{MPC format}
 
-	The officially MPC endorsed format is a text file with exactly prescribed form. The format is divided into columns. Each column equals one character in a text file. The columns are implicitly set, therefore the format does not contain any headers. There are four kinds of formats - for minor planets, for comets, for natural satellites and for minor planets, comets and natural satellites. In our case, we are using the last type (minor planets, comets and natural satellites).
+	The officially MPC endorsed format is a text file with exactly prescribed form. The format is divided into columns where each column equals one character in a text file. The columns are explicitly set, therefore the format does not contain any headers. There are four kinds of formats - for minor planets, for comets, for natural satellites and for minor planets, comets and natural satellites. In our case, we are using the last type.
 	
 	The designation for every column is as follows:
 	
