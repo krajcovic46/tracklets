@@ -10,45 +10,45 @@ Warning--entry type for "mpc" isn't style-file defined
 Warning--I didn't find a database entry for ""
 Warning--to sort, need author or key in FITSdefinition
 Warning--to sort, need author or key in TDMdefinition
-You've used 8 entries,
+You've used 9 entries,
             1935 wiz_defined-function locations,
-            510 strings with 4600 characters,
-and the built_in function-call counts, 2049 in all, are:
-= -- 203
-> -- 48
-< -- 6
-+ -- 14
-- -- 14
-* -- 138
-:= -- 382
-add.period$ -- 24
-call.type$ -- 8
-change.case$ -- 42
-chr.to.int$ -- 8
-cite$ -- 12
-duplicate$ -- 96
-empty$ -- 155
-format.name$ -- 22
-if$ -- 390
+            515 strings with 4704 characters,
+and the built_in function-call counts, 2324 in all, are:
+= -- 228
+> -- 55
+< -- 7
++ -- 16
+- -- 16
+* -- 155
+:= -- 433
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 47
+chr.to.int$ -- 9
+cite$ -- 13
+duplicate$ -- 110
+empty$ -- 178
+format.name$ -- 25
+if$ -- 444
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 4
-newline$ -- 42
-num.names$ -- 18
-pop$ -- 43
+missing$ -- 6
+newline$ -- 47
+num.names$ -- 21
+pop$ -- 51
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 53
 quote$ -- 0
-skip$ -- 72
+skip$ -- 82
 stack$ -- 0
-substring$ -- 98
-swap$ -- 7
+substring$ -- 110
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 48
 warning$ -- 2
-while$ -- 12
+while$ -- 14
 width$ -- 0
-write$ -- 96
+write$ -- 108
 (There were 5 warnings)

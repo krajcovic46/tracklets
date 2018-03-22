@@ -1,9 +1,19 @@
 \chapter{Proposed solutions}\label{chap:proposed_solutions}
 
+	Motivated by previous solutions, mentioned in Chapter \ref{chap:existing_solutions}, Sections \ref{subsec:intra_inter} and \ref{subsec:linear_geo}, we propose multiple approaches to solve the problem of tracklet building. The first one, described in Section \ref{sec:linear_regression} takes advantage of the facts mentioned in Section \ref{subsec:linear_geo}, specifically that picking sufficiently small part of the object's trajectory will make the object appear as if it moved in uniform linear motion. Section \ref{sec:IDO} describes an algorithm which filters and validates data gathered in Section \ref{sec:linear_regression}. An experimental neural network's construction and relevance is discussed in Section \ref{sec:neural} and Section \ref{sec:hough} acknowledges another possible solution which has not been implemented but has been considered nevertheless.
+
 \section{Use of linear regression}\label{sec:linear_regression}
 
-\section{Use of neural network}\label{sec:neural}
+	Linear regression is a well-known statistical concept modelling the relationship between a scalar dependent variable \emph{y} and one or more independent variables, usually denoted as \emph{x}. In this thesis, we will be using a single scalar predictor variable and a single scalar response variable - simple linear regression. For more information about linear regression as a statistical model, see \citep{freedman2005statistical}.
+	
+	To successfully create a tracklet, we need to have three or more confirmed observations out of several images of the same portion of the night sky. As described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:proc_seg_reduc} all objects are classified beforehand and have several mandatory attributes assigned to them.
+	
+	As discussed in Chapter \ref{chap:object_dynamics}, Section \ref{sec:ccd} objects' position on the image reference frame are represented by values \emph{x} and \emph{y}. The first draft of linear regression was designed and realised using these values. However, due to the unreliability and inaccuracy they were replaced by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}), in later stages.
+	
+	There are several unidentified or misidentified objects in each image in the set of provided inputs (see \ref{chap:requirements}, Section \ref{sec:input_data}). 
 
 \section{Use of the Initial Orbit Determination algorithms}\label{sec:IDO}
+
+\section{Use of neural network}\label{sec:neural}
 
 \section{Use of Hough transform}\label{sec:hough}
