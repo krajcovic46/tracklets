@@ -4,16 +4,22 @@
 
 \section{Use of linear regression}\label{sec:linear_regression}
 
-	Linear regression is a well-known statistical concept modelling the relationship between a scalar dependent variable \emph{y} and one or more independent variables, usually denoted as \emph{x}. In this thesis, we will be using a single scalar predictor variable and a single scalar response variable - simple linear regression. For more information about linear regression as a statistical model, see \citep{freedman2005statistical}.
+	Linear regression is a well-known statistical concept modelling the linear relationship between a scalar dependent variable \emph{y} and one or more independent variables, usually denoted as \emph{x}. In this thesis, we will be using a single scalar predictor variable and a single scalar response variable - simple linear regression (SLR). We chose SLR because objects in our case appear as if they followed the rules of uniform linear motion (for details on uniform linear motion, see Chapter \ref{chap:existing_solutions}, Section \ref{sec:linear_motion}). For more information about linear regression as a statistical model, see \citep{freedman2005statistical}.
 	
 	To successfully create a tracklet, we need to have three or more confirmed observations out of several images of the same portion of the night sky. As described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:proc_seg_reduc} all objects are classified beforehand and have several mandatory attributes assigned to them.
 	
-	As discussed in Chapter \ref{chap:object_dynamics}, Section \ref{sec:ccd} objects' position on the image reference frame are represented by values \emph{x} and \emph{y}. The first draft of linear regression was designed and realised using these values. However, due to the unreliability and inaccuracy they were replaced by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}), in later stages.
+	As discussed in Chapter \ref{chap:object_dynamics}, Section \ref{sec:ccd} objects' position on the image reference frame in each image in the set of provided inputs (see Chapter \ref{chap:requirements}, Section \ref{sec:input_data}) are represented by the values \emph{x} and \emph{y}. The first draft of linear regression was designed and realised using these values - \emph{x} as an independent value and \emph{y} as a dependent value. However, due to the unreliability and inaccuracy they were replaced by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}), in later stages.
 	
-	There are several unidentified or misidentified objects in each image in the set of provided inputs (see \ref{chap:requirements}, Section \ref{sec:input_data}). 
+	There are several unidentified or misidentified objects which are potentially the object we are looking for, represented as points. 
+	
+	Firstly, we pair each unidentified point $p_1$ from the first image with each unidentified point $p_2$ from the second image. Then we create a line $l$ such that $p_1,\ p_2 \in l$. The final number of existing lines after this initial procedure is equal to $n_1 * n_2$ where $n_1$ is the number of unidentified points in the first image and $n_2$ is the number of unidentified points in the second image. It is important to note that this number might be relatively high depending on the number of unidentified points and therefore on the quality of the pre-processing of each image. If we ignored all fake points we would be left with one line placed among all the real points from the rest of the images.
+	
+	However, there are several problems. First, fake objects might appear along a line in the same fashion as the real do. Second, the real points might have non-negligible distance from a line. Third, the first or second point might be deviated too - this would cause the line to have incorrect slope. Fourth, the real points might appear as if their acceleration was non-zero. The last three problems are mainly caused by atmospheric fluctuations and errors in the CCD camera. We provide solutions to all of these problems in the next paragraph.
+	
+	
 
 \section{Use of the Initial Orbit Determination algorithms}\label{sec:IDO}
 
 \section{Use of neural network}\label{sec:neural}
 
-\section{Use of Hough transform}\label{sec:hough}
+\section{Hough transform}\label{sec:hough}

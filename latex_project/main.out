@@ -25,7 +25,7 @@
 \BOOKMARK [1][-]{section.6.1}{Use of linear regression}{chapter.6}% 25
 \BOOKMARK [1][-]{section.6.2}{Use of the Initial Orbit Determination algorithms}{chapter.6}% 26
 \BOOKMARK [1][-]{section.6.3}{Use of neural network}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.4}{Use of Hough transform}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.4}{Hough transform}{chapter.6}% 28
 \BOOKMARK [0][-]{chapter.7}{Design and implementation}{}% 29
 \BOOKMARK [0][-]{chapter.8}{Results}{}% 30
 \BOOKMARK [1][-]{section.8.1}{TDM and MPC formats, CCSDS}{chapter.8}% 31
