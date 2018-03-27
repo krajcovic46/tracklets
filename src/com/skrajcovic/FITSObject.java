@@ -76,6 +76,7 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double getHeading(FITSObject otherObject) {
+        //TODO - pravdepodone treba vymenit x a y
         double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
         return Math.abs(theta);
     }

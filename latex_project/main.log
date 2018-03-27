@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.23)  25 MAR 2018 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  27 MAR 2018 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -911,28 +911,28 @@ LaTeX Warning: Label `img:logo' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
  (c:/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    ... okay on input line 44.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 44.
 
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -942,9 +942,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -968,11 +968,11 @@ LaTeX Info: Redefining \nameref on input line 42.
 \c@lstlisting=\count136
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
+LaTeX Font Info:    Try loading font information for U+msa on input line 56.
  (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 56.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -980,7 +980,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <images/logo_fmph.png, id=156, 106.59825pt x 113.58435pt>
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 59.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 61.
 (pdftex.def)             Requested size: 106.59798pt x 113.58406pt.
  [1
 
@@ -989,34 +989,34 @@ Package pdftex.def Info: images/logo_fmph.png  used on input line 59.
 mph.png>]
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 89.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 91.
 (pdftex.def)             Requested size: 106.59798pt x 113.58406pt.
  [2]
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 118.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 120.
 (pdftex.def)             Requested size: 597.50787pt x 636.87735pt.
 
 Overfull \vbox (72.37735pt too high) has occurred while \output is active []
 
 
 [3]
-Underfull \hbox (badness 2302) in paragraph at lines 128--130
+Underfull \hbox (badness 2302) in paragraph at lines 130--132
 []\T1/cmr/m/n/12 ƒestne prehla-su-jem, ºe túto diplo-movú prácu som
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
 
  []
 
 
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 125--131
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 127--133
 $[]$ $[]$ 
  []
 
@@ -1266,13 +1266,26 @@ Package pdftex.def Info: images/cat_columns.png  used on input line 88.
 Chapter 6.
 [31
 
-] [32]) (./07design_implementation.tex [33]
+] [32]
+<images/regresia1.png, id=556, 482.55281pt x 289.83281pt>
+File: images/regresia1.png Graphic file (type png)
+<use images/regresia1.png>
+Package pdftex.def Info: images/regresia1.png  used on input line 23.
+(pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
+ [33 <./images/regresia1.png>] [34]
+<images/regresia2.png, id=571, 482.55281pt x 289.83281pt>
+File: images/regresia2.png Graphic file (type png)
+<use images/regresia2.png>
+Package pdftex.def Info: images/regresia2.png  used on input line 38.
+(pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
+) (./07design_implementation.tex
+[35 <./images/regresia2.png>] [36]
 Chapter 7.
-) (./08results.tex [34
+) (./08results.tex [37
 
 ]
 Chapter 8.
-[35
+[38
 
 ]
 Overfull \hbox (1.7667pt too wide) in paragraph at lines 25--26
@@ -1280,59 +1293,61 @@ Overfull \hbox (1.7667pt too wide) in paragraph at lines 25--26
 or-ma-tion about
  []
 
-[36]
-<images/tdm_example.png, id=583, 379.4175pt x 592.1322pt>
+[39]
+<images/tdm_example.png, id=604, 379.4175pt x 592.1322pt>
 File: images/tdm_example.png Graphic file (type png)
 <use images/tdm_example.png>
 Package pdftex.def Info: images/tdm_example.png  used on input line 55.
 (pdftex.def)             Requested size: 284.52756pt x 444.05289pt.
- [37] [38 <./images/tdm_example.png>] [39]) (./09conclusion.tex [40]
+ [40] [41 <./images/tdm_example.png>] [42]) (./09conclusion.tex [43]
 Chapter 9.
-) [41
+) [44
 
 ] (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
- [42
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+ [45
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7C5F3622751E7D873BD44211ED2618BE;2691.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 10992 strings out of 492985
- 157791 string characters out of 6136283
- 249992 words of memory out of 5000000
- 14164 multiletter control sequences out of 15000+600000
+ 11011 strings out of 492985
+ 158119 string characters out of 6136283
+ 250137 words of memory out of 5000000
+ 14176 multiletter control sequences out of 15000+600000
  18171 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,10n,39p,2103b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
 live/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
-sfbx1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.p
-fb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/tex
-live/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2017/
-texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist
-/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/typ
-e1/public/cm-super/sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
-cm-super/sfti1200.pfb>
-Output written on main.pdf (52 pages, 4128650 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/te
+xlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2017
+/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2017/texmf-dis
+t/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2017/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
+/cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
+sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.p
+fb>
+Output written on main.pdf (55 pages, 4174375 bytes).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
- 602 compressed objects within 7 object streams
- 156 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 723 PDF objects out of 1000 (max. 8388607)
+ 623 compressed objects within 7 object streams
+ 161 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 
