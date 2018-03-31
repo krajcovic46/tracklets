@@ -128,7 +128,7 @@ public class OrbitDetermination {
             * 4. Writing the OD results
             */
             //class to work with IO file commands
-/*            WritingODData wod = new WritingODData();
+            WritingODData wod = new WritingODData();
             //create subdirectory and file whre should the results be writen
             wod.createFile(dirName);
             //checking wether or not is results file filled with expKepler - orbital elements that we expected.
@@ -141,7 +141,7 @@ public class OrbitDetermination {
             //set NORAD number for resutsTLE.txt file
             if(((getKepler.a/1000*(1 - getKepler.e))>3000)&&(getKepler.e<1)){
                 noGoodResults++;
-            }*/
+            }
             //System.out.println("Data written in to ODResults/" + dirName + "/resultsGood.txt!");
             //get the heliocentric datas
             //get from Escobal units to SI

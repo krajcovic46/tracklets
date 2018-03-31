@@ -11,7 +11,7 @@ public class FITSBatch {
     private Map<ArrayList<FITSObject>, SimpleRegression> regressions;
     private List<FITSObject> regressionResults;
 
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     public FITSBatch() {
         regressions = new HashMap<>();

@@ -32,12 +32,12 @@ public class Main {
 
         if (arguments.contains("lod") || arguments.contains("orbital")) {
             //TODO - orbital determination
-            FITSOrbitDetermination.perform(null);        }
-
+        }
         if (arguments.contains("nn") || arguments.contains("neural")) {
             //TODO - neural network - python script probably
         }
         FITSLinearRegression.perform(batch);
+        FITSOrbitDetermination.perform(batch);
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();
             try {

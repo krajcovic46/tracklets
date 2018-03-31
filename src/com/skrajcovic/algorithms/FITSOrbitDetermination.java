@@ -5,8 +5,10 @@ import com.skrajcovic.FITSObject;
 import com.skrajcovic.orbitdetermination.Observation;
 import com.skrajcovic.orbitdetermination.OrbitDetermination;
 import com.skrajcovic.orbitdetermination.compute.Kepler;
+import com.skrajcovic.utils.Combinations;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class FITSOrbitDetermination {
@@ -17,22 +19,27 @@ public class FITSOrbitDetermination {
 
 
     public static void perform(FITSBatch batch) {
-        //TODO - create suitable structure in batch to hold results
-        Set<FITSObject> fitsObjects = batch.getFirstSet();
+        List<FITSObject> fitsObjects = batch.getRegressionResults();
+        Combinations comb = new Combinations(fitsObjects);
 
-        Observation[] observation = constructSuitableInputData(fitsObjects);
+        List<FITSObject[]> resultCombinations = comb.getCombinations();
+
+//        System.out.println(resultCombinations);
+
         Kepler kepler = new Kepler();
 
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                //TODO - change algo so it doesnt output to a file?
-                OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
+        for (FITSObject[] combination : resultCombinations) {
+            Observation[] observation = constructSuitableInputData(combination);
+            System.out.println("LENGTH " + observation.length);
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
+                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
+                }
             }
         }
     }
 
-    //TODO len na tri objekty
-    private static Observation[] constructSuitableInputData(Set<FITSObject> fitsObjects) {
+    private static Observation[] constructSuitableInputData(FITSObject[] fitsObjects) {
         ArrayList<Observation> list = new ArrayList<>();
         for (FITSObject object : fitsObjects) {
             Observation observation = new Observation();
@@ -43,6 +50,7 @@ public class FITSOrbitDetermination {
             observation.dec = Math.toRadians(object.getDeclination().getDegValue());
             list.add(observation);
         }
-        return (Observation[]) list.toArray();
+        Observation[] ret = new Observation[list.size()];
+        return list.toArray(ret);
     }
 }
