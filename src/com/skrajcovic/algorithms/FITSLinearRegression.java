@@ -23,8 +23,8 @@ public class FITSLinearRegression {
         for (FITSObject obj1 : fSet) {
             for (FITSObject obj2 : sSet) {
                 SimpleRegression sr = new SimpleRegression();
-                sr.addData(obj1.getX(), obj1.getY());
-                sr.addData(obj2.getX(), obj2.getY());
+                sr.addData(obj1.getxComponent(), obj1.getyComponent());
+                sr.addData(obj2.getyComponent(), obj2.getyComponent());
                 regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
             }
         }
@@ -61,7 +61,7 @@ public class FITSLinearRegression {
 
                         if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
                             regressionPoints.add(last);
-                            regression.getValue().addData(last.getX(), last.getY());
+                            regression.getValue().addData(last.getxComponent(), last.getyComponent());
 
                             //cleanup
                             last = null;
@@ -78,7 +78,7 @@ public class FITSLinearRegression {
                 // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
                 if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
                     regressionPoints.add(last);
-                    regression.getValue().addData(last.getX(), last.getY());
+                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
                 }
                 batch.setRegressionResults(regressionPoints);
             }

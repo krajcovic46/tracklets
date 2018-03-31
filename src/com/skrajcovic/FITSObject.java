@@ -24,6 +24,9 @@ public class FITSObject implements Comparable<FITSObject> {
 
     private boolean real;
 
+    private double xComponent;
+    private double yComponent;
+
     public FITSObject() {}
 
     public FITSObject(String fileName, String type, Rectascension rectascension,
@@ -35,27 +38,36 @@ public class FITSObject implements Comparable<FITSObject> {
         setMagnitude(magnitude);
         setX(x);
         setY(y);
+
+        if (FITSBatch.RADEC) {
+            xComponent = rectascension.getDegValue();
+            yComponent = declination.getDegValue();
+        } else {
+            xComponent = x;
+            yComponent = y;
+        }
+
+//        System.out.println("xcomponent " + xComponent);
+//        System.out.println("ycomponent " + yComponent);
+//        System.out.println("-------------------------");
     }
 
-    public FITSObject(String fileName, boolean real, double mjd, double x, double y, double magnitude) {
-        setFileName(fileName);
-        setReal(real);
-        setMjd(mjd);
-        setX(x);
-        setY(y);
-        setMagnitude(magnitude);
-    }
+//    public FITSObject(String fileName, boolean real, double mjd, double x, double y, double magnitude) {
+//        setFileName(fileName);
+//        setReal(real);
+//        setMjd(mjd);
+//        setX(x);
+//        setY(y);
+//        setMagnitude(magnitude);
+//    }
 
     public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
         double m = regression.getSlope();
         double b = regression.getIntercept();
 
-        double x = getX();
-        double y = getY();
+        double coeffy = (getyComponent()> 0) ? 1 : -1;
 
-        double coeffy = (y > 0) ? 1 : -1;
-
-        double distance = Math.abs(-m * x + coeffy * y - b) / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
+        double distance = Math.abs(-m * getxComponent() + coeffy * getyComponent() - b) / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
 
         return distance <= threshold;
     }
@@ -71,22 +83,18 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double calculateSpeed(FITSObject otherObject) {
-        return Math.sqrt(Math.pow(this.getX() - otherObject.getX(), 2) + Math.pow(this.getY() - otherObject.getY(), 2))
+        return Math.sqrt(Math.pow(this.getxComponent() - otherObject.getxComponent(), 2) + Math.pow(this.getyComponent() - otherObject.getyComponent(), 2))
                 / calculateDeltaTime(otherObject);
     }
 
     public double getHeading(FITSObject otherObject) {
         //TODO - pravdepodone treba vymenit x a y
-        double theta = Math.toDegrees(Math.atan2(otherObject.getX() - getX(), otherObject.getY() - getY()));
+        double theta = Math.toDegrees(Math.atan2(otherObject.getxComponent() - getxComponent(), otherObject.getyComponent() - getyComponent()));
         return Math.abs(theta);
     }
 
     public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
         double heading = getHeading(otherObject);
-        if (otherObject.isReal()) {
-            System.out.println(otherObject.getFileName() + " - " + angle +" <= " + heading + " + " + threshold +
-            " && " + angle + " >= " + heading + " - " + threshold);
-        }
         return angle <= heading + threshold && angle >= heading - threshold;
     }
 
@@ -187,6 +195,14 @@ public class FITSObject implements Comparable<FITSObject> {
 
     public void setDeclination(Declination declination) {
         this.declination = declination;
+    }
+
+    public double getxComponent() {
+        return this.xComponent;
+    }
+
+    public double getyComponent() {
+        return this.yComponent;
     }
 
     public void setTime(FitsCard dateObs, FitsCard expTime) {

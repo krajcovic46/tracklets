@@ -30,10 +30,10 @@ public class FITSOrbitDetermination {
 
         for (FITSObject[] combination : resultCombinations) {
             Observation[] observation = constructSuitableInputData(combination);
-            System.out.println("LENGTH " + observation.length);
+//            System.out.println("LENGTH " + observation.length);
             for (int i = 0; i < 2; i++) {
                 for (int j = 0; j < 2; j++) {
-                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
+//                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
                 }
             }
         }
