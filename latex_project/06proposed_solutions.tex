@@ -8,7 +8,7 @@
 	
 	To successfully create a tracklet, we need to have three or more confirmed observations out of several images of the same portion of the night sky. As described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:proc_seg_reduc} all objects are classified beforehand and have several mandatory attributes assigned to them.
 	
-	As discussed in Chapter \ref{chap:object_dynamics}, Section \ref{sec:ccd} objects' position on the image reference frame in each image in the set of provided inputs (see Chapter \ref{chap:requirements}, Section \ref{sec:input_data}) are represented by the values \emph{x} and \emph{y}. The first draft of linear regression was designed and realised using these values - \emph{x} as an independent value and \emph{y} as a dependent value. However, due to the unreliability and inaccuracy they were replaced by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}), in later stages.
+	As discussed in Chapter \ref{chap:object_dynamics}, Section \ref{sec:ccd} objects' position on the image reference frame in each image in the set of provided inputs (see Chapter \ref{chap:requirements}, Section \ref{sec:input_data}) are represented by the values \emph{x} and \emph{y}. The first draft of linear regression was designed and realised using these values - \emph{x} as an independent value and \emph{y} as a dependent value.
 	
 	There are several unidentified or misidentified objects which are potentially the object we are looking for, represented as points. 
 	
@@ -31,7 +31,7 @@
 	
 	Speed $s$ is calculated by using the well-known formula $$s=\frac{d}{{\Delta}t}$$ where $$d=\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$$ where $(x_1,y_1)$ and $(x_2,y_2)$ are two successive points in time and $${\Delta}t=|t_1-t_2|$$ We get the time $t_{i},\ i\in\langle1,N\rangle$ where $N$ is the number of images. We treat first two objects $o_1$ and $o_2$ as the baseline - we calculate their speed and then compare speed of each successive object $o_i$ and choose the one which is closer to the baseline speed.
 	
-	The last stage of the filter contains calculation of angles between two successive points. Again, consider having two points represented by its positions $p_{i}=(x_i,y_i)$, $p_j=(x_j,y_j)$. We calculate angle $\theta$ between them as $$\theta=|\arctantwo(y_j-y_i, x_j-x_i)|$$ We then check whether the angle is in predetermined threshold $T_a$. By doing this we create an imaginary 2D cone forming from each point to the plane, as is illustrated in Figure \ref{fig:regresia2}.
+	The last stage of the filter contains calculation of angles between two successive points. Again, consider having two points represented by its positions $p_{i}=(x_i,y_i)$, $p_j=(x_j,y_j)$. We calculate angle $\theta$ between them as $$\theta=|\arctantwo(y_j-y_i, x_j-x_i)|$$ We then check whether the angle is in a predetermined threshold $T_a$. By doing this we create an imaginary 2D cone forming from each point to the plane, as is illustrated in Figure \ref{fig:regresia2}.
 	
 	\begin{figure}[H]
 	\centering
@@ -41,6 +41,17 @@
 	\end{figure}
 	
 	Only after each of these three filters has been satisfied by the currently chosen object and its point, we add it to the list of potential candidates and the SLR is calculated again, containing the last added object as well. It is important to note that we add exactly one object from every image before moving to the next image.
+	
+	The representation of each object $o_i$ can be specified either by the standard coordinate system in the two-dimensional Euclidean plane or by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}). The main difference and the reason why we swapped  a coordinate system for a reference system is that the RA/Dec is precise and mostly devoid of errors and deviations. The difference is best shown rather than explained - see Figure \ref{fig:regresia3}. On the left, there are shown 8 observations of the same object (an asteroid 2017\_PR25), represented in modified RA/Dec and on the right the same 8 observations, represented in the standard coordinate system. It is clearly visible that the deviation of each point in the right graph is more extreme than in the left graph. Acceleration of some of the points appears to be higher than zero - this is because the images were taken in different time intervals.
+	
+	\begin{figure}[H]
+	\centering
+	  \includegraphics[width=12cm]{images/regresia3}
+		  \caption{RA/Dec comparison.}
+	  \label{fig:regresia3}
+	\end{figure}
+	
+	In order to use RA/Dec in this thesis, we firstly needed to convert original values to degrees. However, due to the nature of the spherical coordinates, the points were only a hundredth, thousandth or even ten thousandth units apart. We had to modify the values by multiplying them by $10^3$ and therefore dispersing them spatially.
 	
 	The potential candidates list now contains objects which have a high probability of being real. We touched upon every problem mentioned above - we disregarded points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters is probable and is remedied by using IOD.
 
