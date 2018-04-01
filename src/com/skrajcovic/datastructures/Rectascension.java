@@ -52,29 +52,6 @@ public class Rectascension  {
         degValue = temp;
     }
 
-    public double add(Rectascension other) {
-        double temp = this.getDegValue() + other.getDegValue();
-        return temp % 24;
-    }
-
-    public double sub(Rectascension other) {
-        double myDegValue = getDegValue();
-        double otherDegValue = other.getDegValue();
-
-        if (myDegValue > otherDegValue) {
-            return myDegValue - otherDegValue;
-        } else if (myDegValue < otherDegValue) {
-            myDegValue = 24 + myDegValue;
-            return myDegValue - otherDegValue;
-        }
-        return myDegValue;
-    }
-
-
-    public boolean isSmaller(Rectascension other) {
-        return getDegValue() < other.getDegValue();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

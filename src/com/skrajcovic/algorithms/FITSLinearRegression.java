@@ -9,11 +9,14 @@ import java.util.*;
 
 public class FITSLinearRegression {
 
+    private static final double distanceThreshold = 20;
+    private static final double angleThreshold = 50;
+
     public static void perform(FITSBatch batch) {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
                 (HashSet<FITSObject>) batch.getSecondSet(), batch.getRegressions());
 
-        FITSLinearRegression.fitPointsToRegressions(50, batch);
+        FITSLinearRegression.fitPointsToRegressions(distanceThreshold, batch);
 
         System.out.println(batch.getRegressionResults());
 
@@ -51,7 +54,7 @@ public class FITSLinearRegression {
 
                 for (FITSObject fitsObject : data) {
                     if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
-                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, 20)) {
+                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, angleThreshold)) {
 
 //                        System.out.println(fitsObject.getFileName());
 //                        System.out.println(fitsObject.getType());

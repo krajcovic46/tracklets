@@ -12,7 +12,7 @@ public class FITSBatch {
     private List<FITSObject> regressionResults;
 
     public static final boolean DEBUG = false;
-    public static final boolean RADEC = false;
+    public static final boolean RADEC = true;
 
     public FITSBatch() {
         regressions = new HashMap<>();

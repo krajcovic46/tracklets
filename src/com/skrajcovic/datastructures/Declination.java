@@ -2,7 +2,7 @@ package com.skrajcovic.datastructures;
 
 public class Declination {
     private int degrees;
-    private int minutes;
+    private double minutes;
     private double seconds;
 
     private double degValue;
@@ -23,11 +23,11 @@ public class Declination {
         this.degrees = degrees;
     }
 
-    public int getMinutes() {
+    public double getMinutes() {
         return minutes;
     }
 
-    public void setMinutes(int minutes) {
+    public void setMinutes(double minutes) {
         this.minutes = minutes;
     }
 
@@ -51,26 +51,6 @@ public class Declination {
         temp += getSeconds() / 3600;
 
         degValue = temp;
-    }
-
-    //TODO
-    public double add(Declination other) {
-        double temp = getDegValue() + other.getDegValue();
-
-        if (temp > 90) {
-            temp = -90 + temp;
-        }
-
-        return temp;
-    }
-
-    //TODO
-    public double sub(Declination other) {
-        return 0;
-    }
-
-    public boolean isSmaller(Declination other) {
-        return getDegValue() < other.getDegValue();
     }
 
     @Override

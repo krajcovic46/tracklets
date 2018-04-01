@@ -40,32 +40,23 @@ public class FITSObject implements Comparable<FITSObject> {
         setY(y);
 
         if (FITSBatch.RADEC) {
-            xComponent = rectascension.getDegValue();
-            yComponent = declination.getDegValue();
+            xComponent = rectascension.getDegValue() * 1000;
+            yComponent = declination.getDegValue() * 1000;
         } else {
             xComponent = x;
             yComponent = y;
         }
 
-//        System.out.println("xcomponent " + xComponent);
-//        System.out.println("ycomponent " + yComponent);
+//        System.out.println("xcomponent " + xComponent + " x: " + getX());
+//        System.out.println("ycomponent " + yComponent + " y: " + getY());
 //        System.out.println("-------------------------");
     }
-
-//    public FITSObject(String fileName, boolean real, double mjd, double x, double y, double magnitude) {
-//        setFileName(fileName);
-//        setReal(real);
-//        setMjd(mjd);
-//        setX(x);
-//        setY(y);
-//        setMagnitude(magnitude);
-//    }
 
     public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
         double m = regression.getSlope();
         double b = regression.getIntercept();
 
-        double coeffy = (getyComponent()> 0) ? 1 : -1;
+        double coeffy = (getyComponent() > 0) ? 1 : -1;
 
         double distance = Math.abs(-m * getxComponent() + coeffy * getyComponent() - b) / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
 
@@ -73,12 +64,6 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double calculateDeltaTime(FITSObject otherObject) {
-//        System.out.println("MOJ MJD: " + this.getMjd());
-//        System.out.println("MOJ LDT: " + this.getLdt());
-//        System.out.println("IHR MJD: " + otherObject.getMjd());
-//        System.out.println("IHR LDT: " + otherObject.getLdt());
-//        System.out.println("DEL MJD: " + (this.getMjd() - otherObject.getMjd()));
-//        System.out.println("----------------------------------------------------");
         return Math.abs(this.getMjd() - otherObject.getMjd());
     }
 
@@ -88,8 +73,8 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public double getHeading(FITSObject otherObject) {
-        //TODO - pravdepodone treba vymenit x a y
-        double theta = Math.toDegrees(Math.atan2(otherObject.getxComponent() - getxComponent(), otherObject.getyComponent() - getyComponent()));
+        double theta = Math.toDegrees(Math.atan2(otherObject.getyComponent() - getyComponent(), otherObject.getxComponent() - getxComponent()));
+        System.out.println(Math.abs(theta));
         return Math.abs(theta);
     }
 
@@ -107,7 +92,8 @@ public class FITSObject implements Comparable<FITSObject> {
 
 
     public String toString() {
-        return "[" + getFileName() + ", " + getX() + ", " + getY() + ", " + getType() +"]";
+        return "[" + getFileName() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()*1000
+                + ", dec:: " + getDeclination().getDegValue() * 1000 + ", " + getType() +"]\n";
     }
 
     public String getFileName() {
