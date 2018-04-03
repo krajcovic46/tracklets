@@ -40,7 +40,9 @@
 	  \label{fig:regresia2}
 	\end{figure}
 	
-	Only after each of these three filters has been satisfied by the currently chosen object and its point, we add it to the list of potential candidates and the SLR is calculated again, containing the last added object as well. It is important to note that we add exactly one object from every image before moving to the next image.
+	Only after each of these three filters has been satisfied by the currently chosen object $o_i$ and its point $p_i$, we add it to the list of potential candidates and the SLR is calculated again, containing the last added object as well. It is important to note that we add exactly one object from every image before moving to the next image.
+	
+	The potential candidates list now contains objects which have a high probability of being real. We touched upon every problem mentioned above - we disregarded points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters is probable and is remedied by using IOD.
 	
 	The representation of each object $o_i$ can be specified either by the standard coordinate system in the two-dimensional Euclidean plane or by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}). The main difference and the reason why we swapped  a coordinate system for a reference system is that the RA/Dec is precise and mostly devoid of errors and deviations. The difference is best shown rather than explained - see Figure \ref{fig:regresia3}. On the left, there are shown 8 observations of the same object (an asteroid 2017\_PR25), represented in modified RA/Dec and on the right the same 8 observations, represented in the standard coordinate system. It is clearly visible that the deviation of each point in the right graph is more extreme than in the left graph. Acceleration of some of the points appears to be higher than zero - this is because the images were taken in different time intervals.
 	
@@ -52,11 +54,13 @@
 	\end{figure}
 	
 	In order to use RA/Dec in this thesis, we firstly needed to convert original values to degrees. However, due to the nature of the spherical coordinates, the points were only a hundredth, thousandth or even ten thousandth units apart. We had to modify the values by multiplying them by $10^3$ and therefore dispersing them spatially.
-	
-	The potential candidates list now contains objects which have a high probability of being real. We touched upon every problem mentioned above - we disregarded points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters is probable and is remedied by using IOD.
 
 \section{Use of the Initial Orbit Determination algorithms}\label{sec:IDO}
 
+	The theoretical details of IOD are described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:init_orbit_det}. We used a fully functional implementation of IOD from \citep{Silha2012id}. For functioning correctly, the algorithm requires longitude and latitude in radians, altitude (in our case AGO - see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}) and RA/Dec in radians of three different objects. Then, we perform both Montenbruck and Escobal methods of IOD.
+
 \section{Use of neural network}\label{sec:neural}
+
+	An experimental part of this thesis is the use of a neural network. We are using a popular framework \emph{tflearn}.
 
 \section{Hough transform}\label{sec:hough}
