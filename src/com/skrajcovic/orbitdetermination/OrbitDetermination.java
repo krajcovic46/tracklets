@@ -6,6 +6,8 @@ package com.skrajcovic.orbitdetermination;
 
 import com.skrajcovic.orbitdetermination.compute.*;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Jiri Silha - 22.10.2009
@@ -62,6 +64,7 @@ public class OrbitDetermination {
         Kepler getKepler = new Kepler();
         if(noGoodResults > 39999) noGoodResults = 0;
         for(int i = 0; i < vectorArray.length; i++){
+//            System.out.println(vectorArray[i]);
             /*
             * 2. Computing vectors (3 positions, 1 velocity)
             */
@@ -161,10 +164,10 @@ public class OrbitDetermination {
             //System.out.println("TEST Ecl i    : " + Math.toDegrees(elements[0]));
             //System.out.println("TEST Ecl O    : " + Math.toDegrees(elements[1]));
         }
-        System.out.println("Data written in to ODResults/" + dirName + "/results.txt!");
-        System.out.println("Data written in to ODResults/" + dirName + "/resultsGood.txt!");
-        System.out.println("Data written in to ODResults/" + dirName + "/resultsTLE.txt!");
-        System.out.println("Data written in to ODResults/" + dirName + "/resultsVec.txt!");
+//        System.out.println("Data written in to ODResults/" + dirName + "/results.txt!");
+//        System.out.println("Data written in to ODResults/" + dirName + "/resultsGood.txt!");
+//        System.out.println("Data written in to ODResults/" + dirName + "/resultsTLE.txt!");
+//        System.out.println("Data written in to ODResults/" + dirName + "/resultsVec.txt!");
     }
 
     /**

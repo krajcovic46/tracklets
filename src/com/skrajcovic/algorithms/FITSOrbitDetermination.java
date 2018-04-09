@@ -29,14 +29,30 @@ public class FITSOrbitDetermination {
         Kepler kepler = new Kepler();
 
         for (FITSObject[] combination : resultCombinations) {
-            Observation[] observation = constructSuitableInputData(combination);
+//            Observation[] observation = constructSuitableInputData(combination);
 //            System.out.println("LENGTH " + observation.length);
+            Observation[] observation = transformFITSObjectsIntoObservations(fitsObjects);
             for (int i = 0; i < 2; i++) {
                 for (int j = 0; j < 2; j++) {
-//                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
+                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
                 }
             }
         }
+    }
+
+    private static Observation[] transformFITSObjectsIntoObservations(List<FITSObject> fitsObjects) {
+        Observation[] observations = new Observation[fitsObjects.size()];
+        for (int i = 0; i < fitsObjects.size(); i++) {
+            Observation observation = new Observation();
+            observation.lon = Math.toRadians(AGOLON);
+            observation.lat = Math.toRadians(AGOLAT);
+            observation.alt = AGOALT;
+            observation.ra = Math.toRadians(fitsObjects.get(i).getRectascension().getDegValue());
+            observation.dec = Math.toRadians(fitsObjects.get(i).getDeclination().getDegValue());
+            observations[i] = observation;
+        }
+
+        return observations;
     }
 
     private static Observation[] constructSuitableInputData(FITSObject[] fitsObjects) {

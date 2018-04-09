@@ -17,6 +17,8 @@ package com.skrajcovic.orbitdetermination.compute;
 // Deklaracia triedy (class declaration)
 //
 
+import java.util.Arrays;
+
 /** Mathematical operations with vectors*/
 public class Vector{
 	
@@ -262,5 +264,9 @@ public class Vector{
                               Math.pow(posVec_1.v[2] - posVec_2.v[2],2));
          return distance;
      }
+
+     public String toString() {
+     	return Arrays.toString(this.v);
+	 }
 	
 }

@@ -90,7 +90,7 @@ public class FITSObject implements Comparable<FITSObject> {
 
 
 
-
+// 1.7
     public String toString() {
         return "[" + getFileName() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()*1000
                 + ", dec:: " + getDeclination().getDegValue() * 1000 + ", " + getType() +"]\n";
