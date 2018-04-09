@@ -1,14 +1,17 @@
 import numpy as np
-import matplotlib
 import os
-# matplotlib.rc_file("../../templates/matplotlibrc")
 import matplotlib.pyplot as plt
 from astropy.io import fits
 
+# TODO - intelligently set which folder to use; draw a line using first and last point (get slope and intercept from
+# regression in java)
+
+folder = "../misc/data/Oct2017/NEA/2017_PR25_R_7/"
+
 fits_list = []
-for filename in os.listdir("../misc/data/Oct2017/NEA/2017_PR25_R_7/"):
-    if filename.startswith("2017"):
-        fits_list.append("../misc/data/Oct2017/NEA/2017_PR25_R_7/" + filename)
+for filename in os.listdir(folder):
+    if filename.endswith(".fit"):
+        fits_list.append(folder + filename)
 
 image_concat = []
 for image in fits_list:
@@ -16,14 +19,7 @@ for image in fits_list:
 
 final_image = np.amax(image_concat, axis=0)
 
-# hdu_list = fits.open("frames.tar/frames/20120305/GEO_tracking/Object_1/FIELD01_R.091")
-# final_image = hdu_list[0].data
-# hdu_list.close()
-
-plt.imshow(final_image, cmap="gray", vmin=3000, vmax=5000)
+fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=5000)
+plt.savefig("result/fig.png")
 plt.colorbar()
 plt.show()
-#
-NBINS = 1000
-#histogram = plt.hist(final_image.flatten(), NBINS)
-#plt.show()
