@@ -19,7 +19,7 @@ for image in fits_list:
 
 final_image = np.amax(image_concat, axis=0)
 
-fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=5000)
+fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=6000)
 plt.savefig("result/fig.png")
 plt.colorbar()
 plt.show()

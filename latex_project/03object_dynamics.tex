@@ -3,16 +3,43 @@
 	Contents of this chapter 
 
 \section{Kepler's laws of orbital motion}\label{sec:kepler}
-montebruck kniha
+	
+	Kepler's law of orbital motion describes motion of a satellite in regards to gravitational centre of mass, e.g. Sun, Earth, etc. Generally, it states that such motion follows a trajectory which is always elliptically shaped.
+	
+	In astronomy, an object's position in an inertial system, e.g. geocentric or heliocentric, at specific time (reference epoch $t$) can be defined from two different angles.
+	
+	Either we define a state vector (three position vector components and three velocity vector components) or we define six orbital elements for an elliptical type of orbit:
+	
+	\begin{itemize}
+		\item $a$ - semi-major axis [m]
+		\item $e$ - eccentricity [-]
+		\item $i$ - orbital inclination [°]
+		\item $\Omega$ - right ascension of ascending node (RAAN) [°]
+		\item $\omega$ - argument of pericenter/perigee
+		\item $M_t$ - mean anomaly at reference epoch $t$ [°]
+	\end{itemize}
+	
+	Elements $a$ and $e$ define shape of the ellipse while $i$ and $\Omega$ define orientation of the elliptical plane, $\omega$ defines the orientation of the ellipse in the elliptical plane and $M_t$ defines position of an object on the ellipse.
+	
+	referencia montenbruck chapter 2
 
 \section{Equatorial coordinate system}\label{sec:ra_dec}
-montebruck kniha
+	
+	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $0,360°$) and Declination (Dec, $-90,90°$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck).
+	
+google	equatorial coordinate system (treti obrazok)
 
 \section{CCD and image reference frame}\label{sec:ccd}
 zakladne charakteristiky kamery + x a y (image reference frame)
 
+	First product of an observation is an object's position in the CCD reference frame (x,y). To transform from the x,y to Radec a so called astrometric reduction is used which, in general, means linking the two systems together.
+
 \section{Astrometric reduction}\label{sec:proc_seg_reduc}
-mailom
+mailom z xy na radec
+
+	The primary goal is to determine the six orbital elements defined in section ... from Radec in section... To confirm that an object is on a conic section we need to find a solution to orbital elements which will give us an ellipse. (elliptical orbit)
 
 \section{Initial orbit determination problem}\label{sec:init_orbit_det}
 montebruck kniha + phd
+
+kuzelousecka = conic section

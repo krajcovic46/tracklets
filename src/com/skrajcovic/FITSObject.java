@@ -58,7 +58,19 @@ public class FITSObject implements Comparable<FITSObject> {
 
         double coeffy = (getyComponent() > 0) ? 1 : -1;
 
-        double distance = Math.abs(-m * getxComponent() + coeffy * getyComponent() - b) / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
+        double distance = Math.abs(-m * getxComponent() + coeffy * getyComponent() - b)
+                / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
+
+//        if (this.type == Type.H) {
+//            System.out.println("filename: " + fileName);
+//            System.out.println("slope: " + m);
+//            System.out.println("intercept: " + b);
+//            System.out.println("x: " + x);
+//            System.out.println("y: " + y);
+//            System.out.println("distance: " + distance);
+//            System.out.println("threshold: " + threshold);
+//            System.out.println("------------------------------");
+//        }
 
         return distance <= threshold;
     }
@@ -74,7 +86,7 @@ public class FITSObject implements Comparable<FITSObject> {
 
     public double getHeading(FITSObject otherObject) {
         double theta = Math.toDegrees(Math.atan2(otherObject.getyComponent() - getyComponent(), otherObject.getxComponent() - getxComponent()));
-        System.out.println(Math.abs(theta));
+//        System.out.println(Math.abs(theta));
         return Math.abs(theta);
     }
 
@@ -92,8 +104,8 @@ public class FITSObject implements Comparable<FITSObject> {
 
 // 1.7
     public String toString() {
-        return "[" + getFileName() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()*1000
-                + ", dec:: " + getDeclination().getDegValue() * 1000 + ", " + getType() +"]\n";
+        return "[" + getFileName() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()
+                + ", dec:: " + getDeclination().getDegValue() + ", " + getType() +"]\n";
     }
 
     public String getFileName() {

@@ -28,16 +28,17 @@ public class FITSOrbitDetermination {
 
         Kepler kepler = new Kepler();
 
-        for (FITSObject[] combination : resultCombinations) {
-//            Observation[] observation = constructSuitableInputData(combination);
-//            System.out.println("LENGTH " + observation.length);
-            Observation[] observation = transformFITSObjectsIntoObservations(fitsObjects);
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < 2; j++) {
-                    OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
-                }
+        Observation[] observation = transformFITSObjectsIntoObservations(fitsObjects);
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
             }
         }
+//        System.out.println(fitsObjects.get(0).getMjd());
+//        for (int i = 0; i < fitsObjects.size(); i++) {
+//            System.out.print((fitsObjects.get(i).getMjd() - fitsObjects.get(0).getMjd()) * 3600 * 24);
+//            System.out.println(";" + fitsObjects.get(i).getRectascension().getDegValue() + ";" + fitsObjects.get(i).getDeclination().getDegValue());
+//        }
     }
 
     private static Observation[] transformFITSObjectsIntoObservations(List<FITSObject> fitsObjects) {
@@ -49,6 +50,7 @@ public class FITSOrbitDetermination {
             observation.alt = AGOALT;
             observation.ra = Math.toRadians(fitsObjects.get(i).getRectascension().getDegValue());
             observation.dec = Math.toRadians(fitsObjects.get(i).getDeclination().getDegValue());
+            observation.timeMjd = fitsObjects.get(i).getMjd();
             observations[i] = observation;
         }
 

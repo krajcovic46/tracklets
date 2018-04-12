@@ -58,6 +58,7 @@ public class OrbitDetermination {
         Vector vectorArray[] = CombinationGenerator.getCombinations(intArray, false);
 
         //array of observation for the method getVectors()
+        System.out.println(observation[0].timeMjd);
         Observation observation2[] = new Observation[3];
         Vector vectorsForOd[] = new Vector[4];
         //orbital elements
@@ -74,6 +75,7 @@ public class OrbitDetermination {
             observation2[2] = observation[(int)vectorArray[i].v[2]];
             //3 postions and 1 velocity vector
             vectorsForOd = getVectors(observation2,method_1);
+            System.out.println("vectorsforod: " + Arrays.toString(vectorsForOd));
 
             /*
             System.out.println("method " + method_1);
@@ -104,6 +106,7 @@ public class OrbitDetermination {
             if(method_2 == 0){
                 getKepler = getKepler.getElements(Constants.GM_Earth, observation2[0].timeMjd,
                         observation2[1].timeMjd, vectorsForOd[0], vectorsForOd[1]);
+//                System.out.println("kepler: " + getKepler.a);
                 getKepler.epochMJD = observation2[0].timeMjd;
             }
             //1. case - Escobal position and velocity vectors

@@ -9,7 +9,7 @@ import java.util.*;
 
 public class FITSLinearRegression {
 
-    private static final double distanceThreshold = 20;
+    private static final double distanceThreshold = 50;
     private static final double angleThreshold = 50;
 
     public static void perform(FITSBatch batch) {
@@ -28,6 +28,18 @@ public class FITSLinearRegression {
                 SimpleRegression sr = new SimpleRegression();
                 sr.addData(obj1.getxComponent(), obj1.getyComponent());
                 sr.addData(obj2.getyComponent(), obj2.getyComponent());
+//                if (obj1.getType() == Type.H && obj2.getType() == Type.H) {
+//                    System.out.println(obj1.getFileName());
+//                    System.out.println(obj1.getxComponent());
+//                    System.out.println(obj1.getyComponent());
+//
+//                    System.out.println(obj2.getFileName());
+//                    System.out.println(obj2.getxComponent());
+//                    System.out.println(obj2.getyComponent());
+//
+//                    System.out.println("slope: " + sr.getSlope());
+//                    System.out.println("intercept: " + sr.getIntercept());
+//                }
                 regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
             }
         }
@@ -81,7 +93,7 @@ public class FITSLinearRegression {
                 // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
                 if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
                     regressionPoints.add(last);
-                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
+//                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
                 }
                 batch.setRegressionResults(regressionPoints);
             }
