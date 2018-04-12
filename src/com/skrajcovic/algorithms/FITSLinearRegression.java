@@ -11,6 +11,7 @@ public class FITSLinearRegression {
 
     private static final double distanceThreshold = 50;
     private static final double angleThreshold = 50;
+    private static final double speedThreshold = 50;
 
     public static void perform(FITSBatch batch) {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
@@ -41,6 +42,34 @@ public class FITSLinearRegression {
 //                    System.out.println("intercept: " + sr.getIntercept());
 //                }
                 regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
+            }
+        }
+    }
+
+    private static void fitPointsToRegressions2(double threshold, FITSBatch batch) {
+        Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
+        ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();
+
+        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> mapDataRegression : regressions.entrySet()) {
+
+            SimpleRegression regression = mapDataRegression.getValue();
+            ArrayList<FITSObject> regressionPoints = mapDataRegression.getKey();
+
+            FITSObject firstObject = regressionPoints.get(0);
+            FITSObject secondObject = regressionPoints.get(1);
+            FITSObject lastObject = regressionPoints.get(regressionPoints.size() - 1);
+
+            double baselineHeading = secondObject.getHeading(firstObject);
+            double baselineSpeed = firstObject.calculateSpeed(secondObject);
+
+            for (FITSObject fitsObject : data) {
+                if (fitsObject.isWithinLineThreshold(regression, threshold)) {
+                    if (fitsObject.isWithinAngleThreshold(lastObject, baselineHeading, angleThreshold)) {
+                        if (fitsObject.isWithinSpeedThreshold(lastObject, baselineSpeed, speedThreshold)) {
+
+                        }
+                    }
+                }
             }
         }
     }

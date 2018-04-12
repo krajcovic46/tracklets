@@ -91,8 +91,13 @@ public class FITSObject implements Comparable<FITSObject> {
     }
 
     public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
-        double heading = getHeading(otherObject);
-        return angle <= heading + threshold && angle >= heading - threshold;
+        double myAngle = getHeading(otherObject);
+        return angle + threshold >= myAngle && angle - threshold <= myAngle;
+    }
+
+    public boolean isWithinSpeedThreshold(FITSObject otherObject, double speed, double threshold) {
+        double mySpeed = calculateSpeed(otherObject);
+        return speed + threshold >= mySpeed && speed - threshold <= mySpeed;
     }
 
     @Override
