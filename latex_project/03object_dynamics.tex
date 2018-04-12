@@ -25,21 +25,19 @@
 
 \section{Equatorial coordinate system}\label{sec:ra_dec}
 	
-	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $0,360°$) and Declination (Dec, $-90,90°$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck).
+	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $\langle\ang{0},\ang{360}\rangle$) and Declination (Dec, $\langle\ang{-90},\ang{90}\rangle$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck).
 	
 google	equatorial coordinate system (treti obrazok)
 
 \section{CCD and image reference frame}\label{sec:ccd}
 zakladne charakteristiky kamery + x a y (image reference frame)
 
-	First product of an observation is an object's position in the CCD reference frame (x,y). To transform from the x,y to Radec a so called astrometric reduction is used which, in general, means linking the two systems together.
-
-\section{Astrometric reduction}\label{sec:proc_seg_reduc}
-mailom z xy na radec
-
-	The primary goal is to determine the six orbital elements defined in section ... from Radec in section... To confirm that an object is on a conic section we need to find a solution to orbital elements which will give us an ellipse. (elliptical orbit)
-
+	First product of an observation is an object's position in the CCD reference frame (x,y). To transform from the x,y to RA/Dec a so called astrometric reduction is used which, in general, means linking the two systems together. 
+	
+	The primary goal is to determine the six orbital elements defined in Section \ref{sec:kepler} from RA/Dec in Section \ref{sec:ra_dec}. To confirm that an object is on a conic section we need to find a solution to orbital elements which will yield an elliptical orbit. For more information, see reference .
+	
 \section{Initial orbit determination problem}\label{sec:init_orbit_det}
-montebruck kniha + phd
-
-kuzelousecka = conic section
+	
+	In order to calculate the orbit of object observed with an optical telescope the angle measurements are used(RA/Dec \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters  specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec for three different observation epochs, e.g. few minute intervals for satellites. Methods on how to perform IOD are well defined in the astronomical community - see (referencia montenbruck). The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements. (referencia montenbruck)
+	
+	In the case of observations not being of the same object, some orbital elements will be missing. This characteristic can be used as a filter, or validate gathered data.

@@ -10,8 +10,7 @@
 \contentsline {section}{\numberline {3.1}Kepler's laws of orbital motion}{16}{section.3.1}
 \contentsline {section}{\numberline {3.2}Equatorial coordinate system}{17}{section.3.2}
 \contentsline {section}{\numberline {3.3}CCD and image reference frame}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Astrometric reduction}{17}{section.3.4}
-\contentsline {section}{\numberline {3.5}Initial orbit determination problem}{18}{section.3.5}
+\contentsline {section}{\numberline {3.4}Initial orbit determination problem}{18}{section.3.4}
 \contentsline {chapter}{\numberline {4}Existing solutions to the problem of tracklet building}{19}{chapter.4}
 \contentsline {section}{\numberline {4.1}k-d trees}{19}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Efficient intra- and inter-night linking of asteroid detections using kd-trees}{20}{subsection.4.1.1}
