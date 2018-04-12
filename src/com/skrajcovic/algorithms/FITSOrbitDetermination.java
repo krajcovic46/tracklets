@@ -34,11 +34,6 @@ public class FITSOrbitDetermination {
                 OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
             }
         }
-//        System.out.println(fitsObjects.get(0).getMjd());
-//        for (int i = 0; i < fitsObjects.size(); i++) {
-//            System.out.print((fitsObjects.get(i).getMjd() - fitsObjects.get(0).getMjd()) * 3600 * 24);
-//            System.out.println(";" + fitsObjects.get(i).getRectascension().getDegValue() + ";" + fitsObjects.get(i).getDeclination().getDegValue());
-//        }
     }
 
     private static Observation[] transformFITSObjectsIntoObservations(List<FITSObject> fitsObjects) {

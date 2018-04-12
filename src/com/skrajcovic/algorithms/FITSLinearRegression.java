@@ -2,6 +2,7 @@ package com.skrajcovic.algorithms;
 
 import com.skrajcovic.FITSBatch;
 import com.skrajcovic.FITSObject;
+import com.skrajcovic.FITSTracklet;
 import com.skrajcovic.datastructures.Type;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
@@ -17,9 +18,11 @@ public class FITSLinearRegression {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
                 (HashSet<FITSObject>) batch.getSecondSet(), batch.getRegressions());
 
-        FITSLinearRegression.fitPointsToRegressions(distanceThreshold, batch);
+        FITSLinearRegression.fitPointsToRegressions2(distanceThreshold, batch);
 
-        System.out.println(batch.getRegressionResults());
+        System.out.println(FITSBatch.tracklets);
+
+//        System.out.println(batch.getRegressionResults());
 
     }
 
@@ -50,8 +53,10 @@ public class FITSLinearRegression {
         Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
         ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();
 
-        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> mapDataRegression : regressions.entrySet()) {
+        String name = "";
 
+        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> mapDataRegression : regressions.entrySet()) {
+            FITSTracklet tracklet = new FITSTracklet();
             SimpleRegression regression = mapDataRegression.getValue();
             ArrayList<FITSObject> regressionPoints = mapDataRegression.getKey();
 
@@ -62,19 +67,38 @@ public class FITSLinearRegression {
             double baselineHeading = secondObject.getHeading(firstObject);
             double baselineSpeed = firstObject.calculateSpeed(secondObject);
 
+            tracklet.objects.add(new HashSet<>(Arrays.asList(firstObject)));
+            tracklet.objects.add(new HashSet<>(Arrays.asList(secondObject)));
+
+            HashSet<FITSObject> nextSet = new HashSet<>();
+
+            name = secondObject.getFileName();
+            int numberOfObjects = 0;
+
             for (FITSObject fitsObject : data) {
+                if (!fitsObject.getFileName().equals(name)) {
+                    numberOfObjects = 0;
+                    name = fitsObject.getFileName();
+                }
                 if (fitsObject.isWithinLineThreshold(regression, threshold)) {
                     if (fitsObject.isWithinAngleThreshold(lastObject, baselineHeading, angleThreshold)) {
                         if (fitsObject.isWithinSpeedThreshold(lastObject, baselineSpeed, speedThreshold)) {
-
+                            if (numberOfObjects == FITSBatch.objectsCount.get(fitsObject.getFileName())) {
+                                System.out.println("aiosjdOIAJSDIOAJSIODJIAOD");
+                                tracklet.objects.add(nextSet);
+                                nextSet = new HashSet<>();
+                            } else {
+                                nextSet.add(fitsObject);
+                            }
                         }
                     }
                 }
+                numberOfObjects++;
             }
+            FITSBatch.tracklets.add(tracklet);
         }
     }
 
-    //TODO - make the method work on RADEC instead of x/y
     private static void fitPointsToRegressions(double threshold, FITSBatch batch) {
         Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
         ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();

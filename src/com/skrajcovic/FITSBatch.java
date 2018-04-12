@@ -10,6 +10,9 @@ public class FITSBatch {
     private Set<FITSObject> sSet;
     private Map<ArrayList<FITSObject>, SimpleRegression> regressions;
     private List<FITSObject> regressionResults;
+    public static Map<String, Integer> objectsCount = new TreeMap<>();
+
+    public static HashSet<FITSTracklet> tracklets = new HashSet<>();
 
     public static final boolean DEBUG = false;
     public static final boolean RADEC = true;

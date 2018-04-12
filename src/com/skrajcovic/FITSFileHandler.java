@@ -23,14 +23,21 @@ public class FITSFileHandler {
             throw new NullPointerException("Missing .fits file in an entry.");
         }
 
+        String fileName = catFile.getName();
+        fileName = fileName.substring(0, fileName.length() - 4);
+
         BufferedReader bf = new BufferedReader(new FileReader(catFile));
         String text;
         Pattern pattern = Pattern.compile("\\s+");
+
+        int numberOfObjects = 0;
 
         while ((text = bf.readLine()) != null) {
             if (read) {
                 List<String> textList = Arrays.asList(pattern.split(text.trim()));
                 if (textList.get(0).equals("?") || textList.get(0).equals("H") || textList.get(0).equals("S")) {
+
+                    numberOfObjects++;
 
                     String type = textList.get(0);
 
@@ -59,7 +66,7 @@ public class FITSFileHandler {
                         fitsCardEXPTIME = fitsHeader.card("EXPOSURE");
                     }
 
-                    FITSObject fitsObject = new FITSObject(catFile.getName(), type, ra, dec, magnitude, x, y);
+                    FITSObject fitsObject = new FITSObject(fileName, type, ra, dec, magnitude, x, y);
                     fitsObject.setTime(fitsCardDATEOBS, fitsCardEXPTIME);
 
                     switch (set) {
@@ -81,6 +88,8 @@ public class FITSFileHandler {
             }
         }
 
+        FITSBatch.objectsCount.put(fileName, numberOfObjects);
+        bf.close();
     }
 
     private static FitsHeader getFitsHeader(File fitsFile) throws IOException {
@@ -92,7 +101,7 @@ public class FITSFileHandler {
     static void readFiles(File folder, FITSBatch batch) throws Exception {
         File[] files = folder.listFiles();
         if (files == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("No files in the provided folder.");
         }
         ArrayList<File> filesList = new ArrayList<>(Arrays.asList(files));
         File astrometryFolder = null;
@@ -119,8 +128,8 @@ public class FITSFileHandler {
 
     @SuppressWarnings("unchecked")
     private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) throws Exception {
-//        Object[] arr = mergdFiles.entrySet().toArray();
         ArrayList<Map.Entry<File, File>> arr = new ArrayList<>(mergedFiles.entrySet());
+
         Map.Entry<File, File> firstEntry = arr.get(0);
         Map.Entry<File, File> secondEntry = arr.get(1);
         processEntry(firstEntry, batch, "firstSet");
@@ -128,6 +137,8 @@ public class FITSFileHandler {
         for (int i = 2; i < arr.size(); i++) {
             processEntry(arr.get(i), batch, "mainSet");
         }
+
+        System.out.println(FITSBatch.objectsCount);
     }
 
     private static Map<File, File> mergeCATWithFITS(List<File> catFiles, List<File> fitsFiles) throws Exception {
@@ -161,5 +172,25 @@ public class FITSFileHandler {
             }
         }
         return catFiles;
+    }
+
+    private static Integer countLines(InputStream is) throws IOException {
+        try {
+            byte[] c = new byte[1024];
+            int count = 0;
+            int readChars = 0;
+            boolean empty = true;
+            while ((readChars = is.read(c)) != -1) {
+                empty = false;
+                for (int i = 0; i < readChars; ++i) {
+                    if (c[i] == '\n') {
+                        ++count;
+                    }
+                }
+            }
+            return (count == 0 && !empty) ? 1 : count;
+        } finally {
+            is.close();
+        }
     }
 }

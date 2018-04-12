@@ -38,7 +38,7 @@ public class Main {
             //TODO - neural network - python script probably
         }
         FITSLinearRegression.perform(batch);
-        FITSOrbitDetermination.perform(batch);
+//        FITSOrbitDetermination.perform(batch);
 	    if (FITSBatch.DEBUG) {
             Browser browser = new Browser();
             try {
