@@ -12,7 +12,7 @@ public class FITSLinearRegression {
 
     private static final double distanceThreshold = 50;
     private static final double angleThreshold = 50;
-    private static final double speedThreshold = 50;
+    private static final double speedThreshold = 100;
 
     public static void perform(FITSBatch batch) {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
@@ -64,13 +64,23 @@ public class FITSLinearRegression {
             FITSObject secondObject = regressionPoints.get(1);
             FITSObject lastObject = regressionPoints.get(regressionPoints.size() - 1);
 
-            double baselineHeading = secondObject.getHeading(firstObject);
+            double baselineHeading = secondObject.calculateHeading(firstObject);
             double baselineSpeed = firstObject.calculateSpeed(secondObject);
 
-            tracklet.objects.add(new HashSet<>(Arrays.asList(firstObject)));
-            tracklet.objects.add(new HashSet<>(Arrays.asList(secondObject)));
+            tracklet.baselineHeading = baselineHeading;
+            tracklet.baselineSpeed = baselineSpeed;
 
-            HashSet<FITSObject> nextSet = new HashSet<>();
+            ArrayList<Map<FITSObject, Double>> firstList = new ArrayList<>();
+            Map<FITSObject, Double> firstMap = new HashMap<>(); firstMap.put(firstObject, 0D);
+            firstList.add(firstMap);
+            tracklet.objects.add(firstList);
+
+            ArrayList<Map<FITSObject, Double>> secondList = new ArrayList<>();
+            Map<FITSObject, Double> secondMap = new HashMap<>(); secondMap.put(firstObject, baselineHeading + baselineSpeed);
+            secondList.add(secondMap);
+            tracklet.objects.add(secondList);
+
+            ArrayList<Map<FITSObject, Double>> nextSet = new ArrayList<>();
 
             name = secondObject.getFileName();
             int numberOfObjects = 0;
@@ -80,76 +90,81 @@ public class FITSLinearRegression {
                     numberOfObjects = 0;
                     name = fitsObject.getFileName();
                 }
-                if (fitsObject.isWithinLineThreshold(regression, threshold)) {
-                    if (fitsObject.isWithinAngleThreshold(lastObject, baselineHeading, angleThreshold)) {
-                        if (fitsObject.isWithinSpeedThreshold(lastObject, baselineSpeed, speedThreshold)) {
-                            if (numberOfObjects == FITSBatch.objectsCount.get(fitsObject.getFileName())) {
-                                System.out.println("aiosjdOIAJSDIOAJSIODJIAOD");
-                                tracklet.objects.add(nextSet);
-                                nextSet = new HashSet<>();
-                            } else {
-                                nextSet.add(fitsObject);
-                            }
+                double distanceToLine = fitsObject.calculateDistanceToLine(regression);
+                if (fitsObject.isWithinLineThreshold(distanceToLine, threshold)) {
+                    double angle = fitsObject.calculateHeading(lastObject);
+                    if (fitsObject.isWithinAngleThreshold(angle, baselineHeading, angleThreshold)) {
+                        double speed = fitsObject.calculateSpeed(lastObject);
+                        if (fitsObject.isWithinSpeedThreshold(speed, baselineSpeed, speedThreshold)) {
+                            System.out.println("trigger: " + fitsObject);
+
+                            HashMap<FITSObject, Double> temp = new HashMap<>();
+                            temp.put(fitsObject, distanceToLine + angle + speed);
+
+                            nextSet.add(temp);
                         }
                     }
                 }
                 numberOfObjects++;
+//                System.out.print(numberOfObjects + " = ");
+//                System.out.println(FITSBatch.objectsCount.get(fitsObject.getFileName()));
+                if (numberOfObjects == FITSBatch.objectsCount.get(fitsObject.getFileName())) {
+                    tracklet.objects.add(nextSet);
+                    tracklet.sortLast();
+                    nextSet = new ArrayList<>();
+                }
             }
             FITSBatch.tracklets.add(tracklet);
         }
     }
 
-    private static void fitPointsToRegressions(double threshold, FITSBatch batch) {
-        Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
-        ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();
-
-        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
-            FITSObject last = null;
-            double lastSpeed = Double.MAX_VALUE;
-            ArrayList<FITSObject> regressionPoints = regression.getKey();
-
-            /*TODO - figure out a way to determine correct starting points for regression
-            this is a quick hack to make sure that the algorithm is correct for the right
-            two starting points (both identified as type H  in Astrometrica tool
-             */
-            if (regressionPoints.get(0).getType() == Type.H && regressionPoints.get(1).getType() == Type.H) {
-
-                double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
-                double baseHeading = regressionPoints.get(0).getHeading(regressionPoints.get(1));
-
-                for (FITSObject fitsObject : data) {
-                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
-                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, angleThreshold)) {
-
-//                        System.out.println(fitsObject.getFileName());
-//                        System.out.println(fitsObject.getType());
-//                        System.out.println(fitsObject.getX());
-//                        System.out.println(fitsObject.getY());
-//                        System.out.println("-----------------");
-
-                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
-                            regressionPoints.add(last);
-                            regression.getValue().addData(last.getxComponent(), last.getyComponent());
-
-                            //cleanup
-                            last = null;
-                            lastSpeed = Double.MAX_VALUE;
-                        }
-
-                        double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
-                        if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
-                            last = fitsObject;
-                            lastSpeed = currentSpeed;
-                        }
-                    }
-                }
-                // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
-                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
-                    regressionPoints.add(last);
-//                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
-                }
-                batch.setRegressionResults(regressionPoints);
-            }
-        }
-    }
+//    private static void fitPointsToRegressions(double threshold, FITSBatch batch) {
+//        Map<ArrayList<FITSObject>, SimpleRegression> regressions = batch.getRegressions();
+//        ArrayList<FITSObject> data = (ArrayList<FITSObject>) batch.getMainData();
+//
+//        for (Map.Entry<ArrayList<FITSObject>, SimpleRegression> regression : regressions.entrySet()) {
+//            FITSObject last = null;
+//            double lastSpeed = Double.MAX_VALUE;
+//            ArrayList<FITSObject> regressionPoints = regression.getKey();
+//
+//            if (regressionPoints.get(0).getType() == Type.H && regressionPoints.get(1).getType() == Type.H) {
+//
+//                double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
+//                double baseHeading = regressionPoints.get(0).calculateHeading(regressionPoints.get(1));
+//
+//                for (FITSObject fitsObject : data) {
+//                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
+//                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, angleThreshold)) {
+//
+////                        System.out.println(fitsObject.getFileName());
+////                        System.out.println(fitsObject.getType());
+////                        System.out.println(fitsObject.getX());
+////                        System.out.println(fitsObject.getY());
+////                        System.out.println("-----------------");
+//
+//                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
+//                            regressionPoints.add(last);
+//                            regression.getValue().addData(last.getxComponent(), last.getyComponent());
+//
+//                            //cleanup
+//                            last = null;
+//                            lastSpeed = Double.MAX_VALUE;
+//                        }
+//
+//                        double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
+//                        if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
+//                            last = fitsObject;
+//                            lastSpeed = currentSpeed;
+//                        }
+//                    }
+//                }
+//                // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
+//                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
+//                    regressionPoints.add(last);
+////                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
+//                }
+//                batch.setRegressionResults(regressionPoints);
+//            }
+//        }
+//    }
 }

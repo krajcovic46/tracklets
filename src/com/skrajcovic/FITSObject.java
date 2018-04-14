@@ -52,7 +52,7 @@ public class FITSObject implements Comparable<FITSObject> {
 //        System.out.println("-------------------------");
     }
 
-    public boolean isWithinLineThreshold(SimpleRegression regression, double threshold) {
+    public double calculateDistanceToLine(SimpleRegression regression) {
         double m = regression.getSlope();
         double b = regression.getIntercept();
 
@@ -60,7 +60,10 @@ public class FITSObject implements Comparable<FITSObject> {
 
         double distance = Math.abs(-m * getxComponent() + coeffy * getyComponent() - b)
                 / (Math.sqrt(Math.pow(-m, 2) + Math.pow(coeffy, 2)));
+        return distance;
+    }
 
+    public boolean isWithinLineThreshold(double distance, double threshold) {
 //        if (this.type == Type.H) {
 //            System.out.println("filename: " + fileName);
 //            System.out.println("slope: " + m);
@@ -84,19 +87,17 @@ public class FITSObject implements Comparable<FITSObject> {
                 / calculateDeltaTime(otherObject);
     }
 
-    public double getHeading(FITSObject otherObject) {
+    public double calculateHeading(FITSObject otherObject) {
         double theta = Math.toDegrees(Math.atan2(otherObject.getyComponent() - getyComponent(), otherObject.getxComponent() - getxComponent()));
 //        System.out.println(Math.abs(theta));
         return Math.abs(theta);
     }
 
-    public boolean isWithinAngleThreshold(FITSObject otherObject, double angle, double threshold) {
-        double myAngle = getHeading(otherObject);
+    public boolean isWithinAngleThreshold(double myAngle, double angle, double threshold) {
         return angle + threshold >= myAngle && angle - threshold <= myAngle;
     }
 
-    public boolean isWithinSpeedThreshold(FITSObject otherObject, double speed, double threshold) {
-        double mySpeed = calculateSpeed(otherObject);
+    public boolean isWithinSpeedThreshold(double mySpeed, double speed, double threshold) {
         return speed + threshold >= mySpeed && speed - threshold <= mySpeed;
     }
 
@@ -109,8 +110,19 @@ public class FITSObject implements Comparable<FITSObject> {
 
 // 1.7
     public String toString() {
-        return "[" + getFileName() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()
-                + ", dec:: " + getDeclination().getDegValue() + ", " + getType() +"]\n";
+        if (true) {
+            return shortString();
+        }
+        return verboseString();
+    }
+
+    private String shortString() {
+        return getFileName() + ", " + getType() + ", x: " + getX() + ", y: " + getY();
+    }
+
+    private String verboseString() {
+        return getFileName() + ", " + getType() + ", x: " + getX() + ", y: " + getY() + ", ra: " + getRectascension().getDegValue()
+                + ", dec:: " + getDeclination().getDegValue();
     }
 
     public String getFileName() {
@@ -137,7 +149,7 @@ public class FITSObject implements Comparable<FITSObject> {
                 this.type = Type.H;
                 break;
             case "?":
-                this.type = Type.UNKNOWN;
+                this.type = Type.U;
                 break;
             default:
                 break;
