@@ -2,6 +2,7 @@ package com.skrajcovic;
 
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class FITSBatch {
@@ -15,7 +16,7 @@ public class FITSBatch {
     public static HashSet<FITSTracklet> tracklets = new HashSet<>();
 
     public static final boolean DEBUG = false;
-    public static final boolean RADEC = false;
+    public static final boolean RADEC = true;
 
     public FITSBatch() {
         regressions = new HashMap<>();
@@ -58,6 +59,23 @@ public class FITSBatch {
 
     public List<FITSObject> getRegressionResults() {
         return regressionResults;
+    }
+
+    public void filterOutEmptyTracklets() {
+        Iterator iterator = tracklets.iterator();
+        while (iterator.hasNext()) {
+            FITSTracklet tracklet = (FITSTracklet) iterator.next();
+            int trackletSize = tracklet.objects.size();
+            int numberOfEmpty = 0;
+            for (ArrayList<Map<FITSObject, Double>> list : tracklet.objects) {
+                if (list.isEmpty()) {
+                    numberOfEmpty++;
+                }
+            }
+            if (trackletSize - numberOfEmpty == 2) {
+                iterator.remove();
+            }
+        }
     }
 
     public String toString() {

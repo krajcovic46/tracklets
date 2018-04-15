@@ -4,7 +4,7 @@
 
 \section{Kepler's laws of orbital motion}\label{sec:kepler}
 	
-	Kepler's law of orbital motion describes motion of a satellite in regards to gravitational centre of mass, e.g. Sun, Earth, etc. Generally, it states that such motion follows a trajectory which is always elliptically shaped.
+	Kepler's law of orbital motion describes motion of a satellite in regards to gravitational centre of mass, e.g. Sun to the centre of the galaxy, Earth to Sun, etc. Generally, it states that such motion follows a trajectory which is always elliptically shaped.
 	
 	In astronomy, an object's position in an inertial system, e.g. geocentric or heliocentric, at specific time (reference epoch $t$) can be defined from two different angles.
 	
@@ -19,25 +19,30 @@
 		\item $M_t$ - mean anomaly at reference epoch $t$ [°]
 	\end{itemize}
 	
-	Elements $a$ and $e$ define shape of the ellipse while $i$ and $\Omega$ define orientation of the elliptical plane, $\omega$ defines the orientation of the ellipse in the elliptical plane and $M_t$ defines position of an object on the ellipse.
-	
+	Elements $a$ and $e$ define shape of the ellipse while $i$ and $\Omega$ define orientation of the elliptical plane, $\omega$ defines the orientation of the ellipse in the elliptical plane and $M_t$ defines position of an object on the ellipse.	
 	referencia montenbruck chapter 2
 
 \section{Equatorial coordinate system}\label{sec:ra_dec}
 	
-	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $\langle\ang{0},\ang{360}\rangle$) and Declination (Dec, $\langle\ang{-90},\ang{90}\rangle$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck).
+	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $\langle\ang{0},\ang{360}\rangle$) and Declination (Dec, $\langle\ang{-90},\ang{90}\rangle$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck). See Figure \ref{fig:equatorial} for an illustration of RA/Dec with regards to Earth.
 	
-google	equatorial coordinate system (treti obrazok)
+	\begin{figure}[H]
+	\centering
+	  \includegraphics[width=6cm]{images/equatorial}
+		  \caption{RA/Dec illustrated.}
+	  \label{fig:equatorial}
+	\end{figure}
 
 \section{CCD and image reference frame}\label{sec:ccd}
-zakladne charakteristiky kamery + x a y (image reference frame)
 
-	First product of an observation is an object's position in the CCD reference frame (x,y). To transform from the x,y to RA/Dec a so called astrometric reduction is used which, in general, means linking the two systems together. 
+	First product of an observation is an object's position in the CCD reference frame ($x$, $y$). To transform from the $x$ and $y$ coordinates to RA/Dec a so called \emph{astrometric reduction} is used which, in general, means linking the two systems together.
 	
 	The primary goal is to determine the six orbital elements defined in Section \ref{sec:kepler} from RA/Dec in Section \ref{sec:ra_dec}. To confirm that an object is on a conic section we need to find a solution to orbital elements which will yield an elliptical orbit. For more information, see reference .
 	
 \section{Initial orbit determination problem}\label{sec:init_orbit_det}
 	
-	In order to calculate the orbit of object observed with an optical telescope the angle measurements are used(RA/Dec \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters  specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec for three different observation epochs, e.g. few minute intervals for satellites. Methods on how to perform IOD are well defined in the astronomical community - see (referencia montenbruck). The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements. (referencia montenbruck)
+	In order to calculate the orbit of object observed with an optical telescope the angle measurements are used (RA/Dec, Section \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters - specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec for three different observation epochs, e.g. few minute intervals for satellites. 	
+	
+	Methods on how to perform Initial Orbit Determination (IOD) are well defined in the astronomical community - see (referencia montenbruck). The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements. (referencia montenbruck)
 	
 	In the case of observations not being of the same object, some orbital elements will be missing. This characteristic can be used as a filter, or validate gathered data.

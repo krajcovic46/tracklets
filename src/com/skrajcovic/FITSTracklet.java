@@ -19,6 +19,16 @@ public class FITSTracklet {
         return objects.toString() + "\n";
     }
 
+    public FITSObject getLastPoint() {
+        ArrayList<Map<FITSObject, Double>> firstLast = objects.get(objects.size() - 1);
+        if (firstLast.size() > 0) {
+            LinkedHashMap<FITSObject, Double> toReturn = new LinkedHashMap<>(firstLast.get(0));
+            Map.Entry<FITSObject, Double> entry = toReturn.entrySet().iterator().next();
+            return entry.getKey();
+        }
+        return null;
+    }
+
     public void sortLast() {
         int lastIndex = objects.size() - 1;
         ArrayList<Map<FITSObject, Double>> last = objects.get(lastIndex);

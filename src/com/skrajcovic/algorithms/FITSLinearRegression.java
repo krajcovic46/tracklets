@@ -12,7 +12,7 @@ public class FITSLinearRegression {
 
     private static final double distanceThreshold = 50;
     private static final double angleThreshold = 50;
-    private static final double speedThreshold = 10000;
+    private static final double speedThreshold = 100000;
 
     public static void perform(FITSBatch batch) {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
@@ -20,6 +20,9 @@ public class FITSLinearRegression {
 
         FITSLinearRegression.fitPointsToRegressions2(distanceThreshold, batch);
 
+        System.out.println(FITSBatch.tracklets);
+        batch.filterOutEmptyTracklets();
+        System.out.println("--------------");
         System.out.println(FITSBatch.tracklets);
 
 //        System.out.println(batch.getRegressionResults());
@@ -32,18 +35,6 @@ public class FITSLinearRegression {
                 SimpleRegression sr = new SimpleRegression();
                 sr.addData(obj1.getxComponent(), obj1.getyComponent());
                 sr.addData(obj2.getxComponent(), obj2.getyComponent());
-//                if (obj1.getType() == Type.H && obj2.getType() == Type.H) {
-//                    System.out.println(obj1.getFileName());
-//                    System.out.println(obj1.getxComponent());
-//                    System.out.println(obj1.getyComponent());
-//
-//                    System.out.println(obj2.getFileName());
-//                    System.out.println(obj2.getxComponent());
-//                    System.out.println(obj2.getyComponent());
-//
-//                    System.out.println("slope: " + sr.getSlope());
-//                    System.out.println("intercept: " + sr.getIntercept());
-//                }
                 regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
             }
         }
@@ -92,14 +83,19 @@ public class FITSLinearRegression {
                 }
                 double distanceToLine = fitsObject.calculateDistanceToLine(regression);
                 if (fitsObject.isWithinLineThreshold(distanceToLine, threshold)) {
-                    System.out.println("trigger line threshold: " + fitsObject);
+                    if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                        System.out.println("trigger line threshold: " + fitsObject);
+                    }
                     double angle = fitsObject.calculateHeading(lastObject);
                     if (fitsObject.isWithinAngleThreshold(angle, baselineHeading, angleThreshold)) {
-                        System.out.println("trigger angle threshold: " + fitsObject);
+                        if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                            System.out.println("trigger angle threshold: " + fitsObject);
+                        }
                         double speed = fitsObject.calculateSpeed(lastObject);
                         if (fitsObject.isWithinSpeedThreshold(speed, baselineSpeed, speedThreshold)) {
-                            System.out.println("trigger speed threshold: " + fitsObject);
-
+                            if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                                System.out.println("trigger speed threshold: " + fitsObject);
+                            }
                             HashMap<FITSObject, Double> temp = new HashMap<>();
                             temp.put(fitsObject, distanceToLine + angle + speed);
 
@@ -114,6 +110,11 @@ public class FITSLinearRegression {
                     tracklet.objects.add(nextSet);
                     tracklet.sortLast();
                     nextSet = new ArrayList<>();
+
+                    FITSObject pointToAdd = tracklet.getLastPoint();
+                    if (pointToAdd != null) {
+                        regression.addData(pointToAdd.getxComponent(), pointToAdd.getyComponent());
+                    }
                 }
             }
             FITSBatch.tracklets.add(tracklet);
