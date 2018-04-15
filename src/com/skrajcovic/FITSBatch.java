@@ -15,7 +15,7 @@ public class FITSBatch {
     public static HashSet<FITSTracklet> tracklets = new HashSet<>();
 
     public static final boolean DEBUG = false;
-    public static final boolean RADEC = true;
+    public static final boolean RADEC = false;
 
     public FITSBatch() {
         regressions = new HashMap<>();

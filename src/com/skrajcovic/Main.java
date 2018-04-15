@@ -25,7 +25,7 @@ public class Main {
     	FITSBatch batch = new FITSBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
 
-        FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
+        FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//00040A_R_4"), batch);
 
         if (arguments.contains("lr") || arguments.contains("linear")) {
             //TODO - linear regression

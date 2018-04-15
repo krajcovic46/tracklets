@@ -12,7 +12,7 @@ public class FITSLinearRegression {
 
     private static final double distanceThreshold = 50;
     private static final double angleThreshold = 50;
-    private static final double speedThreshold = 100;
+    private static final double speedThreshold = 10000;
 
     public static void perform(FITSBatch batch) {
         FITSLinearRegression.findInitialRegressions((HashSet<FITSObject>) batch.getFirstSet(),
@@ -31,7 +31,7 @@ public class FITSLinearRegression {
             for (FITSObject obj2 : sSet) {
                 SimpleRegression sr = new SimpleRegression();
                 sr.addData(obj1.getxComponent(), obj1.getyComponent());
-                sr.addData(obj2.getyComponent(), obj2.getyComponent());
+                sr.addData(obj2.getxComponent(), obj2.getyComponent());
 //                if (obj1.getType() == Type.H && obj2.getType() == Type.H) {
 //                    System.out.println(obj1.getFileName());
 //                    System.out.println(obj1.getxComponent());
@@ -76,7 +76,7 @@ public class FITSLinearRegression {
             tracklet.objects.add(firstList);
 
             ArrayList<Map<FITSObject, Double>> secondList = new ArrayList<>();
-            Map<FITSObject, Double> secondMap = new HashMap<>(); secondMap.put(firstObject, baselineHeading + baselineSpeed);
+            Map<FITSObject, Double> secondMap = new HashMap<>(); secondMap.put(secondObject, baselineHeading + baselineSpeed);
             secondList.add(secondMap);
             tracklet.objects.add(secondList);
 
@@ -92,11 +92,13 @@ public class FITSLinearRegression {
                 }
                 double distanceToLine = fitsObject.calculateDistanceToLine(regression);
                 if (fitsObject.isWithinLineThreshold(distanceToLine, threshold)) {
+                    System.out.println("trigger line threshold: " + fitsObject);
                     double angle = fitsObject.calculateHeading(lastObject);
                     if (fitsObject.isWithinAngleThreshold(angle, baselineHeading, angleThreshold)) {
+                        System.out.println("trigger angle threshold: " + fitsObject);
                         double speed = fitsObject.calculateSpeed(lastObject);
                         if (fitsObject.isWithinSpeedThreshold(speed, baselineSpeed, speedThreshold)) {
-                            System.out.println("trigger: " + fitsObject);
+                            System.out.println("trigger speed threshold: " + fitsObject);
 
                             HashMap<FITSObject, Double> temp = new HashMap<>();
                             temp.put(fitsObject, distanceToLine + angle + speed);
