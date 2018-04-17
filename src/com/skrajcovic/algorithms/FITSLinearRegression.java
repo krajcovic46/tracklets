@@ -58,9 +58,6 @@ public class FITSLinearRegression {
             double baselineHeading = secondObject.calculateHeading(firstObject);
             double baselineSpeed = firstObject.calculateSpeed(secondObject);
 
-            tracklet.baselineHeading = baselineHeading;
-            tracklet.baselineSpeed = baselineSpeed;
-
             ArrayList<Map<FITSObject, Double>> firstList = new ArrayList<>();
             Map<FITSObject, Double> firstMap = new HashMap<>(); firstMap.put(firstObject, 0D);
             firstList.add(firstMap);
@@ -70,6 +67,8 @@ public class FITSLinearRegression {
             Map<FITSObject, Double> secondMap = new HashMap<>(); secondMap.put(secondObject, baselineHeading + baselineSpeed);
             secondList.add(secondMap);
             tracklet.objects.add(secondList);
+
+            tracklet.valueToCompareWith = baselineHeading + baselineSpeed;
 
             ArrayList<Map<FITSObject, Double>> nextSet = new ArrayList<>();
 

@@ -6,10 +6,7 @@ import java.util.*;
 
 public class FITSTracklet {
     public ArrayList<ArrayList<Map<FITSObject, Double>>> objects;
-    public double baselineHeading = 0;
-    public double baselineSpeed = 0;
-
-    public SimpleRegression simpleRegression = null;
+    public double valueToCompareWith = 0d;
 
     public FITSTracklet() {
         objects = new ArrayList<>();
@@ -49,7 +46,9 @@ public class FITSTracklet {
         Collections.sort(l, new Comparator<Map.Entry<FITSObject, Double>>() {
             @Override
             public int compare(Map.Entry<FITSObject, Double> o1, Map.Entry<FITSObject, Double> o2) {
-                return o1.getValue().compareTo(o2.getValue());
+                Double firstValue = valueToCompareWith - o1.getValue();
+                Double secondValue = valueToCompareWith - o2.getValue();
+                return secondValue.compareTo(firstValue);
             }
         });
 
