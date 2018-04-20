@@ -3,6 +3,7 @@ package com.skrajcovic;
 
 import com.skrajcovic.datastructures.Declination;
 import com.skrajcovic.datastructures.Rectascension;
+import com.skrajcovic.datastructures.Type;
 import eap.fits.*;
 
 import java.io.*;
@@ -10,6 +11,8 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class FITSFileHandler {
+    static PrintWriter neuralPreProcessFile;
+
     public static void processEntry(Map.Entry<File, File> entry, FITSBatch batch, String set) throws Exception {
         boolean read = false;
 
@@ -68,6 +71,8 @@ public class FITSFileHandler {
 
                     FITSObject fitsObject = new FITSObject(fileName, type, ra, dec, magnitude, x, y);
                     fitsObject.setTime(fitsCardDATEOBS, fitsCardEXPTIME);
+
+                    preProcessForNeural(fitsObject);
 
                     switch (set) {
                         case "firstSet":
@@ -130,6 +135,8 @@ public class FITSFileHandler {
     private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) throws Exception {
         ArrayList<Map.Entry<File, File>> arr = new ArrayList<>(mergedFiles.entrySet());
 
+        neuralPreProcessFile = new PrintWriter(new FileWriter("/resources/test.csv", true));
+
         Map.Entry<File, File> firstEntry = arr.get(0);
         Map.Entry<File, File> secondEntry = arr.get(1);
         processEntry(firstEntry, batch, "firstSet");
@@ -137,6 +144,8 @@ public class FITSFileHandler {
         for (int i = 2; i < arr.size(); i++) {
             processEntry(arr.get(i), batch, "mainSet");
         }
+
+        neuralPreProcessFile.close();
 
         System.out.println(FITSBatch.objectsCount);
     }
@@ -172,6 +181,19 @@ public class FITSFileHandler {
             }
         }
         return catFiles;
+    }
+
+    private static void preProcessForNeural(FITSObject object) throws IOException {
+        BufferedWriter bw = new BufferedWriter(neuralPreProcessFile);
+
+        String type = object.getType() == Type.H ? "1" : "0";
+        String x = String.valueOf(object.getX());
+        String y = String.valueOf(object.getY());
+        String time = String.valueOf(object.getMjd());
+//        bw.write("type,x,y,time");
+        bw.write(type+","+x+","+y+","+time);
+
+        bw.close();
     }
 
     private static Integer countLines(InputStream is) throws IOException {

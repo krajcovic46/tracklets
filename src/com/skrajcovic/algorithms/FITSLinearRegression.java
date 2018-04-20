@@ -103,8 +103,6 @@ public class FITSLinearRegression {
                     }
                 }
                 numberOfObjects++;
-//                System.out.print(numberOfObjects + " = ");
-//                System.out.println(FITSBatch.objectsCount.get(fitsObject.getFileName()));
                 if (numberOfObjects == FITSBatch.objectsCount.get(fitsObject.getFileName())) {
                     tracklet.objects.add(nextSet);
                     tracklet.sortLast();
