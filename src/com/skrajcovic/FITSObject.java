@@ -220,6 +220,13 @@ public class FITSObject implements Comparable<FITSObject> {
         return this.yComponent;
     }
 
+    public boolean isUnidentified() {
+        if (getType() == Type.H || getType() == Type.S || getType() == Type.U) {
+            return true;
+        }
+        return false;
+    }
+
     public void setTime(FitsCard dateObs, FitsCard expTime) {
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
         try {

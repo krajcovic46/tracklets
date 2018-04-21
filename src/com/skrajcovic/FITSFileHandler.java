@@ -135,7 +135,7 @@ public class FITSFileHandler {
     private static void insertBatch(Map<File, File> mergedFiles, FITSBatch batch) throws Exception {
         ArrayList<Map.Entry<File, File>> arr = new ArrayList<>(mergedFiles.entrySet());
 
-        neuralPreProcessFile = new PrintWriter(new FileWriter("/resources/test.csv", true));
+//        neuralPreProcessFile = new PrintWriter(new FileWriter("/resources/test.csv", true));
 
         Map.Entry<File, File> firstEntry = arr.get(0);
         Map.Entry<File, File> secondEntry = arr.get(1);
@@ -145,7 +145,7 @@ public class FITSFileHandler {
             processEntry(arr.get(i), batch, "mainSet");
         }
 
-        neuralPreProcessFile.close();
+//        neuralPreProcessFile.close();
 
         System.out.println(FITSBatch.objectsCount);
     }
@@ -184,16 +184,16 @@ public class FITSFileHandler {
     }
 
     private static void preProcessForNeural(FITSObject object) throws IOException {
-        BufferedWriter bw = new BufferedWriter(neuralPreProcessFile);
+//        BufferedWriter bw = new BufferedWriter(neuralPreProcessFile);
 
         String type = object.getType() == Type.H ? "1" : "0";
         String x = String.valueOf(object.getX());
         String y = String.valueOf(object.getY());
         String time = String.valueOf(object.getMjd());
 //        bw.write("type,x,y,time");
-        bw.write(type+","+x+","+y+","+time);
+//        bw.write(type+","+x+","+y+","+time);
 
-        bw.close();
+//        bw.close();
     }
 
     private static Integer countLines(InputStream is) throws IOException {

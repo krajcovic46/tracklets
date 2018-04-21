@@ -32,10 +32,12 @@ public class FITSLinearRegression {
     private static void findInitialRegressions(HashSet<FITSObject> fSet, HashSet<FITSObject> sSet, Map<ArrayList<FITSObject>, SimpleRegression> regressions) {
         for (FITSObject obj1 : fSet) {
             for (FITSObject obj2 : sSet) {
-                SimpleRegression sr = new SimpleRegression();
-                sr.addData(obj1.getxComponent(), obj1.getyComponent());
-                sr.addData(obj2.getxComponent(), obj2.getyComponent());
-                regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
+                if (obj1.isUnidentified() && obj2.isUnidentified()) {
+                    SimpleRegression sr = new SimpleRegression();
+                    sr.addData(obj1.getxComponent(), obj1.getyComponent());
+                    sr.addData(obj2.getxComponent(), obj2.getyComponent());
+                    regressions.put(new ArrayList<>(Arrays.asList(obj1, obj2)), sr);
+                }
             }
         }
     }
