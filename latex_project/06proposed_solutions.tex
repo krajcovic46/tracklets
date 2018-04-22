@@ -53,11 +53,17 @@
 	  \label{fig:regresia3}
 	\end{figure}
 	
-	We touched upon every problem mentioned above - we disregarded points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters and is marked as real is possible and is remedied, or rather verified, by using IOD. The final result is several tracklets of unknown objects. As mentioned previously, tracklets have to contain at least three objects and thus we remove those which do not satisfy this condition.
+	We touched upon every problem mentioned before - we disregard points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters and is marked as real is possible, although very improbable, and is remedied, or rather verified, by using IOD. The final result is several tracklets of unknown objects. As mentioned previously, tracklets have to contain at least three objects and thus we remove those which do not satisfy this condition.
 
 \section{Use of the Initial Orbit Determination algorithms}\label{sec:IDO}
 
-	The theoretical details of IOD are described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:init_orbit_det}. We used a fully functional implementation of IOD from \citep{Silha2012id}. For functioning correctly, the algorithm requires longitude and latitude in radians, altitude (in our case AGO - see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}), RA/Dec in radians and time of the observation in Modified Julian Date (MJD) of three different objects. Then, we perform both Montenbruck and Escobal methods of IOD.
+	The theoretical details of IOD are described in Chapter \ref{chap:object_dynamics}, Section \ref{sec:init_orbit_det}. We used a fully functional implementation of IOD from \citep{Silha2012id}.
+
+	The provided algorithm works as a standalone program but can be wrapped in our implementation and used for verifying data we provide to it.
+	
+	 In order to function correctly, the algorithm requires information about the observer and three separate objects. For the observer, the information we pass is about AGO (see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}), specifically longitude and latitude in radians, and altitude. For the objects, we need to input RA in radians, Dec in radians and time of the observation in Modified Julian Date. Then the orbital elements described in Chapter \ref{chap:object_dynamics} are calculated and objects are evaluated as belonging to the same trajectory or not.
+	 
+	 In the vast majority of cases, we are left with more than three objects from the previous phase (Section \ref{sec:linear_regression} in this chapter). In order to check them all, we need to form all possible combinations of three out of them.
 
 \section{Use of neural network}\label{sec:neural}
 
