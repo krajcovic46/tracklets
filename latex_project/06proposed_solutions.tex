@@ -63,10 +63,18 @@
 	
 	 In order to function correctly, the algorithm requires information about the observer and three separate objects. For the observer, the information we pass is about AGO (see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}), specifically longitude and latitude in radians, and altitude. For the objects, we need to input RA in radians, Dec in radians and time of the observation in Modified Julian Date. Then the orbital elements described in Chapter \ref{chap:object_dynamics} are calculated and objects are evaluated as belonging to the same trajectory or not.
 	 
-	 In the vast majority of cases, we are left with more than three objects from the previous phase (Section \ref{sec:linear_regression} in this chapter). In order to check them all, we need to form all possible combinations of three out of them.
+	 In the vast majority of cases, we are left with more than three objects from the previous phase (Section \ref{sec:linear_regression} in this chapter). In order to check them all, we need to form all possible combinations of three out of them. 
+	 	
+	 To calculate all possible combinations of $r$ objects out of $n$ objects we use the provided implementation in the distribution of IOD, calculated from the formula $$C(n,r)=\frac{n!}{r!(n-r)!}$$ where $r=3$.
+	 
+	 As an example - 11 objects in a tracklet puts the total number of combinations and runs of IOD at $C(11,3)=165$, which is a large number in this case. 
+	 
+	 The results of the IOD are then output into a file and we check the presence of every observation in every combination. Observations which have the highest number of appearances have the highest probability of being a real object - on the other hand, if an observation does not appear, it is considered a not real object and does not belong into a tracklet.
 
 \section{Use of neural network}\label{sec:neural}
 
 	An experimental part of this thesis is the use of a neural network. We are using a popular framework \emph{tflearn}.
 
 \section{Hough transform}\label{sec:hough}
+
+	
