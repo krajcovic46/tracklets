@@ -9,7 +9,6 @@ import com.skrajcovic.utils.Combinations;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class FITSOrbitDetermination {
 
@@ -28,7 +27,7 @@ public class FITSOrbitDetermination {
 
         Kepler kepler = new Kepler();
 
-        Observation[] observation = transformFITSObjectsIntoObservations(fitsObjects);
+        Observation[] observation = transformObjectsIntoObservations(fitsObjects);
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
@@ -36,7 +35,7 @@ public class FITSOrbitDetermination {
         }
     }
 
-    private static Observation[] transformFITSObjectsIntoObservations(List<FITSObject> fitsObjects) {
+    private static Observation[] transformObjectsIntoObservations(List<FITSObject> fitsObjects) {
         Observation[] observations = new Observation[fitsObjects.size()];
         for (int i = 0; i < fitsObjects.size(); i++) {
             Observation observation = new Observation();

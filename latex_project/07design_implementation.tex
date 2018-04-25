@@ -1,1 +1,84 @@
 \chapter{Design and implementation}\label{chap:design}
+
+	For implementation, we use two programming languages - Java and Python. The application is a console one, running firstly on Linux (see Chapter \ref{chap:requirements}, Section \ref{sec:server_param}), even though due to the languages chosen it runs on MS Windows without problems as well.
+	
+	We use several Java libraries and Python modules which allow for quicker and more efficient execution of many needed tasks.
+	
+	Java libraries:	
+\begin{itemize}
+	\item Commons Math: The Apache Commons Mathematics Library - used for all calculations related to SLR and other mathematical requirements,
+	\item eap.fits - a NASA Java interface to FITS files, allowing for opening, reading and manipulating FITS files.
+\end{itemize}		
+
+	And Python modules:
+\begin{itemize}
+	\item Astropy - a module for performing astronomy and astrophysics related tasks in Python,
+	\item tflearn - a deep learning higher-level library.
+\end{itemize}
+
+\section{Classes}\label{sec:classes}
+
+	There are 12 Java classes (along with the Main class) in our implementation.
+	
+\subsection{algorithms.LinearRegression}
+
+	A class responsible for handling SLR. It contains all user-set values denoting thresholds needed for fine-tuning accuracy of the SLR described in Chapter \ref{chap:proposed_solutions}, Section \ref{sec:linear_regression}.
+	
+\begin{table}[H]
+\centering
+\caption{Class variables table}
+\setlength{\extrarowheight}{2pt}
+\label{tab:class_variables_LR}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Class variable} & \textbf{Description} \\ \hline
+private static final double \mbox{distanceThreshold} & a double representing distance threshold \\ \hline
+private static final double \mbox{angleThreshold} & a double representing angle threshold    \\ \hline
+private static final double \mbox{speedThreshold} & a double representing speed threshold    \\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Methods table}
+\setlength{\extrarowheight}{2pt}
+\label{tab:class_methods_LR}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Method} & \textbf{Description} \\ \hline
+public static void \mbox{perform} & a method responsible for performing all necessary actions, called from outside of the class \\ \hline
+private static void \mbox{findInitialRegressions} & a method responsible for constructing initial regressions from starting points\\ \hline
+private static void \mbox{fitPointsToRegressions} & a method responsible for handling all existing SLRs - modifying them, correcting them, etc.\\ \hline
+\end{tabularx}
+\end{table}
+
+\subsection{algorithms.OrbitDetermination}
+
+	A class wrapping already existing implementation of IOD. It handles translating information from previous steps and passing them to the IOD algorithms described in .
+	
+\begin{table}[H]
+\centering
+\caption{Class variables table}
+\setlength{\extrarowheight}{2pt}
+\label{tab:class_variables_OD}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Class variable} & \textbf{Description} \\ \hline
+private static final double \mbox{AGOLON} & a constant describing longitude of AGO \\ \hline
+private static final double \mbox{AGOLAT} & a constant describing latitude of AGO\\ \hline
+private static final double \mbox{AGOALT} & a constant describing altitude of AGO\\ \hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Methods table}
+\setlength{\extrarowheight}{2pt}
+\label{tab:class_methods_OD}
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\textbf{Method} & \textbf{Description} \\ \hline
+public static void \mbox{perform} & a method responsible for performing all necessary actions, called from outside of the class \\ \hline
+private static void \mbox{transformObjectsIntoObservations} & a method responsible for translating inner objects into Observations (class in the existing implementation of IOD)\\ \hline
+\end{tabularx}
+\end{table}

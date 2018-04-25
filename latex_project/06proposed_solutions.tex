@@ -77,4 +77,17 @@
 
 \section{Hough transform}\label{sec:hough}
 
+	Hough transform is an algorithm proposed in 1962 by Paul Hough and its main purpose is to detect shapes, such as ellipses or circles. The simplest form of Hough transform is however used to detect lines.
 	
+	For each line defined as $r=x\cos\theta+y\sin\theta$ we associate a pair $(r,\theta)$ (also called a Hough space) where $r$ is the distance of the origin $O$ of the Euclidean space or plane to the closest point on the line and $\theta$ is the angle between the $x$ axis and the line connecting the origin with the point. See Figure \ref{fig:rtheta} for illustration of the Hough space.
+	
+	\begin{figure}[H]
+	\centering
+	  \includegraphics[width=6cm]{images/rtheta}
+		  \caption{$(r,\theta)$, or Hough space visualization.}
+	  \label{fig:rtheta}
+	\end{figure}
+	
+	The principle of the transformation lies in finding unknown parameters - for a line, a two dimensional object, it's the mentioned pair $(r,\theta)$ - and plotting them from points in Cartesian space into curves in the polar Hough parameter space. Lines, which are collinear in the Cartesian space produce curves in the polar Hough parameter space and intersect at a $(r,\theta)$ point. 
+	
+	By forming the Hough parameter space into accumulator bins, each point in Cartesian space is transformed into a curve and bins which hold corresponding values are incremented. At the end of this procedure, bins which have the highest values represent parameters of the most likely lines.
