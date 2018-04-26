@@ -36,13 +36,17 @@
 \contentsline {section}{\numberline {6.4}Hough transform}{40}{section.6.4}
 \contentsline {chapter}{\numberline {7}Design and implementation}{41}{chapter.7}
 \contentsline {section}{\numberline {7.1}Classes}{42}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}algorithms.LinearRegression}{42}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}algorithms.OrbitDetermination}{43}{subsection.7.1.2}
-\contentsline {chapter}{\numberline {8}Results}{44}{chapter.8}
-\contentsline {section}{\numberline {8.1}TDM and MPC formats, CCSDS}{44}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}CCSDS}{44}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}TDM format}{44}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}MPC}{47}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}MPC format}{48}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Visualization of results}{49}{section.8.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{50}{chapter.9}
+\contentsline {subsection}{\numberline {7.1.1}algorithms.SDTLinearRegression}{42}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}algorithms.SDTOrbitDetermination}{43}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}SDTObject}{44}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}SDTBatch}{47}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}SDTTracklet}{48}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}SDTFileHandler}{50}{subsection.7.1.6}
+\contentsline {chapter}{\numberline {8}Results}{52}{chapter.8}
+\contentsline {section}{\numberline {8.1}TDM and MPC formats, CCSDS}{52}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}CCSDS}{52}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}TDM format}{52}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}MPC}{55}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}MPC format}{56}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Visualization of results}{57}{section.8.2}
+\contentsline {chapter}{\numberline {9}Conclusion}{58}{chapter.9}

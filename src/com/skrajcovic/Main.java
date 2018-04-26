@@ -1,8 +1,7 @@
 package com.skrajcovic;
 
 
-import com.skrajcovic.algorithms.FITSLinearRegression;
-import com.skrajcovic.algorithms.FITSOrbitDetermination;
+import com.skrajcovic.algorithms.SDTLinearRegression;
 import com.skrajcovic.utils.Arguments;
 import eap.fitsbrowser.Browser;
 
@@ -10,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
 
 public class Main {
 
@@ -22,10 +20,10 @@ public class Main {
             }
         }
 
-    	FITSBatch batch = new FITSBatch();
+    	SDTBatch batch = new SDTBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
 
-        FITSFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
+        SDTFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
 
         if (arguments.contains("lr") || arguments.contains("linear")) {
             //TODO - linear regression
@@ -37,9 +35,9 @@ public class Main {
         if (arguments.contains("nn") || arguments.contains("neural")) {
             //TODO - neural network - python script probably
         }
-        FITSLinearRegression.perform(batch);
-//        FITSOrbitDetermination.perform(batch);
-	    if (FITSBatch.DEBUG) {
+        SDTLinearRegression.perform(batch);
+//        SDTOrbitDetermination.perform(batch);
+	    if (SDTBatch.DEBUG) {
             Browser browser = new Browser();
             try {
                 browser.openFile();

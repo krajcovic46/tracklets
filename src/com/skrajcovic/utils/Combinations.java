@@ -1,28 +1,26 @@
 package com.skrajcovic.utils;
 
-import com.skrajcovic.FITSObject;
-import com.skrajcovic.orbitdetermination.Observation;
+import com.skrajcovic.SDTObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Combinations {
 
-    List<FITSObject[]> outputList;
-    List<FITSObject> inputList;
+    List<SDTObject[]> outputList;
+    List<SDTObject> inputList;
 
-    public Combinations(List<FITSObject> inputList) {
+    public Combinations(List<SDTObject> inputList) {
         this.outputList = new ArrayList<>();
         this.inputList = inputList;
     }
 
-    public List<FITSObject[]> getCombinations() {
-        fillCombination(new FITSObject[3], 0, 0);
+    public List<SDTObject[]> getCombinations() {
+        fillCombination(new SDTObject[3], 0, 0);
         return outputList;
     }
 
-    private void fillCombination(FITSObject[] combination, int innerIndex, int outerIndex) {
+    private void fillCombination(SDTObject[] combination, int innerIndex, int outerIndex) {
         if (innerIndex == 3) {
             outputList.add(combination);
             return;

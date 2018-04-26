@@ -10,7 +10,7 @@
 //import java.util.regex.Pattern;
 //
 //public class FileReaderOld {
-//    public static void processFile(FITSBatch batch, String fileLocation) {
+//    public static void processFile(SDTBatch batch, String fileLocation) {
 //        boolean skipFirstLine = true;
 //
 //        File file = new File(fileLocation);
@@ -33,7 +33,7 @@
 //                        double y = Double.valueOf(splitLine[4]);
 //                        double intensity = Double.valueOf(splitLine[5]);
 //
-//                        FITSObject obj = new FITSObject(splitLine[0], real, mjd, x, y, intensity);
+//                        SDTObject obj = new SDTObject(splitLine[0], real, mjd, x, y, intensity);
 //
 //                        if (insertFirst) {
 //                            batch.firstSetInsert(obj);
