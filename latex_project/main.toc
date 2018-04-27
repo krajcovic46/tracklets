@@ -2,51 +2,49 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Introduction to space debris and observations}{2}{chapter.2}
 \contentsline {subsection}{\numberline {2.0.1}Small space debris}{4}{subsection.2.0.1}
-\contentsline {subsection}{\numberline {2.0.2}Large space debris}{8}{subsection.2.0.2}
-\contentsline {section}{\numberline {2.1}Observations and telescopes}{11}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}ESA OGS}{12}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}FMPI AGO}{13}{subsection.2.1.2}
-\contentsline {chapter}{\numberline {3}Object dynamics}{16}{chapter.3}
-\contentsline {section}{\numberline {3.1}Kepler's laws of orbital motion}{16}{section.3.1}
-\contentsline {section}{\numberline {3.2}Equatorial coordinate system}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}CCD and image reference frame}{18}{section.3.3}
-\contentsline {section}{\numberline {3.4}Initial orbit determination problem}{18}{section.3.4}
-\contentsline {chapter}{\numberline {4}Existing solutions to the problem of tracklet building}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}k-d trees}{19}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Efficient intra- and inter-night linking of asteroid detections using kd-trees}{20}{subsection.4.1.1}
-\contentsline {subsubsection}{Pan-STARRS}{20}{section*.18}
-\contentsline {subsubsection}{Pan-STARRS MOPS}{20}{section*.19}
-\contentsline {section}{\numberline {4.2}Uniform linear motion detection}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Optical observation, image-processing, and detection of space debris in GEO}{23}{subsection.4.2.1}
-\contentsline {subsubsection}{Image processing}{23}{section*.22}
-\contentsline {subsubsection}{Detection algorithm}{24}{section*.23}
-\contentsline {chapter}{\numberline {5}Technical and practical requirements}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Input data}{25}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Flexible Image Transport System files}{25}{subsection.5.1.1}
-\contentsline {subsubsection}{File structure}{26}{section*.25}
-\contentsline {subsubsection}{Data arrays}{26}{section*.26}
-\contentsline {subsubsection}{Headers}{27}{section*.27}
-\contentsline {subsection}{\numberline {5.1.2}.cat files}{29}{subsection.5.1.2}
-\contentsline {subsubsection}{Contents of a .cat file}{30}{section*.30}
-\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{31}{subsection.5.1.3}
-\contentsline {chapter}{\numberline {6}Proposed solutions}{32}{chapter.6}
-\contentsline {section}{\numberline {6.1}Use of linear regression}{32}{section.6.1}
-\contentsline {section}{\numberline {6.2}Use of the Initial Orbit Determination algorithms}{38}{section.6.2}
-\contentsline {section}{\numberline {6.3}Use of neural network}{39}{section.6.3}
-\contentsline {section}{\numberline {6.4}Hough transform}{40}{section.6.4}
-\contentsline {chapter}{\numberline {7}Design and implementation}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Classes}{42}{section.7.1}
+\contentsline {subsection}{\numberline {2.0.2}Large space debris}{7}{subsection.2.0.2}
+\contentsline {section}{\numberline {2.1}Observations and telescopes}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}ESA OGS}{11}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}FMPI AGO}{12}{subsection.2.1.2}
+\contentsline {chapter}{\numberline {3}Object dynamics}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Kepler's laws of orbital motion}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Equatorial coordinate system}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}CCD and image reference frame}{17}{section.3.3}
+\contentsline {section}{\numberline {3.4}Initial orbit determination problem}{17}{section.3.4}
+\contentsline {chapter}{\numberline {4}Existing solutions to the problem of tracklet building}{18}{chapter.4}
+\contentsline {section}{\numberline {4.1}k-d trees}{18}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Efficient intra- and inter-night linking of asteroid detections using kd-trees}{19}{subsection.4.1.1}
+\contentsline {subsubsection}{Pan-STARRS}{19}{section*.18}
+\contentsline {subsubsection}{Pan-STARRS MOPS}{19}{section*.19}
+\contentsline {section}{\numberline {4.2}Uniform linear motion detection}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Optical observation, image-processing, and detection of space debris in GEO}{22}{subsection.4.2.1}
+\contentsline {subsubsection}{Image processing}{22}{section*.22}
+\contentsline {subsubsection}{Detection algorithm}{23}{section*.23}
+\contentsline {chapter}{\numberline {5}Technical and practical requirements}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}Input data}{24}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Flexible Image Transport System files}{24}{subsection.5.1.1}
+\contentsline {subsubsection}{File structure}{25}{section*.25}
+\contentsline {subsubsection}{Data arrays}{25}{section*.26}
+\contentsline {subsubsection}{Headers}{26}{section*.28}
+\contentsline {subsection}{\numberline {5.1.2}.cat files}{28}{subsection.5.1.2}
+\contentsline {subsubsection}{Contents of a .cat file}{29}{section*.31}
+\contentsline {subsection}{\numberline {5.1.3}Processing server parameters}{30}{subsection.5.1.3}
+\contentsline {chapter}{\numberline {6}Proposed solutions}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Use of linear regression}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}Use of the Initial Orbit Determination algorithms}{37}{section.6.2}
+\contentsline {section}{\numberline {6.3}Use of neural network}{38}{section.6.3}
+\contentsline {section}{\numberline {6.4}Hough transform}{39}{section.6.4}
+\contentsline {chapter}{\numberline {7}Design and implementation}{40}{chapter.7}
+\contentsline {section}{\numberline {7.1}Classes}{41}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}algorithms.SDTLinearRegression}{42}{subsection.7.1.1}
 \contentsline {subsection}{\numberline {7.1.2}algorithms.SDTOrbitDetermination}{43}{subsection.7.1.2}
 \contentsline {subsection}{\numberline {7.1.3}SDTObject}{44}{subsection.7.1.3}
 \contentsline {subsection}{\numberline {7.1.4}SDTBatch}{47}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}SDTTracklet}{48}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}SDTFileHandler}{50}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.5}SDTTracklet}{49}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}SDTFileHandler}{51}{subsection.7.1.6}
 \contentsline {chapter}{\numberline {8}Results}{52}{chapter.8}
-\contentsline {section}{\numberline {8.1}TDM and MPC formats, CCSDS}{52}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}CCSDS}{52}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}TDM format}{52}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}MPC}{55}{subsection.8.1.3}
-\contentsline {subsection}{\numberline {8.1.4}MPC format}{56}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Visualization of results}{57}{section.8.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{58}{chapter.9}
+\contentsline {section}{\numberline {8.1}Bern and MPC formats}{52}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}MPC}{52}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}MPC format}{52}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}Visualization of results}{53}{section.8.2}
+\contentsline {chapter}{\numberline {9}Conclusion}{54}{chapter.9}

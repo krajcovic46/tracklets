@@ -1,22 +1,22 @@
 \chapter{Design and implementation}\label{chap:design}
 
-	For implementation, we use two programming languages - Java and Python. The application is a console one, running firstly on Linux (see Chapter \ref{chap:requirements}, Section \ref{sec:server_param}), even though due to the languages chosen it runs on MS Windows without problems as well.
+	For implementation, we use two programming languages - Java and Python. The application runs in a console without a Graphical User Interface, on Linux (see Chapter \ref{chap:requirements}, Section \ref{sec:server_param}), even though due to the languages chosen it runs on MS Windows without problems as well.
 	
-	We use several Java libraries and Python modules which allow for quicker and more efficient execution of many needed tasks.
+	We use several Java libraries and Python modules which allow for quicker and more efficient execution of many needed tasks and procedures.
 	
-	Java libraries:	
+	Java libraries:
 \begin{itemize}
 	\item Commons Math: The Apache Commons Mathematics Library - used for all calculations related to SLR and other mathematical requirements,
-	\item eap.fits - a NASA Java interface to FITS files, allowing for opening, reading and manipulating FITS files.
+	\item eap.fits - a NASA Java interface to FITS files, allowing for opening, reading and manipulating FITS files,
 \end{itemize}		
 
-	And Python modules:
+and Python modules:
 \begin{itemize}
 	\item Astropy - a module for performing astronomy and astrophysics related tasks in Python,
 	\item tflearn - a deep learning higher-level library.
 \end{itemize}
 
-	Throughout the document, you can see many classes having the prefix \emph{SDT} - it stands for \emph{space debris tracklet} and besides marking the classes as our own and distinguishing them from the rest means nothing.
+	Throughout the document, you can see many classes having the prefix \emph{SDT} - it stands for \emph{space debris tracklet} and besides marking the classes as our own and distinguishing them from the rest, it means nothing else.
 
 \section{Classes}\label{sec:classes}
 
@@ -33,6 +33,8 @@
 \end{itemize}
 
 	All the other classes - their member variables and methods - are described in the next subsections.
+	
+\newpage
 	
 \subsection{algorithms.SDTLinearRegression}\label{subsec:slr}
 
@@ -66,9 +68,11 @@ private static void \mbox{fitPointsToRegressions} & a method responsible for han
 \label{tab:class_methods_LR}
 \end{table}
 
+\newpage
+
 \subsection{algorithms.SDTOrbitDetermination}
 
-	A class wrapping already existing implementation of IOD. It handles translating information from previous steps and passing them to the IOD algorithms described in .
+	A class wrapping the already existing implementation of IOD. It handles translating information from previous steps and passing them to the IOD algorithms described in .
 	
 \begin{table}[H]
 \centering
@@ -96,6 +100,8 @@ private static void \mbox{transformObjectsIntoObservations} & a method responsib
 \caption{SDTOrbitDetermination methods table}
 \label{tab:class_methods_OD}
 \end{table}
+
+\newpage
 
 \subsection{SDTObject}\label{subsec:object}
 
@@ -149,6 +155,8 @@ public void \mbox{setTime} & method setting the MJD time gotten from the \emph{p
 \end{table}
 
 	Besides all the methods mentioned in the Table \ref{tab:class_methods_O}, the class also contains setter and getter for every private variable mentioned in the Table \ref{tab:class_variables_O}.
+	
+\newpage
 
 \subsection{SDTBatch}\label{subsec:batch}
 
@@ -197,6 +205,8 @@ public String \mbox{toString} & a convenience method returning \emph{data} list 
 \label{tab:class_methods_B}
 \end{table}
 
+\newpage
+
 \subsection{SDTTracklet}\label{subsec:tracklet}
 
 	SDTTracklet is a class which holds objects in a complex structure designed specifically to allow for convenience and performance while handling said objects and accommodates for the SLR algorithm performed in the class \emph{SDTLinearRegression} described in Subsection \ref{subsec:slr}.
@@ -226,6 +236,8 @@ private \mbox{ArrayList<Map<SDTObject,} \mbox{Double>{}> sort} & private method 
 \caption{SDTTracklet methods table}
 \label{tab:class_methods_T}
 \end{table}
+
+\newpage
 
 \subsection{SDTFileHandler}\label{sec:file_handler}
 

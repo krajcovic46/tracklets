@@ -1,69 +1,16 @@
 \chapter{Results}\label{chap:results}
 
-\section{TDM and MPC formats, CCSDS}\label{sec:tdm_ccsds}
+\section{Bern and MPC formats}\label{sec:tdm_ccsds}
 
-	This section provides a short insight over standardised output data formats used in this thesis and encouraged by multinational agencies. 
-
-\subsection{CCSDS}\label{subsec:ccsds}
-
-	The Consultative Committee for Space Data Systems (CCSDS) is a multi-national forum formed by major space agencies to provide platform for discussion of common problems in the development, operation and maintenance of space data systems and is currently composed of 11 member agencies, 28 observer agencies and over 140 industrial associates \citep{ccsds}.
-
-\subsection{TDM format}
-
-	Tracking Data Message (TDM) is a standard message format for exchange of spacecraft tracking data between space agencies recommended by the CCSDS.
-	
-	TDM consists of lines with text on each line represented by ASCII characters. TDM can be exchanged both in an XML format or a keyword-value notation (KVN) format.
-	
-	The structure of TDM KVN format has a header and a body and can be divided into three major parts:
-	
-	\begin{itemize}
-		\item a header
-		\item a metadata section (part of body)
-		\item a data section (part of body).
-	\end{itemize}
-	
-	Data section contains Tracking Data records which hold information about observations. Metadata section and data section added together are called a TDM segment. There is no explicit limit on the number of TDM segments in a body. See Table \ref{tab:TDMtable} for a more detailed schematic.
-	
-\begin{table}[H]
-\centering
-\caption{TDM structure}
-\label{tab:TDMtable}
-\begin{tabular}{|c|c|c|c|}
-\hline
-Header                & \multicolumn{2}{c|}{}                   & mandatory                  \\ \hline
-\multirow{8}{*}{Body} & \multirow{2}{*}{Segment 1} & Metadata 1 & \multirow{2}{*}{mandatory} \\ \cline{3-3}
-                      &                            & Data 1     &                            \\ \cline{2-4} 
-                      & \multirow{2}{*}{Segment 2} & Metadata 2 & \multirow{2}{*}{optional}  \\ \cline{3-3}
-                      &                            & Data 2     &                            \\ \cline{2-4} 
-                      & \multirow{2}{*}{...}       & ...        & \multirow{2}{*}{optional}  \\ \cline{3-3}
-                      &                            & ...        &                            \\ \cline{2-4} 
-                      & \multirow{2}{*}{Segment n} & Metadata n & \multirow{2}{*}{optional}  \\ \cline{3-3}
-                      &                            & Data n     &                            \\ \hline
-\end{tabular}
-\end{table}
-
-	The arrangement of a TDM data section adheres to the KVN format in that it contains records in keyword-value pairs spanning across one line. However, each record has to have a time tag indicating the time associated with the tracking \citep{TDMdefinition}.
-
-	TDM header contains information that identifies the basic parameters of the message in the KVN format, such as \emph{CREATION\_DATE}, which provides data creation date and time in UTC, or \emph{ORIGINATOR}, which provides information about the file's creator. 
-	
-	The purpose of TDM meta-data's section is to contain configuration details applicable to each TDM data section in the same TDM segment. An example of commonly used metadata keywords are \emph{START\_TIME}, a keyword specifying the starting time of observations, and \emph{STOP\_TIME}, a keyword specifying the ending time of observations in the following TDM data sections.
-	
-	See Figure \ref{fig:tdm_example} for a visual example of a TDM file.
-	
-	\begin{figure}[H]
-	\centering
-	  \includegraphics[width=10cm]{images/tdm_example}
-		  \caption{TDM format example}
-	  \label{fig:tdm_example}
-	\end{figure}
+	This section provides a short insight over standardised output data formats used in this thesis and encouraged by multinational agencies and foreign universities. 
 		
 \subsection{MPC}\label{sec:mpc}
 
-	Another worldwide organization for Astronomical purposes is the Minor Planet Center (MPC). The organization is in charge of collecting observational data for minor planets, comets and satellites of major planets and belongs under International Astronomical Union.
+	Another worldwide organization for Astronomical purposes is the Minor Planet Center (MPC). The organization is in charge of collecting observational data for minor planets, comets and satellites of major planets and belongs under International Astronomical Union \citep{mpc}.
 	
 \subsection{MPC format}
 
-	The officially MPC endorsed format is a text file with exactly prescribed form. The format is divided into columns where each column equals one character in a text file. The columns are explicitly set, therefore the format does not contain any headers. There are four kinds of formats - for minor planets, for comets, for natural satellites and for minor planets, comets and natural satellites. In our case, we are using the last type.
+	The officially MPC endorsed format is a text file with exactly prescribed form. The format is divided into columns where each column equals one character in a text file. The columns are explicitly set, therefore the format does not contain any headers. There are four kinds of formats - for minor planets, for comets, for natural satellites and for minor planets, comets and natural satellites. In our case, we are using the last type \citep{mpc}.
 	
 	The designation for every column is as follows:
 	
@@ -77,7 +24,5 @@ Header                & \multicolumn{2}{c|}{}                   & mandatory     
 		\item columns 57-77 -- OBSERVED MAGNITUDE AND BAND - the observed magnitude of an object and band in which the measurement was made
 		\item columns 78-80 -- OBSERVATORY CODE - the code of the observatory in which observation was made (AGO has code 118)
 	\end{itemize}
-
-	\citep{mpc}
 
 \section{Visualization of results}\label{sec:visualization}
