@@ -2,6 +2,7 @@ package com.skrajcovic.algorithms;
 
 import com.skrajcovic.SDTBatch;
 import com.skrajcovic.SDTObject;
+import com.skrajcovic.SDTOutput;
 import com.skrajcovic.orbitdetermination.Observation;
 import com.skrajcovic.orbitdetermination.OrbitDetermination;
 import com.skrajcovic.orbitdetermination.compute.Kepler;
@@ -9,6 +10,8 @@ import com.skrajcovic.utils.Combinations;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.skrajcovic.SDTBatch.dirName;
 
 public class SDTOrbitDetermination {
 
@@ -19,9 +22,12 @@ public class SDTOrbitDetermination {
 
     public static void perform(SDTBatch batch) {
         List<SDTObject> SDTObjects = batch.getRegressionResults();
-        Combinations comb = new Combinations(SDTObjects);
+        if (SDTObjects == null) {
+            throw new NullPointerException("Empty results list");
+        }
+//        Combinations comb = new Combinations(SDTObjects);
 
-        List<SDTObject[]> resultCombinations = comb.getCombinations();
+//        List<SDTObject[]> resultCombinations = comb.getCombinations();
 
 //        System.out.println(resultCombinations);
 
@@ -30,7 +36,7 @@ public class SDTOrbitDetermination {
         Observation[] observation = transformObjectsIntoObservations(SDTObjects);
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
-                OrbitDetermination.getTheOdResults(observation, i, j, kepler, "2000_072B _1");
+                OrbitDetermination.getTheOdResults(observation, i, j, kepler, dirName);
             }
         }
     }

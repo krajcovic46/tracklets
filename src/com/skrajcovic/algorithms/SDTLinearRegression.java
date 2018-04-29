@@ -10,9 +10,9 @@ import java.util.*;
 
 public class SDTLinearRegression {
 
-    private static final double distanceThreshold = 50;
-    private static final double angleThreshold = 50;
-    private static final double speedThreshold = 100000;
+    private static final double distanceThreshold = 400;
+    private static final double angleThreshold = 300;
+    private static final double speedThreshold = 200000;
 
     public static void perform(SDTBatch batch) {
         SDTLinearRegression.findInitialRegressions((HashSet<SDTObject>) batch.getFirstSet(),
@@ -20,13 +20,30 @@ public class SDTLinearRegression {
 
         SDTLinearRegression.fitPointsToRegressions2(distanceThreshold, batch);
 
-        System.out.println(SDTBatch.tracklets);
+//        System.out.println(batch.tracklets);
         batch.filterOutEmptyTracklets();
-        System.out.println("--------------");
-        System.out.println(SDTBatch.tracklets);
+//        System.out.println("--------------");
+//        System.out.println(batch.tracklets);
 
-//        System.out.println(batch.getRegressionResults());
+        for (SDTTracklet tracklet : batch.tracklets) {
+            SDTObject firstObject = tracklet.getMostProbableObject(tracklet.getListOfObjectsOnIndex(0));
+            SDTObject secondObject = tracklet.getMostProbableObject(tracklet.getListOfObjectsOnIndex(1));
+            if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                System.out.println("inside");
+                List<SDTObject> results = new ArrayList<>();
+                results.add(firstObject);
+                results.add(secondObject);
 
+                for (int i = 2; i < tracklet.objects.size(); i++) {
+                    SDTObject nextToAdd = tracklet.getMostProbableObject(tracklet.getListOfObjectsOnIndex(i));
+                    if (nextToAdd != null) {
+                        results.add(nextToAdd);
+                    }
+                }
+
+                batch.setRegressionResults(results);
+            }
+        }
     }
 
     private static void findInitialRegressions(HashSet<SDTObject> fSet, HashSet<SDTObject> sSet, Map<ArrayList<SDTObject>, SimpleRegression> regressions) {
@@ -84,17 +101,20 @@ public class SDTLinearRegression {
                 }
                 double distanceToLine = SDTObject.calculateDistanceToLine(regression);
                 if (SDTObject.isWithinLineThreshold(distanceToLine, threshold)) {
-                    if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                    if (firstObject.getType() == Type.H && secondObject.getType() == Type.H
+                            && SDTObject.getType() == Type.H) {
                         System.out.println("trigger line threshold: " + SDTObject);
                     }
                     double angle = SDTObject.calculateHeading(lastObject);
                     if (SDTObject.isWithinAngleThreshold(angle, baselineHeading, angleThreshold)) {
-                        if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                        if (firstObject.getType() == Type.H && secondObject.getType() == Type.H
+                            && SDTObject.getType() == Type.H) {
                             System.out.println("trigger angle threshold: " + SDTObject);
                         }
                         double speed = SDTObject.calculateSpeed(lastObject);
                         if (SDTObject.isWithinSpeedThreshold(speed, baselineSpeed, speedThreshold)) {
-                            if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
+                            if (firstObject.getType() == Type.H && secondObject.getType() == Type.H
+                            && SDTObject.getType() == Type.H) {
                                 System.out.println("trigger speed threshold: " + SDTObject);
                             }
                             HashMap<SDTObject, Double> temp = new HashMap<>();
@@ -116,57 +136,7 @@ public class SDTLinearRegression {
                     }
                 }
             }
-            SDTBatch.tracklets.add(tracklet);
+            batch.tracklets.add(tracklet);
         }
     }
-
-//    private static void fitPointsToRegressions(double threshold, SDTBatch batch) {
-//        Map<ArrayList<SDTObject>, SimpleRegression> regressions = batch.getRegressions();
-//        ArrayList<SDTObject> data = (ArrayList<SDTObject>) batch.getMainData();
-//
-//        for (Map.Entry<ArrayList<SDTObject>, SimpleRegression> regression : regressions.entrySet()) {
-//            SDTObject last = null;
-//            double lastSpeed = Double.MAX_VALUE;
-//            ArrayList<SDTObject> regressionPoints = regression.getKey();
-//
-//            if (regressionPoints.get(0).getType() == Type.H && regressionPoints.get(1).getType() == Type.H) {
-//
-//                double averageCombinedSpeed = regressionPoints.get(1).calculateSpeed(regressionPoints.get(0));
-//                double baseHeading = regressionPoints.get(0).calculateHeading(regressionPoints.get(1));
-//
-//                for (SDTObject fitsObject : data) {
-//                    if (fitsObject.isWithinLineThreshold(regression.getValue(), threshold)
-//                            && regressionPoints.get(regressionPoints.size() - 1).isWithinAngleThreshold(fitsObject, baseHeading, angleThreshold)) {
-//
-////                        System.out.println(fitsObject.getFileName());
-////                        System.out.println(fitsObject.getType());
-////                        System.out.println(fitsObject.getX());
-////                        System.out.println(fitsObject.getY());
-////                        System.out.println("-----------------");
-//
-//                        if (last != null && !fitsObject.getFileName().equals(last.getFileName()) && !regressionPoints.contains(last)) {
-//                            regressionPoints.add(last);
-//                            regression.getValue().addData(last.getxComponent(), last.getyComponent());
-//
-//                            //cleanup
-//                            last = null;
-//                            lastSpeed = Double.MAX_VALUE;
-//                        }
-//
-//                        double currentSpeed = regressionPoints.get(regressionPoints.size() - 1).calculateSpeed(fitsObject);
-//                        if (Math.abs(averageCombinedSpeed - currentSpeed) < Math.abs(averageCombinedSpeed - lastSpeed)) {
-//                            last = fitsObject;
-//                            lastSpeed = currentSpeed;
-//                        }
-//                    }
-//                }
-//                // toto sa stane ak uplne posledny prvok vo forcykle zapada - musi sa pridat
-//                if (last != null && !regressionPoints.get(regressionPoints.size() - 1).getFileName().equals(last.getFileName())) {
-//                    regressionPoints.add(last);
-////                    regression.getValue().addData(last.getxComponent(), last.getyComponent());
-//                }
-//                batch.setRegressionResults(regressionPoints);
-//            }
-//        }
-//    }
 }

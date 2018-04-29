@@ -58,7 +58,6 @@ public class OrbitDetermination {
         Vector vectorArray[] = CombinationGenerator.getCombinations(intArray, false);
 
         //array of observation for the method getVectors()
-        System.out.println(observation[0].timeMjd);
         Observation observation2[] = new Observation[3];
         Vector vectorsForOd[] = new Vector[4];
         //orbital elements
@@ -75,7 +74,6 @@ public class OrbitDetermination {
             observation2[2] = observation[(int)vectorArray[i].v[2]];
             //3 postions and 1 velocity vector
             vectorsForOd = getVectors(observation2,method_1);
-            System.out.println("vectorsforod: " + Arrays.toString(vectorsForOd));
 
             /*
             System.out.println("method " + method_1);
@@ -133,17 +131,15 @@ public class OrbitDetermination {
             /*
             * 4. Writing the OD results
             */
-            //class to work with IO file commands
-            WritingODData wod = new WritingODData();
             //create subdirectory and file whre should the results be writen
-            wod.createFile(dirName);
+            WritingODData.createFile(dirName);
             //checking wether or not is results file filled with expKepler - orbital elements that we expected.
-            if(wod.isFileEmpty(dirName)) wod.fillResultsFileBasic(dirName, expKepler);
-            wod.fillResultsFile(dirName, getKepler, vectorArray[i], method_1, method_2);
+            if(WritingODData.isFileEmpty(dirName)) WritingODData.fillResultsFileBasic(dirName, expKepler);
+            WritingODData.fillResultsFile(dirName, getKepler, vectorArray[i], method_1, method_2);
             //System.out.println("Data written in to ODResults/" + dirName + "/results.txt!");
-            wod.fillResultsFileGood(dirName, getKepler, vectorArray[i], method_1, method_2);
-            wod.fillResultsFileTLE(dirName, getKepler, vectorArray[i], method_1, method_2, noGoodResults);
-            wod.fillResultsFileVectors(dirName, vectorArray[i], vectorsForOd, observation2);
+            WritingODData.fillResultsFileGood(dirName, getKepler, vectorArray[i], method_1, method_2);
+            WritingODData.fillResultsFileTLE(dirName, getKepler, vectorArray[i], method_1, method_2, noGoodResults);
+            WritingODData.fillResultsFileVectors(dirName, vectorArray[i], vectorsForOd, observation2);
             //set NORAD number for resutsTLE.txt file
             if(((getKepler.a/1000*(1 - getKepler.e))>3000)&&(getKepler.e<1)){
                 noGoodResults++;

@@ -12,7 +12,9 @@ public class SDTBatch {
     private List<SDTObject> regressionResults;
     public static Map<String, Integer> objectsCount = new TreeMap<>();
 
-    public static HashSet<SDTTracklet> tracklets = new HashSet<>();
+    public static String dirName;
+
+    public HashSet<SDTTracklet> tracklets = new HashSet<>();
 
     public static final boolean DEBUG = false;
     public static final boolean RADEC = true;

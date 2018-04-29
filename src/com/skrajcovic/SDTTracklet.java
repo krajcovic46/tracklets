@@ -17,11 +17,31 @@ public class SDTTracklet {
     public SDTObject getLastPoint() {
         ArrayList<Map<SDTObject, Double>> firstLast = objects.get(objects.size() - 1);
         if (firstLast.size() > 0) {
-            LinkedHashMap<SDTObject, Double> toReturn = new LinkedHashMap<>(firstLast.get(0));
-            Map.Entry<SDTObject, Double> entry = toReturn.entrySet().iterator().next();
-            return entry.getKey();
+            return getFirstObject(firstLast.get(0));
         }
         return null;
+    }
+
+    public ArrayList<Map<SDTObject, Double>> getListOfObjectsOnIndex(int index) {
+        for (int i = 0; i < objects.size(); i++) {
+            if (i == index) {
+                return objects.get(i);
+            }
+        }
+        return null;
+    }
+
+    public SDTObject getMostProbableObject(ArrayList<Map<SDTObject, Double>> list) {
+        if (list.size() > 0) {
+            return getFirstObject(list.get(0));
+        }
+        return null;
+    }
+
+    private SDTObject getFirstObject(Map<SDTObject, Double> map) {
+        LinkedHashMap<SDTObject, Double> toReturn = new LinkedHashMap<>(map);
+        Map.Entry<SDTObject, Double> entry = toReturn.entrySet().iterator().next();
+        return entry.getKey();
     }
 
     public void sortLast() {

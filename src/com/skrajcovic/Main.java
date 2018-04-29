@@ -2,6 +2,7 @@ package com.skrajcovic;
 
 
 import com.skrajcovic.algorithms.SDTLinearRegression;
+import com.skrajcovic.algorithms.SDTOrbitDetermination;
 import com.skrajcovic.utils.Arguments;
 import eap.fitsbrowser.Browser;
 
@@ -23,7 +24,14 @@ public class Main {
     	SDTBatch batch = new SDTBatch();
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
 
-        SDTFileHandler.readFiles(new File("misc//data//Oct2017//NEA//2017_PR25_R_7"), batch);
+        String pathName = "misc//data//Oct2017//NEA//";
+        String dirName = "14008A_R_11";
+        SDTBatch.dirName = dirName;
+
+        SDTOutput output = new SDTOutput(batch);
+        output.setWorkingDirectory("ODResults//" + dirName);
+
+        SDTFileHandler.readFiles(new File(pathName + dirName), batch);
 
         if (arguments.contains("lr") || arguments.contains("linear")) {
             //TODO - linear regression
@@ -36,7 +44,8 @@ public class Main {
             //TODO - neural network - python script probably
         }
         SDTLinearRegression.perform(batch);
-//        SDTOrbitDetermination.perform(batch);
+        SDTOrbitDetermination.perform(batch);
+        output.processGoodResults();
 	    if (SDTBatch.DEBUG) {
             Browser browser = new Browser();
             try {
