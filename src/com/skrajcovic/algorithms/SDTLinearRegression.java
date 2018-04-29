@@ -10,8 +10,8 @@ import java.util.*;
 
 public class SDTLinearRegression {
 
-    private static final double distanceThreshold = 400;
-    private static final double angleThreshold = 300;
+    private static final double distanceThreshold = 100;
+    private static final double angleThreshold = 50;
     private static final double speedThreshold = 200000;
 
     public static void perform(SDTBatch batch) {
@@ -29,7 +29,11 @@ public class SDTLinearRegression {
             SDTObject firstObject = tracklet.getMostProbableObject(tracklet.getListOfObjectsOnIndex(0));
             SDTObject secondObject = tracklet.getMostProbableObject(tracklet.getListOfObjectsOnIndex(1));
             if (firstObject.getType() == Type.H && secondObject.getType() == Type.H) {
-                System.out.println("inside");
+                System.out.println(tracklet);
+
+                batch.setSlope(tracklet.getSlope());
+                batch.setIntercept(tracklet.getIntercept());
+
                 List<SDTObject> results = new ArrayList<>();
                 results.add(firstObject);
                 results.add(secondObject);
@@ -133,6 +137,8 @@ public class SDTLinearRegression {
                     SDTObject pointToAdd = tracklet.getLastPoint();
                     if (pointToAdd != null) {
                         regression.addData(pointToAdd.getxComponent(), pointToAdd.getyComponent());
+                        tracklet.setSlope(regression.getSlope());
+                        tracklet.setIntercept(regression.getIntercept());
                     }
                 }
             }

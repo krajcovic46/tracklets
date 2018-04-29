@@ -6,6 +6,9 @@ public class SDTTracklet {
     public ArrayList<ArrayList<Map<SDTObject, Double>>> objects;
     public double valueToCompareWith = 0d;
 
+    private double slope;
+    private double intercept;
+
     public SDTTracklet() {
         objects = new ArrayList<>();
     }
@@ -71,5 +74,21 @@ public class SDTTracklet {
         });
 
         return new ArrayList<>(list);
+    }
+
+    public void setSlope(double slope) {
+        this.slope = slope;
+    }
+
+    public void setIntercept(double intercept) {
+        this.intercept = intercept;
+    }
+
+    public double getSlope() {
+        return this.slope;
+    }
+
+    public double getIntercept() {
+        return this.intercept;
     }
 }

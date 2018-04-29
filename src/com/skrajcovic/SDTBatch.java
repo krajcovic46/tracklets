@@ -19,6 +19,9 @@ public class SDTBatch {
     public static final boolean DEBUG = false;
     public static final boolean RADEC = true;
 
+    private double slope;
+    private double intercept;
+
     public SDTBatch() {
         regressions = new HashMap<>();
         data = new ArrayList<>();
@@ -77,6 +80,22 @@ public class SDTBatch {
                 iterator.remove();
             }
         }
+    }
+
+    public double getSlope() {
+        return slope;
+    }
+
+    public void setSlope(double slope) {
+        this.slope = slope;
+    }
+
+    public double getIntercept() {
+        return intercept;
+    }
+
+    public void setIntercept(double intercept) {
+        this.intercept = intercept;
     }
 
     public String toString() {

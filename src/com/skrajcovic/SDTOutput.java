@@ -51,7 +51,6 @@ public class SDTOutput {
             String text;
 
             Pattern pattern = Pattern.compile("\\s+");
-
             while ((text = bf.readLine()) != null) {
                 List<String> textList = Arrays.asList(pattern.split(text.trim()));
 
@@ -65,11 +64,12 @@ public class SDTOutput {
 
         List<SDTObject> objects = batch.getRegressionResults();
 
-        System.out.println("help");
         System.out.println(objects);
         System.out.println(objectIndexes);
 
         List<String> results = new ArrayList<>();
+        results.add(batch.getSlope() + "\t" + batch.getIntercept() + "\n");
+
         for (Integer index : objectIndexes) {
             System.out.println(index);
             SDTObject object = objects.get(index);
