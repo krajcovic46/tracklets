@@ -1,6 +1,6 @@
 \chapter{Object dynamics}\label{chap:object_dynamics}
 
-	Contents of this chapter 
+	Contents of this chapter include an overview of physical laws and astronomical systems and algorithms describing movement of space debris objects which have the biggest impact on further contents of this thesis.
 
 \section{Kepler's laws of orbital motion}\label{sec:kepler}
 	
@@ -19,12 +19,11 @@
 		\item $M_t$ - mean anomaly at reference epoch $t$ [°]
 	\end{itemize}
 	
-	Elements $a$ and $e$ define shape of the ellipse while $i$ and $\Omega$ define orientation of the elliptical plane, $\omega$ defines the orientation of the ellipse in the elliptical plane and $M_t$ defines position of an object on the ellipse.	
-	referencia montenbruck chapter 2
+	Elements $a$ and $e$ define shape of the ellipse while $i$ and $\Omega$ define orientation of the elliptical plane, $\omega$ defines the orientation of the ellipse in the elliptical plane and $M_t$ defines position of an object on the ellipse \citep{montenbruck2005satellite}.
 
 \section{Equatorial coordinate system}\label{sec:ra_dec}
 	
-	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $\langle\ang{0},\ang{360}\rangle$) and Declination (Dec, $\langle\ang{-90},\ang{90}\rangle$). This coordinate reference system is fixed on Earth's equator and vernal equinox (referencia montenbruck). See Figure \ref{fig:equatorial} for an illustration of RA/Dec with regards to Earth.
+	To describe an object's position on celestial sphere, we use astronomical coordinate system called Equatorial coordinates defined through two parameters, right ascension (RA, $\langle\ang{0},\ang{360}\rangle$) and Declination (Dec, $\langle\ang{-90},\ang{90}\rangle$). This coordinate reference system is fixed on Earth's equator and vernal equinox \citep{montenbruck2005satellite}. See Figure \ref{fig:equatorial} for an illustration of RA/Dec with regards to Earth.
 	
 	\begin{figure}[H]
 	\centering
@@ -37,12 +36,12 @@
 
 	First product of an observation is an object's position in the CCD reference frame ($x$, $y$). To transform from the $x$ and $y$ coordinates to RA/Dec a so called \emph{astrometric reduction} is used which, in general, means linking the two systems together.
 	
-	The primary goal is to determine the six orbital elements defined in Section \ref{sec:kepler} from RA/Dec in Section \ref{sec:ra_dec}. To confirm that an object is on a conic section we need to find a solution to orbital elements which will yield an elliptical orbit. For more information, see reference .
+	The primary goal is to determine the six orbital elements defined in Section \ref{sec:kepler} from RA/Dec in Section \ref{sec:ra_dec}. To confirm that an object is on a conic section we need to find a solution to orbital elements which will yield an elliptical orbit. For more information, see reference \citep{montenbruck2005satellite}.
 	
 \section{Initial orbit determination problem}\label{sec:init_orbit_det}
 	
 	In order to calculate the orbit of object observed with an optical telescope the angle measurements are used (RA/Dec, Section \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters - specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec for three different observation epochs, e.g. few minute intervals for satellites. 	
 	
-	Methods on how to perform Initial Orbit Determination (IOD) are well defined in the astronomical community - see (referencia montenbruck). The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements. (referencia montenbruck)
+	Methods on how to perform Initial Orbit Determination (IOD) are well defined in the astronomical community. The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements \citep{montenbruck2005satellite}.
 	
 	In the case of observations not being of the same object, some orbital elements will be missing. This characteristic can be used as a filter, or validate gathered data.

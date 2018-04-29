@@ -50,7 +50,7 @@ private static final double \mbox{distanceThreshold} & a double representing dis
 private static final double \mbox{angleThreshold} & a double representing angle threshold    \\ \hline
 private static final double \mbox{speedThreshold} & a double representing speed threshold    \\ \hline
 \end{tabularx}
-\caption{SDTLinearRegression class variables table}
+\caption{SDTLinearRegression class variables.}
 \label{tab:class_variables_LR}
 \end{table}
 
@@ -64,7 +64,7 @@ public static void \mbox{perform} & a method responsible for performing all nece
 private static void \mbox{findInitialRegressions} & a method responsible for constructing initial regressions from starting points\\ \hline
 private static void \mbox{fitPointsToRegressions} & a method responsible for handling all existing SLRs - modifying them, correcting them, etc.\\ \hline
 \end{tabularx}
-\caption{SDTLinearRegression methods table}
+\caption{SDTLinearRegression methods.}
 \label{tab:class_methods_LR}
 \end{table}
 
@@ -84,7 +84,7 @@ private static final double \mbox{AGOLON} & a constant describing longitude of A
 private static final double \mbox{AGOLAT} & a constant describing latitude of AGO\\ \hline
 private static final double \mbox{AGOALT} & a constant describing altitude of AGO\\ \hline
 \end{tabularx}
-\caption{SDTOrbitDetermination class variables table}
+\caption{SDTOrbitDetermination class variables.}
 \label{tab:class_variables_OD}
 \end{table}
 
@@ -97,7 +97,7 @@ private static final double \mbox{AGOALT} & a constant describing altitude of AG
 public static void \mbox{perform} & a method responsible for performing all necessary actions, called from outside of the class \\ \hline
 private static void \mbox{transformObjectsIntoObservations} & a method responsible for translating inner objects into Observations (class in the existing implementation of IOD)\\ \hline
 \end{tabularx}
-\caption{SDTOrbitDetermination methods table}
+\caption{SDTOrbitDetermination methods.}
 \label{tab:class_methods_OD}
 \end{table}
 
@@ -124,7 +124,7 @@ private double \mbox{mjd} & double containing date in the Modified Julian Date \
 private double \mbox{xComponent} & the unified variable containing either RA value or \emph{x} value \\ \hline
 private double \mbox{yComponent} & the unified variable containing either Dec value or \emph{y} value \\ \hline
 \end{tabularx}
-\caption{SDTObject class variables}
+\caption{SDTObject class variables.}
 \label{tab:class_variables_O}
 \end{table}
 
@@ -150,7 +150,7 @@ public boolean \mbox{isUnidentified} & method which determines whether an object
 private double \mbox{produceMjd} & method converting the time read from a FITS file header into MJD \\ \hline
 public void \mbox{setTime} & method setting the MJD time gotten from the \emph{produceMJD} method \\ \hline
 \end{tabularx}
-\caption{SDTObject methods table}
+\caption{SDTObject methods.}
 \label{tab:class_methods_O}
 \end{table}
 
@@ -178,7 +178,7 @@ public static \mbox{HashSet<SDTTracklet> tracklets} & a set containing all track
 public static final boolean \mbox{DEBUG} & a switch to mark whether application should run in debug mode \\ \hline
 public static final boolean \mbox{RADEC} & a switch to resolve if we wish the application to use RA/Dec \\ \hline
 \end{tabularx}
-\caption{SDTBatch class variables table}
+\caption{SDTBatch class variables.}
 \label{tab:class_variables_B}
 \end{table}
 
@@ -201,7 +201,7 @@ public \mbox{List<SDTObject>} \mbox{getRegressionResults} & getter returning the
 public void \mbox{filterOutEmptyTracklets} & a method which removes tracklets which contain less than three objects and therefore does not conform to the general definition of tracklets \\ \hline
 public String \mbox{toString} & a convenience method returning \emph{data} list in String format \\ \hline
 \end{tabularx}
-\caption{SDTBatch methods table}
+\caption{SDTBatch methods.}
 \label{tab:class_methods_B}
 \end{table}
 
@@ -233,7 +233,7 @@ public SDTObject \mbox{getLastPoint} & method returning the last valid most prob
 public void \mbox{sortLast} & method sorting the last non-empty bin according to the Double value in \emph{objects} list \\ \hline
 private \mbox{ArrayList<Map<SDTObject,} \mbox{Double>{}> sort} & private method for sorting used by \emph{sortLast} \\ \hline
 \end{tabularx}
-\caption{SDTTracklet methods table}
+\caption{SDTTracklet methods.}
 \label{tab:class_methods_T}
 \end{table}
 
@@ -257,7 +257,7 @@ private static \mbox{Map<File, File> mergeCATWithFITS} & method internally mergi
 private static \mbox{FitsHeader getFitsHeader} & method returning the header of a FITS file \\ \hline
 public static void \mbox{processEntry} & the core method responsible for parsing .cat files, reading FITS headers and creating SDTObjects \\ \hline
 \end{tabularx}
-\caption{SDTFileHandler methods table}
+\caption{SDTFileHandler methods.}
 \label{tab:class_methods_FH}
 \end{table}
 

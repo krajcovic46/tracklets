@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  27 APR 2018 11:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.23)  29 APR 2018 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -376,10 +376,10 @@ Package color Info: Driver file: pdftex.def on input line 147.
 )
 (c:/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx.sty
 (c:/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2017/12/05 L3 programming layer (loader) 
+Package: expl3 2017/12/16 L3 programming layer (loader) 
 
 (c:/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2017/12/05 L3 programming layer (code)
+Package: expl3 2017/12/16 L3 programming layer (code)
 \c_max_int=\count126
 \l_tmpa_int=\count127
 \l_tmpb_int=\count128
@@ -528,7 +528,7 @@ File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
 \l__driver_tmp_box=\box47
 ))
 (c:/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2017/12/05 L3 Experimental document command parser
+Package: xparse 2017/12/16 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count276
 \g__xparse_grabber_int=\count277
 \l__xparse_m_args_int=\count278
@@ -546,7 +546,7 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \backup@length=\skip58
 )
 (c:/texlive/2017/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2017/12/05 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2017/12/16 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box48
 \l__siunitx_tmp_dim=\dimen159
@@ -1236,28 +1236,28 @@ LaTeX Warning: Label `img:logo' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 48.
  (c:/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    ... okay on input line 48.
 \AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 48.
 
 (c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1267,9 +1267,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count301
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -1302,12 +1302,12 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count309
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1316,7 +1316,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <images/logo_fmph.png, id=168, 106.59825pt x 113.58435pt>
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 63.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 65.
 (pdftex.def)             Requested size: 106.59798pt x 113.58406pt.
  [1
 
@@ -1325,34 +1325,34 @@ Package pdftex.def Info: images/logo_fmph.png  used on input line 63.
 mph.png>]
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 93.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 97.
 (pdftex.def)             Requested size: 106.59798pt x 113.58406pt.
  [2]
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
-Package pdftex.def Info: images/logo_fmph.png  used on input line 122.
+Package pdftex.def Info: images/logo_fmph.png  used on input line 128.
 (pdftex.def)             Requested size: 597.50787pt x 636.87735pt.
 
 Overfull \vbox (72.37735pt too high) has occurred while \output is active []
 
 
 [3]
-Underfull \hbox (badness 2302) in paragraph at lines 132--134
+Underfull \hbox (badness 2302) in paragraph at lines 138--140
 []\T1/cmr/m/n/12 ƒestne prehla-su-jem, ºe túto diplo-movú prácu som
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--134
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--134
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
 
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 129--135
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 135--141
 $[]$ $[]$ 
  []
 
@@ -1470,7 +1470,7 @@ mr/m/n/12 10
 File: images/ESAOGS1.jpg Graphic file (type jpg)
 <use images/ESAOGS1.jpg>
 Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 114.
-(pdftex.def)             Requested size: 227.62204pt x 230.23203pt.
+(pdftex.def)             Requested size: 170.71652pt x 172.67401pt.
 
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
@@ -1482,7 +1482,7 @@ mr/m/n/12 11
 File: images/ESAOGS2.jpg Graphic file (type jpg)
 <use images/ESAOGS2.jpg>
 Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 123.
-(pdftex.def)             Requested size: 227.62204pt x 163.43544pt.
+(pdftex.def)             Requested size: 170.71652pt x 122.57658pt.
 
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
@@ -1494,139 +1494,100 @@ mr/m/n/12 12
 File: images/FMPIAGO1.jpg Graphic file (type jpg)
 <use images/FMPIAGO1.jpg>
 Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 135.
-(pdftex.def)             Requested size: 227.62204pt x 200.21039pt.
+(pdftex.def)             Requested size: 170.71652pt x 150.15779pt.
 <images/FMPIAGO2.jpg, id=393, 120.45pt x 79.9788pt>
 File: images/FMPIAGO2.jpg Graphic file (type jpg)
 <use images/FMPIAGO2.jpg>
 Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 144.
-(pdftex.def)             Requested size: 227.62204pt x 151.15585pt.
+(pdftex.def)             Requested size: 170.71652pt x 113.36688pt.
 ) (./03object_dynamics.tex
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 13
  []
 
-[13 <./images/FMPIAGO1.jpg>]
-Overfull \hbox (28.28246pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
-mr/m/n/12 14
- []
-
-[14 <./images/FMPIAGO2.jpg>]
+[13 <./images/FMPIAGO1.jpg> <./images/FMPIAGO2.jpg>]
 Chapter 3.
-[15
+[14
 
 ]
 <images/equatorial.png, id=410, 316.18124pt x 299.1175pt>
 File: images/equatorial.png Graphic file (type png)
 <use images/equatorial.png>
-Package pdftex.def Info: images/equatorial.png  used on input line 31.
+Package pdftex.def Info: images/equatorial.png  used on input line 30.
 (pdftex.def)             Requested size: 170.71652pt x 161.50734pt.
- [16 <./images/equatorial.png>]) (./04existing_solutions.tex [17]
+ [15] [16 <./images/equatorial.png>]) (./04existing_solutions.tex [17]
 Chapter 4.
 [18
 
-]
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 19
- []
-
-[19]
-<images/kd_tree.png, id=443, 903.375pt x 380.92313pt>
+] [19]
+<images/kd_tree.png, id=457, 903.375pt x 380.92313pt>
 File: images/kd_tree.png Graphic file (type png)
 <use images/kd_tree.png>
 Package pdftex.def Info: images/kd_tree.png  used on input line 25.
 (pdftex.def)             Requested size: 284.52756pt x 119.97397pt.
-
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 20
- []
-
-[20 <./images/kd_tree.png>]
-<images/kd_tree_time.png, id=452, 363.60844pt x 146.04562pt>
+ [20 <./images/kd_tree.png>]
+<images/kd_tree_time.png, id=466, 363.60844pt x 146.04562pt>
 File: images/kd_tree_time.png Graphic file (type png)
 <use images/kd_tree_time.png>
 Package pdftex.def Info: images/kd_tree_time.png  used on input line 36.
 (pdftex.def)             Requested size: 284.52756pt x 114.28503pt.
-
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 21
- []
-
-[21 <./images/kd_tree_time.png>]
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 22
- []
-
-[22]
-<images/uniform_linear_motion.png, id=465, 200.24812pt x 289.83281pt>
+ [21 <./images/kd_tree_time.png>] [22]
+<images/uniform_linear_motion.png, id=479, 200.24812pt x 289.83281pt>
 File: images/uniform_linear_motion.png Graphic file (type png)
 <use images/uniform_linear_motion.png>
 Package pdftex.def Info: images/uniform_linear_motion.png  used on input line 6
 3.
 (pdftex.def)             Requested size: 170.71652pt x 247.10202pt.
-) (./05requirements.tex
-Overfull \hbox (92.2198pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 CHAPTER 4.  EXISTING SOLUTIONS TO THE PROBLEM OF TRACKLET BUILD
-ING \T1/cmr/m/n/12 23
- []
-
-[23 <./images/uniform_linear_motion.png>]
+)
+(./05requirements.tex [23 <./images/uniform_linear_motion.png>]
 Chapter 5.
 [24
 
 ] [25]
-<images/fits_data_array.png, id=493, 396.7322pt x 154.32657pt>
+<images/fits_data_array.png, id=507, 396.7322pt x 154.32657pt>
 File: images/fits_data_array.png Graphic file (type png)
 <use images/fits_data_array.png>
 Package pdftex.def Info: images/fits_data_array.png  used on input line 42.
 (pdftex.def)             Requested size: 284.52756pt x 110.68173pt.
-<images/asciifull.png, id=495, 1583.9175pt x 1220.30907pt>
+<images/asciifull.png, id=509, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
 Package pdftex.def Info: images/asciifull.png  used on input line 53.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
  [26 <./images/fits_data_array.png> <./images/asciifull.png>]
-<images/fits_header_example.png, id=508, 425.33907pt x 425.33907pt>
+<images/fits_header_example.png, id=522, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
 Package pdftex.def Info: images/fits_header_example.png  used on input line 79.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
  [27]
-
-LaTeX Warning: Reference `sec:proc_seg_reduc' on page 28 undefined on input lin
-e 86.
-
-[28 <./images/fits_header_example.png>]
-<images/cat_columns.png, id=521, 956.82469pt x 60.225pt>
+<images/cat_columns.png, id=530, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
 Package pdftex.def Info: images/cat_columns.png  used on input line 95.
 (pdftex.def)             Requested size: 390.0pt x 24.5472pt.
- [29 <./images/cat_columns.png>])
+
+[28 <./images/fits_header_example.png>] [29 <./images/cat_columns.png>])
 (./06proposed_solutions.tex [30]
 Chapter 6.
 [31
 
 ] [32]
-<images/regresia1.png, id=581, 482.55281pt x 289.83281pt>
+<images/regresia1.png, id=594, 482.55281pt x 289.83281pt>
 File: images/regresia1.png Graphic file (type png)
 <use images/regresia1.png>
 Package pdftex.def Info: images/regresia1.png  used on input line 25.
 (pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
  [33 <./images/regresia1.png>]
-<images/regresia2.png, id=586, 482.55281pt x 289.83281pt>
+<images/regresia2.png, id=599, 482.55281pt x 289.83281pt>
 File: images/regresia2.png Graphic file (type png)
 <use images/regresia2.png>
 Package pdftex.def Info: images/regresia2.png  used on input line 36.
 (pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
  [34] [35 <./images/regresia2.png>]
-<images/regresia3.png, id=600, 1050.92625pt x 303.38344pt>
+<images/regresia3.png, id=613, 1050.92625pt x 303.38344pt>
 File: images/regresia3.png Graphic file (type png)
 <use images/regresia3.png>
 Package pdftex.def Info: images/regresia3.png  used on input line 51.
@@ -1639,7 +1600,7 @@ can be wrapped
  []
 
 [37 <./images/regresia3.png>] [38]
-<images/rtheta.png, id=624, 285.065pt x 239.89626pt>
+<images/rtheta.png, id=637, 285.065pt x 239.89626pt>
 File: images/rtheta.png Graphic file (type png)
 <use images/rtheta.png>
 Package pdftex.def Info: images/rtheta.png  used on input line 86.
@@ -1796,7 +1757,7 @@ Underfull \hbox (badness 2846) in paragraph at lines 203--203
  []
 
 [47] [48]
-<images/2dbins.png, id=687, 164.0529pt x 108.405pt>
+<images/2dbins.png, id=700, 164.0529pt x 108.405pt>
 File: images/2dbins.png Graphic file (type png)
 <use images/2dbins.png>
 Package pdftex.def Info: images/2dbins.png  used on input line 220.
@@ -1870,18 +1831,18 @@ Chapter 8.
 Chapter 9.
 ) [54
 
-] (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
- [55
+] (./main.bbl [55
 
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
+ [56]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2C08EAB7D62170C46BEABA85E982ACED;2919.
+(rerunfilecheck)             Checksum: 4985017CB0B6DDBF0F48B41937E868AC;2901.
 
 
 LaTeX Warning: There were undefined references.
@@ -1889,16 +1850,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 21465 strings out of 492985
- 393802 string characters out of 6136283
- 456083 words of memory out of 5000000
- 24553 multiletter control sequences out of 15000+600000
+ 21497 strings out of 492985
+ 394457 string characters out of 6136283
+ 456502 words of memory out of 5000000
+ 24581 multiletter control sequences out of 15000+600000
  548770 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,11n,39p,10384b,823s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,39p,10384b,842s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
 live/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2017/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-dis
@@ -1914,10 +1875,10 @@ pe1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
 sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.p
 fb>
-Output written on main.pdf (66 pages, 4020196 bytes).
+Output written on main.pdf (67 pages, 4020295 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 707 compressed objects within 8 object streams
- 188 named destinations out of 1000 (max. 500000)
+ 843 PDF objects out of 1000 (max. 8388607)
+ 725 compressed objects within 8 object streams
+ 192 named destinations out of 1000 (max. 500000)
  444 words of extra memory for PDF output out of 10000 (max. 10000000)
 

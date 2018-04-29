@@ -15,6 +15,11 @@
 {ASRC Federal Technical Services CCSDS} (2017).
 \newblock {CCSDS}.
 
+\bibitem[Bentley, 1975]{Bentley:1975:MBS:361002.361007}
+Bentley, J.~L. (1975).
+\newblock Multidimensional binary search trees used for associative searching.
+\newblock {\em Commun. ACM}, 18(9):509--517.
+
 \bibitem[ESA, 2017]{esabr336}
 ESA (2017).
 \newblock Space debris: the {ESA} approach.
@@ -30,9 +35,19 @@ Klinkrad, H. (2006).
 \newblock {\em Space Debris: Models and Risk Analysis}.
 \newblock Astronautical Engineering. Springer.
 
+\bibitem[Miller et~al., 2009]{miller2009kd}
+Miller, F., Vandome, A., and McBrewster, J. (2009).
+\newblock {\em Kd-tree}.
+\newblock VDM Publishing.
+
 \bibitem[{Minor Planet Center}, 2016]{mpc}
 {Minor Planet Center} (2016).
 \newblock {MPC} format.
+
+\bibitem[Montenbruck and Gill, 2005]{montenbruck2005satellite}
+Montenbruck, O. and Gill, E. (2005).
+\newblock {\em Satellite Orbits: Models, Methods, Applications}.
+\newblock Springer.
 
 \bibitem[on~the Peaceful Uses~of Outer Space.~Scientific and Subcommittee,
   1999]{united1999technical}

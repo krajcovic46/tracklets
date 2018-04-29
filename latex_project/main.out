@@ -10,7 +10,7 @@
 \BOOKMARK [1][-]{section.3.2}{Equatorial coordinate system}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.3}{CCD and image reference frame}{chapter.3}% 11
 \BOOKMARK [1][-]{section.3.4}{Initial orbit determination problem}{chapter.3}% 12
-\BOOKMARK [0][-]{chapter.4}{Existing solutions to the problem of tracklet building}{}% 13
+\BOOKMARK [0][-]{chapter.4}{Existing tracklet building solutions}{}% 13
 \BOOKMARK [1][-]{section.4.1}{k-d trees}{chapter.4}% 14
 \BOOKMARK [2][-]{subsection.4.1.1}{Efficient intra- and inter-night linking of asteroid detections using kd-trees}{section.4.1}% 15
 \BOOKMARK [1][-]{section.4.2}{Uniform linear motion detection}{chapter.4}% 16

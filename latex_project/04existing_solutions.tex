@@ -1,8 +1,8 @@
-\chapter{Existing solutions to the problem of tracklet building}\label{chap:existing_solutions}
+\chapter{Existing tracklet building solutions}\label{chap:existing_solutions}
 
 \section{k-d trees}\label{sec:kd_trees}
 	
-	k-dimensional trees (k-d trees) are a hierarchical data structure that recursively partitions both the set of data points and the space in which they reside into smaller subsets and subspaces. Each node in a k-d tree represents a partial region of the whole space and a set of points contained in the region \citep{}.
+	k-dimensional trees (k-d trees) are a hierarchical data structure that recursively partitions both the set of data points and the space in which they reside into smaller subsets and subspaces. Each node in a k-d tree represents a partial region of the whole space and a set of points contained in the region \citep{Bentley:1975:MBS:361002.361007}.
 	
 	Complexity of k-d trees is similar, or identical in some cases, to other tree data structures. For example, adding a point into a balanced k-d tree takes $O(log\ n)$ time and removing a point from a balanced k-d tree takes $O(log\ n)$ time as well. There are several approaches to constructing a k-d tree, such as finding a median among points (with complexity $O(n)$), sorting all points (with complexity $O(log\ n)$) or sorting a fixed number of randomly selected points.
 
