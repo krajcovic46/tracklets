@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  30 APR 2018 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  30 APR 2018 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1444,13 +1444,13 @@ Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 mr/m/n/12 6
  []
 
-[6 <./images/slag.jpg> <./images/westfordneedles.jpg>]
+[6 <./images/slag.jpg>]
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 7
  []
 
-[7]
+[7 <./images/westfordneedles.jpg>]
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 8
@@ -1864,7 +1864,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
 Here is how much of TeX's memory you used:
  21486 strings out of 492985
  394398 string characters out of 6136283
- 456089 words of memory out of 5000000
+ 456176 words of memory out of 5000000
  24568 multiletter control sequences out of 15000+600000
  548770 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1884,7 +1884,7 @@ pe1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
 sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.p
 fb>
-Output written on main.pdf (67 pages, 4210876 bytes).
+Output written on main.pdf (67 pages, 4211091 bytes).
 PDF statistics:
  915 PDF objects out of 1000 (max. 8388607)
  773 compressed objects within 8 object streams
