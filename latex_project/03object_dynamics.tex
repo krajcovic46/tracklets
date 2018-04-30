@@ -34,14 +34,14 @@
 
 \section{CCD and image reference frame}\label{sec:ccd}
 
-	First product of an observation is an object's position in the CCD reference frame ($x$, $y$). To transform from the $x$ and $y$ coordinates to RA/Dec a so called \emph{astrometric reduction} is used which, in general, means linking the two systems together.
+	The first product of an observation is an object's position in the CCD reference frame ($x$, $y$). To transform from the $x$ and $y$ coordinates to RA/Dec a so called \emph{astrometric reduction} is employed which, in general, means linking the two systems together.
 	
 	The primary goal is to determine the six orbital elements defined in Section \ref{sec:kepler} from RA/Dec in Section \ref{sec:ra_dec}. To confirm that an object is on a conic section we need to find a solution to orbital elements which will yield an elliptical orbit. For more information, see reference \citep{montenbruck2005satellite}.
 	
 \section{Initial orbit determination problem}\label{sec:init_orbit_det}
 	
-	In order to calculate the orbit of object observed with an optical telescope the angle measurements are used (RA/Dec, Section \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters - specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec for three different observation epochs, e.g. few minute intervals for satellites. 	
+	In order to calculate the orbit of an object observed with an optical telescope the angle measurements are used (RA/Dec, Section \ref{sec:ra_dec}). To fully determine all six orbital elements we must use at least six parameters - specifically three pairs of angle measurements of the same object. Usually, three pairs of RA/Dec are required for three different observation epochs, e.g. few minute intervals for satellites. 	
 	
 	Methods on how to perform Initial Orbit Determination (IOD) are well defined in the astronomical community. The output of this procedure are position vectors or position and velocity vectors for observation epochs. These vectors are then used to determine said orbital elements \citep{montenbruck2005satellite}.
 	
-	In the case of observations not being of the same object, some orbital elements will be missing. This characteristic can be used as a filter, or validate gathered data.
+	In the case of observations not being of the same object, some orbital elements will be missing. This characteristic can be used as a filter, or to validate gathered data.

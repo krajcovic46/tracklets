@@ -12,7 +12,7 @@ public class SDTLinearRegression {
 
     private static final double distanceThreshold = 100;
     private static final double angleThreshold = 50;
-    private static final double speedThreshold = 200000;
+    private static final double speedThreshold = 100000;
 
     public static void perform(SDTBatch batch) {
         SDTLinearRegression.findInitialRegressions((HashSet<SDTObject>) batch.getFirstSet(),

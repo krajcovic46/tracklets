@@ -109,10 +109,11 @@
 \end{center}
 \vfill
 \begin{tabular}{l l}
-Študijný program: & Aplikovaná informatika\\
-Študijný odbor: & 2511 Aplikovaná informatika\\
-Školiace pracovisko: & Katedra aplikovanej informatiky\\
-Školiteľ: & \mfadvisor
+Study programme: & Applied Informatics\\
+Field of study: & 2511 Applied Informatics\\
+Department: & Department of Applied Informatics\\
+Supervisor: & \mfadvisor \\
+Consultant: & Mgr. Jiří Šilha, PhD.
 \end{tabular}
 \vfill
 \noindent
@@ -135,7 +136,7 @@
 \noindent
 \begin{minipage}{0.25\textwidth}~\end{minipage}
 \begin{minipage}{0.75\textwidth}
-Čestne prehlasujem, že túto diplomovú prácu som vypracoval samostatne len s použitím uvedenej literatúry a za pomoci konzultácií u môjho školiteľa.
+I hereby certify that this thesis has been composed by me and is based on my work, unless stated otherwise. No other person's work has been used without due acknowledgement in this thesis. All references and verbatim extracts have been quoted, and all sources of information, including graphs and data sets, have been specifically acknowledged.
 \newline \newline
 \end{minipage}
 \vfill
@@ -144,21 +145,21 @@
 \vfill\eject 
 
 \chapter*{Poďakovanie}\label{chap:thank_you}
-Touto cestou by som sa chcel v prvom rade poďakovať môjmu školiteľovi prof. RNDr. Romanovi Ďurikovičovi, PhD. za jeho cenné rady a usmernenia, ktoré mi veľmi pomohli pri riešení tejto diplomovej práce. Takisto sa chcem poďakovať mojím kolegom z YACGS semináru za rady ohľadom implementácie a v neposlednom rade chcem tiež poďakovať všetkým mojím kamarátom a celej mojej rodine za podporu počas môjho štúdia. 
-\vfill\eject 
-
-\chapter*{Abstrakt}\label{chap:abstract_sk}
-Počas astronomických pozorovaní sa získavajú snímky nočnej oblohy, prevažne jej kokrétnej časti, ktoré sa ukladajú do tzv. Flexible Image Transport System (FITS) formátu. Tieto snímky obsahujú signál rôzneho charakteru od šumu spôsobeného elektrickým prúdom a vyčítavaním snímky zo CCD kamier, cez pozadie oblohy až po skutočné objekty ako hviezdy alebo objekty slnečnej sústavy (asteroidy, kométy, vesmírny odpad, atď.). Každý pixel FITS snímky je charakterisktický svojou pozíciou na CCD kamere (x,y) a intenzitou. Tieto údaje sa využívajú na výpočet polohy objektu na CCD snímke a na jeho súhrnú intenzitu. Na typických astronomických snímkach sa hviezdy javia ako statické body, ktoré možno popísať tzv. rozptýlovou funkciou (z ang. Point Spread Function). To neplatí v prípade, keď sa uskutočnia pozorovania vesmírneho odpadu, ktorý sa pohybuje relatívne rýchlo vzhľadom k hviezdnemu pozadiu. V tomto prípade sa objekty javia ako predlžené čiary a nie ako body. Ak sa počas pozorovaní ďalekohľad pohybuje za objektom vesmírneho odpadu nastáva situácia, že všetky hviezdy sa javia ako predlžené čiary s rovnakou dĺžkou a smerom, zatiaľ čo snímaný objekt sa javí ako bod. Úlohou študenta/-ky bude naštudovať si literatúru venujúcu sa spracovaniu astronomických FITS snímok, ktoré obsahujú objekty vesmírneho odpadu. Následne študent/-ka navrhne najvhodnejší, alebo aj vlastný algoritmus na segmentáciu snímok, ktorý následne naprogramuje a otestuje. Počas segmentácie sa identifikujú všetky objekty na snímke a pre každý taký objekt sa vyextrahuje jeho pozícia na CCD snímke (x,y) ako aj súhrná intenzita. Testovanie algoritmu bude uskutočnené na reálnych snímkach na ktorých sa nachádza hviezdne pozadie ako aj vesmírny odpad. Výsledky sa porovnajú s predpoveďami pozícii vesmírneho odpadu, ktoré budú študentovi dodané spolu s reálnymi snímkami získanými ďalekohľadmi na Astronomickom a geofyzikálnom observatóriu v Modre, FMFI UK.
-
-~\\
-Kľúčové slová: vesmírny odpad, pozorovanie
+I would like to thank my supervisor, prof. RNDr. Roman Ďurikovič, PhD. for all his invaluable and expert advice and guidance, which helped me successfully finish this thesis. I would also like to thank my consultant, Mgr. Jiří Šilha, PhD. for provided knowledge about astronomy and astrodynamics; for all his advice and support. I must also thank my colleagues from the YACGS seminary for their patience and input. Finally, I want to extend my thanks to all my friends and my family, both present and future.
 \vfill\eject 
 
 \chapter*{Abstract}\label{chap:abstract_en}
-
+Astronomical observations of a specific portion of the night sky produce images saved in Flexible Image Transport System (FITS) format. They contain basic information such as date, exposure time and other. However, these files are processed in a complex pipeline beforehand and data about the objects inside is gained. The document contains summary of prerequisite knowledge needed, such as object dynamics, already existing solutions and analysis of inputs. Then, we describe the design and creation of algorithms used to create tracklets, which are observations of the same object in time. We describe our reasoning behind using linear regression, Initial Orbit Determination and not using Hough transform. The implementation, including methods and class variables, follows. In conclusion, we review the effectiveness of our implementation and suggest possible improvements.
 
 ~\\
-Keywords: space debris, observation
+Keywords: space debris, observation, tracklet
+\vfill\eject 
+
+\chapter*{Abstrakt}\label{chap:abstract_sk}
+Astronomickými pozorovaniami časťami nočnej oblohy získavame obrázky uložené v tzv. Flexible Image Transport System (FITS) formáte. Obsahujú základné dáta, ako dátum, čas expozície a iné. Tieto súbory sú avšak spracované v komplexnom systéme a tým sú získané informácie o objektoch na snímkach. Tento dokument obsahuje zhrnutie potrebných vedomostí, ako napríklad dynamiku telies, existujúcich riešení a analýzu vstupných dát. V ďalšom kroku popisujeme dizajn a tvorbu algoritmov použitých na tvorbu trackletov, čo sú vlastne pozorvania toho istého objektu v čase. Zároveň odôvodňujeme dôvody na použitie lineárnej regresie, algoritmu Initial Orbit Determination a dôvod na vynechanie algoritmu Hough transform. Po tejto časti nasleduje implementácia, ktorá zahŕňa metódy a triedne premenné. Na záver zhrnieme efektivitu našej implementácie a navrhneme možné zlepšenia.
+
+~\\
+Kľúčové slová: vesmírny odpad, pozorovanie, tracklet
 \vfill\eject 
 % koniec abstraktov
 

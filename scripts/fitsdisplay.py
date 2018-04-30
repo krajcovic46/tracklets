@@ -8,6 +8,30 @@ from astropy.io import fits
 
 folder = "../misc/data/Oct2017/NEA/2017_PR25_R_7/"
 
+results_list = list()
+with open("../ODResults/myresults.txt", 'r') as f:
+    results_list = f.readlines()
+
+print(results_list)
+first_line = results_list.pop(0).split("\t"); results_list.pop(0)
+
+slope = first_line[0]
+intercept = first_line[1][:-1]
+
+first_object = results_list.pop(0).split("\t")
+last_object = results_list.pop(-1).split("\t")
+
+x1 = first_object[-2]; y1 = first_object[-1][:-1]
+x2 = last_object[-2]; y2 = last_object[-1][:-1]
+
+print(first_object)
+print(last_object)
+
+print(slope)
+
+print(x1, y1)
+print(x2, y2)
+
 fits_list = []
 for filename in os.listdir(folder):
     if filename.endswith(".fit"):
@@ -19,7 +43,7 @@ for image in fits_list:
 
 final_image = np.amax(image_concat, axis=0)
 
-fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=6000)
-plt.savefig("result/fig.png")
-plt.colorbar()
-plt.show()
+# fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=6000)
+# plt.savefig("result/fig.png")
+# plt.colorbar()
+# plt.show()
