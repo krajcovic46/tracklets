@@ -25,11 +25,6 @@ public class SDTOrbitDetermination {
         if (SDTObjects == null) {
             throw new NullPointerException("Empty results list");
         }
-//        Combinations comb = new Combinations(SDTObjects);
-
-//        List<SDTObject[]> resultCombinations = comb.getCombinations();
-
-//        System.out.println(resultCombinations);
 
         Kepler kepler = new Kepler();
 

@@ -7,6 +7,7 @@ import eap.fits.FitsCard;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SDTObject implements Comparable<SDTObject> {
     private String fileName;
@@ -24,6 +25,8 @@ public class SDTObject implements Comparable<SDTObject> {
 
     private double xComponent;
     private double yComponent;
+
+    private String mpcDate;
 
     public SDTObject() {}
 
@@ -213,8 +216,16 @@ public class SDTObject implements Comparable<SDTObject> {
         return false;
     }
 
+    public void setMpcDate(String mpcDate) {
+        this.mpcDate = mpcDate;
+    }
+
+    public String getMpcDate() {
+        return this.mpcDate;
+    }
+
     public void setTime(FitsCard dateObs, FitsCard expTime) {
-//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY MM dd.hhmmss");
         try {
             LocalDateTime ldt = LocalDateTime.parse(dateObs.stringValue());
             Double exposureTimeSeconds = expTime.doubleValue();
@@ -229,6 +240,8 @@ public class SDTObject implements Comparable<SDTObject> {
             sec += exposureTimeSeconds / 2;
 
             setMjd(produceMjd(month, year, day, hour, min, sec));
+
+            setMpcDate(ldt.format(dtf));
         } catch (Exception e) {
             e.printStackTrace();
         }

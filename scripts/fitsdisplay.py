@@ -3,9 +3,6 @@ import os
 import matplotlib.pyplot as plt
 from astropy.io import fits
 
-# TODO - intelligently set which folder to use; draw a line using first and last point (get slope and intercept from
-# regression in java)
-
 folder = "../misc/data/Oct2017/NEA/2017_PR25_R_7/"
 
 results_list = list()
@@ -24,14 +21,6 @@ last_object = results_list.pop(-1).split("\t")
 x1 = first_object[-2]; y1 = first_object[-1][:-1]
 x2 = last_object[-2]; y2 = last_object[-1][:-1]
 
-print(first_object)
-print(last_object)
-
-print(slope)
-
-print(x1, y1)
-print(x2, y2)
-
 fits_list = []
 for filename in os.listdir(folder):
     if filename.endswith(".fit"):
@@ -41,9 +30,10 @@ image_concat = []
 for image in fits_list:
     image_concat.append(fits.getdata(image))
 
-final_image = np.amax(image_concat, axis=0)
+final_image = np.sum(image_concat, axis=0)
 
-# fig = plt.imshow(final_image, cmap="gray", vmin=1000, vmax=6000)
-# plt.savefig("result/fig.png")
-# plt.colorbar()
-# plt.show()
+fig = plt.imshow(final_image, cmap="gray", vmin=10000, vmax=25000)
+plt.plot([float(x1), float(x2)], [float(y1), float(y2)], "r-")
+plt.savefig("result/fig.png")
+plt.colorbar()
+plt.show()

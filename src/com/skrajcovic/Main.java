@@ -25,7 +25,7 @@ public class Main {
 //	    FileReaderOld.processFile(batch, "misc//Data_20120305_2.txt");
 
         String pathName = "misc//data//Oct2017//NEA//";
-        String dirName = "2017_PR25_R_7";
+        String dirName = "PR25_R_7";
         SDTBatch.dirName = dirName;
 
         SDTOutput output = new SDTOutput(batch);

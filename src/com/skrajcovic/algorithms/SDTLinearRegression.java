@@ -11,7 +11,7 @@ import java.util.*;
 public class SDTLinearRegression {
 
     private static final double distanceThreshold = 100;
-    private static final double angleThreshold = 50;
+    private static final double angleThreshold = 150;
     private static final double speedThreshold = 100000;
 
     public static void perform(SDTBatch batch) {
@@ -81,19 +81,19 @@ public class SDTLinearRegression {
             double baselineHeading = secondObject.calculateHeading(firstObject);
             double baselineSpeed = firstObject.calculateSpeed(secondObject);
 
-            ArrayList<Map<SDTObject, Double>> firstList = new ArrayList<>();
-            Map<SDTObject, Double> firstMap = new HashMap<>(); firstMap.put(firstObject, 0D);
+            ArrayList<HashMap<SDTObject, Double>> firstList = new ArrayList<>();
+            HashMap<SDTObject, Double> firstMap = new HashMap<>(); firstMap.put(firstObject, 0D);
             firstList.add(firstMap);
             tracklet.objects.add(firstList);
 
-            ArrayList<Map<SDTObject, Double>> secondList = new ArrayList<>();
-            Map<SDTObject, Double> secondMap = new HashMap<>(); secondMap.put(secondObject, baselineHeading + baselineSpeed);
+            ArrayList<HashMap<SDTObject, Double>> secondList = new ArrayList<>();
+            HashMap<SDTObject, Double> secondMap = new HashMap<>(); secondMap.put(secondObject, baselineHeading + baselineSpeed);
             secondList.add(secondMap);
             tracklet.objects.add(secondList);
 
             tracklet.valueToCompareWith = baselineHeading + baselineSpeed;
 
-            ArrayList<Map<SDTObject, Double>> nextSet = new ArrayList<>();
+            ArrayList<HashMap<SDTObject, Double>> nextSet = new ArrayList<>();
 
             name = secondObject.getFileName();
             int numberOfObjects = 0;

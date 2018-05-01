@@ -71,7 +71,7 @@ public class SDTBatch {
             SDTTracklet tracklet = (SDTTracklet) iterator.next();
             int trackletSize = tracklet.objects.size();
             int numberOfEmpty = 0;
-            for (ArrayList<Map<SDTObject, Double>> list : tracklet.objects) {
+            for (ArrayList<HashMap<SDTObject, Double>> list : tracklet.objects) {
                 if (list.isEmpty()) {
                     numberOfEmpty++;
                 }
