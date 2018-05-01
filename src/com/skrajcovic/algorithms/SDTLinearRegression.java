@@ -18,7 +18,7 @@ public class SDTLinearRegression {
         SDTLinearRegression.findInitialRegressions((HashSet<SDTObject>) batch.getFirstSet(),
                 (HashSet<SDTObject>) batch.getSecondSet(), batch.getRegressions());
 
-        SDTLinearRegression.fitPointsToRegressions2(distanceThreshold, batch);
+        SDTLinearRegression.fitPointsToRegressions(distanceThreshold, batch);
 
 //        System.out.println(batch.tracklets);
         batch.filterOutEmptyTracklets();
@@ -63,7 +63,7 @@ public class SDTLinearRegression {
         }
     }
 
-    private static void fitPointsToRegressions2(double threshold, SDTBatch batch) {
+    private static void fitPointsToRegressions(double threshold, SDTBatch batch) {
         Map<ArrayList<SDTObject>, SimpleRegression> regressions = batch.getRegressions();
         ArrayList<SDTObject> data = (ArrayList<SDTObject>) batch.getMainData();
 

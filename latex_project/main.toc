@@ -34,17 +34,20 @@
 \contentsline {section}{\numberline {6.2}Use of the Initial Orbit Determination algorithms}{37}{section.6.2}
 \contentsline {section}{\numberline {6.3}Use of neural network}{38}{section.6.3}
 \contentsline {section}{\numberline {6.4}Hough transform}{39}{section.6.4}
-\contentsline {chapter}{\numberline {7}Design and implementation}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}Classes}{41}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}algorithms.SDTLinearRegression}{42}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}algorithms.SDTOrbitDetermination}{43}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}SDTObject}{44}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}SDTBatch}{47}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}SDTTracklet}{49}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}SDTFileHandler}{51}{subsection.7.1.6}
-\contentsline {chapter}{\numberline {8}Results}{52}{chapter.8}
-\contentsline {section}{\numberline {8.1}Bern and MPC formats}{52}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}MPC}{52}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}MPC format}{52}{subsection.8.1.2}
-\contentsline {section}{\numberline {8.2}Visualization of results}{53}{section.8.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{54}{chapter.9}
+\contentsline {chapter}{\numberline {7}Design and implementation}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}Classes}{42}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}algorithms.SDTLinearRegression}{43}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}algorithms.SDTOrbitDetermination}{44}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}SDTObject}{45}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}SDTBatch}{48}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}SDTTracklet}{50}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}SDTFileHandler}{52}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}SDTOutput}{53}{subsection.7.1.7}
+\contentsline {section}{\numberline {7.2}Python script}{53}{section.7.2}
+\contentsline {chapter}{\numberline {8}Results}{54}{chapter.8}
+\contentsline {section}{\numberline {8.1}AIUB and MPC formats}{54}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}MPC}{54}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}MPC format}{54}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}AIUB format}{56}{section.8.2}
+\contentsline {section}{\numberline {8.3}Visualization of results}{57}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusion}{59}{chapter.9}

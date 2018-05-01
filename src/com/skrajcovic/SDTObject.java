@@ -61,17 +61,6 @@ public class SDTObject implements Comparable<SDTObject> {
     }
 
     public boolean isWithinLineThreshold(double distance, double threshold) {
-//        if (this.type == Type.H) {
-//            System.out.println("filename: " + fileName);
-//            System.out.println("slope: " + m);
-//            System.out.println("intercept: " + b);
-//            System.out.println("x: " + x);
-//            System.out.println("y: " + y);
-//            System.out.println("distance: " + distance);
-//            System.out.println("threshold: " + threshold);
-//            System.out.println("------------------------------");
-//        }
-
         return distance <= threshold;
     }
 
@@ -86,7 +75,6 @@ public class SDTObject implements Comparable<SDTObject> {
 
     public double calculateHeading(SDTObject otherObject) {
         double theta = Math.toDegrees(Math.atan2(otherObject.getyComponent() - getyComponent(), otherObject.getxComponent() - getxComponent()));
-//        System.out.println(Math.abs(theta));
         return Math.abs(theta);
     }
 

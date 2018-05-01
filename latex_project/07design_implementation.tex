@@ -7,13 +7,15 @@
 	Java libraries:
 \begin{itemize}
 	\item Commons Math: The Apache Commons Mathematics Library - used for all calculations related to SLR and other mathematical requirements,
-	\item eap.fits - a NASA Java interface to FITS files, allowing for opening, reading and manipulating FITS files,
+	\item eap.fits - NASA Java interface to FITS files, allowing for opening, reading and manipulating FITS files,
 \end{itemize}		
 
 and Python modules:
 \begin{itemize}
-	\item Astropy - a module for performing astronomy and astrophysics related tasks in Python,
-	\item tflearn - a deep learning higher-level library.
+	\item Astropy - module for performing astronomy and astrophysics related tasks in Python,
+	\item tflearn - deep learning higher-level library,
+	\item numpy - module for scientific computations,
+	\item matplotlib - 2D plotting library.
 \end{itemize}
 
 	Throughout the document, you can see many classes having the prefix \emph{SDT} - it stands for \emph{space debris tracklet} and besides marking the classes as our own and distinguishing them from the rest, it means nothing else.
@@ -46,9 +48,9 @@ and Python modules:
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Class variable} & \textbf{Description} \\ \hline
-private static final double \mbox{distanceThreshold} & a double representing distance threshold \\ \hline
-private static final double \mbox{angleThreshold} & a double representing angle threshold    \\ \hline
-private static final double \mbox{speedThreshold} & a double representing speed threshold    \\ \hline
+private static final double \mbox{distanceThreshold} & double representing distance threshold \\ \hline
+private static final double \mbox{angleThreshold} & double representing angle threshold    \\ \hline
+private static final double \mbox{speedThreshold} & double representing speed threshold    \\ \hline
 \end{tabularx}
 \caption{SDTLinearRegression class variables.}
 \label{tab:class_variables_LR}
@@ -60,9 +62,9 @@ private static final double \mbox{speedThreshold} & a double representing speed 
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Method} & \textbf{Description} \\ \hline
-public static void \mbox{perform} & a method responsible for performing all necessary actions, called from outside of the class \\ \hline
-private static void \mbox{findInitialRegressions} & a method responsible for constructing initial regressions from starting points\\ \hline
-private static void \mbox{fitPointsToRegressions} & a method responsible for handling all existing SLRs - modifying them, correcting them, etc.\\ \hline
+public static void \mbox{perform} & method responsible for performing all necessary actions, called from outside of the class \\ \hline
+private static void \mbox{findInitialRegressions} & method responsible for constructing initial regressions from starting points\\ \hline
+private static void \mbox{fitPointsToRegressions} & method responsible for handling all existing SLRs - modifying them, correcting them, etc.\\ \hline
 \end{tabularx}
 \caption{SDTLinearRegression methods.}
 \label{tab:class_methods_LR}
@@ -80,9 +82,9 @@ private static void \mbox{fitPointsToRegressions} & a method responsible for han
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Class variable} & \textbf{Description} \\ \hline
-private static final double \mbox{AGOLON} & a constant describing longitude of AGO \\ \hline
-private static final double \mbox{AGOLAT} & a constant describing latitude of AGO\\ \hline
-private static final double \mbox{AGOALT} & a constant describing altitude of AGO\\ \hline
+private static final double \mbox{AGOLON} & constant describing longitude of AGO \\ \hline
+private static final double \mbox{AGOLAT} & constant describing latitude of AGO\\ \hline
+private static final double \mbox{AGOALT} & constant describing altitude of AGO\\ \hline
 \end{tabularx}
 \caption{SDTOrbitDetermination class variables.}
 \label{tab:class_variables_OD}
@@ -94,8 +96,8 @@ private static final double \mbox{AGOALT} & a constant describing altitude of AG
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Method} & \textbf{Description} \\ \hline
-public static void \mbox{perform} & a method responsible for performing all necessary actions, called from outside of the class \\ \hline
-private static void \mbox{transformObjectsIntoObservations} & a method responsible for translating inner objects into Observations (class in the existing implementation of IOD)\\ \hline
+public static void \mbox{perform} & method responsible for performing all necessary actions, called from outside of the class \\ \hline
+private static void \mbox{transformObjectsIntoObservations} & method responsible for translating inner objects into Observations (class in the existing implementation of IOD)\\ \hline
 \end{tabularx}
 \caption{SDTOrbitDetermination methods.}
 \label{tab:class_methods_OD}
@@ -113,16 +115,17 @@ private static void \mbox{transformObjectsIntoObservations} & a method responsib
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Class variable} & \textbf{Description} \\ \hline
-private String \mbox{fileName} & a String variable containing the name of the file in which the object resides (same for both FITS and .cat files) \\ \hline
-private Type \mbox{type} & enumerator marking type of the object (see\ref{} \\ \hline
+private String \mbox{fileName} & String variable containing the name of the file in which the object resides (same for both FITS and .cat files) \\ \hline
+private Type \mbox{type} & enumerator marking type of the object \\ \hline
 private \mbox{Rectascension} \mbox{rectascension} & custom data structure holding information about RA of the object \\ \hline
 private \mbox{Declination} \mbox{declination} & custom data structure holding information about Dec of the object \\ \hline
 private double \mbox{magnitude} & double representing magnitude of the object \\ \hline
 private double \mbox{x} & \emph{x} value of the object on the reference frame \\ \hline
 private double \mbox{y} & \emph{y} value of the object on the reference frame \\ \hline
 private double \mbox{mjd} & double containing date in the Modified Julian Date \\ \hline
-private double \mbox{xComponent} & the unified variable containing either RA value or \emph{x} value \\ \hline
-private double \mbox{yComponent} & the unified variable containing either Dec value or \emph{y} value \\ \hline
+private double \mbox{xComponent} & unified variable containing either RA value or \emph{x} value \\ \hline
+private double \mbox{yComponent} & unified variable containing either Dec value or \emph{y} value \\ \hline
+private String mpcDate & convenience String used for the MPC output \\ \hline
 \end{tabularx}
 \caption{SDTObject class variables.}
 \label{tab:class_variables_O}
@@ -147,8 +150,8 @@ public String \mbox{shortString} & convenience method constructing a short Strin
 public String \mbox{verboseString} & convenience method constructing a long String containing significant number of information about the object \\ \hline
 public String \mbox{toString} & convenience method returning either short or verbose String, depending on the internal switch \\ \hline
 public boolean \mbox{isUnidentified} & method which determines whether an object is unknown or not (Types \emph{H}, \emph{S} and \emph{U} \\ \hline
-private double \mbox{produceMjd} & method converting the time read from a FITS file header into MJD \\ \hline
-public void \mbox{setTime} & method setting the MJD time gotten from the \emph{produceMJD} method \\ \hline
+private double \mbox{produceMjd} & method converting the time read from a FITS file header into MJD \citep{Silha2012id} \\ \hline
+public void \mbox{setTime} & method setting the MJD time gotten from the \emph{produceMJD} method and formatting the MPC time \\ \hline
 \end{tabularx}
 \caption{SDTObject methods.}
 \label{tab:class_methods_O}
@@ -168,15 +171,15 @@ public void \mbox{setTime} & method setting the MJD time gotten from the \emph{p
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
 \textbf{Class variable} & \textbf{Description} \\ \hline
-private \mbox{Set<SDTObject> fSet} & the first set of objects (from the first FITS file and the first .cat file) \\ \hline
-private \mbox{Set<SDTObject> sSet} & the second set of objects \\ \hline
-private \mbox{List<SDTObject> data} & a list containing the rest of the objects from the rest of the files \\ \hline
+private \mbox{Set<SDTObject> fSet} & first set of objects (from the first FITS file and the first .cat file) \\ \hline
+private \mbox{Set<SDTObject> sSet} & second set of objects \\ \hline
+private \mbox{List<SDTObject> data} & list containing the rest of the objects from the rest of the files \\ \hline
 private \mbox{Map<ArrayList<SDTObject>,} \mbox{SimpleRegression> regressions} & the Commons Math library's implementation of SLR does not allow for retrieving input data so we implement this map to keep track of them \\ \hline
-private \mbox{List<SDTObject> regressionResults} & a list containing final tracklet \\ \hline
-public static \mbox{Map<String, Integer> objectsCount} & a helper map for keeping track of number of objects in each file \\ \hline
-public static \mbox{HashSet<SDTTracklet> tracklets} & a set containing all tracklets \\ \hline
-public static final boolean \mbox{DEBUG} & a switch to mark whether application should run in debug mode \\ \hline
-public static final boolean \mbox{RADEC} & a switch to resolve if we wish the application to use RA/Dec \\ \hline
+private \mbox{List<SDTObject>} \mbox{regressionResults} & list containing final tracklet \\ \hline
+public static \mbox{Map<String, Integer>} \mbox{objectsCount} & helper map for keeping track of number of objects in each file \\ \hline
+public static \mbox{HashSet<SDTTracklet> tracklets} & set containing all tracklets \\ \hline
+public static final boolean \mbox{DEBUG} & switch to mark whether application should run in debug mode \\ \hline
+public static final boolean \mbox{RADEC} & switch to resolve if we wish the application to use RA/Dec \\ \hline
 \end{tabularx}
 \caption{SDTBatch class variables.}
 \label{tab:class_variables_B}
@@ -189,17 +192,17 @@ public static final boolean \mbox{RADEC} & a switch to resolve if we wish the ap
 \hline
 \textbf{Method} & \textbf{Description} \\ \hline
 public \mbox{SDTBatch} & constructor initializing empty \emph{regressions}, \emph{data}, \emph{fSet} and \emph{sSet} \\ \hline
-public void \mbox{mainDataInsert} & a method for inserting \mbox{SDTObjects} into \emph{data} \\ \hline
-public void \mbox{firstSetInsert} & a method for inserting \mbox{SDTObjects} into \emph{fSet} \\ \hline
-public void \mbox{secondSetInsert} & a method for inserting \mbox{SDTObjects} into \emph{sSet} \\ \hline
+public void \mbox{mainDataInsert} & method for inserting \mbox{SDTObjects} into \emph{data} \\ \hline
+public void \mbox{firstSetInsert} & method for inserting \mbox{SDTObjects} into \emph{fSet} \\ \hline
+public void \mbox{secondSetInsert} & method for inserting \mbox{SDTObjects} into \emph{sSet} \\ \hline
 public \mbox{Set<SDTObject> getFirstSet} & getter for the set containing first objects \\ \hline
 public \mbox{Set<SDTObject> getSecondSet} & getter for the second set \\ \hline
 public \mbox{List<SDTObject> getMainData} & getter for the \emph{data} list \\ \hline
 public \mbox{Map<ArrayList<SDTObject,} \mbox{SimpleRegression getRegressions} & getter for the \emph{regressions} map \\ \hline
 public void \mbox{setRegressionResults} & setter for inserting the final tracket \\ \hline
 public \mbox{List<SDTObject>} \mbox{getRegressionResults} & getter returning the final tracklet \\ \hline
-public void \mbox{filterOutEmptyTracklets} & a method which removes tracklets which contain less than three objects and therefore does not conform to the general definition of tracklets \\ \hline
-public String \mbox{toString} & a convenience method returning \emph{data} list in String format \\ \hline
+public void \mbox{filterOutEmptyTracklets} & method which removes tracklets which contain less than three objects and therefore does not conform to the general definition of tracklets \\ \hline
+public String \mbox{toString} & convenience method returning \emph{data} list in String format \\ \hline
 \end{tabularx}
 \caption{SDTBatch methods.}
 \label{tab:class_methods_B}
@@ -209,7 +212,7 @@ public String \mbox{toString} & a convenience method returning \emph{data} list 
 
 \subsection{SDTTracklet}\label{subsec:tracklet}
 
-	SDTTracklet is a class which holds objects in a complex structure designed specifically to allow for convenience and performance while handling said objects and accommodates for the SLR algorithm performed in the class \emph{SDTLinearRegression} described in Subsection \ref{subsec:slr}.
+	SDTTracklet is a class which holds objects in a complex structure designed specifically to allow for fine balance between convenience and performance while handling said objects and accommodating for the SLR algorithm performed in the class \emph{SDTLinearRegression} described in Subsection \ref{subsec:slr}.
 	
 	The class contains two member variables, specifically \newline \mbox{public ArrayList<ArrayList<Map<SDTObject, Double>{}>{}> objects} \newline and \mbox{public double valueToCompareWith}.
 	
@@ -231,7 +234,9 @@ public String \mbox{toString} & a convenience method returning \emph{data} list 
 pubic \mbox{SDTTracklet} & constructor initialising \emph{objects} list \\ \hline
 public SDTObject \mbox{getLastPoint} & method returning the last valid most probable point to insert to the SLR \\ \hline
 public void \mbox{sortLast} & method sorting the last non-empty bin according to the Double value in \emph{objects} list \\ \hline
-private \mbox{ArrayList<Map<SDTObject,} \mbox{Double>{}> sort} & private method for sorting used by \emph{sortLast} \\ \hline
+private \mbox{ArrayList<HashMap<SDTObject,} \mbox{Double>{}> sort} & private method for sorting used by \emph{sortLast} \\ \hline
+public SDTObject \mbox{getMostProbableObject} & method returning the first object in the \emph{bin} \\ \hline
+public \mbox{ArrayList<HashMap<} \mbox{SDTObject, Double>{}>{}} \mbox{getListOfObjectsOnIndex} & method responsible for returning the right \emph{bin} \\ \hline
 \end{tabularx}
 \caption{SDTTracklet methods.}
 \label{tab:class_methods_T}
@@ -262,3 +267,18 @@ public static void \mbox{processEntry} & the core method responsible for parsing
 \end{table}
 
 	Public static methods from the class are used as the first step of the application. Data provided in the files on the disk are read and sent to the next steps.
+	
+\newpage
+	
+\subsection{SDTOutput}\label{sec:output}
+
+	A class which handles output of the algorithms. The class reads output of the IOD (see Chapter \ref{chap:proposed_solutions}, Section \ref{sec:IDO}) and creates internal text file with the results, text file in Bern format (see Chapter \ref{chap:results}, Section \ref{sec:aiub}) and text file in MPC format (see Chapter \ref{chap:results}, Section \ref{sec:mpc}).
+	
+
+\section{Python script}\label{sec:python_script}
+
+	The included Python script is used to read results from the internal text file. The parsed information about objects is then used to create a line which begins at the first object and ends at the last object.
+	
+	Moreover, FITS files are read by the \emph{Astropy} module and stacked on top of each other via \emph{numpy} module and the final image is created (see Chapter \ref{chap:results}, Section \ref{sec:visualization}).
+	
+	The minimal (\emph{vmin}) and maximal (\emph{vmax}) luminance of the final image is left to be determined from one case to another. In the image referenced in the paragraph above, \emph{vmin} is at 10 000 and \emph{vmax} at 25 000.

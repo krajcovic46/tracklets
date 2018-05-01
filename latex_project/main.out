@@ -33,9 +33,12 @@
 \BOOKMARK [2][-]{subsection.7.1.4}{SDTBatch}{section.7.1}% 33
 \BOOKMARK [2][-]{subsection.7.1.5}{SDTTracklet}{section.7.1}% 34
 \BOOKMARK [2][-]{subsection.7.1.6}{SDTFileHandler}{section.7.1}% 35
-\BOOKMARK [0][-]{chapter.8}{Results}{}% 36
-\BOOKMARK [1][-]{section.8.1}{Bern and MPC formats}{chapter.8}% 37
-\BOOKMARK [2][-]{subsection.8.1.1}{MPC}{section.8.1}% 38
-\BOOKMARK [2][-]{subsection.8.1.2}{MPC format}{section.8.1}% 39
-\BOOKMARK [1][-]{section.8.2}{Visualization of results}{chapter.8}% 40
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 41
+\BOOKMARK [2][-]{subsection.7.1.7}{SDTOutput}{section.7.1}% 36
+\BOOKMARK [1][-]{section.7.2}{Python script}{chapter.7}% 37
+\BOOKMARK [0][-]{chapter.8}{Results}{}% 38
+\BOOKMARK [1][-]{section.8.1}{AIUB and MPC formats}{chapter.8}% 39
+\BOOKMARK [2][-]{subsection.8.1.1}{MPC}{section.8.1}% 40
+\BOOKMARK [2][-]{subsection.8.1.2}{MPC format}{section.8.1}% 41
+\BOOKMARK [1][-]{section.8.2}{AIUB format}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.3}{Visualization of results}{chapter.8}% 43
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 44

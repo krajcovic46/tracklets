@@ -66,34 +66,14 @@ public class SDTTracklet {
     }
 
     private ArrayList<HashMap<SDTObject, Double>> sort(ArrayList<HashMap<SDTObject, Double>> list) {
-//        List<Map.Entry<SDTObject, Double>> l = new LinkedList<>();
+        list.sort((o1, o2) -> {
+            Double o1value = o1.entrySet().iterator().next().getValue();
+            Double o2value = o2.entrySet().iterator().next().getValue();
 
-//        Collections.sort(l, new Comparator<Map.Entry<SDTObject, Double>>() {
-//            @Override
-//            public int compare(Map.Entry<SDTObject, Double> o1, Map.Entry<SDTObject, Double> o2) {
-//                Double firstValue = valueToCompareWith - o1.getValue();
-//                Double secondValue = valueToCompareWith - o2.getValue();
-////                if (firstValue < secondValue) {
-////                    return -1;
-////                } else if (firstValue == secondValue) {
-////                    return 0;
-////                }
-////                return 1;
-//                return secondValue.compareTo(firstValue);
-//            }
-//        });
+            Double firstValue = Math.abs(valueToCompareWith - o1value);
+            Double secondValue = Math.abs(valueToCompareWith - o2value);
 
-        Collections.sort(list, new Comparator<HashMap<SDTObject, Double>>() {
-            @Override
-            public int compare(HashMap<SDTObject, Double> o1, HashMap<SDTObject, Double> o2) {
-                Double o1value = o1.entrySet().iterator().next().getValue();
-                Double o2value = o2.entrySet().iterator().next().getValue();
-
-                Double firstValue = Math.abs(valueToCompareWith - o1value);
-                Double secondValue = Math.abs(valueToCompareWith - o2value);
-
-                return firstValue.compareTo(secondValue);
-            }
+            return firstValue.compareTo(secondValue);
         });
         return new ArrayList<>(list);
     }
