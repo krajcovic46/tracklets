@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  2 MAY 2018 00:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.14)  2 MAY 2018 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1395,7 +1395,7 @@ mr/m/n/12 3
 [3]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 21.
+(hyperref)                than one, level fixed on input line 20.
 
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
@@ -1404,47 +1404,48 @@ mr/m/n/12 4
  []
 
 [4]
-<images/paintflakes.jpg, id=401, 361.35pt x 320.8788pt>
+<images/paintflakes.jpg, id=402, 174.8934pt x 310.0383pt>
 File: images/paintflakes.jpg Graphic file (type jpg)
 <use images/paintflakes.jpg>
-Package pdftex.def Info: images/paintflakes.jpg  used on input line 29.
-(pdftex.def)             Requested size: 170.71652pt x 151.59644pt.
-<images/hypervelocitycollision.jpg, id=403, 682.9515pt x 523.9575pt>
+Package pdftex.def Info: images/paintflakes.jpg  used on input line 28.
+(pdftex.def)             Requested size: 170.71652pt x 302.63383pt.
+<images/hypervelocitycollision.jpg, id=408, 661.9932pt x 469.9959pt>
 File: images/hypervelocitycollision.jpg Graphic file (type jpg)
 <use images/hypervelocitycollision.jpg>
 Package pdftex.def Info: images/hypervelocitycollision.jpg  used on input line 
-38.
-(pdftex.def)             Requested size: 170.71652pt x 130.97305pt.
+37.
+(pdftex.def)             Requested size: 170.71652pt x 121.1992pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 5
  []
 
-[5 <./images/paintflakes.jpg> <./images/hypervelocitycollision.jpg>]
-<images/slag.jpg, id=411, 545.99985pt x 427.1157pt>
+[5 <./images/paintflakes.jpg>]
+<images/slag.jpg, id=421, 545.99985pt x 427.1157pt>
 File: images/slag.jpg Graphic file (type jpg)
 <use images/slag.jpg>
-Package pdftex.def Info: images/slag.jpg  used on input line 47.
+Package pdftex.def Info: images/slag.jpg  used on input line 46.
 (pdftex.def)             Requested size: 170.71652pt x 133.54501pt.
 
-Overfull \hbox (2.60674pt too wide) in paragraph at lines 52--53
+Overfull \hbox (2.60674pt too wide) in paragraph at lines 51--52
 []\T1/cmr/m/n/12 Another sim-i-lar but rare type is droplets of sodium-potassiu
 m al-loy (NaK),
  []
 
-<images/westfordneedles.jpg, id=413, 763.85374pt x 429.605pt>
-File: images/westfordneedles.jpg Graphic file (type jpg)
-<use images/westfordneedles.jpg>
-Package pdftex.def Info: images/westfordneedles.jpg  used on input line 58.
-(pdftex.def)             Requested size: 170.71652pt x 96.01453pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 6
  []
 
-[6 <./images/slag.jpg>]
+[6 <./images/hypervelocitycollision.jpg> <./images/slag.jpg>]
+<images/westfordneedles.jpg, id=432, 763.85374pt x 429.605pt>
+File: images/westfordneedles.jpg Graphic file (type jpg)
+<use images/westfordneedles.jpg>
+Package pdftex.def Info: images/westfordneedles.jpg  used on input line 57.
+(pdftex.def)             Requested size: 170.71652pt x 96.01453pt.
+
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 CHAPTER 2.  INTRODUCTION TO SPACE DEBRIS AND OBSERVATIONS \T1/c
 mr/m/n/12 7
@@ -1457,10 +1458,10 @@ mr/m/n/12 8
  []
 
 [8]
-<images/upperstage.jpg, id=441, 377.91188pt x 376.40625pt>
+<images/upperstage.jpg, id=463, 377.91188pt x 376.40625pt>
 File: images/upperstage.jpg Graphic file (type jpg)
 <use images/upperstage.jpg>
-Package pdftex.def Info: images/upperstage.jpg  used on input line 81.
+Package pdftex.def Info: images/upperstage.jpg  used on input line 80.
 (pdftex.def)             Requested size: 170.71652pt x 170.036pt.
 
 Overfull \hbox (22.40889pt too wide) has occurred while \output is active
@@ -1475,10 +1476,10 @@ mr/m/n/12 10
  []
 
 [10]
-<images/ESAOGS1.jpg, id=463, 700.6175pt x 708.6475pt>
+<images/ESAOGS1.jpg, id=494, 700.6175pt x 708.6475pt>
 File: images/ESAOGS1.jpg Graphic file (type jpg)
 <use images/ESAOGS1.jpg>
-Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 114.
+Package pdftex.def Info: images/ESAOGS1.jpg  used on input line 113.
 (pdftex.def)             Requested size: 170.71652pt x 172.67401pt.
 
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
@@ -1487,10 +1488,10 @@ mr/m/n/12 11
  []
 
 [11]
-<images/ESAOGS2.jpg, id=471, 501.875pt x 360.34625pt>
+<images/ESAOGS2.jpg, id=507, 501.875pt x 360.34625pt>
 File: images/ESAOGS2.jpg Graphic file (type jpg)
 <use images/ESAOGS2.jpg>
-Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 123.
+Package pdftex.def Info: images/ESAOGS2.jpg  used on input line 122.
 (pdftex.def)             Requested size: 170.71652pt x 122.57658pt.
 
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
@@ -1499,15 +1500,15 @@ mr/m/n/12 12
  []
 
 [12 <./images/ESAOGS1.jpg> <./images/ESAOGS2.jpg>]
-<images/FMPIAGO1.jpg, id=478, 1084.05pt x 953.5625pt>
+<images/FMPIAGO1.jpg, id=518, 1084.05pt x 953.5625pt>
 File: images/FMPIAGO1.jpg Graphic file (type jpg)
 <use images/FMPIAGO1.jpg>
-Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 135.
+Package pdftex.def Info: images/FMPIAGO1.jpg  used on input line 134.
 (pdftex.def)             Requested size: 170.71652pt x 150.15779pt.
-<images/FMPIAGO2.jpg, id=480, 120.45pt x 79.9788pt>
+<images/FMPIAGO2.jpg, id=524, 120.45pt x 79.9788pt>
 File: images/FMPIAGO2.jpg Graphic file (type jpg)
 <use images/FMPIAGO2.jpg>
-Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 144.
+Package pdftex.def Info: images/FMPIAGO2.jpg  used on input line 143.
 (pdftex.def)             Requested size: 170.71652pt x 113.36688pt.
 ) (./03object_dynamics.tex
 Overfull \hbox (28.28246pt too wide) has occurred while \output is active
@@ -1520,7 +1521,7 @@ Chapter 3.
 [14
 
 ]
-<images/equatorial.png, id=497, 316.18124pt x 299.1175pt>
+<images/equatorial.png, id=548, 316.18124pt x 299.1175pt>
 File: images/equatorial.png Graphic file (type png)
 <use images/equatorial.png>
 Package pdftex.def Info: images/equatorial.png  used on input line 30.
@@ -1530,355 +1531,352 @@ Chapter 4.
 [18
 
 ] [19]
-<images/kd_tree.png, id=543, 903.375pt x 380.92313pt>
+<images/kd_tree.png, id=598, 903.375pt x 380.92313pt>
 File: images/kd_tree.png Graphic file (type png)
 <use images/kd_tree.png>
 Package pdftex.def Info: images/kd_tree.png  used on input line 25.
 (pdftex.def)             Requested size: 284.52756pt x 119.97397pt.
  [20 <./images/kd_tree.png>]
-<images/kd_tree_time.png, id=552, 363.60844pt x 146.04562pt>
+<images/kd_tree_time.png, id=612, 363.60844pt x 146.04562pt>
 File: images/kd_tree_time.png Graphic file (type png)
 <use images/kd_tree_time.png>
 Package pdftex.def Info: images/kd_tree_time.png  used on input line 36.
 (pdftex.def)             Requested size: 284.52756pt x 114.28503pt.
  [21 <./images/kd_tree_time.png>] [22]
-<images/uniform_linear_motion.png, id=565, 200.24812pt x 289.83281pt>
+<images/uniform_linear_motion.png, id=639, 200.24812pt x 289.83281pt>
 File: images/uniform_linear_motion.png Graphic file (type png)
 <use images/uniform_linear_motion.png>
 Package pdftex.def Info: images/uniform_linear_motion.png  used on input line 6
 3.
 (pdftex.def)             Requested size: 170.71652pt x 247.10202pt.
 )
-(./05requirements.tex [23 <./images/uniform_linear_motion.png>]
+(./05requirements.tex [23] [24 <./images/uniform_linear_motion.png>]
 Chapter 5.
-[24
+[25
 
-] [25]
-<images/fits_data_array.png, id=594, 396.7322pt x 154.32657pt>
+] [26]
+<images/fits_data_array.png, id=677, 396.7322pt x 154.32657pt>
 File: images/fits_data_array.png Graphic file (type png)
 <use images/fits_data_array.png>
-Package pdftex.def Info: images/fits_data_array.png  used on input line 42.
+Package pdftex.def Info: images/fits_data_array.png  used on input line 43.
 (pdftex.def)             Requested size: 284.52756pt x 110.68173pt.
-<images/asciifull.png, id=596, 1583.9175pt x 1220.30907pt>
+<images/asciifull.png, id=683, 1583.9175pt x 1220.30907pt>
 File: images/asciifull.png Graphic file (type png)
 <use images/asciifull.png>
-Package pdftex.def Info: images/asciifull.png  used on input line 53.
+Package pdftex.def Info: images/asciifull.png  used on input line 54.
 (pdftex.def)             Requested size: 284.52756pt x 219.19926pt.
- [26 <./images/fits_data_array.png> <./images/asciifull.png>]
-<images/fits_header_example.png, id=609, 425.33907pt x 425.33907pt>
+ [27 <./images/fits_data_array.png>] [28 <./images/asciifull.png>]
+<images/fits_header_example.png, id=701, 425.33907pt x 425.33907pt>
 File: images/fits_header_example.png Graphic file (type png)
 <use images/fits_header_example.png>
-Package pdftex.def Info: images/fits_header_example.png  used on input line 79.
+Package pdftex.def Info: images/fits_header_example.png  used on input line 80.
 
 (pdftex.def)             Requested size: 284.52756pt x 284.54085pt.
- [27]
-<images/cat_columns.png, id=617, 956.82469pt x 60.225pt>
+
+[29 <./images/fits_header_example.png>]
+<images/cat_columns.png, id=709, 956.82469pt x 60.225pt>
 File: images/cat_columns.png Graphic file (type png)
 <use images/cat_columns.png>
-Package pdftex.def Info: images/cat_columns.png  used on input line 95.
+Package pdftex.def Info: images/cat_columns.png  used on input line 96.
 (pdftex.def)             Requested size: 390.0pt x 24.5472pt.
-
-[28 <./images/fits_header_example.png>] [29 <./images/cat_columns.png>])
-(./06proposed_solutions.tex [30]
+ [30 <./images/cat_columns.png>])
+(./06proposed_solutions.tex [31] [32]
 Chapter 6.
-[31
+[33
 
-] [32]
-<images/regresia1.png, id=680, 482.55281pt x 289.83281pt>
+] [34]
+<images/regresia1.png, id=773, 482.55281pt x 289.83281pt>
 File: images/regresia1.png Graphic file (type png)
 <use images/regresia1.png>
 Package pdftex.def Info: images/regresia1.png  used on input line 25.
 (pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
- [33 <./images/regresia1.png>]
-<images/regresia2.png, id=685, 482.55281pt x 289.83281pt>
+ [35 <./images/regresia1.png>]
+<images/regresia2.png, id=778, 482.55281pt x 289.83281pt>
 File: images/regresia2.png Graphic file (type png)
 <use images/regresia2.png>
 Package pdftex.def Info: images/regresia2.png  used on input line 36.
 (pdftex.def)             Requested size: 341.43306pt x 205.07954pt.
- [34] [35 <./images/regresia2.png>]
-<images/regresia3.png, id=700, 1050.92625pt x 303.38344pt>
+ [36] [37 <./images/regresia2.png>]
+<images/regresia3.png, id=792, 1050.92625pt x 303.38344pt>
 File: images/regresia3.png Graphic file (type png)
 <use images/regresia3.png>
 Package pdftex.def Info: images/regresia3.png  used on input line 51.
 (pdftex.def)             Requested size: 390.0pt x 112.58342pt.
 
-[36]
+[38]
 Overfull \hbox (5.68672pt too wide) in paragraph at lines 62--63
 []\T1/cmr/m/n/12 The pro-vided al-go-rithm works as a stan-dalone pro-gram but 
 can be wrapped
  []
 
-[37 <./images/regresia3.png>] [38]
-<images/rtheta.png, id=724, 285.065pt x 239.89626pt>
+[39 <./images/regresia3.png>] [40]
+<images/rtheta.png, id=816, 170.5572pt x 170.5572pt>
 File: images/rtheta.png Graphic file (type png)
 <use images/rtheta.png>
-Package pdftex.def Info: images/rtheta.png  used on input line 86.
-(pdftex.def)             Requested size: 170.71652pt x 143.6643pt.
-) (./07design_implementation.tex [39 <./images/rtheta.png>] [40]
+Package pdftex.def Info: images/rtheta.png  used on input line 90.
+(pdftex.def)             Requested size: 170.71652pt x 170.72594pt.
+ [41 <./images/rtheta.png>])
+(./07design_implementation.tex [42]
 Chapter 7.
-[41
+[43
 
-] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+] [44]
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\T1/cmr/m/n/12 private static fi-nal dou-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\T1/cmr/m/n/12 private static fi-nal dou-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 []|\T1/cmr/m/n/12 private static fi-nal dou-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []|\T1/cmr/m/n/12 private static void
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
 []|\T1/cmr/m/n/12 private static void
  []
 
-[43]
-Underfull \hbox (badness 3098) in paragraph at lines 88--88
+[45]
+Underfull \hbox (badness 3098) in paragraph at lines 87--87
 []|\T1/cmr/m/n/12 constant de-scrib-ing lon-gi-tude of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []|\T1/cmr/m/n/12 private static void
  []
 
 
-Underfull \hbox (badness 2600) in paragraph at lines 101--101
+Underfull \hbox (badness 2600) in paragraph at lines 100--100
 []|\T1/cmr/m/n/12 method re-spon-si-ble for trans-lat-
  []
 
-[44]
-Underfull \hbox (badness 1178) in paragraph at lines 129--129
+[46]
+Underfull \hbox (badness 1178) in paragraph at lines 128--128
 []|\T1/cmr/m/n/12 unified vari-able con-tain-ing ei-ther
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 129--129
+Underfull \hbox (badness 1178) in paragraph at lines 128--128
 []|\T1/cmr/m/n/12 unified vari-able con-tain-ing ei-ther
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 129--129
+Underfull \hbox (badness 2150) in paragraph at lines 128--128
 []|\T1/cmr/m/n/12 convenience String used for the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 public dou-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 public boolean
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 public boolean
  []
 
 
-Underfull \hbox (badness 2846) in paragraph at lines 155--155
+Underfull \hbox (badness 2846) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 method re-turn-ing boolean value
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 public boolean
  []
 
-[45]
+[47]
 Overfull \vbox (51.29964pt too high) has occurred while \output is active []
 
 
-[46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
+[48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/cmr/m/n/12 private
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/cmr/m/n/12 private []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/cmr/m/n/12 public static
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Overfull \hbox (3.59196pt too wide) in paragraph at lines 205--205
+[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 public void
  []
 
 
-Underfull \hbox (badness 2635) in paragraph at lines 206--206
+Underfull \hbox (badness 2635) in paragraph at lines 205--205
 []|\T1/cmr/m/n/12 method which re-moves track-lets
  []
 
-[48] [49]
-<images/2dbins.png, id=798, 164.0529pt x 108.405pt>
+[50] [51]
+<images/2dbins.png, id=891, 164.0529pt x 108.405pt>
 File: images/2dbins.png Graphic file (type png)
 <use images/2dbins.png>
-Package pdftex.def Info: images/2dbins.png  used on input line 223.
+Package pdftex.def Info: images/2dbins.png  used on input line 222.
 (pdftex.def)             Requested size: 284.52756pt x 188.0376pt.
 
-Underfull \hbox (badness 1960) in paragraph at lines 240--240
+Underfull \hbox (badness 1960) in paragraph at lines 239--239
 []|\T1/cmr/m/n/12 method re-turn-ing the last valid
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []|\T1/cmr/m/n/12 private
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []|\T1/cmr/m/n/12 public SD-TO-b-ject
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []|\T1/cmr/m/n/12 public []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
 []
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 240--240
+Underfull \hbox (badness 1231) in paragraph at lines 239--239
 []|\T1/cmr/m/n/12 method re-spon-si-ble for re-turn-ing
  []
 
-[50 <./images/2dbins.png>] [51]
-Underfull \hbox (badness 1983) in paragraph at lines 264--264
+[52 <./images/2dbins.png>] [53]
+Underfull \hbox (badness 1983) in paragraph at lines 262--262
 \T1/cmr/m/n/12 rect data struc-ture (ei-ther \T1/cmr/m/it/12 fSet\T1/cmr/m/n/12
  ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
+[]|\T1/cmr/m/n/12 private static []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []|\T1/cmr/m/n/12 private static
  []
 
 
-Overfull \hbox (17.76764pt too wide) in paragraph at lines 264--264
-[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []|\T1/cmr/m/n/12 private static
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
-[]|\T1/cmr/m/n/12 private static
- []
-
-
-Overfull \hbox (17.76764pt too wide) in paragraph at lines 264--264
-[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
-[]|\T1/cmr/m/n/12 private static
- []
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 264--264
+Underfull \hbox (badness 1688) in paragraph at lines 262--262
 []|\T1/cmr/m/n/12 the core method re-spon-si-ble for
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 264--264
+Underfull \hbox (badness 2073) in paragraph at lines 262--262
 \T1/cmr/m/n/12 pars-ing .cat files, read-ing FITS
  []
 
-[52]
-
-LaTeX Warning: Reference `sec:aiub' on page 53 undefined on input line 275.
-
-) (./08results.tex [53]
+[54]) (./08results.tex [55]
 Chapter 8.
-[54
+[56
 
-] [55] [56]
-<images/fig.png, id=851, 462.528pt x 346.896pt>
+] [57] [58]
+<images/fig.png, id=943, 462.528pt x 346.896pt>
 File: images/fig.png Graphic file (type png)
 <use images/fig.png>
 Package pdftex.def Info: images/fig.png  used on input line 54.
 (pdftex.def)             Requested size: 390.0pt x 292.5128pt.
-<images/results_list.png, id=853, 779.16093pt x 155.07938pt>
+<images/results_list.png, id=945, 779.16093pt x 155.07938pt>
 File: images/results_list.png Graphic file (type png)
 <use images/results_list.png>
 Package pdftex.def Info: images/results_list.png  used on input line 63.
 (pdftex.def)             Requested size: 390.0pt x 77.6223pt.
- [57 <./images/fig.png> <./images/results_list.png>])
-(./09conclusion.tex [58]
+ [59 <./images/fig.png> <./images/results_list.png>])
+(./09conclusion.tex [60]
 Chapter 9.
-) [59
+) [61
 
-] (./main.bbl [60
+] (./main.bbl
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 12.
+ (c:/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 26--32
+\T1/cmtt/m/n/12 / / www . esa . int / About _ Us / ESA _ Publications / ESA _ P
+ublications _
+ []
+
+[62
 
 
-])
+] [63])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
- [61]
+ [64]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
@@ -1887,23 +1885,20 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4B45801D77FEC8E3939D3636E1E31C03;3082.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 21514 strings out of 492985
- 394836 string characters out of 6136283
- 456408 words of memory out of 5000000
- 24584 multiletter control sequences out of 15000+600000
- 548770 words of font info for 68 fonts, out of 8000000 for 9000
+ 21563 strings out of 492985
+ 395757 string characters out of 6136283
+ 456985 words of memory out of 5000000
+ 24619 multiletter control sequences out of 15000+600000
+ 549083 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,11n,39p,10384b,842s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
-live/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2017/
+ 36i,11n,43p,10384b,856s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
+ive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2017/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2017/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publi
@@ -1916,11 +1911,11 @@ t/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2017/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm0600.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
 /cm-super/sfrm1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
 sfsl1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.p
-fb>
-Output written on main.pdf (72 pages, 4304353 bytes).
+fb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (75 pages, 4467644 bytes).
 PDF statistics:
- 982 PDF objects out of 1000 (max. 8388607)
- 827 compressed objects within 9 object streams
- 203 named destinations out of 1000 (max. 500000)
+ 1102 PDF objects out of 1200 (max. 8388607)
+ 917 compressed objects within 10 object streams
+ 213 named destinations out of 1000 (max. 500000)
  488 words of extra memory for PDF output out of 10000 (max. 10000000)
 

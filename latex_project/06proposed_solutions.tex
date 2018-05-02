@@ -16,7 +16,7 @@
 	
 	However, there are several issues with this approach. First, fake objects might appear along a line in the same fashion as the real do. Second, the real points might have non-negligible distance from a line. Third, the first or second point might be deviated too - this would cause the line to have incorrect slope. Fourth, the real points might appear as if their acceleration was non-zero. 
 	
-	The last three problems are mainly caused by atmospheric fluctuations and errors in the CCD camera processing and the first one is the result of cosmic rays impacting the CCD arrays. We provide solutions to all of these complications in the next paragraphs.
+	The last three problems are mainly caused by atmospheric fluctuations and errors in the CCD camera processing and the first one is the result of cosmic rays impacting the CCD arrays or high temperatures of the device. We provide solutions to all of these complications in the next paragraphs.
 	
 	 To filter out points which have almost zero probability of being real objects we introduce a distance threshold $T_l$ which determines a maximum distance a point can have from the currently considered line. 
 	
@@ -42,9 +42,9 @@
 	
 	Only after each of these three filters has been satisfied by the currently chosen object $o_i$ and its point $p_i$, we add it to the list of potential candidates. 
 	
-	However, there is yet another metric that helps determining the most probable object for a currently constructed tracklet. Filters only select out points within user set boundaries - the candidates are then sorted by comparing the values gotten while processing filters. We treat first two objects $o_1$ and $o_2$ as a baseline - we calculate their speed and angle and then compare speed and angle of each successive object $o_i$ with the baseline. The object with the closest value is then put at the front of the list and therefore implicitly marked as the most probable real object. SLR is then calculated again, containing the last added object as well. It is important to note that we add exactly one object from every image before moving to the next image. As opposed to adding every filtered object, this has proved to be a better solution.
+	However, there is yet another metric that helps determining the most probable object for a currently constructed tracklet. Filters only select out points within user set boundaries - the candidates are then sorted by comparing the values assigned while processing filters. We treat first two objects $o_1$ and $o_2$ as a baseline - we calculate their speed and angle and then compare speed and angle of each successive object $o_i$ with the baseline. The object with the closest value is then put at the front of the list and therefore implicitly marked as the most probable real object. SLR is then calculated again, containing the last added object as well. It is important to note that we add exactly one object from every image before moving to the next image. As opposed to adding every filtered object, this has proved to be a better solution.
 	
-	The representation of each object $o_i$ can be specified either by the standard coordinate system in the two-dimensional Euclidean plane or by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}). The main difference and the reason why we swapped a coordinate system for a reference system is that the RA/Dec is more precise and mostly devoid of errors and deviations. The difference is best shown rather than explained - see Figure \ref{fig:regresia3}. On the left, there are shown 8 observations of the same object (an asteroid 2017\_PR25), represented in modified RA/Dec and on the right the same 8 observations, represented in the standard coordinate system. It is clearly visible that the deviation of each point in the right graph is more extreme than in the left graph. Acceleration of some of the points appears to be higher than zero - this is because the images were taken in different time intervals.
+	The representation of each object $o_i$ can be specified either by the standard coordinate system in the two-dimensional Euclidean plane or by a reference system, specifically RA/Dec (see Chapter \ref{chap:object_dynamics}, Section \ref{sec:ra_dec}). The main difference and the reason why we swapped a coordinate system for a reference system is that the RA/Dec is more precise and mostly devoid of errors and deviations. The difference is best shown rather than explained - see Figure \ref{fig:regresia3}. On the left, there are shown 8 observations of the same object, represented in modified RA/Dec and on the right the same 8 observations, represented in the standard coordinate system. It is clearly visible that the deviation of each point in the right graph is more extreme than in the left graph. Acceleration of some of the points appears to be higher than zero - this is because the images were taken in different time intervals.
 	
 	\begin{figure}[H]
 	\centering
@@ -53,7 +53,7 @@
 	  \label{fig:regresia3}
 	\end{figure}
 	
-	We touched upon every problem mentioned before - we disregard points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters and is marked as real is possible, although very improbable, and is remedied, or rather verified, by using IOD. The final result is several tracklets of unknown objects. As mentioned previously, tracklets have to contain at least three objects and thus we remove those which do not satisfy this condition.
+	We touched upon every problem mentioned before - we disregard points which are too far from the line, we correct the line by dynamically adding objects and re-calculating SLR, we filter out fake objects with nonsense speeds and angles. However, the situation when a fake object passes through all these filters and is marked as real is possible and is remedied, or rather verified, by using IOD. The final result is either one or several tracklets. As mentioned previously, tracklets have to contain at least three objects and thus we remove those which do not satisfy this condition.
 
 \section{Use of the Initial Orbit Determination algorithms}\label{sec:IDO}
 
@@ -61,7 +61,7 @@
 
 	The provided algorithm works as a standalone program but can be wrapped in our implementation and used for verifying data we provide to it.
 	
-	 In order to function correctly, the algorithm requires information about the observer and three separate objects. For the observer, the information we pass is about AGO (see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}), specifically longitude and latitude in radians, and altitude. For the objects, we need to input RA in radians, Dec in radians and time of the observation in Modified Julian Date. Then the orbital elements described in Chapter \ref{chap:object_dynamics} are calculated and objects are evaluated as belonging to the same trajectory or not.
+	 In order to function correctly, the algorithm requires information about the observer and three separate objects. For the observer, the information we pass is about AGO (see Chapter \ref{chap:introduction}, Section \ref{subsec:fmpi_ago}), specifically longitude and latitude in radians, and altitude. For the objects, we need to input RA in radians, Dec in radians and time of the observation in Modified Julian Date (MJD). Then the orbital elements described in Chapter \ref{chap:object_dynamics} are calculated and objects are evaluated as belonging to the same trajectory or not.
 	 
 	 In the vast majority of cases, we are left with more than three objects from the previous phase (Section \ref{sec:linear_regression} in this chapter). In order to check them all, we need to form all possible combinations of three out of them. 
 	 	
@@ -72,8 +72,12 @@
 	 The results of the IOD are then output into a file and we check the presence of every observation in every combination. Observations which have the highest number of appearances have the highest probability of being a real object - on the other hand, if an observation does not appear, it is considered a not real object and does not belong into a tracklet.
 
 \section{Use of neural network}\label{sec:neural}
+	
+	A highly experimental part of this thesis is the use of a neural network. We used a higher-level API to TensorFlow, \emph{tflearn}.
 
-	An experimental part of this thesis is the use of a neural network. We are using a popular framework \emph{tflearn}.
+	We built a deep neural network (DNN) and attempted to apply few activation functions (sigmoid, softmax) with multiple settings of layers and a regression layer at the end.
+	
+	We attempted to train the network for various number of epochs with gradient descent algorithm but were ultimately unsuccessful. Nevertheless, we see great potential in application of neural networks in astronomical calculations.
 
 \section{Hough transform}\label{sec:hough}
 

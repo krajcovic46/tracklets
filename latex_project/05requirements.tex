@@ -1,9 +1,10 @@
 \chapter{Technical and practical requirements}\label{chap:requirements}
 
+	Our application is a part of a system, or a pipeline, and its inputs and outputs need to be precisely specified. Contents of this chapter consist of an overview of inputs coming from previous stages of the pipeline.
 
 \section{Input data}\label{sec:input_data}
 
-	Information about potential unknown objects are passed to the program in the form of input files. There are two formats of files which contain relevant metadata, such as right ascension, declination, magnitude, and other, which are vital to the correct functioning of algorithms of tracklet building described in detail in chapter \ref{chap:proposed_solutions}. 
+	Information about potential unknown objects are passed to the application in the form of input files. There are two formats of files which contain relevant metadata, such as right ascension, declination, magnitude, and other, which are vital to the correct functioning of algorithms of tracklet building described in detail in Chapter \ref{chap:proposed_solutions}. 
 	
 	The first is Flexible Image Transport System (FITS), a standardised and the most commonly used digital file format in astronomy. The second is an output from previous stage of the pipeline, a .cat file. 
 	
@@ -29,7 +30,7 @@
 	
 	In our case, all FITS Files contain only the primary HDU which is sometimes referred to as Basic FITS File or a Single Image FITS File.
 	
-	If used, a structure contains a higher than zero number of FITS Blocks (blocks), each with size of 2880 bytes. Primary HDU always starts with the first block and each following structure begins with a block starting right after the end of the last block of previous structure. Furthermore, the primary HDU and each extension HDU must contain non-zero number of 2880-byte FITS Header (header) blocks, which are mandatory, and an optional array of associated 2880-byte data blocks\citep{FITSdefinition}.
+	If used, a structure contains a higher than zero number of FITS Blocks (blocks), each with size of 2880 bytes. Primary HDU always starts with the first block and each following structure begins with a block starting right after the end of the last block of previous structure. Furthermore, the primary HDU and each extension HDU must contain non-zero number of 2880-byte FITS Header (header) blocks, which are mandatory, and an optional array of associated 2880-byte data blocks \citep{FITSdefinition}.
 	
 \subsubsection{Data arrays} 
 	
@@ -40,7 +41,7 @@
 	\begin{figure}[H]
 	\centering
 	  \includegraphics[width=10cm]{images/fits_data_array}
-		  \caption{FITS data array represented as 2 byte integer.}
+		  \caption{FITS data array represented as 2 byte integer. Image downloaded from \citep{astropy}.}
 	  \label{fig:fits_data_array}
 	\end{figure}
 	
@@ -57,7 +58,7 @@
 	
 	A header contains at least one header block, each consisting of maximum 80-character keyword sequence. In the 2880-byte block, this puts the maximum number of records at 36. The logical end of the block is marked by the END keyword and if there is space left, it is filled with ASCII character for space.
 	
-	Keywords are composed of key-value pairs and an optional comment. The presence of the value indicator (\emph{'= '}, ASCII character "equals" followed by ASCII character for space) determines that the key has a value associated with it. The values field can hold any of the following types:
+	Keywords are composed of key-value pairs and an optional comment. The presence of the value indicator (\emph{'= '}, ASCII character for equals followed by ASCII character for space) determines that the key has a value associated with it. The values field can hold any of the following types:
 	
 	\begin{itemize}
 		\item character string (eg. '27/10/82')
@@ -68,7 +69,7 @@
 		\item complex floating-point number (eg. $7.8+1.7i$).
 	\end{itemize}
 	
-	 Each FITS file (file) must contain several mandatory keywords (such as \emph{SIMPLE} - describes whether FITS file is a Basic Fits File or not; and other) which are reserved and have fixed types of their values. FITS format also contains reserved keywords that are not mandatory (such as \emph{DATE} - date on which the HDU was created, and other).
+	 Each FITS file (file) must contain several mandatory keywords (such as \emph{SIMPLE} - describes whether FITS file is a Basic Fits File or not, and other) which are reserved and have fixed types of their values. FITS format also contains reserved keywords that are not mandatory (such as \emph{DATE} - date on which the HDU was created, and other).
 	 
 	 In our case, the most relevant keywords are \emph{DATE-OBS} and \emph{EXPTIME}, or \emph{EXPOSURE} in files where the keyword \emph{EXPTIME} is missing \citep{FITSdefinition}.
 	 
@@ -119,7 +120,7 @@
 		\item FWHM - "\emph{full width at half maximum}" describes a measurement of the width of a diffused object
 		\item Peak - signal to noise ratio; describes the difference between the pixel with the maximal value and background
 		\item Fit - the deviation of fitting of centroids in image to the star catalogue
-		\item Designation - an user given input
+		\item Designation - an user given text
 	\end{enumerate}
 	
 \subsection{Processing server parameters}\label{sec:server_param}

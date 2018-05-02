@@ -4,51 +4,60 @@ The top-level auxiliary file: main.aux
 The style file: apalike.bst
 Database file #1: references.bib
 Warning--entry type for "ccsds" isn't style-file defined
---line 103 of file references.bib
+--line 46 of file references.bib
 Warning--entry type for "mpc" isn't style-file defined
---line 119 of file references.bib
-Warning--I didn't find a database entry for ""
+--line 55 of file references.bib
+Warning--entry type for "NASA" isn't style-file defined
+--line 64 of file references.bib
+Warning--entry type for "mit" isn't style-file defined
+--line 73 of file references.bib
+Warning--entry type for "esaogs" isn't style-file defined
+--line 84 of file references.bib
+Warning--entry type for "kafzm" isn't style-file defined
+--line 93 of file references.bib
+Warning--entry type for "astropy" isn't style-file defined
+--line 129 of file references.bib
 Warning--to sort, need author or key in FITSdefinition
-Warning--to sort, need author or key in TDMdefinition
-You've used 12 entries,
+Warning--empty journal in kessler
+You've used 19 entries,
             1935 wiz_defined-function locations,
-            534 strings with 5080 characters,
-and the built_in function-call counts, 3344 in all, are:
-= -- 325
-> -- 93
-< -- 9
-+ -- 28
-- -- 28
-* -- 236
-:= -- 615
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 66
-chr.to.int$ -- 12
-cite$ -- 16
-duplicate$ -- 152
-empty$ -- 254
-format.name$ -- 42
-if$ -- 642
+            570 strings with 6374 characters,
+and the built_in function-call counts, 5290 in all, are:
+= -- 536
+> -- 155
+< -- 17
++ -- 46
+- -- 46
+* -- 359
+:= -- 1003
+add.period$ -- 62
+call.type$ -- 19
+change.case$ -- 111
+chr.to.int$ -- 19
+cite$ -- 22
+duplicate$ -- 223
+empty$ -- 367
+format.name$ -- 70
+if$ -- 1004
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 62
-num.names$ -- 30
-pop$ -- 74
+missing$ -- 12
+newline$ -- 102
+num.names$ -- 54
+pop$ -- 89
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 118
 quote$ -- 0
-skip$ -- 112
+skip$ -- 179
 stack$ -- 0
-substring$ -- 171
-swap$ -- 11
+substring$ -- 281
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 104
 warning$ -- 2
-while$ -- 22
+while$ -- 39
 width$ -- 0
-write$ -- 145
-(There were 5 warnings)
+write$ -- 240
+(There were 9 warnings)

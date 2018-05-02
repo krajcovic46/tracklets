@@ -1,19 +1,21 @@
 \begin{thebibliography}{}
 
-\bibitem[TDM, 2007]{TDMdefinition}
- (2007).
-\newblock {\em Recommendation for Space Data System Standards}.
-\newblock {CCSDS Secretariat}.
-
 \bibitem[FIT, 2016]{FITSdefinition}
  (2016).
-\newblock {\em Definition of the Flexible Image Transport System {(FITS)}}.
-\newblock International Astronomical Union.
+\newblock {\em Definition of the Flexible Image Transport System (FITS)}.
+\newblock International Astronomical Union, {IAU}.
 \newblock Version 4.0.
 
 \bibitem[{ASRC Federal Technical Services CCSDS}, 2017]{ccsds}
 {ASRC Federal Technical Services CCSDS} (2017).
 \newblock {CCSDS}.
+\newblock \url{https://public.ccsds.org/about/default.aspx}, accessed at 2018.
+
+\bibitem[{Astropy Developers}, 2018]{astropy}
+{Astropy Developers}, T. (2018).
+\newblock Fits file handling.
+\newblock \url{http://docs.astropy.org/en/stable/io/fits/index.html}, accessed
+  at 2018.
 
 \bibitem[Bentley, 1975]{Bentley:1975:MBS:361002.361007}
 Bentley, J.~L. (1975).
@@ -24,16 +26,51 @@ Bentley, J.~L. (1975).
 ESA (2017).
 \newblock Space debris: the {ESA} approach.
 \newblock Brochure.
+\newblock
+  \url{http://www.esa.int/About_Us/ESA_Publications/ESA_Publications_Brochures/ESA_BR-336_Space_Debris_The_ESA_Approach},
+  accessed at 2018.
+
+\bibitem[{ESA Science}, 2013]{esaogs}
+{ESA Science} (2013).
+\newblock {ESA} optical ground station.
+\newblock \url{http://sci.esa.int/sci-fmi/36520-optical-ground-station/},
+  accessed at 2018.
 
 \bibitem[Freedman, 2005]{freedman2005statistical}
 Freedman, D. (2005).
 \newblock {\em Statistical Models: Theory and Practice}.
 \newblock Cambridge University Press.
 
+\bibitem[{KAFZM FMFI UK}, 2017]{kafzm}
+{KAFZM FMFI UK} (2017).
+\newblock Department of astronomy, physics of the earth and meteorology.
+\newblock \url{http://www.daa.fmph.uniba.sk/}, accessed at 2018.
+
+\bibitem[{Kessler} and {Cour-Palais}, 1978]{kessler}
+{Kessler}, D.~J. and {Cour-Palais}, B.~G. (1978).
+\newblock {Collision frequency of artificial satellites: The creation of a
+  debris belt}.
+\newblock 83:2637--2646.
+\newblock Provided by the SAO/NASA Astrophysics Data System.
+
 \bibitem[Klinkrad, 2006]{klinkrad2006space}
 Klinkrad, H. (2006).
 \newblock {\em Space Debris: Models and Risk Analysis}.
 \newblock Astronautical Engineering. Springer.
+
+\bibitem[{Kubica et. al.}, 2007]{kubica}
+{Kubica et. al.}, J. (2007).
+\newblock Efficient intra- and inter-night linking of asteroid detections using
+  kd-trees.
+\newblock paper.
+\newblock Icarus 189 (2007) 151–168.
+
+\bibitem[{Massachusetts Institute of Technology}, 2009]{mit}
+{Massachusetts Institute of Technology} (2009).
+\newblock {MIT} lab notes.
+\newblock
+  \url{https://www.ll.mit.edu/publications/labnotes/Looking_Back_3.pdf},
+  accessed at 2018.
 
 \bibitem[Miller et~al., 2009]{miller2009kd}
 Miller, F., Vandome, A., and McBrewster, J. (2009).
@@ -43,19 +80,33 @@ Miller, F., Vandome, A., and McBrewster, J. (2009).
 \bibitem[{Minor Planet Center}, 2016]{mpc}
 {Minor Planet Center} (2016).
 \newblock {MPC} format.
+\newblock \url{https://minorplanetcenter.net/iau/info/OpticalObs.html},
+  accessed at 2018.
 
 \bibitem[Montenbruck and Gill, 2005]{montenbruck2005satellite}
 Montenbruck, O. and Gill, E. (2005).
 \newblock {\em Satellite Orbits: Models, Methods, Applications}.
 \newblock Springer.
 
+\bibitem[NASA, 2018]{NASA}
+NASA (2018).
+\newblock Nasa image gallery.
+\newblock \url{https://www.orbitaldebris.jsc.nasa.gov/photo-gallery.html},
+  accessed at 2018.
+
+\bibitem[{Oda et. al.}, 2013]{oda}
+{Oda et. al.}, H. (2013).
+\newblock Optical observation, image-processing, and detection of space debris
+  in geosynchronous earth orbit.
+\newblock paper.
+
 \bibitem[on~the Peaceful Uses~of Outer Space.~Scientific and Subcommittee,
   1999]{united1999technical}
-on~the Peaceful Uses~of Outer Space.~Scientific, U. N. G. A.~C. and
-  Subcommittee, T. (1999).
+on~the Peaceful Uses~of Outer Space.~Scientific, U. G. A.~C. and Subcommittee,
+  T. (1999).
 \newblock {\em Technical report on space debris: text of the report adopted by
-  the Scientific and Technical Subcommittee of the United Nations Committee on
-  the Peaceful uses of Outer Space}.
+  the Scientific and Technical Subcommittee of the {United Nations Committee}
+  On the Peaceful uses of Outer Space}.
 \newblock United Nations.
 
 \bibitem[Šilha, 2012]{Silha2012id}
