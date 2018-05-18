@@ -16,7 +16,7 @@ public class SDTBatch {
 
     public HashSet<SDTTracklet> tracklets = new HashSet<>();
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
     public static final boolean RADEC = true;
 
     private double slope;

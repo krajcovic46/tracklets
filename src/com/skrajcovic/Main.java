@@ -24,7 +24,7 @@ public class Main {
     	SDTBatch batch = new SDTBatch();
 
         String pathName = "misc//data//Oct2017//NEA//";
-        String dirName = "PR25_R_7";
+        String dirName = "00040A_R_4";
         SDTBatch.dirName = dirName;
 
         SDTOutput output = new SDTOutput(batch);
